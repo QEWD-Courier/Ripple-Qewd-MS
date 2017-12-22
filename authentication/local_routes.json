@@ -1,0 +1,12 @@
+[
+  {
+    "path": "ripple-oauth-openid",
+    "module": "/opt/qewd/mapped/modules/ripple-oauth-openid",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  }
+]

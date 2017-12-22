@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/phr/test",
+    "method": "GET",
+    "use": "test"
+  },
+  {
+    "path": "/phr/initialise",
+    "method": "GET",
+    "use": "initialise"
+  }
+]

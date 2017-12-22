@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/phr/oauth/login",
+    "method": "GET",
+    "destination": "authentication_service"
+  },
+  {
+    "path": "/phr/oauth/callback",
+    "method": "GET",
+    "destination": "authentication_service"
+  },
+  {
+    "path": "/phr/my/demographics",
+    "method": "GET",
+    "destination": "hospital_service"
+  },
+  {
+    "path": "/phr/my/heading/:heading",
+    "method": "GET",
+    "destination": "phr_service"
+  }
+]

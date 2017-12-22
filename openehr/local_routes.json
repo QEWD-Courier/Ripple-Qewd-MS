@@ -1,0 +1,12 @@
+[
+  {
+    "path": "ripple-phr-openehr",
+    "module": "/opt/qewd/mapped/modules/ripple-phr-openehr",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  }
+]

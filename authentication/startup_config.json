@@ -1,0 +1,6 @@
+{
+  "managementPassword": "R1pp1$",
+  "serverName": "Gov.Verify Authentication MicroService Server",
+  "port": 8080,
+  "poolSize": 2
+}

@@ -1,0 +1,6 @@
+{
+  "managementPassword": "R1pp1$",
+  "serverName": "Hospital Access MicroService Server",
+  "port": 8080,
+  "poolSize": 3
+}

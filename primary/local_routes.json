@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/phr",
+    "module": "/opt/qewd/mapped/modules/ripple-phr-primary",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  }
+]
