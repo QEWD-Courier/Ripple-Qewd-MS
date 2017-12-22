@@ -51,15 +51,15 @@ There are 2 things you'll need to change.
 
 - The Callback URL for the Authentication Service.  This is defined in the file:
 
-     ~/Ripple-QEWD-Microservices/authentication/userDefined.json
+       ~/Ripple-QEWD-Microservices/authentication/userDefined.json
 
-  You'll find that it containsthe line:
+  You'll find that it contains the line:
 
-    "callback_url": "http://www.mgateway.com:8080/phr/loggedIn.html",
+      "callback_url": "http://www.mgateway.com:8080/phr/loggedIn.html",
 
   Change this URL to your own configuration's equivalent (for the Primary service), eg:
 
-    "callback_url": "http://192.168.1.120:8080/phr/loggedIn.html",
+      "callback_url": "http://192.168.1.120:8080/phr/loggedIn.html",
 
   Save your changes (keeping the file-name unchanged).
 
