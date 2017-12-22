@@ -2,7 +2,7 @@
 
 Email: <code.custodian@ripple.foundation>
 
-2016 Ripple Foundation Community Interest Company 
+2017 Ripple Foundation Community Interest Company 
 
 [http://ripple.foundation](http://ripple.foundation)
 
