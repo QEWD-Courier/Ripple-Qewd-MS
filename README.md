@@ -27,12 +27,14 @@ If you haven't already done so, install Docker on your host machine(s)
 
 ## Configuration
 
-The only thing you'll need to change is the IP addresses of the MicroService machines.  These are defined in the file:
+There are 2 things you'll need to change.
+
+- The IP addresses of the MicroService machines.  These are defined in the file:
 
 
-     cd ~/Ripple-QEWD-Microservices/primary/ms-hosts.json
+     ~/Ripple-QEWD-Microservices/primary/ms-hosts.json
 
-You'll find that it contains:
+  You'll find that it contains:
 
       {
         "authentication_service": "http://192.168.1.120:8081",
@@ -40,11 +42,27 @@ You'll find that it contains:
         "phr_service": "http://192.168.1.120:8083"
       }
 
-Change the IP addresses for each service to the one you'll be using for each MicroService.  These can be on the same or different IP addresses, as you choose.  The one proviso is that the Primary server is able to communicate with the other microservices.
+  Change the IP addresses for each service to the one you'll be using for each MicroService.  These can be on the same or different IP addresses, as you choose.  The one proviso is that the Primary server is able to communicate with the other microservices.
 
-Note that you can't use localhost / 127.0.0.1 as the IP address(es) in these definitions, since this will be interpreted as the local host / IP address of the Docker Container itself, rather than that of the host machine.
+  Note that you can't use localhost / 127.0.0.1 as the IP address(es) in these definitions, since this will be interpreted as the local host / IP address of the Docker Container itself, rather than that of the host machine.
 
-Save your changes (keeping the file-name unchanged).
+  Save your changes (keeping the file-name unchanged).
+
+
+- The Callback URL for the Authentication Service.  This is defined in the file:
+
+     ~/Ripple-QEWD-Microservices/authentication/userDefined.json
+
+  You'll find that it containsthe line:
+
+    "callback_url": "http://www.mgateway.com:8080/phr/loggedIn.html",
+
+  Change this URL to your own configuration's equivalent (for the Primary service), eg:
+
+    "callback_url": "http://192.168.1.120:8080/phr/loggedIn.html",
+
+  Save your changes (keeping the file-name unchanged).
+
 
 ## Running the Suite of MicroServices
 
