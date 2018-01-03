@@ -2,7 +2,7 @@
 
 Email: <code.custodian@ripple.foundation>
 
-2017 Ripple Foundation Community Interest Company 
+2017-18 Ripple Foundation Community Interest Company 
 
 [http://ripple.foundation](http://ripple.foundation)
 
@@ -24,6 +24,10 @@ If you haven't already done so, install Docker on your host machine(s)
 
       sudo apt-get update
       sudo apt-get install docker.io
+
+### Installing Docker on Raspberry Pi
+
+      curl -sSL https://get.docker.com | sh
 
 ## Configuration
 
@@ -66,6 +70,8 @@ There are 2 things you'll need to change.
 
 ## Running the Suite of MicroServices
 
-Start each one up: see the README file in each sub-directory
+- Start each one up: see the README file in each sub-directory for instructions.  Start with the
+*/primary* MicroService.
 
-Start the browser application: see the README file in the */primary* folder.
+- When all the MicroServices are running, start the browser application: see the README file in the */primary* folder.
+
