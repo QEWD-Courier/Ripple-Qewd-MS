@@ -61,9 +61,12 @@ There are 2 things you'll need to change.
 
       "callback_url": "http://www.mgateway.com:8080/phr/loggedIn.html",
 
-  Change this URL to your own configuration's equivalent (for the Primary service), eg:
+  Change this URL an external-facing, publicly-accessible address for your own Primary service, eg:
 
-      "callback_url": "http://192.168.1.120:8080/phr/loggedIn.html",
+      "callback_url": "http://my.server.com:8080/phr/loggedIn.html",
+
+  Important: the Gov.Verify sandbox service MUST be able to redirect to your Primary Micro-Service, so
+  the domain name/port you specify must be publicly-accessible.
 
   Save your changes (keeping the file-name unchanged).
 
