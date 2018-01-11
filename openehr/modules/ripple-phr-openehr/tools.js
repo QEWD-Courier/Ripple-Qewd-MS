@@ -1,8 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-hospital: Ripple MicroServices for Hospital System Access     |
- |                          eg PAS, etc                                     |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -29,13 +28,47 @@
 
 */
 
-module.exports = function(args, finished) {
-  var nhsNumber = args.session.nhsNumber;
+var headings = require('./headings/headings').headings;
 
-  var patient = this.db.use('RipplePHRPatients', 'byId', nhsNumber);
-  var demographics = patient.getDocument();
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
-  finished({
-    demographics: demographics
-  });
+function isGuid(str) {
+  var regexGuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  return regexGuid.test(str);
+}
+
+function isPatientIdValid(patientId) {
+
+  if (!patientId || patientId === '') {
+    return {error: 'patientId ' + patientId + ' must be defined'};
+  }
+
+  if (!isNumeric(patientId)) {
+    return {error: 'patientId ' + patientId + ' is invalid'};
+  }
+
+  return {ok: true};
+}
+
+function isHeadingValid(heading) {
+  if (!heading || heading === '' || !headings[heading]) return false;
+  return true;
+}
+
+function isSourceIdValid(sourceId) {
+  if (!sourceId || sourceId === '') return false;
+  if (!isGuid(sourceId)) return false;
+  return true;
+}
+
+module.exports = {
+  isNumeric,
+  isPatientIdValid,
+  isHeadingValid,
+  isSourceIdValid
 };
+
+
+

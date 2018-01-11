@@ -1,8 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-hospital: Ripple MicroServices for Hospital System Access     |
- |                          eg PAS, etc                                     |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -29,13 +28,44 @@
 
 */
 
-module.exports = function(args, finished) {
-  var nhsNumber = args.session.nhsNumber;
+var headings = require('../headings/headings').headings;
+var headingHelpers = require('../headings/headingHelpers');
+var transform = require('qewd-transform-json').transform;
 
-  var patient = this.db.use('RipplePHRPatients', 'byId', nhsNumber);
-  var demographics = patient.getDocument();
+function getHeadingTableFromCache(patientId, heading, session) {
 
-  finished({
-    demographics: demographics
+  // The heading records are in the QEWD Session cache
+  // Retrieve and transform them
+
+  var cachedHeading = session.data.$(['patients', patientId, 'headings', headings[heading].name]);
+  var results = [];
+
+  var template = headings[heading].get.transformTemplate;
+
+  cachedHeading.forEachChild(function(host, hostNode) {
+
+    var helpers = headingHelpers(host, heading, 'get');
+
+    hostNode.forEachChild(function(index, headingNode) {
+      //console.log('**** forEachChild index = ' + index);
+      var input = headingNode.getDocument();
+      var output = transform(template, input, helpers);
+
+      // only send the summary headings
+
+      var summaryFields = headings[heading].headingTableFields;
+      summaryFields.push('source');
+      summaryFields.push('sourceId');
+
+      var summary = {};
+      summaryFields.forEach(function(fieldName) {
+        summary[fieldName] = output[fieldName] || '';
+      });
+
+      results.push(summary);
+    });
   });
-};
+  return results;
+}
+
+module.exports = getHeadingTableFromCache;

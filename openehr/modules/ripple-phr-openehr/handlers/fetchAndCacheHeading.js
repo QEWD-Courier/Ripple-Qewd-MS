@@ -1,8 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-hospital: Ripple MicroServices for Hospital System Access     |
- |                          eg PAS, etc                                     |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -29,13 +28,34 @@
 
 */
 
-module.exports = function(args, finished) {
-  var nhsNumber = args.session.nhsNumber;
+var openEHR = require('../openEHR/openEHR');
+var headingsLib = require('../headings/headings');
+var headings = headingsLib.headings;
+var getHeading = headingsLib.getHeading;
 
-  var patient = this.db.use('RipplePHRPatients', 'byId', nhsNumber);
-  var demographics = patient.getDocument();
+function fetchAndCacheHeading(patientId, heading, session, callback) {
 
-  finished({
-    demographics: demographics
+  var cachedHeading = session.data.$(['patients', patientId, 'headings', headings[heading].name]);
+
+  if (cachedHeading.exists) {
+    if (callback) callback({ok: true});
+    return;
+  }
+
+  // fetches and caches a heading for a patient
+
+  openEHR.init.call(this);
+  var self = this;
+
+  openEHR.startSessions(session, function(openEHRSessions) {
+    //console.log('*** sessions: ' + JSON.stringify(openEHRSessions));
+    openEHR.mapNHSNo(patientId, openEHRSessions, function() {
+      getHeading.call(self, patientId, heading, session, openEHRSessions, function() {
+        openEHR.stopSessions(openEHRSessions, session);
+        if (callback) callback({ok: cachedHeading.exists});
+      });
+    });
   });
-};
+}
+
+module.exports = fetchAndCacheHeading;

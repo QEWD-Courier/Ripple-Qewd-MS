@@ -1,7 +1,8 @@
 {
   "name": "ripple-phr-openehr",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
+    "qewd-router": "",
     "qewd-template": "",
     "qewd-transform-json": "",
     "request": "",

@@ -1,6 +1,6 @@
 [
   {
-    "path": "/phr",
+    "path": "/api",
     "module": "/opt/qewd/mapped/modules/ripple-phr-primary",
     "errors": {
       "notfound": {

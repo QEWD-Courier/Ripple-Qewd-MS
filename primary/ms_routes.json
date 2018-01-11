@@ -1,21 +1,31 @@
 [
   {
-    "path": "/phr/oauth/login",
+    "path": "/api/oauth/login",
     "method": "GET",
     "destination": "authentication_service"
   },
   {
-    "path": "/phr/oauth/callback",
+    "path": "/api/oauth/callback",
     "method": "GET",
     "destination": "authentication_service"
   },
   {
-    "path": "/phr/my/demographics",
+    "path": "/api/my/demographics",
     "method": "GET",
     "destination": "hospital_service"
   },
   {
-    "path": "/phr/my/heading/:heading",
+    "path": "/api/my/heading/:heading",
+    "method": "GET",
+    "destination": "phr_service"
+  },
+  {
+    "path": "/api/my/heading/:heading/:sourceId",
+    "method": "GET",
+    "destination": "phr_service"
+  },
+  {
+    "path": "/api/my/summary",
     "method": "GET",
     "destination": "phr_service"
   }

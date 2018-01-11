@@ -1,8 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-hospital: Ripple MicroServices for Hospital System Access     |
- |                          eg PAS, etc                                     |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -29,13 +28,51 @@
 
 */
 
-module.exports = function(args, finished) {
-  var nhsNumber = args.session.nhsNumber;
+var fetchAndCacheHeading = require('./fetchAndCacheHeading');
+var getHeadingDetailFromCache = require('./getHeadingDetailFromCache');
+var tools = require('../tools');
 
-  var patient = this.db.use('RipplePHRPatients', 'byId', nhsNumber);
-  var demographics = patient.getDocument();
-
+function getDetail(patientId, heading, sourceId, session, finished) {
+  var results = getHeadingDetailFromCache(patientId, heading, sourceId, session);
   finished({
-    demographics: demographics
+    responseFrom: 'phr_service',
+    results: results
   });
+}
+
+module.exports = function(args, finished) {
+
+  var patientId = args.patientId;
+
+  var valid = tools.isPatientIdValid(patientId);
+  if (valid.error) return finished(valid);
+
+  var heading = args.heading;
+
+  if (!tools.isHeadingValid(heading)) {
+    console.log('*** ' + heading + ' has not yet been added to middle-tier processing');
+    return finished([]);
+  }
+
+  var sourceId = args.sourceId;
+  if (!tools.isSourceIdValid(sourceId)) {
+    console.log('*** Invalid SourceId: ' + sourceId);
+    return finished([]);
+  }
+
+  var session = args.req.qewdSession;
+
+  fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
+    if (!response.ok) {
+      console.log('*** No results could be returned from the OpenEHR servers for heading ' + heading);
+      return finished([]);
+    }
+    else {
+      console.log('heading ' + heading + ' for ' + patientId + ' is cached');
+      getDetail(patientId, heading, sourceId, session, finished);
+    }
+  });
+
 };
+
+

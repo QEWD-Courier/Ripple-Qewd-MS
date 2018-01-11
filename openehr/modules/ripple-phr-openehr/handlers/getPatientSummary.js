@@ -28,65 +28,67 @@
 
 */
 
-var moment = require('moment-timezone');
-var timezone = 'Europe/London';
+var headings = require('../headings/headings').headings;
+var fetchAndCacheHeading = require('./fetchAndCacheHeading');
+var isPatientIdValid = require('../tools').isPatientIdValid;
 
-
-function format(date) {
-  if (typeof date !== 'object') date = new Date(date);
-  return moment(date).tz(timezone).format();
-}
-
-function now() {
-  return format(new Date());
-}
-
-function isDST(date) {
-  if (typeof date !== 'object') date = new Date(date);
-  return moment(date).tz(timezone).isDST();
-}
-
-function toSqlPASFormat(date) {
-  if (typeof date !== 'object') date = new Date(date);
-  return moment(date).tz(timezone).format("YYYY-MM-DD");
-}
-
-function toGMT(date) {
-  // if a date is in summer time, return as GMT, ie with an hour deducted
-  var result = date;
-  if (moment(date).tz(timezone).isDST()) result = new Date(date.getTime() - 3600000);
-  return result;
-}
-
-function getRippleTime(date, host) {
-  //console.log('*** host = ' + host);
-  if (date === '') return date;
-  var dt = new Date(date);
-  if (host === 'ethercis') dt = toGMT(dt);
-  return dt.getTime();
-}
-
-function msSinceMidnight(date, host, GMTCheck) {
-  var e = new Date(date);
-  //if (host === 'ethercis') e = toGMT(e);
-  if (GMTCheck) e = toGMT(e);
-  return e.getTime() - e.setHours(0,0,0,0);
-}
-
-function msAtMidnight(date, host, GMTCheck) {
-  var e = new Date(date);
-  //if (host === 'ethercis') e = toGMT(e);
-  if (GMTCheck) e = toGMT(e);
-  return e.setHours(0,0,0,0);
-}
-
-module.exports = {
-  format: format,
-  now: now,
-  isDST: isDST,
-  toGMT: toGMT,
-  msSinceMidnight: msSinceMidnight,
-  msAtMidnight: msAtMidnight,
-  getRippleTime: getRippleTime,
-  toSqlPASFormat: toSqlPASFormat
+var headingList = {
+  allergies: true,
+  medications: true,
+  problems: true,
+  contacts: true
 };
+
+function cacheSummaryHeadings(patientId, session, callback) {
+
+  var count = 0;
+  var max = 4;
+
+  for (var heading in headingList) {
+    fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
+      count++;
+      if (count === max && callback) callback();
+    });
+  }
+}
+
+function getCachedSummary(patientId, session, callback) {
+  var results = {};
+  for (var heading in headingList) {
+    results[heading] = [];
+    session.data.$(['patients', patientId, 'headings', heading]).forEachChild(function(host, hostNode) {
+      hostNode.forEachChild(function(index, recordNode) {
+        var summaryTextFieldName = headings[heading].textFieldName;
+        var summaryText = recordNode.$(summaryTextFieldName).value;
+        if (summaryText !== null && summaryText !== '') {
+          var summary = {
+            sourceId: recordNode.$('uid').value.split('::')[0],
+            source: host,
+            text: summaryText
+          }
+          results[heading].push(summary);
+        }
+      });
+    });
+  }
+  callback(results);
+}
+
+
+function patientSummary(args, finished) {
+
+  var patientId = args.patientId;
+  var valid = isPatientIdValid(patientId);
+  if (valid.error) return finished(valid);
+
+  var session = args.req.qewdSession; // QEWD Session
+
+  cacheSummaryHeadings.call(this, patientId, session, function() {
+    getCachedSummary(patientId, session, function(results) {
+      finished(results);
+    });
+  });
+}
+
+module.exports = patientSummary;
+

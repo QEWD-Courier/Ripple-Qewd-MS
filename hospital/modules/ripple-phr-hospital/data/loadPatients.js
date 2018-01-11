@@ -1,9 +1,10 @@
 /*
 
  ----------------------------------------------------------------------------
- | qewd-ripple: QEWD-based Middle Tier for Ripple OSI                       |
+ | ripple-phr-hospital: Ripple MicroServices for Hospital System Access     |
+ |                          eg PAS, etc                                     |
  |                                                                          |
- | Copyright (c) 2016-17 Ripple Foundation Community Interest Company       |
+ | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
  |                                                                          |
  | http://rippleosi.org                                                     |
@@ -24,7 +25,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  20 November 2017
+  11 January 2018
 
 */
 

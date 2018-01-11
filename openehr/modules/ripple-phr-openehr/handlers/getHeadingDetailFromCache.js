@@ -1,8 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-hospital: Ripple MicroServices for Hospital System Access     |
- |                          eg PAS, etc                                     |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -29,13 +28,17 @@
 
 */
 
-module.exports = function(args, finished) {
-  var nhsNumber = args.session.nhsNumber;
+var headings = require('../headings/headings').headings;
 
-  var patient = this.db.use('RipplePHRPatients', 'byId', nhsNumber);
-  var demographics = patient.getDocument();
+function getHeadingDetailFromCache(patientId, heading, sourceId, session) {
 
-  finished({
-    demographics: demographics
-  });
-};
+  var cachedPatient = session.data.$(['patients', patientId]);
+  var cachedHeadingIndex = cachedPatient.$(['headingIndex', headings[heading].name, sourceId]);
+
+  if (!cachedHeadingIndex.exists) return {};
+  var index = cachedHeadingIndex.getDocument();
+  var cachedHeading = cachedPatient.$(['headings', headings[heading].name, index.host, index.recNo]);
+  return cachedHeading.getDocument(true);
+}
+
+module.exports = getHeadingDetailFromCache;

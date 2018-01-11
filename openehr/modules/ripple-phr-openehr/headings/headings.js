@@ -1,9 +1,9 @@
 /*
 
  ----------------------------------------------------------------------------
- | qewd-ripple: QEWD-based Middle Tier for Ripple OSI                       |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
- | Copyright (c) 2016-17 Ripple Foundation Community Interest Company       |
+ | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
  |                                                                          |
  | http://rippleosi.org                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  28 June 2017
+  11 January 2018
 
 */
 
@@ -108,8 +108,6 @@ var q;
 
 function getHeading(nhsNo, heading, session, openEHRSessions, callback) {
 
-  console.log('**&^*&^*^*& getHeading');
-
   var servers = this.userDefined.openehr;
 
   // OK this is where we determine how and where the heading data will be fetched from
@@ -180,16 +178,14 @@ function getHeading(nhsNo, heading, session, openEHRSessions, callback) {
     };
     if (body && body.resultSet) {
       //console.log('setting patientHeading global for ' + heading.name + ' / host ' + host);
-      var patient = session.data.$(['patients', nhsNo]);
-      var patientHeading = patient.$(['headings', heading.name, host]);
-      //var patientHeading = new q.documentStore.DocumentNode('ripplePatients', [nhsNo, "headings", heading.name, host]);
+      var patientCache = session.data.$(['patients', nhsNo]);
+      var patientHeading = patientCache.$(['headings', heading.name, host]);
       if (body.resultSet.length === 0) {
         patientHeading.value = 'empty';
       }
       else {
         patientHeading.setDocument(body.resultSet);
-        var patientHeadingIndex = patient.$(['headingIndex', heading.name]);
-        //var patientHeadingIndex = new q.documentStore.DocumentNode('ripplePatients', [nhsNo, "headingIndex", heading.name]);
+        var patientHeadingIndex = patientCache.$(['headingIndex', heading.name]);
 
         var count = 0;
         body.resultSet.forEach(function(result) {
@@ -225,7 +221,6 @@ function getSelectedHeading(patientId, headingName, session, openEHRSessions, ca
   if (!heading) {
     console.log('***!!! error in getSelectedHeading: ' + headingName + ' is not defined in headings object');
     var patientHeading = session.data.$(['patients', patientId, 'headings', headingName]);
-    //var patientHeading = new q.documentStore.DocumentNode('ripplePatients', [patientId, "headings", headingName]);
     patientHeading.value = 'error';
     callback();
     return;
@@ -233,33 +228,11 @@ function getSelectedHeading(patientId, headingName, session, openEHRSessions, ca
   getHeading.call(this, patientId, heading, session, openEHRSessions, callback);
 }
 
-/*
-function getAllergies(nhsNo, sessions, callback) {
-  getSelectedHeading(nhsNo, 'allergies', sessions, callback);
-}
-
-function getProblems(nhsNo, sessions, callback) {
-  getSelectedHeading(nhsNo, 'problems', sessions, callback);
-} 
-
-function getMedications(nhsNo, sessions, callback) {
-  getSelectedHeading(nhsNo, 'medications', sessions, callback);
-}
-
-function getContacts(nhsNo, sessions, callback) {
-  getSelectedHeading(nhsNo, 'contacts', sessions, callback);
-}
-*/
-
 module.exports = {
   init: function() {
     q = this;
     openEHR.init.call(this);
   },
-  //getAllergies: getAllergies,
-  //getProblems: getProblems,
-  //getContacts: getContacts,
-  //getMedications: getMedications,
   getHeading: getSelectedHeading,
   headings: headings,
   getAQL: getAQL
