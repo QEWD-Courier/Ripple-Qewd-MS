@@ -31,7 +31,7 @@ If you haven't already done so, install Docker on your host machine(s)
 
 ### Installing Docker on Windows
 
-  See (the Docker instructions)[https://docs.docker.com/docker-for-windows/install/]
+  See [the Docker instructions](https://docs.docker.com/docker-for-windows/install/)
 
 ## Configuration
 
