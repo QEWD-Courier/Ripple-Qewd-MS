@@ -29,6 +29,10 @@ If you haven't already done so, install Docker on your host machine(s)
 
       curl -sSL https://get.docker.com | sh
 
+### Installing Docker on Windows
+
+  See (the Docker instructions)[https://docs.docker.com/docker-for-windows/install/]
+
 ## Configuration
 
 There are 2 things you'll need to change.
