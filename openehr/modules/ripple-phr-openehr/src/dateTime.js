@@ -24,21 +24,69 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  8 January 2018
 
 */
 
-var headings = require('../headings/headings').headings;
+var moment = require('moment-timezone');
+var timezone = 'Europe/London';
 
-function getHeadingDetailFromCache(patientId, heading, sourceId, session) {
 
-  var cachedPatient = session.data.$(['patients', patientId]);
-  var cachedHeadingIndex = cachedPatient.$(['headingIndex', headings[heading].name, sourceId]);
-
-  if (!cachedHeadingIndex.exists) return {};
-  var index = cachedHeadingIndex.getDocument();
-  var cachedHeading = cachedPatient.$(['headings', headings[heading].name, index.host, index.recNo]);
-  return cachedHeading.getDocument(true);
+function format(date) {
+  if (typeof date !== 'object') date = new Date(date);
+  return moment(date).tz(timezone).format();
 }
 
-module.exports = getHeadingDetailFromCache;
+function now() {
+  return format(new Date());
+}
+
+function isDST(date) {
+  if (typeof date !== 'object') date = new Date(date);
+  return moment(date).tz(timezone).isDST();
+}
+
+function toSqlPASFormat(date) {
+  if (typeof date !== 'object') date = new Date(date);
+  return moment(date).tz(timezone).format("YYYY-MM-DD");
+}
+
+function toGMT(date) {
+  // if a date is in summer time, return as GMT, ie with an hour deducted
+  var result = date;
+  if (moment(date).tz(timezone).isDST()) result = new Date(date.getTime() - 3600000);
+  return result;
+}
+
+function getRippleTime(date, host) {
+  //console.log('*** host = ' + host);
+  if (date === '') return date;
+  var dt = new Date(date);
+  if (host === 'ethercis') dt = toGMT(dt);
+  return dt.getTime();
+}
+
+function msSinceMidnight(date, host, GMTCheck) {
+  var e = new Date(date);
+  //if (host === 'ethercis') e = toGMT(e);
+  if (GMTCheck) e = toGMT(e);
+  return e.getTime() - e.setHours(0,0,0,0);
+}
+
+function msAtMidnight(date, host, GMTCheck) {
+  var e = new Date(date);
+  //if (host === 'ethercis') e = toGMT(e);
+  if (GMTCheck) e = toGMT(e);
+  return e.setHours(0,0,0,0);
+}
+
+module.exports = {
+  format: format,
+  now: now,
+  isDST: isDST,
+  toGMT: toGMT,
+  msSinceMidnight: msSinceMidnight,
+  msAtMidnight: msAtMidnight,
+  getRippleTime: getRippleTime,
+  toSqlPASFormat: toSqlPASFormat
+};

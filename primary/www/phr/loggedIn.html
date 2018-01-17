@@ -41,11 +41,37 @@
     <div id="detail"></div>
 
     <h4>Headings</h4>
+
+    <div>
+      <button id="allergiesBtn">Allergies</button>
+      <button id="medicationsBtn">Medications</button>
+      <button id="problemsBtn">Problems</button>
+      <button id="contactsBtn">Contacts</button>
+    </div>
+   
     <div id="allergies"></div>
     <div id="medications"></div>
     <div id="problems"></div>
     <div id="contacts"></div>
 
+    <div id="allergiesForm" title="Add an Allergy">
+        <label>Cause:</label>
+        <input id="allergies-cause" type="text">
+
+        <label>Cause Code:</label>
+        <input id="allergies-causeCode" type="text">
+
+        <label>Cause Terminology:</label>
+        <input id="allergies-causeTerminology" type="text">
+
+        <label>Reaction:</label>
+        <input id="allergies-reaction" type="text">
+
+        <label>Author:</label>
+        <input id="allergies-author" type="text">
+
+        <button id="submitallergiesBtn">Add</button>
+    </div>
 
   </body> 
 </html>

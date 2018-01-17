@@ -10,5 +10,32 @@
       "username": "guest",
       "password": "guest"
     }
+  },
+  "defaultPostHost": "ethercis",
+  "synopsis": {
+    "headings": [
+      "allergies",
+      "medications",
+      "problems",
+      "contacts"
+    ],
+    "maximum": 10
+  },
+  "headings": {
+    "allergies": true,
+    "contacts": true,
+    "counts": true,
+    "eolcareplans": true,
+    "events": true,
+    "laborders": true,
+    "labresults": true,
+    "medications": true,
+    "mdtreports": true,
+    "personalnotes": true,
+    "problems": true,
+    "procedures": true,
+    "referrals": true,
+    "vaccinations": true,
+    "vitalsigns": true
   }
 }

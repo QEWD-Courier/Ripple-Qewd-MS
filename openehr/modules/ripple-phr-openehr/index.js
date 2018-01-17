@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  16 January 2018
 
 */
 
@@ -32,17 +32,19 @@ var router = require('qewd-router');
 
 var getMyHeadingSummary = require('./handlers/getMyHeadingSummary');
 var getMyHeadingDetail = require('./handlers/getMyHeadingDetail');
-var getMySummary = require('./handlers/getMySummary');
+var getMySynopsis = require('./handlers/getMySynopsis');
+var postMyHeading = require('./handlers/postMyHeading');
 
 var routes = {
   '/api/my/heading/:heading': {
-    GET: getMyHeadingSummary
+    GET: getMyHeadingSummary,
+    POST: postMyHeading
   },
   '/api/my/heading/:heading/:sourceId': {
     GET: getMyHeadingDetail
   },
-  '/api/my/summary': {
-    GET: getMySummary
+  '/api/my/headings/synopsis': {
+    GET: getMySynopsis
   }
 };
 
@@ -61,8 +63,8 @@ module.exports = {
         console.log('**** attempt to use an /api/my/ path by a non-PHR user ******');
         return false;
       }
-      var sub = req.session.verify_jwt.sub;
-      var qewdSession = this.sessions.byToken(sub);
+      var uid = req.session.uid;
+      var qewdSession = this.sessions.byToken(uid);
       if (!qewdSession) {
         // New Verify JWT - need to create a new QEWD Session for it
 
@@ -70,18 +72,18 @@ module.exports = {
         qewdSession= this.sessions.create(req.application, req.session.timeout);
         var token = qewdSession.token;
 
-        // swap QEWD Session token with JWT sub value
+        // swap QEWD Session token with JWT uid value
         var sessionGlo = this.db.use('CacheTempEWDSession');
         var sessionRec = sessionGlo.$(['session', qewdSession.id]);
         var sessionIndex = sessionGlo.$('sessionsByToken');
-        sessionRec.$(['ewd-session', 'token']).value = sub;
-        sessionIndex.$(sub).value = qewdSession.id;
+        sessionRec.$(['ewd-session', 'token']).value = uid;
+        sessionIndex.$(uid).value = qewdSession.id;
         sessionIndex.$(token).delete();
-        console.log('**** new QEWD Session created for sub ' + sub);
+        console.log('**** new QEWD Session created for uid ' + uid);
 
       }
       else {
-        console.log('QEWD Session ' + qewdSession.id + ' exists for sub ' + sub);
+        console.log('QEWD Session ' + qewdSession.id + ' exists for uid ' + uid);
       }
       req.qewdSession = qewdSession;
     }

@@ -24,69 +24,45 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  17 January 2018
 
 */
 
-var moment = require('moment-timezone');
-var timezone = 'Europe/London';
+var transform = require('qewd-transform-json').transform;
+var flatten = require('./objectToFlatJSON');
+var dateTime = require('./dateTime');
+var openEHR = require('./openEHR');
 
+module.exports = function(params, callback) {
+  var postMap = params.headingPostMap;
+  var helpers = postMap.helperFunctions || {};
+  helpers.now = dateTime.now;
 
-function format(date) {
-  if (typeof date !== 'object') date = new Date(date);
-  return moment(date).tz(timezone).format();
-}
+  var output = transform(postMap.transformTemplate, params.data, helpers);
+  var body = flatten(output);
 
-function now() {
-  return format(new Date());
-}
-
-function isDST(date) {
-  if (typeof date !== 'object') date = new Date(date);
-  return moment(date).tz(timezone).isDST();
-}
-
-function toSqlPASFormat(date) {
-  if (typeof date !== 'object') date = new Date(date);
-  return moment(date).tz(timezone).format("YYYY-MM-DD");
-}
-
-function toGMT(date) {
-  // if a date is in summer time, return as GMT, ie with an hour deducted
-  var result = date;
-  if (moment(date).tz(timezone).isDST()) result = new Date(date.getTime() - 3600000);
-  return result;
-}
-
-function getRippleTime(date, host) {
-  //console.log('*** host = ' + host);
-  if (date === '') return date;
-  var dt = new Date(date);
-  if (host === 'ethercis') dt = toGMT(dt);
-  return dt.getTime();
-}
-
-function msSinceMidnight(date, host, GMTCheck) {
-  var e = new Date(date);
-  //if (host === 'ethercis') e = toGMT(e);
-  if (GMTCheck) e = toGMT(e);
-  return e.getTime() - e.setHours(0,0,0,0);
-}
-
-function msAtMidnight(date, host, GMTCheck) {
-  var e = new Date(date);
-  //if (host === 'ethercis') e = toGMT(e);
-  if (GMTCheck) e = toGMT(e);
-  return e.setHours(0,0,0,0);
-}
-
-module.exports = {
-  format: format,
-  now: now,
-  isDST: isDST,
-  toGMT: toGMT,
-  msSinceMidnight: msSinceMidnight,
-  msAtMidnight: msAtMidnight,
-  getRippleTime: getRippleTime,
-  toSqlPASFormat: toSqlPASFormat
+  // ready to post
+  var params = {
+    host: params.host,
+    callback: callback,
+    url: '/rest/v1/composition',
+    queryString: {
+      templateId: postMap.templateId,
+      ehrId: params.ehrId,
+      format: 'FLAT'
+    },
+    method: 'POST',
+    session: params.openEhrSessionId,
+    options: {
+      body: body
+    }
+  };
+  console.log('**** about to post data: ' + JSON.stringify(params, null, 2));
+  params.processBody = function(body, userObj) {
+    // for this to work, have to set userObj properties
+    //  simply setting the userObj object itself to body won't work
+    userObj.data = body;
+  };
+  var userObj = {};
+  openEHR.request(params, userObj);
 };

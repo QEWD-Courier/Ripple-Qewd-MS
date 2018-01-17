@@ -1,9 +1,9 @@
 /*
 
  ----------------------------------------------------------------------------
- | qewd-ripple: QEWD-based Middle Tier for Ripple OSI                       |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
- | Copyright (c) 2016-17 Ripple Foundation Community Interest Company       |
+ | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
  |                                                                          |
  | http://rippleosi.org                                                     |
@@ -24,15 +24,15 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-10 August 2017
+  15 January 2018
 
 */
 
-var dateTime = require('.././dateTime');
+var dateTime = require('../src/dateTime');
 
 module.exports = {
   name: 'medications',
-  textFieldName: 'medication_name',
+  textFieldName: 'name',
   headingTableFields: ['name', 'doseAmount', 'dateCreated'],
 
 

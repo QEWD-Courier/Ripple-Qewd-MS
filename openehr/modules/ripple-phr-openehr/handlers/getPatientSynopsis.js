@@ -24,49 +24,70 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 January 2018
+  15 January 2018
 
 */
 
 var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
-var getHeadingTableFromCache = require('../src/getHeadingTableFromCache');
-var tools = require('../src/tools');
+var isPatientIdValid = require('../src/tools').isPatientIdValid;
+var getHeadingBySourceId = require('../src/getHeadingBySourceId');
 
-function getHeadingTable(patientId, heading, session, finished) {
-  var results = getHeadingTableFromCache(patientId, heading, session);
-  finished({
-    responseFrom: 'phr_service',
-    results: results
+// Headings that make up the synopsis are defined in the userDefined config JSON file
+
+function cacheSummaryHeadings(patientId, session, callback) {
+
+  var count = 0;
+  var max = 4;
+  var self = this;
+
+  this.userDefined.synopsis.headings.forEach(function(heading) {
+    fetchAndCacheHeading.call(self, patientId, heading, session, function(response) {
+      count++;
+      if (count === max && callback) callback();
+    });
   });
 }
 
-module.exports = function(args, finished) {
+function getSynopsisFromCache(patientId, max, session, callback) {
+  var results = {};
+  var patientHeadingCache = session.data.$(['headings', 'byPatientId', patientId]);
 
+  this.userDefined.synopsis.headings.forEach(function(heading) {
+
+    headingByDateCache = patientHeadingCache.$([heading, 'byDate']);
+    results[heading] = [];
+    var count = 0;
+
+    headingByDateCache.forEachChild({direction: 'reverse'}, function(date, dateNode) {
+      dateNode.forEachChild(function(sourceId) {
+        var summary = getHeadingBySourceId(sourceId, session, 'synopsis');
+        results[heading].push(summary);
+        count++;
+        if (count === max) return true;
+      });
+      if (count === max) return true;
+    });
+  });
+  callback(results);
+}
+
+
+function patientSynopsis(args, finished) {
+
+  var self = this;
   var patientId = args.patientId;
-
-  var valid = tools.isPatientIdValid(patientId);
+  var valid = isPatientIdValid(patientId);
   if (valid.error) return finished(valid);
 
-  var heading = args.heading;
+  var max = args.req.query.maximum || this.userDefined.synopsis.maximum; 
+  var session = args.req.qewdSession; // QEWD Session
 
-  if (!tools.isHeadingValid.call(this, heading)) {
-    console.log('*** ' + heading + ' has not yet been added to middle-tier processing');
-    return finished([]);
-  }
-
-  var session = args.req.qewdSession;
-
-  fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
-    if (!response.ok) {
-      console.log('*** No results could be returned from the OpenEHR servers for heading ' + heading);
-      return finished([]);
-    }
-    else {
-      console.log('heading ' + heading + ' for ' + patientId + ' is cached');
-      getHeadingTable(patientId, heading, session, finished)
-    }
+  cacheSummaryHeadings.call(this, patientId, session, function() {
+    getSynopsisFromCache.call(self, patientId, max, session, function(results) {
+      finished(results);
+    });
   });
+}
 
-};
-
+module.exports = patientSynopsis;
 

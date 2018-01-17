@@ -28,64 +28,47 @@
 
 */
 
-var dateTime = require('../src/dateTime')
+var openEHR = require('./openEHR');
 
-var heading = {
-  name: 'vaccinations',
-  textFieldName: 'vaccinationName',
-  headingTableFields: ['vaccinationName', 'dateCreated'],
+function isCached(nhsNoMap) {
 
-  get: {
-
-    transformTemplate: {
-      vaccinationName:     '{{vaccination_name}}',
-      comment:             '{{comment}}',
-      series:              '{{series_number}}',
-      vaccinationDateTime: '=> getRippleTime(vaccination_time)',
-      author:              '{{author}}',
-      dateCreated:         '=> getRippleTime(date_created)',
-      source:              '=> getSource()',
-      sourceId:            '=> getUid(uid)'
-    }
-
-  },
-
-  post: {
-    templateId: 'IDCR - Immunisation summary.v0',
-
-    helperFunctions: {
-      formatDate: function(date) {
-        return dateTime.format(new Date(date));
-      }
-    },
-
-    transformTemplate: {
-      ctx: {
-        composer_name:               '=> either(author, "Dr Tony Shannon")',
-        'health_care_facility|id':   '=> either(healthcareFacilityId, "999999-345")',
-        'health_care_facility|name': '=> either(healthcareFacilityName, "Ripple View Care Home")',
-        id_namespace:                'NHS-UK',
-        id_scheme:                   '2.16.840.1.113883.2.1.4.3',
-        language:                    'en',
-        territory:                   'GB',
-        time:                        '=> now()'
-      },
-      immunisation_summary: {
-        immunisation_procedure: [
-          {
-            ism_transition: {
-              'current_state|code': '532',
-            },
-            immunisation_name:      '{{vaccinationName}}',
-            series_number:          '{{series}}',
-            comment:                '{{comment}}',
-            time:                   '=> formatDate(vaccinationDateTime)'
-          }
-        ]
-      }
-    }
+  var servers = this.userDefined.openehr;
+  for (var host in servers) {
+    if (!nhsNoMap.$(host).exists) return false;
   }
-};
+  return true;
+}
 
-module.exports = heading;
+function mapNHSNo(nhsNo, sessions, callback) {
 
+  var nhsNoMap = this.db.use('RippleNHSNoMap', ['byNHSNo', nhsNo]);
+
+  // check that all mapped values exist - otherwise rebuild
+
+  if (isCached.call(this, nhsNoMap)) {
+    if (callback) callback();
+    return;
+  }
+
+  var mapByEhrId = this.db.use('RippleNHSNoMap', ['byEhrId']);
+
+  var params = {
+    callback: callback,
+    url: '/rest/v1/ehr',
+    queryString: {
+      subjectId: nhsNo,
+      subjectNamespace: 'uk.nhs.nhs_number'
+    },
+    method: 'GET',
+    sessions: sessions
+  };
+  params.processBody = function(body, host) {
+    if (body && body.ehrId) {
+      nhsNoMap.$(host).value = body.ehrId;
+      mapByEhrId.$([body.ehrId, host]).value = nhsNo;
+    }
+  };
+  openEHR.requests(params);
+}
+
+module.exports = mapNHSNo;

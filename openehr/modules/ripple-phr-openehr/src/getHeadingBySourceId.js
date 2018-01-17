@@ -24,49 +24,67 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 January 2018
+  17 January 2018
 
 */
 
-var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
-var getHeadingTableFromCache = require('../src/getHeadingTableFromCache');
-var tools = require('../src/tools');
+var headingHelpers = require('./headingHelpers');
+var transform = require('qewd-transform-json').transform;
+var headingMap = {};
 
-function getHeadingTable(patientId, heading, session, finished) {
-  var results = getHeadingTableFromCache(patientId, heading, session);
-  finished({
-    responseFrom: 'phr_service',
-    results: results
-  });
-}
+module.exports = function(sourceId, session, format) {
 
-module.exports = function(args, finished) {
+  // format = synopsys || summary || detail
 
-  var patientId = args.patientId;
+  format = format || 'detail';
+  var sourceIdCache = session.data.$(['headings', 'bySourceId', sourceId]);
+  if (!sourceIdCache.exists) return {};
 
-  var valid = tools.isPatientIdValid(patientId);
-  if (valid.error) return finished(valid);
+  //console.log('*** sourceId = ' + sourceId);
+  var cachedObj = sourceIdCache.getDocument(true);
+  //console.log('cachedObj = ' + JSON.stringify(cachedObj));
+  var heading = cachedObj.heading;
 
-  var heading = args.heading;
-
-  if (!tools.isHeadingValid.call(this, heading)) {
-    console.log('*** ' + heading + ' has not yet been added to middle-tier processing');
-    return finished([]);
+  if (!headingMap[heading]) {
+    // load on demand
+    headingMap[heading] = require('../headings/' + heading);
   }
 
-  var session = args.req.qewdSession;
+  var host = cachedObj.host;
+  var template = headingMap[heading].get.transformTemplate;
+  var helpers = headingHelpers(host, heading, 'get');
+  var output = transform(template, cachedObj.data, helpers);
 
-  fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
-    if (!response.ok) {
-      console.log('*** No results could be returned from the OpenEHR servers for heading ' + heading);
-      return finished([]);
-    }
-    else {
-      console.log('heading ' + heading + ' for ' + patientId + ' is cached');
-      getHeadingTable(patientId, heading, session, finished)
-    }
-  });
+  if (format === 'synopsis') {
+    // only return the synopsis headings
 
+    var fieldName = headingMap[heading].textFieldName;
+    var summaryText = output[fieldName] || '';
+    return {
+      sourceId: sourceId,
+      source: host,
+      text: summaryText
+    }
+  }
+
+  if (format === 'summary') {
+    // only return the summary headings
+
+    var results = {};
+    var summaryFields = headingMap[heading].headingTableFields;
+    summaryFields.push('source');
+    summaryFields.push('sourceId');
+    output.source = cachedObj.host;
+    output.sourceId = sourceId;
+    summaryFields.forEach(function(fieldName) {
+      results[fieldName] = output[fieldName] || '';
+    });
+    return results;
+  }
+  else {
+    // return detail
+
+    output.sourceId = sourceId; // over-ride old calculated one
+    return output;
+  }
 };
-
-

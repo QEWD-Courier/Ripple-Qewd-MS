@@ -24,16 +24,16 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  15 January 2018
 
 */
 
-var fetchAndCacheHeading = require('./fetchAndCacheHeading');
-var getHeadingDetailFromCache = require('./getHeadingDetailFromCache');
-var tools = require('../tools');
+var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
+var getHeadingDetailFromCache = require('../src/getHeadingDetailFromCache');
+var tools = require('../src/tools');
 
-function getDetail(patientId, heading, sourceId, session, finished) {
-  var results = getHeadingDetailFromCache(patientId, heading, sourceId, session);
+function getDetail(sourceId, session, finished) {
+  var results = getHeadingDetailFromCache(sourceId, session);
   finished({
     responseFrom: 'phr_service',
     results: results
@@ -49,7 +49,7 @@ module.exports = function(args, finished) {
 
   var heading = args.heading;
 
-  if (!tools.isHeadingValid(heading)) {
+  if (!tools.isHeadingValid.call(this, heading)) {
     console.log('*** ' + heading + ' has not yet been added to middle-tier processing');
     return finished([]);
   }
@@ -69,7 +69,7 @@ module.exports = function(args, finished) {
     }
     else {
       console.log('heading ' + heading + ' for ' + patientId + ' is cached');
-      getDetail(patientId, heading, sourceId, session, finished);
+      getDetail(sourceId, session, finished);
     }
   });
 

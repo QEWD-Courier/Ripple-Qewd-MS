@@ -24,51 +24,27 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  17 January 2018
 
 */
 
-var headings = require('./headings/headings').headings;
+module.exports = function(patientId, heading, host) {
 
-function isNumeric(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}
+  // delete cached heading data in all active sessions, for patient
 
-function isGuid(str) {
-  var regexGuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-  return regexGuid.test(str);
-}
-
-function isPatientIdValid(patientId) {
-
-  if (!patientId || patientId === '') {
-    return {error: 'patientId ' + patientId + ' must be defined'};
-  }
-
-  if (!isNumeric(patientId)) {
-    return {error: 'patientId ' + patientId + ' is invalid'};
-  }
-
-  return {ok: true};
-}
-
-function isHeadingValid(heading) {
-  if (!heading || heading === '' || !headings[heading]) return false;
-  return true;
-}
-
-function isSourceIdValid(sourceId) {
-  if (!sourceId || sourceId === '') return false;
-  if (!isGuid(sourceId)) return false;
-  return true;
-}
-
-module.exports = {
-  isNumeric,
-  isPatientIdValid,
-  isHeadingValid,
-  isSourceIdValid
+  var sessions = this.sessions.active();
+  sessions.forEach(function(session) {
+    var patientHeadingCache = session.data.$(['headings', 'byPatientId', patientId, heading]);
+    if (patientHeadingCache.exists) {
+      var byDateCache = patientHeadingCache.$('byDate');
+      var sourceIdCache = session.data.$(['headings', 'bySourceId']);
+      patientHeadingCache.$(['byHost', host]).forEachChild(function(sourceId, indexNode) {
+        var sourceIdNode = sourceIdCache.$(sourceId);
+        var date = sourceIdNode.$('date').value;
+        sourceIdNode.delete();
+        byDateCache.$([date, sourceId]).delete();
+        indexNode.delete();
+      });
+    }
+  });
 };
-
-
-

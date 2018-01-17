@@ -24,49 +24,14 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 January 2018
+  15 January 2018
 
 */
 
-var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
-var getHeadingTableFromCache = require('../src/getHeadingTableFromCache');
-var tools = require('../src/tools');
+var getHeadingBySourceId = require('./getHeadingBySourceId');
 
-function getHeadingTable(patientId, heading, session, finished) {
-  var results = getHeadingTableFromCache(patientId, heading, session);
-  finished({
-    responseFrom: 'phr_service',
-    results: results
-  });
+function getHeadingDetailFromCache(sourceId, session) {
+  return getHeadingBySourceId(sourceId, session, 'detail');
 }
 
-module.exports = function(args, finished) {
-
-  var patientId = args.patientId;
-
-  var valid = tools.isPatientIdValid(patientId);
-  if (valid.error) return finished(valid);
-
-  var heading = args.heading;
-
-  if (!tools.isHeadingValid.call(this, heading)) {
-    console.log('*** ' + heading + ' has not yet been added to middle-tier processing');
-    return finished([]);
-  }
-
-  var session = args.req.qewdSession;
-
-  fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
-    if (!response.ok) {
-      console.log('*** No results could be returned from the OpenEHR servers for heading ' + heading);
-      return finished([]);
-    }
-    else {
-      console.log('heading ' + heading + ' for ' + patientId + ' is cached');
-      getHeadingTable(patientId, heading, session, finished)
-    }
-  });
-
-};
-
-
+module.exports = getHeadingDetailFromCache;

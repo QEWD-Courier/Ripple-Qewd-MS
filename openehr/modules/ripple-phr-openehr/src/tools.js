@@ -28,64 +28,59 @@
 
 */
 
-var dateTime = require('../src/dateTime')
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
-var heading = {
-  name: 'vaccinations',
-  textFieldName: 'vaccinationName',
-  headingTableFields: ['vaccinationName', 'dateCreated'],
+function isGuid(str) {
+  var regexGuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  return regexGuid.test(str);
+}
 
-  get: {
+function isPatientIdValid(patientId) {
 
-    transformTemplate: {
-      vaccinationName:     '{{vaccination_name}}',
-      comment:             '{{comment}}',
-      series:              '{{series_number}}',
-      vaccinationDateTime: '=> getRippleTime(vaccination_time)',
-      author:              '{{author}}',
-      dateCreated:         '=> getRippleTime(date_created)',
-      source:              '=> getSource()',
-      sourceId:            '=> getUid(uid)'
-    }
-
-  },
-
-  post: {
-    templateId: 'IDCR - Immunisation summary.v0',
-
-    helperFunctions: {
-      formatDate: function(date) {
-        return dateTime.format(new Date(date));
-      }
-    },
-
-    transformTemplate: {
-      ctx: {
-        composer_name:               '=> either(author, "Dr Tony Shannon")',
-        'health_care_facility|id':   '=> either(healthcareFacilityId, "999999-345")',
-        'health_care_facility|name': '=> either(healthcareFacilityName, "Ripple View Care Home")',
-        id_namespace:                'NHS-UK',
-        id_scheme:                   '2.16.840.1.113883.2.1.4.3',
-        language:                    'en',
-        territory:                   'GB',
-        time:                        '=> now()'
-      },
-      immunisation_summary: {
-        immunisation_procedure: [
-          {
-            ism_transition: {
-              'current_state|code': '532',
-            },
-            immunisation_name:      '{{vaccinationName}}',
-            series_number:          '{{series}}',
-            comment:                '{{comment}}',
-            time:                   '=> formatDate(vaccinationDateTime)'
-          }
-        ]
-      }
-    }
+  if (!patientId || patientId === '') {
+    return {error: 'patientId ' + patientId + ' must be defined'};
   }
+
+  if (!isNumeric(patientId)) {
+    return {error: 'patientId ' + patientId + ' is invalid'};
+  }
+
+  return {ok: true};
+}
+
+function isHeadingValid(heading) {
+  if (!heading || heading === '') return false;
+  return this.userDefined.headings[heading];
+}
+
+function isSourceIdValid(sourceId) {
+  if (!sourceId || sourceId === '') return false;
+  var pieces = sourceId.split('-');
+  if (pieces.length !== 6) return false;
+  pieces.shift(); // remove host name element
+  var guid = pieces.join('-');
+  if (!isGuid(guid)) return false;
+  return true;
+}
+
+function isEmpty(obj) {
+  if (!obj) return true;
+  if (typeof obj !== 'object') return true;
+  for (var name in obj) {
+    return false;
+  }
+  return true;
+}
+
+module.exports = {
+  isNumeric,
+  isPatientIdValid,
+  isHeadingValid,
+  isSourceIdValid,
+  isEmpty
 };
 
-module.exports = heading;
+
 

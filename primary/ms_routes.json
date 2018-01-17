@@ -20,12 +20,17 @@
     "destination": "phr_service"
   },
   {
+    "path": "/api/my/heading/:heading",
+    "method": "POST",
+    "destination": "phr_service"
+  },
+  {
     "path": "/api/my/heading/:heading/:sourceId",
     "method": "GET",
     "destination": "phr_service"
   },
   {
-    "path": "/api/my/summary",
+    "path": "/api/my/headings/synopsis",
     "method": "GET",
     "destination": "phr_service"
   }

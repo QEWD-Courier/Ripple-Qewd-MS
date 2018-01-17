@@ -24,38 +24,27 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  12 January 2018
 
 */
 
-var openEHR = require('../openEHR/openEHR');
-var headingsLib = require('../headings/headings');
-var headings = headingsLib.headings;
-var getHeading = headingsLib.getHeading;
+var fs = require('fs');
 
-function fetchAndCacheHeading(patientId, heading, session, callback) {
-
-  var cachedHeading = session.data.$(['patients', patientId, 'headings', headings[heading].name]);
-
-  if (cachedHeading.exists) {
-    if (callback) callback({ok: true});
-    return;
-  }
-
-  // fetches and caches a heading for a patient
-
-  openEHR.init.call(this);
-  var self = this;
-
-  openEHR.startSessions(session, function(openEHRSessions) {
-    //console.log('*** sessions: ' + JSON.stringify(openEHRSessions));
-    openEHR.mapNHSNo(patientId, openEHRSessions, function() {
-      getHeading.call(self, patientId, heading, session, openEHRSessions, function() {
-        openEHR.stopSessions(openEHRSessions, session);
-        if (callback) callback({ok: cachedHeading.exists});
-      });
+function getTextFromFile(fileName) {
+  var text = '';
+  if (fs.existsSync(fileName)) {
+    text = '';
+    fs.readFileSync(fileName).toString().split(/\r?\n/).forEach(function(line){
+      text = text + ' ' + line;
     });
-  });
+  }
+  return text;
 }
 
-module.exports = fetchAndCacheHeading;
+function loadAQLFile(headingName) {
+  var aqlFile = __dirname + '/../headings/' + headingName + '.aql';
+  console.log('loading aqlFile ' + aqlFile);
+  return getTextFromFile(aqlFile);
+}
+
+module.exports = loadAQLFile;

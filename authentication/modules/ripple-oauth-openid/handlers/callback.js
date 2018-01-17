@@ -24,26 +24,44 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  15 January 2018
 
 */
 
 var jwt = require('jwt-simple');
+//var uuid = require('uuid/v4');
+
+var errorCallback;
+
+process.on('unhandledRejection', function(reason, p){
+    console.log("Possibly Unhandled Rejection at: Promise ", p, " reason: ", reason);
+    // application specific logging here
+    errorCallback({error: reason});
+});
 
 module.exports = function(args, finished) {
+
+  errorCallback = finished;
 
   var callbackURL = this.oauth.config.callback_url;
   var self = this;
   this.oauth.client.authorizationCallback(callbackURL, args.req.query)
     .then(function (tokenSet) {
 
+      console.log('\nTokenSet: ' + JSON.stringify(tokenSet));
+
       var session = args.session;
       session.authenticated = true;
+      //session.uid = uuid();
       session.timeout = tokenSet.refresh_expires_in;
       var verify_jwt = jwt.decode(tokenSet.id_token, null, true);
       session.nhsNumber = verify_jwt.nhsNumber;
+      session.role = 'phrUser';
+      session.uid = tokenSet.session_state;
       session.verify_jwt = verify_jwt;
       session.makeSecret('verify_jwt');
+
+      console.log('verify_jwt = ' + JSON.stringify(verify_jwt, null, 2));
 
       // possibly use verify_jwt.sub as a key for a global or session record
       //  could use session and give it the same timeout as jwt
@@ -54,7 +72,4 @@ module.exports = function(args, finished) {
         //verify_jwt: verify_jwt
       });
   });
-
-
-
 };

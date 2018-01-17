@@ -24,14 +24,62 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  15 January 2018
 
 */
 
-var getPatientSummary = require('./getPatientSummary');
+var dateTime = require('./dateTime');
+var headings = {};
 
-module.exports = function(args, finished) {
-  args.patientId = args.session.nhsNumber;
-  getPatientSummary.call(this, args, finished);
-};
+function helpers(host, heading, method) {
 
+  var helpers = {
+    now: function() {
+      return dateTime.now();
+    },
+    getRippleTime: function(date) {
+      //console.log('rippleTime: date = ' + date + '; host = ' + host);
+      return dateTime.getRippleTime(date, host);
+    },
+    msAtMidnight: function(date) {
+      return dateTime.msAtMidnight(date, host, true);
+    },
+    msSinceMidnight: function(date) {
+      var d = new Date(date).getTime() - 3600000;
+      return dateTime.msSinceMidnight(d, host, true);
+    },
+    msAfterMidnight: function(date) {
+      var d = new Date(date).getTime();
+      return dateTime.msSinceMidnight(d, host);
+    },
+    getSource: function() {
+      return host;
+    },
+    getCountsSource: function() {
+      return host + '-counts';
+    },
+    getUid: function(uid) {
+      return uid.split('::')[0];
+    },
+    integer: function(value) {
+      return parseInt(value);
+    }
+  };
+
+  // augment with heading-specific helper methods
+
+  if (!headings[heading]) {
+    headings[heading] = require('../headings/' + heading);
+  }
+  method = method || 'get';
+
+  if (headings[heading][method] && headings[heading][method].helperFunctions) {
+    var helperFunctions = headings[heading][method].helperFunctions;
+    for (var name in helperFunctions) {
+      helpers[name] = helperFunctions[name];
+    }
+  }
+  return helpers;
+}
+
+module.exports = helpers;

@@ -1,33 +1,3 @@
-/*
-
- ----------------------------------------------------------------------------
- | ripple-phr-primary: Ripple MicroServices for Primary Server              |
- |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
- | All rights reserved.                                                     |
- |                                                                          |
- | http://rippleosi.org                                                     |
- | Email: code.custodian@rippleosi.org                                      |
- |                                                                          |
- | Author: Rob Tweed, M/Gateway Developments Ltd                            |
- |                                                                          |
- | Licensed under the Apache License, Version 2.0 (the "License");          |
- | you may not use this file except in compliance with the License.         |
- | You may obtain a copy of the License at                                  |
- |                                                                          |
- |     http://www.apache.org/licenses/LICENSE-2.0                           |
- |                                                                          |
- | Unless required by applicable law or agreed to in writing, software      |
- | distributed under the License is distributed on an "AS IS" BASIS,        |
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
- | See the License for the specific language governing permissions and      |
- |  limitations under the License.                                          |
- ----------------------------------------------------------------------------
-
-  11 January 2018
-
-*/
-
 var jwt;
 var stardardHeaders;
 
@@ -82,8 +52,8 @@ function capitalise(string) {
 function createTable(results, id, fieldArray, indexField) {
   var data = results[id];
   var container = $('#' + id);
-  var heading = $('<h4>' + capitalise(id) + '</h4>');
-  container.append(heading);
+  var heading = $('<h4>' + capitalise(id) + '&nbsp;<button id="add' + id + 'Btn">Add</button></h4>');
+  container.html(heading);
 
   var table = $('<table id="' + id + '">');
   var tr;
@@ -116,6 +86,7 @@ function getHeadingDetail(heading, sourceId) {
     headers: standardHeaders() 
   })
   .success(function(data) {
+    jwt = data.token; // update JWT to latest
     console.log('detail for ' + sourceId + ': ' + JSON.stringify(data));
     //$('#detail').show();
     //$('#detail').text(JSON.stringify(data.results, null, 2));
@@ -123,29 +94,99 @@ function getHeadingDetail(heading, sourceId) {
   });
 }
 
-function getAllergies() {
+function getHeading(heading) {
   $.ajax({
-    url: '/api/my/heading/allergies',
+    url: '/api/my/heading/' + heading,
     headers: standardHeaders() 
   })
   .success(function(data) {
-    console.log('getAllergies: ' + JSON.stringify(data));
-    createTable(data.results, 'allergies');
+    jwt = data.token; // update JWT to latest
 
+    //console.log('getheading: ' + JSON.stringify(data));
+    if (data.results && data.results.length > 0) {
+      var fields = [];
+      for (var fieldName in data.results[0]) {
+        fields.push(fieldName);
+      }
+      var headingData = {};
+      headingData[heading] = data.results;
+      createTable(headingData, heading, fields, 'sourceId');
+    }
   });
+}
+
+function postHeading(heading) {
+
+  console.log('** posting ' + heading);
+
+  var $inputs = $('#' + heading + 'Form :input');
+  var data = {};
+  var name;
+  $inputs.each(function() {
+    if (this.id !== 'submit' + heading + 'Btn') {
+      name = this.id.split(heading + '-')[1]
+      data[name] = $(this).val();
+    }
+  });
+
+  console.log('data = ' + JSON.stringify(data));
+
+  $.ajax({
+    url: '/api/my/heading/' + heading,
+    headers: standardHeaders(),
+    contentType: 'application/json',
+    type: 'POST',
+    dataType: 'json',
+    data: JSON.stringify(data),
+    success: function(data) {
+      console.log('postheading response: ' + JSON.stringify(data));
+      jwt = data.token; // update JWT to latest
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log('Error: ' + jqXHR.responseJSON.error);
+    }
+  });
+
 }
 
 function getHeadingSummary() {
   $.ajax({
-    url: '/api/my/summary',
+    url: '/api/my/headings/synopsis',
     headers: standardHeaders() 
   })
   .success(function(data) {
+    jwt = data.token; // update JWT to latest
     console.log('headinmg summary: ' + JSON.stringify(data));
     var fields = ['sourceId', 'text', 'source'];
     createTable(data, 'allergies', fields, 'sourceId');
     createTable(data, 'contacts', fields, 'sourceId');
+    createTable(data, 'medications', fields, 'sourceId');
+    createTable(data, 'problems', fields, 'sourceId');
+
+
+    $('#addallergiesBtn').on('click', function() {
+      $("#allergiesForm").dialog("open");
+      console.log('should open popup form');
+    });
+
   });
+
+  $('#allergiesBtn').on('click', function() {
+    getHeading('allergies');
+  });
+
+  $('#medicationsBtn').on('click', function() {
+    getHeading('medications');
+  });
+
+  $('#problemsBtn').on('click', function() {
+    getHeading('problems');
+  });
+
+  $('#contactsBtn').on('click', function() {
+    getHeading('contacts');
+  });
+
 }
 
 $(document).ready(function() {
@@ -153,6 +194,14 @@ $(document).ready(function() {
   // invoke callback to Authentication server to get id_token JWT
 
   $('#detail').hide();
+
+  $("#allergiesForm").dialog({
+    autoOpen: false
+  });
+
+  $('#submitallergiesBtn').on('click', function() {
+    postHeading('allergies');
+  });
 
   var code = getQueryString('code');
   if (!code || code === '') {

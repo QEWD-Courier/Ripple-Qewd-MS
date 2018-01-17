@@ -24,71 +24,40 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  16 January 2018
 
 */
 
-var headings = require('../headings/headings').headings;
-var fetchAndCacheHeading = require('./fetchAndCacheHeading');
-var isPatientIdValid = require('../tools').isPatientIdValid;
+var openEHR = require('./openEHR');
 
-var headingList = {
-  allergies: true,
-  medications: true,
-  problems: true,
-  contacts: true
+module.exports = function(nhsNo, host, session, callback) {
+  var ehrId;
+  var nhsNoMap = this.db.use('RippleNHSNoMap', ['byNHSNo', nhsNo, host]);
+  var mapByEhrId = this.db.use('RippleNHSNoMap', ['byEhrId']);
+
+  if (nhsNoMap.exists) {
+    ehrId = nhsNoMap.value;
+    if (callback) callback(ehrId);
+    return;
+  }
+
+  var params = {
+    host: host,
+    callback: callback,
+    url: '/rest/v1/ehr',
+    queryString: {
+      subjectId: nhsNo,
+      subjectNamespace: 'uk.nhs.nhs_number'
+    },
+    method: 'GET',
+    session: session.id
+  };
+  params.processBody = function(body, ehrId) {
+    if (body && body.ehrId) {
+      nhsNoMap.value = body.ehrId;
+      mapByEhrId.$([body.ehrId, host]).value = nhsNo;
+      ehrId = body.ehrId;
+    }
+  };
+  openEHR.request(params, ehrId);
 };
-
-function cacheSummaryHeadings(patientId, session, callback) {
-
-  var count = 0;
-  var max = 4;
-
-  for (var heading in headingList) {
-    fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
-      count++;
-      if (count === max && callback) callback();
-    });
-  }
-}
-
-function getCachedSummary(patientId, session, callback) {
-  var results = {};
-  for (var heading in headingList) {
-    results[heading] = [];
-    session.data.$(['patients', patientId, 'headings', heading]).forEachChild(function(host, hostNode) {
-      hostNode.forEachChild(function(index, recordNode) {
-        var summaryTextFieldName = headings[heading].textFieldName;
-        var summaryText = recordNode.$(summaryTextFieldName).value;
-        if (summaryText !== null && summaryText !== '') {
-          var summary = {
-            sourceId: recordNode.$('uid').value.split('::')[0],
-            source: host,
-            text: summaryText
-          }
-          results[heading].push(summary);
-        }
-      });
-    });
-  }
-  callback(results);
-}
-
-
-function patientSummary(args, finished) {
-
-  var patientId = args.patientId;
-  var valid = isPatientIdValid(patientId);
-  if (valid.error) return finished(valid);
-
-  var session = args.req.qewdSession; // QEWD Session
-
-  cacheSummaryHeadings.call(this, patientId, session, function() {
-    getCachedSummary(patientId, session, function(results) {
-      finished(results);
-    });
-  });
-}
-
-module.exports = patientSummary;
-

@@ -1,9 +1,9 @@
 /*
 
  ----------------------------------------------------------------------------
- | qewd-ripple: QEWD-based Middle Tier for Ripple OSI                       |
+ | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
- | Copyright (c) 2016-17 Ripple Foundation Community Interest Company       |
+ | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
  |                                                                          |
  | http://rippleosi.org                                                     |
@@ -24,21 +24,18 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  20 November 2017
+  17 January 2018
 
 */
 
 var request = require('request');
 var servers;
+var noOfServers;
 var q;
 var initialised = false;
 
 function openEHRRequests(params, userObj) {
 
-  var noOfServers = 0;
-  for (var host in servers) {
-    noOfServers++;
-  }
   var count = 0;
   var options;
   var url;
@@ -256,6 +253,7 @@ function openEHRRequest(params, userObj) {
       options[param] = params.options[param];
     }
   }
+
   console.log('request to ' + host + ': ' + JSON.stringify(options));
   request(options, function(error, response, body) {
     if (error) {
@@ -462,18 +460,18 @@ function init() {
 
   q = this;
   servers = this.userDefined.openehr;
-  initialised = true;
 
-  if (this.userDefined && this.userDefined.rippleUser && this.userDefined.rippleUser.server) {
-    servers[this.userDefined.rippleUser.pasModule] = this.userDefined.rippleUser.server;
+  noOfServers = 0;
+  for (var host in servers) {
+    noOfServers++;
   }
+
+  initialised = true;
 }
 
 module.exports = {
   init: init,
   servers: servers,
-  //username: username,
-  //password: password,
   requests: openEHRRequests,
   request: openEHRRequest,
   startSessions: startSessions,

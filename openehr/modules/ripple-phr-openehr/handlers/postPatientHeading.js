@@ -24,48 +24,38 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  16 January 2018
 
 */
 
-var headings = require('../headings/headings').headings;
-var headingHelpers = require('../headings/headingHelpers');
-var transform = require('qewd-transform-json').transform;
+var tools = require('../src/tools');
+var postHeading = require('../src/postHeading');
 
-function getHeadingTableFromCache(patientId, heading, session) {
+function postPatientHeading(args, finished) {
 
-  // The heading records are in the QEWD Session cache
-  // Retrieve and transform them
+  var patientId = args.patientId;
 
-  var cachedHeading = session.data.$(['patients', patientId, 'headings', headings[heading].name]);
-  var results = [];
+  var valid = tools.isPatientIdValid(patientId);
+  if (valid.error) return finished(valid);
 
-  var template = headings[heading].get.transformTemplate;
+  var heading = args.heading;
 
-  cachedHeading.forEachChild(function(host, hostNode) {
+  if (!tools.isHeadingValid.call(this, heading)) {
+    return finished({error: 'Invalid or missing heading: ' + heading});
+  }
 
-    var helpers = headingHelpers(host, heading, 'get');
+  var body = args.req.body;
+  if (!body || body === '' || tools.isEmpty(body)) {
+    return finished({error: 'No body content was posted for heading ' + heading});
+  }
 
-    hostNode.forEachChild(function(index, headingNode) {
-      //console.log('**** forEachChild index = ' + index);
-      var input = headingNode.getDocument();
-      var output = transform(template, input, helpers);
+  var session = args.req.qewdSession;
 
-      // only send the summary headings
-
-      var summaryFields = headings[heading].headingTableFields;
-      summaryFields.push('source');
-      summaryFields.push('sourceId');
-
-      var summary = {};
-      summaryFields.forEach(function(fieldName) {
-        summary[fieldName] = output[fieldName] || '';
-      });
-
-      results.push(summary);
-    });
+  postHeading.call(this, patientId, heading, body, session, function(response) {
+    finished(response);
   });
-  return results;
+
 }
 
-module.exports = getHeadingTableFromCache;
+module.exports = postPatientHeading;
+

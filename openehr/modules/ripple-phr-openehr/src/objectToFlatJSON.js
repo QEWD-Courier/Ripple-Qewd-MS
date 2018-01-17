@@ -28,45 +28,34 @@
 
 */
 
-var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
-var getHeadingTableFromCache = require('../src/getHeadingTableFromCache');
-var tools = require('../src/tools');
+var traverse = require('traverse');
+var tools = require('./tools');
 
-function getHeadingTable(patientId, heading, session, finished) {
-  var results = getHeadingTableFromCache(patientId, heading, session);
-  finished({
-    responseFrom: 'phr_service',
-    results: results
+function flatten(obj) {
+  var flatObj = {};
+
+  var outputObj = traverse(obj).map(function(node) {
+    if (this.isLeaf) {
+      var flatPath = '';
+      var slash = '';
+      var colon = '';
+      var lastPathIndex = this.path.length - 1;
+      var pathArr = this.path;
+      pathArr.forEach(function(path, index) {
+        if (tools.isNumeric(path)) {
+          flatPath = flatPath + colon + path
+        }
+        else {
+          if (index === lastPathIndex && path[0] === '|' && tools.isNumeric(pathArr[index -1])) slash = '';
+          flatPath = flatPath + slash + path;
+        }
+        slash = '/';
+        colon = ':';
+      });
+      flatObj[flatPath] = node;
+    }
   });
+  return flatObj;
 }
 
-module.exports = function(args, finished) {
-
-  var patientId = args.patientId;
-
-  var valid = tools.isPatientIdValid(patientId);
-  if (valid.error) return finished(valid);
-
-  var heading = args.heading;
-
-  if (!tools.isHeadingValid.call(this, heading)) {
-    console.log('*** ' + heading + ' has not yet been added to middle-tier processing');
-    return finished([]);
-  }
-
-  var session = args.req.qewdSession;
-
-  fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
-    if (!response.ok) {
-      console.log('*** No results could be returned from the OpenEHR servers for heading ' + heading);
-      return finished([]);
-    }
-    else {
-      console.log('heading ' + heading + ' for ' + patientId + ' is cached');
-      getHeadingTable(patientId, heading, session, finished)
-    }
-  });
-
-};
-
-
+module.exports = flatten;
