@@ -34,22 +34,22 @@ var request = require('request');
 var initialised = false;
 
 function getRedirectURL(scope) {
-  return this.oauth.client.authorizationUrl({
-    redirect_uri: this.oauth.config.callback_url,
+  return this.auth.client.authorizationUrl({
+    redirect_uri: this.auth.config.callback_url,
     scope: scope,
   });
 }
 
 function getPublicKey() {
     var options = {
-      url: this.oauth.config.issuer,
+      url: this.auth.config.issuer,
       method: 'GET',
       json: true
     };
    var self = this;
    request(options, function(error, response, body) {
-     self.oauth.publicKey = '-----BEGIN PUBLIC KEY-----\n' + body.public_key + '\n-----END PUBLIC KEY-----';
-     console.log('**** public key: ' + self.oauth.publicKey);
+     self.auth.publicKey = '-----BEGIN PUBLIC KEY-----\n' + body.public_key + '\n-----END PUBLIC KEY-----';
+     console.log('**** public key: ' + self.auth.publicKey);
    });
 }
 
@@ -98,14 +98,16 @@ function oauthTest(args, finished) {
 module.exports = {
 
   init: function() {
+    console.log('oauth-openid init');
     if (!initialised) {
-      this.oauth = {};
-      this.oauth.config = this.userDefined.oauth;
+      console.log('initialising');
+      this.auth = {};
+      this.auth.config = this.userDefined.auth;
       getPublicKey.call(this);
 
-      var config = this.oauth.config;
+      var config = this.auth.config;
 
-      this.oauth.issuer = new Issuer({
+      this.auth.issuer = new Issuer({
         issuer: config.issuer,
         authorization_endpoint: config.authorization_endpoint,
         token_endpoint: config.token_endpoint,
@@ -113,20 +115,22 @@ module.exports = {
         introspection_endpoint: config.introspection_endpoint,
         jwks_uri: config.jwks_endpoint,
       });
-      var issuer = this.oauth.issuer;
-      this.oauth.client = new issuer.Client({
+      var issuer = this.auth.issuer;
+      this.auth.client = new issuer.Client({
         client_id: config.client_id,
         client_secret: config.client_secret
       });
 
-      var client = this.oauth.client;
+      var client = this.auth.client;
 
-      this.oauth.getRedirectURL = function(scope) {
+      this.auth.getRedirectURL = function(scope) {
         return client.authorizationUrl({
           redirect_uri: config.callback_url,
           scope: scope,
         });
       }
+      //console.log('this.auth should exist now: ');
+      //console.log(JSON.stringify(this.auth));
 
       initialised = true;
     }

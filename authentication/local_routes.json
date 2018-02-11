@@ -1,7 +1,7 @@
 [
   {
-    "path": "ripple-oauth-openid",
-    "module": "/opt/qewd/mapped/modules/ripple-oauth-openid",
+    "path": "ripple-auth",
+    "module": "/opt/qewd/mapped/modules/ripple-auth",
     "errors": {
       "notfound": {
         "text": "Resource Not Recognised",

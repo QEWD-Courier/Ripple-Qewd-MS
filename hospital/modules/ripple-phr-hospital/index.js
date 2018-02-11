@@ -33,11 +33,23 @@ var router = require('qewd-router');
 var loadPatients = require('./data/loadPatients');
 
 var getDemographics = require('./handlers/getDemographics');
+var getPatients = require('./handlers/getPatients');
+var getUser = require('./handlers/getUser');
 
 var routes = {
   '/api/my/demographics': {
     GET: getDemographics
+  },
+  '/api/patients': {
+    GET: getPatients
+  },
+  '/api/patients/:patientId': {
+    GET: getDemographics
+  },
+  '/api/user': {
+    GET: getUser
   }
+
 };
 
 module.exports = {
@@ -47,6 +59,24 @@ module.exports = {
   },
 
   beforeMicroServiceHandler: function(req, finished) {
-    return this.jwt.handlers.validateRestRequest.call(this, req, finished);
+    var authorised = this.jwt.handlers.validateRestRequest.call(this, req, finished);
+
+    if (authorised) {
+      var role = req.session.role;
+      console.log('*** role = ' + role + ' *****');
+      if (req.path.startsWith('/api/my/') && role !== 'phrUser') {
+        finished({error: 'Unauthorised request'});
+        console.log('**** attempt to use an /api/my/ path by a non-PHR user ******');
+        return false;
+      }
+
+      if (req.path.startsWith('/api/patient/') && role === 'phrUser') {
+        finished({error: 'Unauthorised request'});
+        console.log('**** attempt to use an /api/patient/ path by a PHR user ******');
+        return false;
+      }
+    }
+
+    return authorised;
   }
 };

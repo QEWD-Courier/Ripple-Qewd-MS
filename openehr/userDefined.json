@@ -17,7 +17,8 @@
       "allergies",
       "medications",
       "problems",
-      "contacts"
+      "contacts",
+      "vaccinations"
     ],
     "maximum": 10
   },

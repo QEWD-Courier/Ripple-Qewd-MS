@@ -31,7 +31,9 @@
 var router = require('qewd-router');
 
 var getMyHeadingSummary = require('./handlers/getMyHeadingSummary');
+var getHeadingSummary = require('./handlers/getHeadingSummary');
 var getMyHeadingDetail = require('./handlers/getMyHeadingDetail');
+var getHeadingDetail = require('./handlers/getHeadingDetail');
 var getMySynopsis = require('./handlers/getMySynopsis');
 var postMyHeading = require('./handlers/postMyHeading');
 
@@ -45,6 +47,12 @@ var routes = {
   },
   '/api/my/headings/synopsis': {
     GET: getMySynopsis
+  },
+  '/api/patients/:patientId/:heading': {
+    GET: getHeadingSummary
+  },
+  '/api/patients/:patientId/:heading/:sourceId': {
+    GET: getHeadingDetail
   }
 };
 
@@ -63,6 +71,13 @@ module.exports = {
         console.log('**** attempt to use an /api/my/ path by a non-PHR user ******');
         return false;
       }
+
+      //if (req.path.startsWith('/api/patients/') && role === 'phrUser') {
+      //  finished({error: 'Unauthorised request'});
+      //  console.log('**** attempt to use an /api/patient/ path by a PHR user ******');
+      //  return false;
+      //}
+
       var uid = req.session.uid;
       var qewdSession = this.sessions.byToken(uid);
       if (!qewdSession) {

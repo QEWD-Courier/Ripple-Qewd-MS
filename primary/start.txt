@@ -1,0 +1,1 @@
+sudo docker run -it -p 8080:8080 -v ~/phr/docker/primary:/opt/qewd/mapped -v ~/phr/docker/primary/www/phr:/opt/qewd/www/phr rtweed/qewd-server

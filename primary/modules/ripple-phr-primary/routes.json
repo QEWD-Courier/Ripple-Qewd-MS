@@ -3,5 +3,10 @@
     "path": "/api/test",
     "method": "GET",
     "use": "test"
+  },
+  {
+    "path": "/api/application",
+    "method": "GET",
+    "use": "getApplication"
   }
 ]

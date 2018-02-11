@@ -78,8 +78,9 @@ function patientSynopsis(args, finished) {
   var patientId = args.patientId;
   var valid = isPatientIdValid(patientId);
   if (valid.error) return finished(valid);
-
-  var max = args.req.query.maximum || this.userDefined.synopsis.maximum; 
+  
+  var max = this.userDefined.synopsis.maximum; 
+  if (args.req.query && args.req.query.maximum) max = args.req.query.maximum;
   var session = args.req.qewdSession; // QEWD Session
 
   cacheSummaryHeadings.call(this, patientId, session, function() {

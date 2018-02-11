@@ -36,6 +36,11 @@ module.exports = {
   init: function() {
     routes = router.initialise(routes, module.exports);
   },
+
+  beforeMicroServiceHandler: function(req, finished) {
+    console.log('beforeMicroServiceHandler: ' + JSON.stringify(req));
+  },
+  /*
   workerResponseHandlers: {
     initialise: function(message) {
 
@@ -53,4 +58,5 @@ module.exports = {
       return {hello: 'world'};
     }
   }
+  */
 };

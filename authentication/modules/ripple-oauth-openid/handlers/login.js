@@ -32,7 +32,8 @@
 module.exports = function(args, finished) {
   var session = args.session;
   session.authenticated = false;
-  var url = this.oauth.getRedirectURL();
+  //console.log('ripple-oauth-openid login: this.auth = ' + JSON.stringify(this.auth));
+  var url = this.auth.getRedirectURL();
 
   finished({
     redirectURL: url

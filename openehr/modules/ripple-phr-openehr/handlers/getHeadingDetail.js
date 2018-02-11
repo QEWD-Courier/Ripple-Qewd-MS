@@ -44,6 +44,10 @@ module.exports = function(args, finished) {
 
   var patientId = args.patientId;
 
+  // override patientId for PHR Users - only allowed to see their own data
+
+  if (args.session.role === 'phrUser') patientId = args.session.nhsNumber;
+
   var valid = tools.isPatientIdValid(patientId);
   if (valid.error) return finished(valid);
 
