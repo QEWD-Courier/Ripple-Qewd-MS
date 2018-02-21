@@ -1,4 +1,5 @@
 [
   "openid-client",
-  "request"
+  "request",
+  "bcrypt"
 ]

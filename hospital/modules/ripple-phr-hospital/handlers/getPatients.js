@@ -25,7 +25,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  7 February 2018
+  20 February 2018
 
 */
 
@@ -35,7 +35,10 @@ module.exports = function(args, finished) {
     patients: []
   });
 
-  finished({
-    listOfPatients: 'goesHere' 
-  });
+  // in production system we'd fetch the patients relevant
+  //  to the user - whose details are in args.session (ie in the JWT)
+
+  var patientDoc = this.db.use('RipplePHRPatients', 'byId');
+
+  finished(patientDoc.getDocument());
 };

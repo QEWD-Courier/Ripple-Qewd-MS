@@ -31,6 +31,7 @@
 var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
 var isPatientIdValid = require('../src/tools').isPatientIdValid;
 var getHeadingBySourceId = require('../src/getHeadingBySourceId');
+var getTop3ThingsSummary = require('../top3Things/getTop3ThingsSummarySync');
 
 // Headings that make up the synopsis are defined in the userDefined config JSON file
 
@@ -41,6 +42,7 @@ function cacheSummaryHeadings(patientId, session, callback) {
   var self = this;
 
   this.userDefined.synopsis.headings.forEach(function(heading) {
+    if (heading === 'top3Things') return;
     fetchAndCacheHeading.call(self, patientId, heading, session, function(response) {
       count++;
       if (count === max && callback) callback();
@@ -51,12 +53,20 @@ function cacheSummaryHeadings(patientId, session, callback) {
 function getSynopsisFromCache(patientId, max, session, callback) {
   var results = {};
   var patientHeadingCache = session.data.$(['headings', 'byPatientId', patientId]);
+  var self = this;
 
   this.userDefined.synopsis.headings.forEach(function(heading) {
 
-    headingByDateCache = patientHeadingCache.$([heading, 'byDate']);
     results[heading] = [];
     var count = 0;
+
+    if (heading === 'top3Things') {
+      var summary = getTop3ThingsSummary.call(self, patientId);
+      results[heading].push(summary);
+      return;
+    }
+
+    var headingByDateCache = patientHeadingCache.$([heading, 'byDate']);
 
     headingByDateCache.forEachChild({direction: 'reverse'}, function(date, dateNode) {
       dateNode.forEachChild(function(sourceId) {

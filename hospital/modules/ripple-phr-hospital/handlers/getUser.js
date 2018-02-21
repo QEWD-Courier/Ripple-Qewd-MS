@@ -25,7 +25,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  7 February 2018
+  20 February 2018
 
 */
 
@@ -33,6 +33,19 @@ module.exports = function(args, finished) {
 
   var jwt = args.session;
   var nhsNumber = jwt.nhsNumber;
+  var role = jwt.role;
+
+  if (!nhsNumber && role === 'IDCR') {
+
+    return finished({
+      given_name: jwt.given_name,
+      family_name: jwt.family_name,
+      email: jwt.email,
+      tenant: '',
+      role: role,
+      roles: [role]
+    });
+  }
 
   var patient = this.db.use('RipplePHRPatients', 'byId', nhsNumber);
   if (!patient.exists) return finished({error: 'No such NHS Number: ' + nhsNumber});

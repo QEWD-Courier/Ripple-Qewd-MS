@@ -48,5 +48,13 @@ module.exports = {
       //return responseObj;
 
     }
+  },
+
+  '/api/logout': {
+
+    to: function(config) {
+      return '/api/auth/logout';
+    }
   }
+
 };

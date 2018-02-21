@@ -18,9 +18,10 @@
       "medications",
       "problems",
       "contacts",
-      "vaccinations"
+      "vaccinations",
+      "top3Things"
     ],
-    "maximum": 10
+    "maximum": 4
   },
   "headings": {
     "allergies": true,

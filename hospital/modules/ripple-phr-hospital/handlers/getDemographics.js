@@ -25,14 +25,25 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 January 2018
+  21 February 2018
 
 */
 
 module.exports = function(args, finished) {
-  var nhsNumber = args.session.nhsNumber;
+  var jwt = args.session;
+  var nhsNumber = jwt.nhsNumber;
+  var role = jwt.role;
+
+  if (!nhsNumber && role === 'IDCR') nhsNumber = args.patientId;
+  if (!nhsNumber || nhsNumber === '') {
+    return finished({error: 'Patient Id was not specified'});
+  }
 
   var patient = this.db.use('RipplePHRPatients', 'byId', nhsNumber);
+  if (!patient.exists) {
+    return finished({error: 'No patient exists with that ID'});
+  }
+
   var demographics = patient.getDocument();
 
   finished({

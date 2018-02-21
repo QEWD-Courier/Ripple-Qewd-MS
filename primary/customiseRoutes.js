@@ -55,7 +55,8 @@ module.exports = function(routes, config) {
             var code = 400;
             var status = messageObj.status;
             if (status && status.code) code = status.code;
-            console.log('afterRouter for ' + req.originalUrl + ' sending an error response');
+            console.log('afterRouter for ' + req.originalUrl + ' sending an error response: ' + JSON.stringify(messageObj));
+            res.set('content-length', messageObj.length);
             res.status(code).send(messageObj);
           }
           else {

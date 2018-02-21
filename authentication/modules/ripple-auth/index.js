@@ -24,12 +24,16 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  1 February 2018
+  21 February 2018
 
 */
 
 var router = require('qewd-router');
 var jwt = require('jwt-simple');
+
+var adminLogin = require('./admin/login');
+var adminRegister = require('./admin/register');
+var adminDocStatus = require('./admin/docStatus');
 
 var path_to_auth;
 var auth_module_name;
@@ -69,6 +73,7 @@ module.exports = {
     if (auth_module_name) {
       path_to_auth = '../' + auth_module_name;
       var login = require(path_to_auth + '/handlers/login');
+      var logout = require(path_to_auth + '/handlers/logout');
       var getToken = require(path_to_auth + '/handlers/getToken');
       var test = require(path_to_auth + '/handlers/test');
       var auth_module = require(path_to_auth);
@@ -80,9 +85,22 @@ module.exports = {
         '/api/auth/login': {
           GET: login
         },
+        '/api/auth/logout': {
+          GET: logout
+        },
         '/api/auth/token': {
           GET: getToken
-        }      };
+        },
+        '/api/auth/admin/login': {
+          POST: adminLogin
+        },
+        '/api/auth/admin/register': {
+          POST: adminRegister
+        },
+        '/api/auth/admin/docStatus': {
+          GET: adminDocStatus
+        },
+      };
 
       if (auth_module_name === 'ripple-auth0') {
          routes['/api/auth/demo'] = {
@@ -97,7 +115,9 @@ module.exports = {
 
   beforeMicroServiceHandler: function(req, finished) {
 
-    //console.log('*** beforeMicroServiceHandler: req: ' + JSON.stringify(req));
+    console.log('*** beforeMicroServiceHandler: req: ' + JSON.stringify(req));
+
+    if (req.path === '/api/auth/admin/docStatus') return true;
 
     var checkIfAuthenticated = true;
     if (req.pathTemplate === '/api/auth/callback' || req.pathTemplate === '/api/auth/token') {
@@ -105,6 +125,11 @@ module.exports = {
       checkIfAuthenticated = false;
     }
 
+    if (req.path === '/api/auth/admin/login') {
+      return true;
+    }
+
+    //if (req.path === '/api/auth/login' || req.path === '/api/auth/admin/login') {
     if (req.path === '/api/auth/login') {
       var validJWT = false;
       if (req.headers.authorization) {
@@ -119,11 +144,19 @@ module.exports = {
         //console.log('*&*&* validJWT = ' + validJWT);
       }
       if (validJWT) {
-        // Valid JWT / QEWD Session, so bypass the login and signal to the browser not to redirect
-        finished({
-          authenticated: true
-        });
-        return false;
+        if (req.path === '/api/auth/login') {
+          // Valid JWT / QEWD Session, so bypass the login and signal to the browser not to redirect
+          finished({
+            authenticated: true
+          });
+          return false;
+        }
+        else {
+          finished({
+            ok: true
+          });
+          return false;
+        }
       }
       return true;
     }

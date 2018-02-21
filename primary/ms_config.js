@@ -1,7 +1,8 @@
 
-function findRoute(path, routes) {
+function findRoute(path, routes, method) {
+  method = method || 'GET';
   for (var index = 0; index < routes.length; index++) {
-    if (routes[index].path === path) return index;
+    if (routes[index].path === path && routes[index].method === method) return index;
   }
 }
 
@@ -31,15 +32,28 @@ module.exports = function(routes, ms_hosts) {
     }
   };
 
+  index = findRoute('/api/patients/:patientId/top3Things', routes);
+
+  routes[index].onResponse = function(args) {
+    console.log('onResponse handler for /api/patients/:patientId/:heading/get3Things');
+    if (!args.responseObj.message.error) {
+      args.handleResponse({
+        message: args.responseObj.message.results
+      });
+      return true;
+    }
+  };
+
   index = findRoute('/api/patients/:patientId', routes);
 
   routes[index].onResponse = function(args) {
     console.log('onResponse handler for /api/patients/:patientId');
     if (!args.responseObj.message.error) {
       var patientArgs = args.responseObj.message;
+      console.log('**** patientArgs: ' + JSON.stringify(patientArgs));
 
       var message = {
-        path: '/api/my/headings/synopsis',
+        path: '/api/patients/' + patientArgs.demographics.id + '/headings/synopsis',
         method: 'GET',
         headers: {
           authorization: 'Bearer ' + patientArgs.token
@@ -49,7 +63,7 @@ module.exports = function(routes, ms_hosts) {
         }
       };
       args.send(message, function(responseObj) {
-        console.log('response from /api/my/headings/synopsis: ' + JSON.stringify(responseObj));
+        console.log('response from /api/patients/:patientId/headings/synopsis: ' + JSON.stringify(responseObj));
 
         //add in fields from patient response
 

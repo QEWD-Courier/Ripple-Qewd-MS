@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  17 January 2018
+  20 February 2018
 
 */
 
@@ -69,17 +69,26 @@ function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
   params.queryString = getTransformedAQL.call(this, host, nhsNo, aql[heading]);  
 
   params.processBody = function(body) { 
-    //console.log('**** processBody for host ' + host);
+    //console.log('**** processBody for host ' + host + ': body = ' + body);
     var results = [];
     if (!body) body = {
       resultSet: []
     };
+    if (typeof body.resultSet === 'undefined') {
+      body = {
+        resultSet: []
+      };
+    }
 
     var headingCache = session.data.$('headings');
     var byPatientIdCache = headingCache.$(['byPatientId', nhsNo, heading]);
     var bySourceIdCache = headingCache.$(['bySourceId']);
     
     body.resultSet.forEach(function(result) {
+      if (heading === 'counts') {
+        result.uid = result.ehrId + '::';
+        result.dateCreated = Date.now();
+      }
       if (result.uid) {
         var sourceId = host + '-' + result.uid.split('::')[0];
         var dateCreated = result.date_created || result.dateCreated;
