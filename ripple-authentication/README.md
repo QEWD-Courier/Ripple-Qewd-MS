@@ -10,15 +10,15 @@ Author: Rob Tweed, M/Gateway Developments Ltd (@rtweed)
 
 ## Authentication Service
 
-This folder contains the code for the Leeds PHR Demo Authentication Microservice, which provides the Ripple interface to the Gov.Verify Authentication Service
+This folder contains the code for the Ripple Demo Authentication Microservice, which provides the Ripple interface to Auth0.
 
 Start up this container as a foreground process using the *rtweed/qewd-server* Docker Container:
 
-       sudo docker run -it -p 8081:8080 -v ~/Ripple-QEWD-Microservices/authentication:/opt/qewd/mapped rtweed/qewd-server
+        sudo docker run -it -p 8085:8080 -v ~/phr/docker/ripple-authentication:/opt/qewd/mapped rtweed/qewd-server
 
 or, to run it as a daemon process:
 
-       sudo docker run -d -p 8081:8080 -v ~/Ripple-QEWD-Microservices/authentication:/opt/qewd/mapped rtweed/qewd-server
+        sudo docker run -d -p 8085:8080 -v ~/phr/docker/ripple-authentication:/opt/qewd/mapped rtweed/qewd-server
 
 
 Note: if you're using a Raspberry Pi (RPi), use the RPi-specific Container: *rtweed/qewd-server-rpi*
