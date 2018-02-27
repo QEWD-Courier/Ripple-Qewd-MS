@@ -67798,7 +67798,13 @@ var AdminPortal = createReactClass({
   },
 
   startPHR: function startPHR() {
-    document.location = '/index.html';
+    document.location = this.props.controller.adminPortalURLs.phr;
+  },
+
+  startRipple: function startRipple() {
+    console.log('Redirecting to Ripple');
+    // need to get the URL from the configuration info
+    document.location = this.props.controller.adminPortalURLs.ripple;
   },
 
   render: function render() {
@@ -67806,6 +67812,8 @@ var AdminPortal = createReactClass({
     //var componentPath = this.controller.updateComponentPath(this);
 
     console.log('rendering AdminPortal - loginStatus = ' + this.props.loginStatus);
+
+    console.log('URLs: ' + JSON.stringify(this.props.controller.adminPortalURLs));
 
     if (this.props.loginStatus === 'addAdminUser') {
       // no records are in the Admin Login Database yet
@@ -68503,6 +68511,10 @@ var LoginField = createReactClass({
     //console.log('LoginField rendering');
     //this.controller.updateComponentPath(this);
 
+    if (this.props.hide === true) {
+      return React.createElement('span', null);
+    }
+
     return React.createElement(
       FormGroup,
       null,
@@ -68585,6 +68597,11 @@ var LoginModal = createReactClass({
     //console.log('LoginModal rendering');
     //var componentPath = this.controller.updateComponentPath(this);
 
+    if (this.props.hideUsername) {
+      this.modalTitle = 'Login with the QEWD Management Password';
+      this.username = 'dummy';
+    }
+
     return React.createElement(
       Modal,
       {
@@ -68612,7 +68629,8 @@ var LoginModal = createReactClass({
           label: this.username.label,
           type: 'text',
           controller: this.controller,
-          focus: true
+          focus: true,
+          hide: this.props.hideUsername
         }),
         React.createElement(LoginField, {
           placeholder: this.password.placeholder,
@@ -68757,7 +68775,7 @@ var MainPage = createReactClass({
           React.createElement(
             'p',
             null,
-            'Login using the QEWD Management Password to create an Admin User. Note: The username field must not be blank, but any value will be accepted.'
+            'Login using the QEWD Management Password to create an Admin User to get things started.'
           ),
           React.createElement(
             'p',
@@ -68786,7 +68804,8 @@ var MainPage = createReactClass({
       }),
       React.createElement(LoginModal, {
         controller: this.controller,
-        show: this.showLoginModal
+        show: this.showLoginModal,
+        hideUsername: this.hideUsername
       }),
       React.createElement(Content, {
         controller: this.controller,
@@ -69175,7 +69194,7 @@ var RegisterUser = createReactClass({
             label: 'Password',
             type: 'password',
             controller: this.controller,
-            focus: true,
+            focus: false,
             value: '',
             formModule: 'RegisterUser'
           }),
@@ -69184,7 +69203,34 @@ var RegisterUser = createReactClass({
             label: 'Re-Enter Password',
             type: 'password',
             controller: this.controller,
-            focus: true,
+            focus: false,
+            value: '',
+            formModule: 'RegisterUser'
+          }),
+          React.createElement(FormField, {
+            fieldname: 'givenName',
+            label: 'First Name',
+            type: 'text',
+            controller: this.controller,
+            focus: false,
+            value: '',
+            formModule: 'RegisterUser'
+          }),
+          React.createElement(FormField, {
+            fieldname: 'familyName',
+            label: 'Last Name',
+            type: 'text',
+            controller: this.controller,
+            focus: false,
+            value: '',
+            formModule: 'RegisterUser'
+          }),
+          React.createElement(FormField, {
+            fieldname: 'email',
+            label: 'Email',
+            type: 'text',
+            controller: this.controller,
+            focus: false,
             value: '',
             formModule: 'RegisterUser'
           }),
@@ -69897,29 +69943,42 @@ module.exports = function (controller, component) {
   }
 
   component.checkAdminDoc = function () {
-    console.log('&&& checking Admin Document Status....');
-    $.ajax({
-      url: '/api/auth/admin/docStatus',
-      method: 'GET',
-      contentType: 'application/json',
-      dataType: 'json',
-      timeout: 10000
-    }).done(function (data) {
-      console.log('*** received response: ' + JSON.stringify(data));
-      component.setState({
-        status: data.status
+    console.log('Checking Admin Document Status....');
+
+    controller.send({
+      type: 'getHomePageURLs'
+    }, function (responseObj) {
+      console.log('getHomePageURLs response: ' + JSON.stringify(responseObj));
+
+      controller.adminPortalURLs = responseObj.message;
+
+      // now see if Admin Document has been created yet
+      $.ajax({
+        url: '/api/auth/admin/docStatus',
+        method: 'GET',
+        contentType: 'application/json',
+        dataType: 'json',
+        timeout: 10000
+      }).done(function (data) {
+        console.log('*** received response: ' + JSON.stringify(data));
+        component.setState({
+          status: data.status
+        });
+      }).fail(function (err, textStatus, errorThrown) {
+        console.log('*** registerUser err: ' + JSON.stringify(err));
+        if (!err.responseJSON || !err.responseJSON.error) {
+          controller.emit('error', { message: { error: 'Your request timed out' } });
+        } else {
+          controller.emit('error', { message: { error: err.responseJSON.error } });
+        }
       });
-    }).fail(function (err, textStatus, errorThrown) {
-      console.log('*** registerUser err: ' + JSON.stringify(err));
-      if (!err.responseJSON || !err.responseJSON.error) {
-        controller.emit('error', { message: { error: 'Your request timed out' } });
-      } else {
-        controller.emit('error', { message: { error: err.responseJSON.error } });
-      }
     });
   };
 
+  component.hideUsername = false;
+
   component.startLogin = function () {
+    if (component.state.status === 'docEmpty') component.hideUsername = true;
     component.setState({
       status: 'initial'
     });
@@ -70102,6 +70161,21 @@ module.exports = function (controller, component) {
       component.userType.value = 'admin';
     }
 
+    if (!component.givenName || component.givenName === '') {
+      controller.displayError('You must enter a First Name');
+      return;
+    }
+
+    if (!component.familyName || component.familyName === '') {
+      controller.displayError('You must enter a Last Name');
+      return;
+    }
+
+    if (!component.email || component.email === '') {
+      controller.displayError('You must enter a valid Email Address');
+      return;
+    }
+
     $.ajax({
       url: '/api/auth/admin/register',
       method: 'POST',
@@ -70109,7 +70183,10 @@ module.exports = function (controller, component) {
       data: JSON.stringify({
         username: component.username,
         password: component.password,
-        userType: component.userType.value
+        userType: component.userType.value,
+        givenName: component.givenName,
+        familyName: component.familyName,
+        email: component.email
       }),
       headers: {
         Authorization: 'Bearer ' + controller.token

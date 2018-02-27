@@ -1,0 +1,5 @@
+{
+  "authentication_service": "http://192.168.1.120:8085",
+  "hospital_service": "http://192.168.1.120:8082",
+  "phr_service": "http://192.168.1.120:8083"
+}

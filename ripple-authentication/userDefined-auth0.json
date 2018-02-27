@@ -1,0 +1,12 @@
+{
+  "auth": {
+    "type": "Auth0",
+    "domain": "rippleosi.eu.auth0.com",
+    "client_id": "Ghi91Wk1PERQjxIN5ili6rssnl4em8In",
+    "client_secret": "sZn_wWPQQV3mfIYDANrufQ12pyWcCtWULoGOqqakH1IiCs0IBLRybK6c1XB863WT",
+    "callback_url": "http://www.mgateway.com:8084/api/auth/token",
+    "connections": ["Username-Password-Authentication", "google-oauth2", "twitter"],
+    "index_url": "/index.html",
+    "cookie_name": "JSESSIONID"
+  }
+}

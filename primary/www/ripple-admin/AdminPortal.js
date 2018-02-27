@@ -69,7 +69,13 @@ var AdminPortal = createReactClass({
   },
 
   startPHR: function() {
-    document.location = '/index.html';
+    document.location = this.props.controller.adminPortalURLs.phr;
+  },
+
+  startRipple: function() {
+    console.log('Redirecting to Ripple');
+    // need to get the URL from the configuration info
+    document.location = this.props.controller.adminPortalURLs.ripple;
   },
 
   render: function() {
@@ -77,6 +83,8 @@ var AdminPortal = createReactClass({
     //var componentPath = this.controller.updateComponentPath(this);
 
     console.log('rendering AdminPortal - loginStatus = ' + this.props.loginStatus);
+
+    console.log('URLs: ' + JSON.stringify(this.props.controller.adminPortalURLs));
 
     if (this.props.loginStatus === 'addAdminUser') {
       // no records are in the Admin Login Database yet

@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/api",
+    "module": "/opt/qewd/mapped/modules/ripple-primary",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  }
+]

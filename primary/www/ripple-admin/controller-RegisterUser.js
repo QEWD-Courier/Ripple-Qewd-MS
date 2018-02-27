@@ -126,6 +126,21 @@ module.exports = function (controller, component) {
       component.userType.value = 'admin';
     }
 
+    if (!component.givenName || component.givenName === '') {
+      controller.displayError('You must enter a First Name');
+      return;
+    }
+
+    if (!component.familyName || component.familyName === '') {
+      controller.displayError('You must enter a Last Name');
+      return;
+    }
+
+    if (!component.email || component.email === '') {
+      controller.displayError('You must enter a valid Email Address');
+      return;
+    }
+
     $.ajax({
       url: '/api/auth/admin/register',
       method: 'POST',
@@ -133,7 +148,10 @@ module.exports = function (controller, component) {
       data: JSON.stringify({
         username: component.username,
         password: component.password,
-        userType: component.userType.value
+        userType: component.userType.value,
+        givenName: component.givenName,
+        familyName: component.familyName,
+        email: component.email,
       }),
       headers: {
         Authorization: 'Bearer ' + controller.token

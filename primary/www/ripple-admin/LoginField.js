@@ -55,6 +55,12 @@ var LoginField = createReactClass({
     //console.log('LoginField rendering');
     //this.controller.updateComponentPath(this);
 
+    if (this.props.hide === true) {
+      return (
+        <span></span>
+      );
+    }
+
     return (
       <FormGroup>
         <ControlLabel>{this.props.label}</ControlLabel>

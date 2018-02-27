@@ -1,8 +1,27 @@
-var bcrypt = require('bcrypt');
+//var bcrypt = require('bcrypt');
 
 module.exports = {
 
   handlers: {
+
+    getHomePageURLs: function(messageObj, session, send, finished) {
+      var ripple = '';
+      var phr = '';
+      if (this.userDefined.ripple && this.userDefined.ripple.homepage) {
+        ripple = this.userDefined.ripple.homepage;
+      }
+
+      if (this.userDefined.phr && this.userDefined.phr.homepage) {
+        phr = this.userDefined.phr.homepage;
+      }
+      
+      finished({
+        ripple: ripple,
+        phr: phr
+      });
+    }
+
+    /*
     login: function(messageObj, session, send, finished) {
        
       var username = messageObj.params.username;
@@ -29,5 +48,6 @@ module.exports = {
       session.authenticated = true;
       finished({ok: true});
     }
+    */
   }
 };

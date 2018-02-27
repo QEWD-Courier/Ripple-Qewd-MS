@@ -139,7 +139,7 @@ var RegisterUser = createReactClass({
               label='Password'
               type='password'
               controller = {this.controller}
-              focus={true}
+              focus={false}
               value = ''
               formModule = 'RegisterUser'
             />
@@ -148,7 +148,37 @@ var RegisterUser = createReactClass({
               label='Re-Enter Password'
               type='password'
               controller = {this.controller}
-              focus={true}
+              focus={false}
+              value = ''
+              formModule = 'RegisterUser'
+            />
+
+            <FormField
+              fieldname='givenName'
+              label='First Name'
+              type='text'
+              controller = {this.controller}
+              focus={false}
+              value = ''
+              formModule = 'RegisterUser'
+            />
+
+            <FormField
+              fieldname='familyName'
+              label='Last Name'
+              type='text'
+              controller = {this.controller}
+              focus={false}
+              value = ''
+              formModule = 'RegisterUser'
+            />
+
+            <FormField
+              fieldname='email'
+              label='Email'
+              type='text'
+              controller = {this.controller}
+              focus={false}
               value = ''
               formModule = 'RegisterUser'
             />

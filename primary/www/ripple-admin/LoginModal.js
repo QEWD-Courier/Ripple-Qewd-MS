@@ -55,6 +55,11 @@ var LoginModal = createReactClass({
     //console.log('LoginModal rendering');
     //var componentPath = this.controller.updateComponentPath(this);
 
+    if (this.props.hideUsername) {
+      this.modalTitle = 'Login with the QEWD Management Password';
+      this.username = 'dummy';
+    }
+
     return (
 
         <Modal
@@ -78,6 +83,7 @@ var LoginModal = createReactClass({
               type='text'
               controller = {this.controller}
               focus={true}
+              hide = {this.props.hideUsername}
             />
 
             <LoginField

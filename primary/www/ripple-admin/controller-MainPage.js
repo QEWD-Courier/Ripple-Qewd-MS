@@ -156,32 +156,45 @@ module.exports = function (controller, component) {
   }
 
   component.checkAdminDoc = function() {
-    console.log('&&& checking Admin Document Status....');
-    $.ajax({
-      url: '/api/auth/admin/docStatus',
-      method: 'GET',
-      contentType: 'application/json',
-      dataType: 'json',
-      timeout: 10000
-    })
-    .done(function(data) {
-      console.log('*** received response: ' + JSON.stringify(data));
-      component.setState({
-        status: data.status
-      });
-    })
-    .fail(function(err, textStatus, errorThrown) {
-      console.log('*** registerUser err: ' + JSON.stringify(err));
-      if (!err.responseJSON || !err.responseJSON.error) {
-        controller.emit('error', {message: {error: 'Your request timed out'}});
-      }
-      else {
-        controller.emit('error', {message: {error: err.responseJSON.error}});
-      }
+    console.log('Checking Admin Document Status....');
+
+    controller.send({
+      type: 'getHomePageURLs'
+      }, function(responseObj) {
+        console.log('getHomePageURLs response: ' + JSON.stringify(responseObj));
+
+        controller.adminPortalURLs = responseObj.message;
+
+        // now see if Admin Document has been created yet
+        $.ajax({
+          url: '/api/auth/admin/docStatus',
+          method: 'GET',
+          contentType: 'application/json',
+          dataType: 'json',
+          timeout: 10000
+        })
+        .done(function(data) {
+          console.log('*** received response: ' + JSON.stringify(data));
+          component.setState({
+            status: data.status
+          });
+        })
+        .fail(function(err, textStatus, errorThrown) {
+          console.log('*** registerUser err: ' + JSON.stringify(err));
+          if (!err.responseJSON || !err.responseJSON.error) {
+            controller.emit('error', {message: {error: 'Your request timed out'}});
+          }
+          else {
+            controller.emit('error', {message: {error: err.responseJSON.error}});
+          }
+        });
     });
   };
 
+  component.hideUsername = false;
+
   component.startLogin = function() {
+    if (component.state.status === 'docEmpty') component.hideUsername = true;
     component.setState({
       status: 'initial'
     });

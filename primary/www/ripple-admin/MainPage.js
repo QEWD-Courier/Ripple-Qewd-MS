@@ -112,8 +112,7 @@ var MainPage = createReactClass({
               the Authentication service.
             </p>
             <p>
-              Login using the QEWD Management Password to create an Admin User. Note:
-              The username field must not be blank, but any value will be accepted.
+              Login using the QEWD Management Password to create an Admin User to get things started.
             </p>
             <p>
               <Button onClick={this.startLogin}>Continue</Button>
@@ -139,6 +138,7 @@ var MainPage = createReactClass({
         <LoginModal
           controller = {this.controller}
           show = {this.showLoginModal}
+          hideUsername = {this.hideUsername}
         />
 
         <Content

@@ -13,7 +13,10 @@ config.moduleMap = {
   'ripple-admin': '/opt/qewd/mapped/modules/ripple-admin'
 };
 
+var userDefined = require('./userDefined.json');
+
 module.exports = {
   config: config,
-  routes: routes
+  routes: routes,
+  userDefined: userDefined
 };
