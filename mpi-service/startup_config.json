@@ -1,0 +1,6 @@
+{
+  "managementPassword": "R!ppl$",
+  "serverName": "Master Patient Index / PAS MicroService Server",
+  "port": 8080,
+  "poolSize": 3
+}

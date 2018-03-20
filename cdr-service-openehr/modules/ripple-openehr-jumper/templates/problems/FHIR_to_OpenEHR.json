@@ -1,0 +1,7 @@
+{
+  "uid": "{{identifier[0].value}}",
+  "composer": {
+    "value": "{{recorder.display}}"
+  },
+  "patientName": "{{patient.display}}"
+}

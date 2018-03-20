@@ -1,0 +1,19 @@
+{
+  "resourceType": "Condition",
+  "identifier": [
+    {
+      "system": "http://ripple.foundation/sourceId",
+      "value": "{{uid}}"
+    }
+  ],
+  "onset": "=> rippleDateTime(start_time, false)",
+  "recordedDate": "=> rippleDateTime(start_time, false)",
+  "recorder": {
+    "reference": "=> fhirReference(composer.code, 'Practitioner', false)",
+    "display": "{{composer.value}}"
+  },
+  "patient": {
+    "reference": "=> fhirReference(patientId, 'Patient', false)",
+    "display": "{{patientName}}"
+  }
+}

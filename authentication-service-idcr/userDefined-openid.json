@@ -1,0 +1,20 @@
+{
+  "auth": {
+    "type": "OpenID Connect",
+    "client_id": "xxxxx",
+    "client_secret": "yyyyyyyyyyyyyyyyyy",
+    "callback_url": "http://www.mgateway.com:8080/api/auth/token",
+    "scope": {
+      "login": "openid"
+    },
+    "issuer": "https://blue.testlab.nhs.uk/auth/realms/sandpit",
+    "authorization_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/auth",
+    "token_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/token",
+    "userinfo_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/userinfo",
+    "introspection_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/token/introspect",
+    "jwks_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/certs",
+    "end_session_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/logout",
+    "index_url": "/index.html",
+    "cookie_name": "JSESSIONID"
+  }
+}

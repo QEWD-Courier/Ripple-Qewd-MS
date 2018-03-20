@@ -1,0 +1,304 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "IDCR - Adverse Reaction List.v1",
+  "description": "Data Entry Schema for OpenEHR Template IDCR - Adverse Reaction List.v1",
+  "type": "object",
+  "properties": {
+    "allergies_and_adverse_reactions": {
+      "type": "object",
+      "properties": {
+        "adverse_reaction_risk": {
+          "type": "object",
+          "properties": {
+            "last_updated": {
+              "description": "Last updated",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            },
+            "category": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Category value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Category code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Category terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "causative_agent": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Causative agent value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Causative agent code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Causative agent terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "value"
+              ]
+            },
+            "criticality": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Criticality value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Criticality code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Criticality terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "reaction_mechanism": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Reaction mechanism value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Reaction mechanism code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Reaction mechanism terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "comment": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Comment value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Comment code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Comment terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "onset_of_last_reaction": {
+              "description": "Onset of last reaction",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            },
+            "reaction_details": {
+              "type": "object",
+              "properties": {
+                "onset_of_reaction": {
+                  "description": "Onset of reaction",
+                  "type": "string",
+                  "minLength": 1,
+                  "format": "date-time"
+                },
+                "route_of_exposure": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Route of exposure value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Route of exposure code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Route of exposure terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "manifestation": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Manifestation value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Manifestation code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Manifestation terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "specific_substance": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Specific substance value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Specific substance code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Specific substance terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "certainty": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Certainty value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Certainty code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Certainty terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "comment": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Comment value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Comment code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Comment terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "reaction_description": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Reaction description value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Reaction description code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Reaction description terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "severity": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Severity value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Severity code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Severity terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            },
+            "status": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Status value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Status code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Status terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

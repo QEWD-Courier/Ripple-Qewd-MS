@@ -1,0 +1,88 @@
+{
+  "uid": "{{uid}}",
+  "composer": {
+    "value": "{{composer}}"
+  },
+  "host": "{{host}}",
+  "patientId": "{{patientId}}",
+  "allergies_and_adverse_reactions": {
+    "adverse_reaction_risk": {
+      "last_updated": {
+        "value": "{{last_updated}}"
+      },
+      "category": {
+        "value": "{{category}}",
+        "code": "{{category_codeString}}",
+        "terminology": "{{category_terminology}}"
+      },
+      "causative_agent": {
+        "value": "{{causative_agent}}",
+        "code": "{{causative_agent_codeString}}",
+        "terminology": "{{causative_agent_terminology}}"
+      },
+      "criticality": {
+        "value": "{{criticality}}",
+        "code": "{{criticality_codeString}}",
+        "terminology": "{{criticality_terminology}}"
+      },
+      "reaction_mechanism": {
+        "value": "{{reaction_mechanism}}",
+        "code": "{{reaction_mechanism_codeString}}",
+        "terminology": "{{reaction_mechanism_terminology}}"
+      },
+      "comment": {
+        "value": "{{comment}}",
+        "code": "{{comment_codeString}}",
+        "terminology": "{{comment_terminology}}"
+      },
+      "onset_of_last_reaction": {
+        "value": "{{onset_of_last_reaction}}"
+      },
+      "reaction_details": {
+        "onset_of_reaction": {
+          "value": "{{onset_of_reaction}}"
+        },
+        "route_of_exposure": {
+          "value": "{{route_of_exposure}}",
+          "code": "{{route_of_exposure_codeString}}",
+          "terminology": "{{route_of_exposure_terminology}}"
+        },
+        "manifestation": {
+          "value": "{{manifestation}}",
+          "code": "{{manifestation_codeString}}",
+          "terminology": "{{manifestation_terminology}}"
+        },
+        "specific_substance": {
+          "value": "{{specific_substance}}",
+          "code": "{{specific_substance_codeString}}",
+          "terminology": "{{specific_substance_terminology}}"
+        },
+        "certainty": {
+          "value": "{{certainty}}",
+          "code": "{{certainty_codeString}}",
+          "terminology": "{{certainty_terminology}}"
+        },
+        "comment": {
+          "value": "{{comment}}",
+          "code": "{{comment_codeString}}",
+          "terminology": "{{comment_terminology}}"
+        },
+        "reaction_description": {
+          "value": "{{reaction_description}}",
+          "code": "{{reaction_description_codeString}}",
+          "terminology": "{{reaction_description_terminology}}"
+        },
+        "severity": {
+          "value": "{{severity}}",
+          "code": "{{severity_codeString}}",
+          "terminology": "{{severity_terminology}}"
+        }
+      },
+      "status": {
+        "value": "{{status}}",
+        "code": "{{status_codeString}}",
+        "terminology": "{{status_terminology}}"
+      }
+    }
+  }
+}

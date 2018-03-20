@@ -1,0 +1,11 @@
+{
+  "name": "ripple-phr-openehr",
+  "version": "1.4.0",
+  "dependencies": {
+    "qewd-router": "",
+    "qewd-template": "",
+    "qewd-transform-json": "",
+    "request": "",
+    "moment-timezone": ""
+  }
+}

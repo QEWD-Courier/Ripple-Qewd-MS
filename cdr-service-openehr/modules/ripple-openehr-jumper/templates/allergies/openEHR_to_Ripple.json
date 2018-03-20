@@ -1,0 +1,12 @@
+{
+  "cause": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.value}}",
+  "causeCode": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.code}}",
+  "causeTerminology": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.terminology}}",
+  "terminologyCode": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.code}}",
+  "reaction": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.value}}",
+  "author": "{{composer.value}}",
+  "dateCreated": "=> getTime(start_time)",
+  "source": "{{host}}",
+  "sourceId": "{{uid}}",
+  "patientId": "{{patientId}}"
+}

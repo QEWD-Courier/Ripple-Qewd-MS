@@ -1,0 +1,60 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "identifier": [
+    {
+      "system": "http://ripple.foundation/sourceId",
+      "value": "{{uid}}"
+    }
+  ],
+  "onset": "=> getDate(start_time)",
+  "recordedDate": "=> getDate(start_time)",
+  "recorder": {
+    "reference": "Practitioner/{{composer.code}}",
+    "display": "{{composer.value}}"
+  },
+  "patient": {
+    "reference": "Patient/{{patientId}}",
+    "display": "{{patientName}}"
+  },
+  "substance": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.code}}",
+        "display": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.value}}"
+      }
+    ]
+  },
+  "status": "active",
+  "type": "allergy",
+  "category": "other",
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.code}}",
+            "display": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.value}}"
+          }
+        ],
+        "text": "{{allergies_and_adverse_reactions.adverse_reaction_risk.causative_agent.value}}"
+      },
+      "certainty": "confirmed",
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.code}}",
+              "display": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.value}}"
+            }
+          ],
+          "text": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.value}}"
+        }
+      ],
+      "description": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.value}}"
+    }
+  ],
+  "note": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.comment.value}}"
+}

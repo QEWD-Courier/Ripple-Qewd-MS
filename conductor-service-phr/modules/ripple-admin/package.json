@@ -1,0 +1,9 @@
+{
+  "name": "ripple-admin",
+  "version": "1.0.0",
+  "description": "Administration Package for Ripple",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": ""
+  }
+}

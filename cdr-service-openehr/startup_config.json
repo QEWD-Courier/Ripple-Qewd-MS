@@ -1,0 +1,6 @@
+{
+  "managementPassword": "R!ppl$",
+  "serverName": "OpenEHR Access MicroService Server",
+  "port": 8080,
+  "poolSize": 3
+}

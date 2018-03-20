@@ -1,0 +1,10 @@
+{
+  "name": "ripple-openehr-jumper",
+  "version": "1.0.0",
+  "description": "Automated OpenEHR Template Access",
+  "author": "Rob Tweed <rtweed@mgateway.com>",
+  "main": "index.js",
+  "dependencies": {
+    "traverse": ""
+  }
+}

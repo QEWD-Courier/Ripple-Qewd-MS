@@ -1,0 +1,22 @@
+[
+  {
+    "path": "ripple-cdr-openehr",
+    "module": "/opt/qewd/mapped/modules/ripple-cdr-openehr",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  },
+  {
+    "path": "ripple-openehr-jumper",
+    "module": "/opt/qewd/mapped/modules/ripple-openehr-jumper",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  }
+]
