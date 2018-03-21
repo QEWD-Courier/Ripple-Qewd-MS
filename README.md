@@ -357,7 +357,8 @@ you would access its QEWD Monitor application by pointing the browser at:
        http://www.myserver.com:8084/qewd-monitor/index.html
 
 
-You will be asked to enter the QEWD Management Password.  You'll find this password in the file:
+You will be asked to enter the QEWD Management Password.  You'll find this password in the file
+named *startup_config.json* within each MicroService directory.  For example:
 
      ~/ripple/conductor-service-phr/startup_config.json
 
