@@ -1,0 +1,19 @@
+select
+  a/uid/value as uid,
+  a/composer/name as author,
+  a/context/start_time/value as date_created,
+  a/context/other_context[at0001]/items[at0002]/value/value as PROMS_type,
+  a/context/other_context[at0001]/items[at0005]/value/value as Procedure_link,
+  b_a/items[at0001]/value/magnitude as Pain_scale,
+  b_b/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value/symbol/defining_code/code_string as a_1_Health_in_general,
+  b_b/data[at0001]/events[at0002]/data[at0003]/items[at0014]/value/symbol/defining_code/code_string as a_2_Health_compared_to_1_year_ago,
+  b_b/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0020]/value/symbol/defining_code/code_string as a_3_Vigorous_activies,
+  b_b/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0024]/value/symbol/defining_code/code_string as a_4_Moderate_activies,
+  b_b/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0028]/value/symbol/defining_code/code_string as a_5_Lifting_or_carrying_groceries
+ from EHR e [ehr_id/value = '{{ehrId}}']
+ contains COMPOSITION a[openEHR-EHR-COMPOSITION.report.v1]
+ contains (
+  CLUSTER b_a[openEHR-EHR-CLUSTER.pain_vas.v0] or
+  OBSERVATION b_b[openEHR-EHR-OBSERVATION.sf36.v0] or
+  ACTION b_c[openEHR-EHR-ACTION.procedure.v1])
+ where a/name/value='Generic PROMS'
