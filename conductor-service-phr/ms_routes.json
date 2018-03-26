@@ -137,5 +137,10 @@
     "path": "/api/openehr/jumper/build",
     "method": "GET",
     "destination": "openehr_jumper_service"
+  },
+  {
+    "path": "/api/openehr/jumper/patient/:patientId/template/:templateName",
+    "method": "GET",
+    "destination": "openehr_jumper_service"
   }
 ]

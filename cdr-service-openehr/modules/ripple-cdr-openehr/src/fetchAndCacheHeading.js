@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  17 January 2018
+  22 March 2018
 
 */
 
@@ -60,6 +60,7 @@ function fetchAndCacheHeading(patientId, heading, session, callback) {
   for (host in servers) {  
     if (cachedHeading.$(host).exists) {
       count++;
+      console.log('startSession a - process ' + process.pid + ': count = ' + count + '; ' + noOfServers + ' servers');
       if (count === noOfServers) {
         if (callback) callback({ok: true});
         return;
@@ -71,22 +72,34 @@ function fetchAndCacheHeading(patientId, heading, session, callback) {
         openEHR.startSession(host, session, function(openEhrSession) {
           console.log('\nFetchAndCacheHeading: ' + host + '; startSession callback - OpenEhr session = ' + JSON.stringify(openEhrSession));
           if (!openEhrSession || !openEhrSession.id) {
-            console.log('\nUnable to establish session on ' + host);
+            console.log('\nUnable to establish session on ' + host + '; worker ' + process.pid);
             count++;
+            console.log('startSession b - process ' + process.pid + ': count = ' + count + '; ' + noOfServers + ' servers');
             if (count === noOfServers) {
               if (callback) callback({ok: true});
             }
           }
           else {
             mapNHSNoByHost.call(self, patientId, host, openEhrSession, function(ehrId) {
-              getHeadingFromOpenEHRServer.call(self, patientId, heading, host, session, openEhrSession, function() {
-                openEHR.stopSession(host, openEhrSession.id, session);
+              if (ehrId) {
+                getHeadingFromOpenEHRServer.call(self, patientId, heading, host, session, openEhrSession, function() {
+                  openEHR.stopSession(host, openEhrSession.id, session);
+                  count++;
+                  console.log('startSession c - process ' + process.pid + ': count = ' + count + '; ' + noOfServers + ' servers');
+                  if (count === noOfServers) {
+                    if (callback) callback({ok: true});
+                    return;
+                  }
+                });
+              }
+              else {
                 count++;
+                console.log('startSession d - process ' + process.pid + ': count = ' + count + '; ' + noOfServers + ' servers');
                 if (count === noOfServers) {
                   if (callback) callback({ok: true});
                   return;
                 }
-              });
+              }
             });
           }
         });

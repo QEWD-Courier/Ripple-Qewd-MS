@@ -24,21 +24,21 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  7 March 2018
+  23 March 2018
 
 */
 
 
-function parseWebTemplate(templateObj, host) {
+function parseWebTemplate(templateObj, platform) {
   var path = [];
   var info = [];
 
-  if (host === 'marand') {
-    parse(templateObj.webTemplate.tree.children, path, info, host);
+  if (platform === 'marand') {
+    parse(templateObj.webTemplate.tree.children, path, info, platform);
   }
   else {
     //path.push(templateObj.tree.id);
-    parse(templateObj.tree.children, path, info, host);
+    parse(templateObj.tree.children, path, info, platform);
   }
   return info;
 }
@@ -48,7 +48,7 @@ function removePunctuation(string) {
   return string.replace(/[.,\/#!$%\^&\*;:?{}=`~()]/g,"");
 }
 
-function parse(obj, path, info, host) {
+function parse(obj, path, info, platform) {
   console.log('\n path = ' + JSON.stringify(path) + '\n');
 
   obj.forEach(function(node, index) {
@@ -58,7 +58,7 @@ function parse(obj, path, info, host) {
     var currentPath = path.slice(0);
     if (typeof node.id === 'undefined') {
       if (node.children) {
-        parse(node.children, currentPath, info, host);
+        parse(node.children, currentPath, info, platform);
         console.log('!! popped parse');
       }
     }
@@ -66,15 +66,18 @@ function parse(obj, path, info, host) {
       var nodeId = removePunctuation(node.id);
       var tree_structure = false;
       if (node.type === 'ITEM_TREE' && (node.id === 'tree' || node.id === 'structure')) tree_structure = true;
+      if (node.type === 'HISTORY' && node.id === 'event_series') tree_structure = true;
+      if (node.type === 'POINT_EVENT') tree_structure = true;
+
       if (!tree_structure) currentPath.push(nodeId);
       if (node.children) {
-        parse(node.children, currentPath, info, host);
+        parse(node.children, currentPath, info, platform);
         console.log('!! popped parse');
       }
       else {
         var pieces;
         var aqlPath;
-        if (host === 'marand') {
+        if (platform === 'marand') {
           aqlPath = node.aqlPath;
         }
         else {
@@ -96,7 +99,7 @@ function parse(obj, path, info, host) {
         });
 
         newPath.shift();       // remove first item
-        if (host === 'marand') newPath.splice(-1, 1); // remove last item
+        if (platform === 'marand') newPath.splice(-1, 1); // remove last item
 
         var required = false;
         var max;
@@ -105,7 +108,7 @@ function parse(obj, path, info, host) {
 
        console.log('parseTemplate: node = ' + JSON.stringify(node));
 
-        if (host === 'marand') {
+        if (platform === 'marand') {
           max = node.max;
           if (node.min > 0) required = true;
           type = node.rmType;

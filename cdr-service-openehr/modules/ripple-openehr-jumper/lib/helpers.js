@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  28 February 2018
+  23 March 2018
 
 */
 
@@ -36,10 +36,14 @@ module.exports = {
   rippleDateTime: function(input, inverse) {
     if (inverse) {
       if (!input || input === '') return '';
+      if (input.indexOf('UTC') !== -1) input = input.split('UTC')[0];
       return new Date(input).getTime();
     }
     if (!input) return new Date().toISOString();
     return new Date(input).toISOString();
+  },
+  getUid: function(uid) {
+    return uid.split('::')[0];
   },
   fhirSnomed: function(input, inverse) {
     if (input === '') return '<!delete>';
@@ -49,5 +53,21 @@ module.exports = {
     }
     if (input === 'http://snomed.info/sct') return 'SNOMED-CT';
     return input;
+  },
+  dvText: function(inputObj) {
+    if (typeof inputObj.value !== 'undefined' && inputObj.value !== '') {
+      if (typeof inputObj.code === 'undefined' || inputObj.code === '') {
+        return '<!delete>';
+      }
+      if (typeof inputObj.terminology === 'undefined' || inputObj.terminology === '') {
+        return '<!delete>';
+      }
+      var result = inputObj.value.toString();
+      delete inputObj.value;  // so that next Flat JSON directive doesn't create |value reference
+      return result;
+    }
+    else {
+      return '<!delete>';
+    }
   }
 };

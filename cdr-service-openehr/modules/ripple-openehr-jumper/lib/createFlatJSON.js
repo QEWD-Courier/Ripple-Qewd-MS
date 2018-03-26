@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  19 March 2018
+  21 March 2018
 
 */
 
@@ -38,6 +38,17 @@ function getSource(id, extra) {
   });
   if (extra && extra !== '') pieces.push(extra);
   return '=> either(' + pieces.join('.') + ', <!delete>)';
+}
+
+function getDVText(id) {
+  var pieces = id.split('/');
+  pieces.shift(); // remove first element
+  pieces.forEach(function(piece, index) {
+    if (piece.indexOf(':0') !== -1) {
+      pieces[index] = piece.split(':0')[0];
+    }
+  });
+  return '=> dvText(' + pieces.join('.') + ')';
 }
 
 function removePunctuation(string) {
@@ -79,7 +90,9 @@ function getPaths(obj, path, paths, host) {
       }
     }
 
-    if (node.id === 'context' && node.aqlPath === '/context') return; // ignore these
+    //if (node.id === 'context' && node.aqlPath === '/context') return; // ignore these
+    if (node.aqlPath === '/context/start_time') return; // ignore these
+    if (node.aqlPath === '/context/setting') return; // ignore these
     if (node.id === 'composer' && node.aqlPath === '/composer') return; // ignore this
     if (node.id === 'language' && type === 'CODE_PHRASE' && !node.children) return; // ignore this
     if (node.id === 'encoding' && type === 'CODE_PHRASE' && !node.children) return; // ignore this
@@ -103,11 +116,30 @@ function getPaths(obj, path, paths, host) {
       getPaths(node.children, currentPath, paths, host);
     }
     else if (!tree_structure) {
-      if (type === 'DV_TEXT' || type === 'DV_CODED_TEXT') {
+      if (type === 'DV_CODED_TEXT') {
         if (node.max === -1) currentPath = currentPath + ':0';
         paths.push({
           id: getSource(currentPath, 'value'),
           path: currentPath + '|value'
+        });
+        paths.push({
+          id: getSource(currentPath, 'code'),
+          path: currentPath + '|code'
+        });
+        paths.push({
+          id: getSource(currentPath, 'terminology'),
+          path: currentPath + '|terminology'
+        });
+      }
+      else if (type === 'DV_TEXT') {
+        if (node.max === -1) currentPath = currentPath + ':0';
+        paths.push({
+          id: getDVText(currentPath),
+          path: currentPath
+        });
+        paths.push({
+          id: getSource(currentPath, 'value'),
+          path: currentPath + '|text'
         });
         paths.push({
           id: getSource(currentPath, 'code'),

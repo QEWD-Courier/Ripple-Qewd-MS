@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  17 January 2018
+  22 March 2018
 
 */
 
@@ -214,7 +214,7 @@ function openEHRRequest(params, userObj) {
       var now = new Date().getTime();
       if ((now - cachedSession.$('creationTime').value) < sessionTimeout) {
         // should be OK to use cached Session
-        console.log('** using cached session for ' + host);
+        console.log(process.pid + ' ** using cached session for ' + host);
         userObj.id = cachedSession.$('id').value;
         if (params.callback(userObj)) params.callback(userObj);
         return;
@@ -272,19 +272,22 @@ function openEHRRequest(params, userObj) {
     }
   }
 
-  console.log('request to ' + host + ': ' + JSON.stringify(options));
+  console.log(process.pid + ': request to ' + host + ': ' + JSON.stringify(options));
   request(options, function(error, response, body) {
     if (error) {
-      console.log('error returned from ' + host + ': ' + error);
+      console.log(process.pid + ': error returned from ' + host + ': ' + error);
     }
     else {
-      console.log('response from ' + host + ': ' + JSON.stringify(body));
+      console.log(process.pid + ': response from ' + host + ': ' + JSON.stringify(body));
       //if (!body) console.log('***** no body returned from ' + host);
       //if (body && typeof body === 'string') console.log('body returned from ' + host + ' is a string');
       //if (body && typeof body !== 'string' && params.processBody) params.processBody(body, host, userObj);
       if (params.processBody) params.processBody(body, userObj);
     }
-    if (params.callback) params.callback(userObj);
+    if (params.callback) {
+      console.log(process.pid + ': invoking callback');
+      params.callback(userObj);
+    }
   });
 }
 
@@ -332,6 +335,7 @@ function startSessions(session, callback) {
 }
 
 function startSession(host, qewdSession, callback) {
+
   var params = {
     host: host,
     type: 'startSession',

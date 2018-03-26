@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 January 2018
+  22 March 2018
 
 */
 
@@ -43,7 +43,7 @@ module.exports = function(nhsNo, host, session, callback) {
 
   var params = {
     host: host,
-    callback: callback,
+    //callback: callback,
     url: '/rest/v1/ehr',
     queryString: {
       subjectId: nhsNo,
@@ -57,6 +57,10 @@ module.exports = function(nhsNo, host, session, callback) {
       nhsNoMap.value = body.ehrId;
       mapByEhrId.$([body.ehrId, host]).value = nhsNo;
       ehrId = body.ehrId;
+      if (callback) callback(ehrId);
+    }
+    else {
+      if (callback) callback();
     }
   };
   openEHR.request(params, ehrId);

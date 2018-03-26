@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  7 March 2018
+  22 March 2018
 
 */
 
@@ -36,7 +36,7 @@ module.exports = function(templateName) {
   }
 
   var templateId;
-  var documentName = 'OpenEHRJumper';
+  var documentName = this.userDefined.documentNames.jumperTemplateFields || 'OpenEHRJumper';
   var templateReg = this.db.use(documentName, 'templates');
   var templateByName = templateReg.$(['byName', templateName]);
   if (templateByName.exists) {

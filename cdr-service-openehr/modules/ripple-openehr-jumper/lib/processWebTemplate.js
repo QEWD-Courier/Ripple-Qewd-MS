@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  7 March 2018
+  23 March 2018
 
 */
 
@@ -34,14 +34,20 @@ var parseWebTemplate = require('./parseWebTemplate');
 var getTemplateFields = require('./getTemplateFields');
 var createFlatJSON = require('./createFlatJSON');
 var createJSONSchema = require('./createJSONSchema');
+var buildJSONFile = require('./buildJsonFile');
 
 function processWebTemplate(templateName, headingPath, body, host) {
 
-  var results = parseWebTemplate(body, host);
+  // save Web Template as a file
+
+  var platform = this.userDefined.openehr[host].platform;
+  buildJSONFile.call(this, body, headingPath, 'WebTemplate_' + platform + '.json');
+
+  var results = parseWebTemplate(body, platform);
   //return results;
 
   var templateId;
-  var documentName = 'OpenEHRJumper';
+  var documentName = this.userDefined.documentNames.jumperTemplateFields || 'OpenEHRJumper';
   var templateReg = this.db.use(documentName, 'templates');
   var templateByName = templateReg.$(['byName', templateName]);
   if (templateByName.exists) {
@@ -57,12 +63,12 @@ function processWebTemplate(templateName, headingPath, body, host) {
   templateDoc.delete();
   var composition;
   var name;
-  if (host === 'marand') {
+  if (platform === 'marand') {
     composition = body.webTemplate.tree.nodeId;
     name = body.webTemplate.tree.name;
   }
   else {
-    composition = body.tree.nodeId;
+    composition = body.tree.node_id;
     name = body.tree.name;
   }
 

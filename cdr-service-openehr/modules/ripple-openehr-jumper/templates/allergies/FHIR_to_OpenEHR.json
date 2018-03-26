@@ -1,29 +1,7 @@
 {
   "uid": "{{identifier[0].value}}",
-  "start_time": "=> rippleDateTime(recordedDate,true)",
   "composer": {
-    "code": "=> fhirReference(recorder.reference,'Practitioner',true)",
     "value": "{{recorder.display}}"
   },
-  "patientId": "=> fhirReference(patient.reference,'Patient',true)",
-  "patientName": "{{patient.display}}",
-  "allergies_and_adverse_reactions": {
-    "adverse_reaction_risk": {
-      "causative_agent": {
-        "terminology": "=> fhirSnomed(reaction[0].substance.coding[0].system,true)",
-        "code": "{{reaction[0].substance.coding[0].code}}",
-        "value": "{{reaction[0].substance.text}}"
-      },
-      "reaction_details": {
-        "manifestation": {
-          "terminology": "=> fhirSnomed(reaction[0].manifestation[0].coding[0].system,true)",
-          "code": "{{reaction[0].manifestation[0].coding[0].code}}",
-          "value": "{{reaction[0].description}}"
-        },
-        "comment": {
-          "value": "{{note}}"
-        }
-      }
-    }
-  }
+  "patientName": "{{patient.display}}"
 }

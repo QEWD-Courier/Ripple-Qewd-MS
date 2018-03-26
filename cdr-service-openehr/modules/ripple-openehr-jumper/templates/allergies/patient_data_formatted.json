@@ -1,0 +1,3563 @@
+[
+  {
+    "uid": "01fc6ad3-3d10-4bbf-98ce-99c81113ff9c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-01-13T23:26:22UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "ww test 01",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "ww test 01"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "0493561a-4279-45b6-ab17-e3cd3ffd7a70::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-10-13T16:06:15UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Flour"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Sneezing"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "04deedb3-6d84-4bc1-a6b0-86fc7da16b87::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-08T00:30:41UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergytoAspirin204",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "900Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "052541fd-8c32-4ef6-a2f1-69252b47b789::vm01.ethercis.org::3",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-31T21:52:18+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Allergy to Shellfish 2"
+        }
+      }
+    }
+  },
+  {
+    "uid": "0a660211-2c3a-4989-91af-42c093f1df4d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-08T01:38:52UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergytoAspirin204730891",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "0a6bcb83-4886-41c5-9ed3-06c281bbe92b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-05T17:23:08+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Peanuts 6"
+        }
+      }
+    }
+  },
+  {
+    "uid": "0f09bbf2-5660-47b5-95ba-7ac64afa7131::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-05T00:32:29UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test Allergen 5",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Bad reaction (5)"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "10bdffba-9b08-4323-88f3-8f58cf21c850::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-04T23:52:09UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Wasp sting",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Bad rash"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "10ef823a-172b-4710-bdbe-d08f346fbfd4::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T18:46:50UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1515177913686",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1515177913686"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "139d192b-cba1-4e8c-ab43-59e2bf3517d3::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-05T17:08:17+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Peanuts"
+        }
+      }
+    }
+  },
+  {
+    "uid": "1647cf23-99fa-48f6-b19a-91946d5e1dec::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-08T13:17:58UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test1905i",
+          "code": "testing",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "testingi"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "16e9e637-cec5-4941-8574-30f1ced9f8a6::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T17:50:45UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "qweqwe 1515174465026",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "qweqwe 1515174465026"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "17019a8e-c8e1-4b56-89d6-b75e77f7a036::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Robert Smith"
+    },
+    "start_time": "2015-03-24T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "salicylate allergy",
+          "code": "293585002",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "Very unpleasant"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "17ad68f7-f305-4206-a9f7-cd2b79030f1d::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-27T13:13:38UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test ang 27.02 t",
+          "code": "SNOMED-CT",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test ang 27.02 t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "188a6bbe-d823-4fca-a79f-11c64af5c2e6::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-15T12:47:11UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "tes allergy y",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "g"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "18abb212-2ea5-4ad0-a8bb-e231e874801c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-24T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Amoxycilin"
+        }
+      }
+    }
+  },
+  {
+    "uid": "19560a2f-5d15-4398-a1a1-a813ea992650::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "pollen",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Itching"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "19a8f74c-4464-455b-9b97-618c329c363a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-01T15:09:46+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Penicillin"
+        }
+      }
+    }
+  },
+  {
+    "uid": "1a561a5e-1b0a-456e-b049-85f4a93d9c17::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-26T15:07:26UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "121200000000666666",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "gv"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "1a5cda76-bc13-41fd-a3be-7c02676f86f5::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-19T00:26:52+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Nuts"
+        }
+      }
+    }
+  },
+  {
+    "uid": "1b2a63e8-c51c-4d6d-ba78-e2527fcb6e1a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-05T00:12:20UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test Allergen 3",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Very bad reaction (Rob 3)"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "1b35e376-9879-42a4-b428-35e832e6112b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-10-13T17:40:30UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Robs test allergy"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "This is a test by Rob"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "1e502d9a-04d6-4081-baaa-cc6d69a4d011::vm01.ethercis.org::6",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-12T12:12:55UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "5.0",
+          "code": "1.0",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "2"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "1ecab0a6-af0e-4ca2-a4f4-743260c47268::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-07T15:00:55UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergytoAspirin204348282",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "226b628b-deb8-4ac8-b8fd-a8fefefb875a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-30T08:46:43UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "30.01 tesgt",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "gg"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "23540d37-7b89-456d-a7c5-d55e344193a9::vm01.ethercis.org::4",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-10T16:20:51UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to drug",
+          "code": "SNOMED-CT",
+          "terminology": "1.2390856E7"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rash"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "23acb098-f61a-4805-bcbc-95b9ac35ff05::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-24T13:32:03UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15:31",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15:31"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "26a4eef5-9b79-485b-92a0-105827aab161::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-05T00:16:53UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test Allergen 4",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Bad reaction (4)"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "26d50a2e-83a3-41dd-b8ef-879bcdf2ea9f::vm01.ethercis.org::4",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-10T16:16:11UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy",
+          "code": "allergy terminology",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "allergy reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "28acc78c-aa44-4382-a3ca-c3e9f0462ff2::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "start_time": "2017-11-10T16:21:34UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "SNOMED-CT",
+          "terminology": "919360056"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "eruption due to drug"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "28dbe7a4-82be-46fa-aa1b-fc84ccd1c3e1::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test cause",
+          "code": "1239085",
+          "terminology": "Test terminology"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Test reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "2b6cd357-9fa4-448a-a5cb-1bb590f491ce::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "start_time": "2016-12-19T22:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "2e0a5056-fdd7-4e93-85aa-3acb848b96bc::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-03-08T12:24:10UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Tree Pollen",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Itchy eyes"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "2f3c9f7d-2c6e-49a9-8def-36312665998b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-28T09:09:17UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "ter",
+          "code": "1239085",
+          "terminology": "ter"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "ter"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "302e026a-0ce4-4da2-914d-d017539d1b34::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-12T16:22:13UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "221",
+          "code": "SNOMED-CT",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "221"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "31751469-cc26-462c-b0be-50984d0b9755::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-15T22:24:39UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test1",
+          "code": "1239085",
+          "terminology": "test1"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test1"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "35877c2b-edf5-4eeb-8aaa-65839c8bb2c6::vm01.ethercis.org::18",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-10T13:47:42UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "424242",
+          "code": "1239085.0",
+          "terminology": "1.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "2"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "369f6246-ca37-4614-b95f-c4916bfca653::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2017-11-10T16:26:39UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "SNOMED-CT",
+          "terminology": "919360053"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "eruption due to drug"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "37cd2689-36b9-45ba-8b10-b3b7e4a8f70b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-10-30T13:33:30UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "fafa",
+          "code": "1239085",
+          "terminology": "faf"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "fafa"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "39be9445-9f3c-492d-adff-fd9e472edd7f::vm01.ethercis.org::4",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2017-11-10T16:17:45UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to animal hair",
+          "code": "SNOMED-CT",
+          "terminology": "3.00911008E8"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "sneezing"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "3a9d672b-502d-465d-b83a-9710fbb02b6d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-10-19T09:51:06+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "ye",
+          "code": "1239085",
+          "terminology": "we"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "yu"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "3d747062-2a4a-4df3-80b4-6757152c0833::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-12T16:31:56UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1133",
+          "code": "SNOMED-CT",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1133"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "4b55871c-79e5-4682-8be3-2d30031f4425::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-12T22:28:51+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test"
+        }
+      }
+    }
+  },
+  {
+    "uid": "4b8f263a-e4db-4f49-af5c-f5aaf3d54344::vm01.ethercis.org::4",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-11T12:54:26UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "5 tests hohoho",
+          "code": "0.pp",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "5 ml"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "4c25435e-f477-45b0-a81b-a1a5fcdbb1f6::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-03-15T11:38:26UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "cause - ww test 15/03 02",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "reaction - ww test 15/03 02"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "4fd0abae-240a-408b-a05b-c39a1be2238a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-19T17:20:08UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Tree Pollen 111",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Itchy Eyes 111"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "51a36e7b-90ff-407b-9451-432e6e561610::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-12T15:55:34UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test 12.02. ang 1",
+          "code": "SNOMED-CT",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test 12.02. ang 2"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "53b2616d-9dc1-49ff-9ebb-666ee3da9ec3::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Jack Shannon"
+    },
+    "start_time": "2017-11-10T16:24:03UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "SNOMED-CT",
+          "terminology": "919360056"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "eruption due to drug"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "53f56e66-99b1-414a-aa44-0d4179c19eba::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-29T12:26:21UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "29.01 test ",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "fff"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "55670080-0acd-423f-a8c1-74edd467e839::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-10-31T16:13:51UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "gsgsgs",
+          "code": "1239085",
+          "terminology": "gsgsgs"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "gsgsgs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "590294b7-e12b-41bd-8454-7fab0bf520e1::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr George Crooks"
+    },
+    "start_time": "2015-12-19T22:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Grass pollen allergy"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "only in spring"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "5a12e66d-e6af-41cf-affa-e6d947801cb6::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-06-12T11:23:21+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Eggs",
+          "code": "1239085",
+          "terminology": "23456789"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rashes on face and hands"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "5a47ec29-8883-4c89-8dc8-629d8edc5560::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-26T19:07:31UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Penicillin",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Severe anaphylactic reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "5a568bb7-1858-46da-abb9-1921b25d2ee0::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-24T13:31:36UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15:29",
+          "code": "SNOMED-CT",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15:29"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "62bd1148-c896-4930-9606-7d0e1fa463bd::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-20T23:12:54UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "stress",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "stress"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "6491f49e-a708-4b27-967b-d4c21ac0674f::vm01.ethercis.org::1",
+    "composer": {
+      "value": "string"
+    },
+    "start_time": "2017-11-12T20:49:32UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "string",
+          "code": "string",
+          "terminology": "string"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "658aae74-d924-43ca-bb49-3e6a4363ba9b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr George Crooks"
+    },
+    "start_time": "2015-12-19T22:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Grass pollen allergy"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "only in spring"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "6700475d-2d29-4f07-b461-1e9aa33ecadc::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-30T08:56:30UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15:311",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "11111"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "672589c1-1ff4-4b25-8d7f-55c4ce62c525::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Robert Smith"
+    },
+    "start_time": "2016-03-24T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "salicylate allergy",
+          "code": "293585002",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "Very unpleasant"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "68745efe-eb9c-48dc-bf43-76fa52eadd01::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-03-15T11:36:15UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "cause - ww test 15/03 01",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "reaction - ww test 15/03 01"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "69ba3803-0875-42d8-b1ad-1d374bd6c17f::vm01.ethercis.org::6",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-19T12:33:50UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "123ab11h",
+          "code": "123a",
+          "terminology": "1.239085345E9"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "123ab11h"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "6b4f04ce-e31a-4b36-bd61-14e88ed90474::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-08T12:08:55UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergytoAspirin210904",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "6c64d3ea-1d0e-4403-bbb2-c2ee3a19d461::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Smith"
+    },
+    "start_time": "2016-03-18T21:42:15+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Paracetamol"
+        }
+      }
+    }
+  },
+  {
+    "uid": "6fb0f997-4e0b-42e5-9bb7-770d8bd48a72::vm01.ethercis.org::58",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-08T13:16:51UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "oioioi",
+          "code": "11.0",
+          "terminology": "1.2390851E7"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "6fcfc40a-bd2c-4ab9-ad50-c3786ee02494::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-26T12:38:23UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "26.01 cause",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "y"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "7114e716-5a70-490e-b207-33232b869774::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2015-02-23T06:11:02+02:00"
+  },
+  {
+    "uid": "713a26bf-d7c7-4280-8e6a-fff78c690488::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T18:00:51UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "the bus",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "the bus"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "715e942a-4526-4949-a477-f6b2b7b8b7c3::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-17T15:29:00UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1.515177462863E12",
+          "code": "SNOMED-CT",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1.515177462863E12"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "741a04a9-fe0e-457d-84b6-bab263abffb3::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Robert Smith"
+    },
+    "start_time": "2016-02-24T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "74d1e386-5c2e-404c-bf65-29e3344285ef::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr George Shannon"
+    },
+    "start_time": "2016-12-19T22:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "74fae631-2e8d-4c02-b189-8f689c0fe802::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-05T17:39:03+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Peanuts 99"
+        }
+      }
+    }
+  },
+  {
+    "uid": "7527983f-1544-46de-9f7a-2f2b15849a5b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-04-04T14:16:53+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Tree Pollen",
+          "code": "1239085",
+          "terminology": "Snomed CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Sneezing"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "76373b3b-f0bc-4fcc-8910-caa371146873::vm01.ethercis.org::17",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-24T10:30:32UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "132.0",
+          "code": "uioodtjtjftjdjrt0",
+          "terminology": "asdasdasd"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "178"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "766e40bc-b51b-44b9-bb66-e86e13374c3d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Rob Tweed"
+    },
+    "start_time": "2018-01-17T13:30:27UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Cause 5",
+          "code": "1234561",
+          "terminology": "Snomed-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rob Reaction 5"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "78d429c2-3130-41b1-9b52-53b7065a0239::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-19T00:26:28+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Nuts"
+        }
+      }
+    }
+  },
+  {
+    "uid": "795e0570-d91e-478b-999b-1d15e31eb96e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Jack Shannon"
+    },
+    "start_time": "2016-12-21T08:11:02UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "79e0bf9d-d79c-4bd2-a213-61b2d1c85ce7::vm01.ethercis.org::5",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-30T22:11:54+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Allergy to Peanut Butter"
+        }
+      }
+    }
+  },
+  {
+    "uid": "7a81e6dc-a9a0-4525-a119-29158a89f774::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-30T13:32:53UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15:32",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15:32"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "7bdd55ed-061d-4549-a2f1-1152f5062873::vm01.ethercis.org::78",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-11T12:55:56UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "5 tests hoho 78",
+          "code": "1.239085777E9",
+          "terminology": "111.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1wert 18"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "7c45e0f7-64ed-46e1-960a-9097ae1e77f2::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-05-19T09:35:16+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test1905",
+          "code": "1239085",
+          "terminology": "testing"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "testing"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "7c475993-83f2-4a1a-a994-f102d5f9d4b5::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-05T16:02:24UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test 5.02.18",
+          "code": "SNOMED-CT",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test 5.02.18"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "7cbd1c9d-90df-4326-87f7-7fce11575580::vm01.ethercis.org::7",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-21T12:17:11UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Test Allergy",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rob Reaction 1fff"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "7f4ca61c-33a9-4392-b768-5f685b5c9121::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-07T23:35:48+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Dust Mites"
+        }
+      }
+    }
+  },
+  {
+    "uid": "81765f9c-855c-41f7-b67e-810f9f2e1516::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "start_time": "2016-12-19T22:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Erythromycin",
+          "code": "304270095",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "Reported by patient's carer"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "85b6ae8b-afba-40f1-92a6-7a0276d913ad::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-08T11:55:52UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergytoAspirin210119708",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "86e0cf2d-bb14-4964-a2cc-8d1a045be9ac::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-15T21:57:56UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "newtestrecord",
+          "code": "1239085",
+          "terminology": "Reaction"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "87539b80-6fc4-4205-af15-35fb05bf7e2c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-20T10:13:52UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "20.01.2018",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "20.01.2018"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8a15f548-8e3b-4586-bef3-b1df4d8dc374::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-05-23T11:59:48+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "qwd",
+          "code": "1239085",
+          "terminology": "qwd"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "qwd"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8d5a2ee2-6b8b-45ce-94b7-ec9a5aedcf17::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-29T12:29:26UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "uuuuu",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "jjk"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8e1cd639-7872-43e6-908a-8655eb358eec::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-04-05T10:12:14+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test1212",
+          "code": "1239085",
+          "terminology": "1212"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1212"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8e91a1dc-5ffd-4c9b-9691-87cd51d2fd9a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-06-06T16:39:27+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Toast"
+        }
+      }
+    }
+  },
+  {
+    "uid": "8f413e5a-3990-42d2-bb06-e24540587b1f::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-01T22:08:15+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "New allergy 1234"
+        }
+      }
+    }
+  },
+  {
+    "uid": "966b5e46-758f-4ef5-b26e-cb34a6fd5ee7::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-14T22:00:01UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test allergy 1411",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Sneezing"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "96a9793f-92f6-4e0f-a7fe-1161f3be92ed::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T18:51:21UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15151779136867",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15151779136867"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "96b475b1-ec9d-4fe9-a381-7fedd89dc328::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2015-07-17T06:12:32+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "salicylate allergy",
+          "code": "293585002",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "reported by patient"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "989b5527-dffe-4f8c-936e-a520971c6e95::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-05-22T18:50:06+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Cause",
+          "code": "1239085",
+          "terminology": "Terminology"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "9947cd25-7047-456a-8ebb-1be85e68d0a6::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-30T10:14:01UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "12:13",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "12:13"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "99704fac-afb3-4753-9db4-95441f8d7f45::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Ian McNicoll"
+    },
+    "start_time": "2015-10-12T19:01:45UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Tree pollen"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Urticaria"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "999a18ab-2e0e-448c-b4c1-b4f57cd5e825::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-05-23T11:59:37+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "aqwd",
+          "code": "1239085",
+          "terminology": "qwd"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "qwd"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "99ea1772-afcf-45e4-b503-ba81637728f9::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-14T13:57:17UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test 1411-4iibn ikb ",
+          "code": "Reaction",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "9a7de740-b5e0-4190-bc02-56caa322e194::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-30T14:19:18UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1231231231234 66",
+          "code": "SNOMED-CT",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "44 66"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "9bcde775-e7be-42ae-ba46-7efda0860828::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-10-25T15:23:59+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "tett",
+          "code": "1239085",
+          "terminology": "twtwtw"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "wwtw"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "9ff090d6-1b4b-4390-80fc-0a5403fd1794::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-04-05T15:34:59UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test Allergy 5",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Test Reaction 5"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a0061f13-4461-4c7b-b7e9-7fdeb722ec5f::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Rob Tweed"
+    },
+    "start_time": "2018-01-17T13:20:17UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Cause 3",
+          "code": "1234569",
+          "terminology": "Snomed-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rob Reaction 3"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a161fefb-6584-46ac-95e0-292dff38af38::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-23T19:48:49+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "New Nut Allergy"
+        }
+      }
+    }
+  },
+  {
+    "uid": "a1632988-0ea3-4a40-8ef0-e36a3e12cdbe::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-06-07T15:09:34+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Pollen",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Itchy Eyes"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a28a2bc0-e09d-491a-abc1-e6dd6cd89fc1::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-04T23:54:28UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test Allergen",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Bad reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a3f93b4b-a989-462a-ae17-a83b94b52b3c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-08T00:00:52UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergytoAspirin204",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "72089Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a4192017-952b-406b-9dab-cde79b20e82e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-30T18:00:20+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Allergy to Peanut Butter"
+        }
+      }
+    }
+  },
+  {
+    "uid": "a48ac8d8-02a5-4716-8f77-4f30c3a586f3::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Smith"
+    },
+    "start_time": "2016-03-17T01:58:08+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Penicillin"
+        }
+      }
+    }
+  },
+  {
+    "uid": "a49c2f79-e301-429c-b99e-2822fad00496::vm01.ethercis.org::19",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-19T15:57:07UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "222222 test 20",
+          "code": "802.0",
+          "terminology": "0.067"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "sdgsgsgsgqwe"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a4a8c7b9-5f6e-46d3-98c8-7737f6cc1828::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-15T22:23:31UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "TEST12",
+          "code": "1239085",
+          "terminology": "Reaction"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a4b5b9f5-87d0-4b6b-8fc6-9d6fa5c68037::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-04-05T15:59:15+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test Allergy 6",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Test Reaction 6"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a6000c70-57b3-497f-94b9-f319f49ef397::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-12T14:32:30UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test 12.02. react 1",
+          "code": "SNOMED-CT",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test 12.02. react 1"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a80ba345-c3b2-4386-85f5-8e76dacc1626::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-15T12:46:18UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "yyyes cas",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "l"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a83f36fb-98e9-4aec-9535-fb0c0127a86e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-04-06T14:38:29+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "create new test",
+          "code": "1239085",
+          "terminology": "qwweqazz"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "qwerrty"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a8edd547-dd9e-4b56-9012-93fbc973c1f5::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-11-04T23:28:15UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Peanuts",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Difficulty breathing"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a9f24911-28a6-422f-ae79-02ad2a701b2e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Jack Shannon"
+    },
+    "start_time": "2016-12-21T05:11:02+03:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "aa7f7c07-e07f-4f61-804d-a7372020e000::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-08T12:47:07UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergytoAspirin",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ac912dba-e948-4137-a0f8-51d459ad044b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-12-07T20:28:00UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Test 11",
+          "code": "1239085",
+          "terminology": "Test 11"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Test 11"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "acb0eaf2-d1df-4c7a-9382-619b31935f2b::vm01.ethercis.org::9",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-06T18:34:45UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1.edit",
+          "code": "6.0",
+          "terminology": "3.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1.edit"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "acc4b999-7c05-4bf9-a04f-2dfc3f7cf33f::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Rob Tweed"
+    },
+    "start_time": "2018-01-17T12:23:07UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Cause",
+          "code": "1234567",
+          "terminology": "Snomed-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rob Reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "af568a22-cb29-4cca-a60f-bb3c7a4ba133::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T18:50:46UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15151779136869",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15151779136869"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b14dbe70-ff7a-45fb-a91c-3c29029ed0f1::vm01.ethercis.org::3",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-03T14:56:39UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "00000000666666745",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "h"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b1565e2a-c77f-46bd-b22e-e458fe24c865::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-01T14:49:57+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Nuts"
+        }
+      }
+    }
+  },
+  {
+    "uid": "b1fc6517-abb2-48f1-ada8-64ce295cf1a7::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-12T16:32:08UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1.0",
+          "code": "SNOMED-CT",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b5af637f-1469-401f-9cde-bcd0e27b2e78::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-24T13:34:31UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15:34",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15:34"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b6cf5fae-ca51-4495-9888-d8030fdcfcc1::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2015-03-28T06:12:43+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "dust allergy",
+          "code": "390952000",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "patient reported"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b6e32499-9704-4e99-9c7d-e36fbf74d835::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T18:40:54UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15151774628632",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15151774628632"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b76f5746-88d8-41d9-8a93-f976f84bd525::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-15T12:47:37UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "tes 77890777",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "i"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b83337c1-479d-484f-ab51-fdfea31da1aa::vm01.ethercis.org::3",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-01T17:00:45UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "#0987654321 test",
+          "code": "1239085.0",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "#0987654321 test"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b96c4093-e116-44d3-9b74-fc15e6ac3270::vm01.ethercis.org::3",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-03-03T14:40:34UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "lexa",
+          "code": "1239085.0",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "good"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b9f2d3b1-a20e-471b-982e-71557607f85e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2016-02-24T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "be78797d-6a30-40a9-a02b-e65253a77910::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-06-06T16:38:35+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Toast"
+        }
+      }
+    }
+  },
+  {
+    "uid": "bec99212-03e0-443b-bed1-0e7ab88c7f2d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-29T13:09:12UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "23123123b",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "h"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "bf418c80-ed19-4d15-a808-2e2620326d7c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-15T13:54:07UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "create allergy on blue ",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "g"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c064bb67-2bc1-47e6-b90a-7335c2e00a57::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Rob Tweed"
+    },
+    "start_time": "2018-01-17T13:06:06UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Cause 2",
+          "code": "1234568",
+          "terminology": "Snomed-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rob Reaction 2"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c115ef7e-1a06-4c93-ab63-df257f106ff9::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-31T23:01:23+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Shellfish"
+        }
+      }
+    }
+  },
+  {
+    "uid": "c2b936bf-d612-4b42-8969-e562816c6307::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-30T09:26:25UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "123456789",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "123456789"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c412ddf6-0cf1-4300-9c38-16704f3bfe95::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-26T12:37:02UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "26.01 cause",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "rr"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c5914466-b3cb-40e0-ad53-b48d5ba43a06::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-08T12:14:32UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "55",
+          "code": "1239085",
+          "terminology": "55"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "55"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c596a3b1-051a-4187-9304-b0a39c0233e3::vm01.ethercis.org::3",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-14T13:45:04UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test1411CHAN",
+          "code": "1239085.0",
+          "terminology": "TermCHAN"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "ReactionCHAN"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c5b81e8f-226a-4556-8240-fdf2f26d5a73::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-24T13:28:09UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15:28",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15:28"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c8741c97-8836-44f8-b96a-e4757ee4023b::vm01.ethercis.org::5",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-24T13:31:45UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15:29",
+          "code": "1239085.0",
+          "terminology": "1.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15:29"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c8a5edd8-4df1-40fc-b6e4-0ab1a5a02e47::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T17:49:47UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "lalala 1515174465026",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "lalala 1515174465026"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c97b5714-0c39-467f-90a1-4b7a59e7d6c8::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-29T13:11:11UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "123123123 c",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "c"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ce1297e8-0a77-45a0-bfc8-d5c97c5ca29c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-06-06T16:52:13+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Toast"
+        }
+      }
+    }
+  },
+  {
+    "uid": "d2bb63a9-7871-4981-9daa-e82081aad515::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-07T19:13:06+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Peanuts 100"
+        }
+      }
+    }
+  },
+  {
+    "uid": "d2e7d38a-33c1-4cfb-a498-9df2d6ea049d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "start_time": "2016-12-20T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d54f2ae9-a5e6-4c02-9c55-0c77c4611751::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-05T18:41:48UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "15151774628634",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "15151774628634"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d55e591f-7104-4bfe-ab1d-07170526d368::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-29T13:11:36UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "123123123 d",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "j"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d647291f-ea9d-458a-add8-50dca48bc355::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-20T09:58:36UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "1"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d731bc45-c112-4614-a92e-3e30c568c03e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-25T00:11:24UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to Life",
+          "code": "1239085",
+          "terminology": "no data"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Fever"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d7451853-72b0-4772-9710-b450166d14ec::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr George Crooks"
+    },
+    "start_time": "2016-12-18T22:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Seafood"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "eating crabmeat and prawns"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "dc4b3294-9b43-4ea9-988b-3ae2ebc8cbd7::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-01-03T20:31:03UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Cause",
+          "code": "1239085",
+          "terminology": "Cause"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Cause"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "dc741aff-f361-4f98-9f66-f58cc8fc9174::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-02-24T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Grass pollen allergy"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "only in spring"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "dd54e477-1293-4a17-a75a-bf87e91c1357::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-05-22T19:26:45+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test",
+          "code": "1239085",
+          "terminology": "test"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "df0ef0bf-ded3-47b7-82d4-87fe077d6159::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2016-02-24T06:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e03a19e8-fa38-4053-aa3e-9cca476780d2::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-27T12:05:08UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test 27,02 react ts",
+          "code": "SNOMED-CT",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test 27,02 react ts"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e0be0282-1cd7-499b-bd17-13b8ba0881a8::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-05-22T19:32:19+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Cause",
+          "code": "1239085",
+          "terminology": "Cause"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Cause"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e19de785-bbaf-474a-8b44-e0e02b975478::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Rob Tweed"
+    },
+    "start_time": "2018-01-17T13:24:44UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Cause 4",
+          "code": "1234560",
+          "terminology": "Snomed-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rob Reaction 4"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e6441756-0e21-4229-bf95-8924030b8f93::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-02-06T10:40:52UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "11:08 77",
+          "code": "SNOMED-CT",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "11:08 77"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e71c435a-0cfd-4f8f-9f97-e0d5b7cafc41::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-12-21T18:22:30UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "ww test 01 cause",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "ww test 01 reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e71f51a2-ba09-4d58-823d-333f7ce40674::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-30T00:50:17+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Peanut Butter"
+        }
+      }
+    }
+  },
+  {
+    "uid": "e72e4d92-c3e4-4716-ba75-a78afa1e40a6::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-14T15:50:41UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test1411-6",
+          "code": "1239085",
+          "terminology": "Terminology"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e8651d6b-a097-4f1f-986e-4db1fdf94a7c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-24T09:57:00UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "yeaaa",
+          "code": "1239085",
+          "terminology": "1234"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "jjj"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e93c8342-8b93-4ef6-a0ca-8761797127d0::vm01.ethercis.org::37",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-12-06T17:06:13UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "success",
+          "code": "1.0",
+          "terminology": "1239085.0"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "successs"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ea134449-6a8f-4e87-bf5c-b90c0c2f2a78::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-12T23:54:29+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Amoxycilin"
+        }
+      }
+    }
+  },
+  {
+    "uid": "eb05c537-eb54-48a6-8ee0-f0dc0a7edb4e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "WW test 001 - cause",
+          "code": "1239085",
+          "terminology": "WW test 001 - terminology"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "WW test 001 - reaction"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "eca21b28-fc9c-4481-85f1-27e787a1847e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "start_time": "2016-12-19T22:11:02+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "History unclear"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ee4ed035-0081-425c-90d4-9a98fd262a92::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-05-19T09:20:15+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test",
+          "code": "1239085",
+          "terminology": "test"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "tetst"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ee6b735f-8bf7-482c-b7fe-3bb26a7f24b5::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-26T12:37:24UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "26.01 cause 2",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "2"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f08cac13-362d-4b31-b3cc-76bd1e51c75d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-03-23T21:36:06+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "New paracetamol"
+        }
+      }
+    }
+  },
+  {
+    "uid": "f277042c-e0ac-4686-9fde-7486c4b54cc6::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2016-04-01T15:36:20+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Animal Hair 2"
+        }
+      }
+    }
+  },
+  {
+    "uid": "f5deb22c-7d85-4877-bcc9-141808536c4b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-10-24T16:02:24+01:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Milk",
+          "code": "1239085",
+          "terminology": "SCT BA"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "sneezy"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f7f8d5b9-cb07-4167-8997-9079c15b1ea5::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2017-11-24T10:23:36UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "666",
+          "code": "1239085",
+          "terminology": "666"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "666"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f8b3d95c-ee9e-4a22-a6f2-302b1afdd758::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-20T10:14:11UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "20.01.2018",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "20.01.2018"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f8d4f97b-55ab-4f89-8314-bf3f5c622cd0::vm01.ethercis.org::2",
+    "composer": {
+      "value": "Dr Smith"
+    },
+    "start_time": "2016-03-18T21:56:37+08:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Amoxycilin"
+        }
+      }
+    }
+  },
+  {
+    "uid": "fc042a72-ceca-45b7-9a85-440af3718cda::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Joyce Smith"
+    },
+    "start_time": "2015-07-29T06:15:45+02:00",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to seafood",
+          "code": "91937001",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "comment": {
+            "value": "observed by clinician"
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "fc27ebd6-7778-402c-9e6c-bbdfc57c5c9d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "start_time": "2018-01-29T13:08:24UTC",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "123123123 a",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "t"
+          }
+        }
+      }
+    }
+  }
+]

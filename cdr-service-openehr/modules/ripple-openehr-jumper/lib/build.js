@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  5 March 2018
+  21 March 2018
 
 */
 
@@ -49,9 +49,12 @@ function build(args, finished) {
 
   var jumperHeadingPath = __dirname + '/../templates/';
 
+  var headingsToBuild = {};
   var headingsBuilt = [];
+  var noToBuild = 0;
+  var heading;
 
-  for (var heading in headings) {
+  for (heading in headings) {
     headingTemplate = headings[heading].template;
     if (headingTemplate) {
       // should this heading be built / rebuilt?  or left alone?
@@ -77,32 +80,56 @@ function build(args, finished) {
       }
       console.log('heading ' + heading + ': rebuild: ' + buildIt);
       if (buildIt) {
-        // build out and create the Jumper files and data for this heading
-        buildHeadingRippleTemplate(headingPath);
-        if (headings[heading].fhir && headings[heading].fhir.name) {
-          fhirResourceName = headings[heading].fhir.name;
-          buildHeadingFHIRTemplate(fhirResourceName, headingPath);
-        }
-        statusJson = {status: 'locked'};
-        buildJSONFile.call(this, statusJson, headingPath, 'headingStatus.json');
-        fs.chmodSync(headingPath, '0777');
-        headingsBuilt.push(heading);
-        // now fetch the Web Template from EtherCIS for this heading
+        noToBuild++;
 
-        getWebTemplate.call(this, templateName, headingPath, function(response) {
-          finished({
-            response: response,
-            headings_built: headingsBuilt
-          });
-        });
-        return;
+        headingsToBuild[heading] = {
+          headingPath: headingPath,
+          templateName: templateName
+        };
       }
     }
   }
-  finished({
-    dirname: __dirname,
-    headings_built: headingsBuilt
-  });
+
+  if (noToBuild === 0) {
+    return finished({
+      dirname: __dirname,
+      headings_built: headingsBuilt
+    });
+  }
+
+  var count = 0;
+  var responseObj = {};
+  var self = this;
+  for (heading in headingsToBuild) {
+    headingPath = headingsToBuild[heading].headingPath;
+    templateName = headingsToBuild[heading].templateName;
+
+    // build out and create the Jumper files and data for this heading
+    buildHeadingRippleTemplate(headingPath);
+    if (headings[heading].fhir && headings[heading].fhir.name) {
+      fhirResourceName = headings[heading].fhir.name;
+      buildHeadingFHIRTemplate(fhirResourceName, headingPath);
+    }
+    statusJson = {status: 'locked'};
+    buildJSONFile.call(this, statusJson, headingPath, 'headingStatus.json');
+    fs.chmodSync(headingPath, '0777');
+    headingsBuilt.push(heading);
+    // now fetch the Web Template from EtherCIS for this heading
+
+    (function(heading, templateName, headingPath) {
+
+      getWebTemplate.call(self, templateName, headingPath, function(response) {
+        responseObj[heading] = response;
+        count++;
+        if (count == noToBuild) {
+          finished({
+            response: responseObj,
+            headings_built: headingsBuilt
+          });
+        }
+      });
+    }(heading, templateName, headingPath));
+  }
 }
 
 module.exports = build;
