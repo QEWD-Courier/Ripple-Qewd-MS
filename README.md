@@ -191,6 +191,15 @@ can be copied / backed up if required.
 
 - When all the MicroServices are running, start the browser application: see the README file in the */conductor-service-phr* folder.
 
+## The OpenEHR Jumper Functionality
+
+OpenEHR Jumper automates the fetching and updating of OpenEHR data, avoiding the need for hand-crafted
+AQL and Flat JSON definitions.  Instead, OpenEHR Jumper just needs to know the name of each
+OpenEHR Template that you're interested in using.
+
+For details on how to configure, initialise and use the OpenEHR Jumper technology, see the README file
+in the */cdr-service-openehr* folder.
+
 
 ### Running the PHR as a patient / individual user
 
@@ -384,4 +393,3 @@ From the Overview screen you can:
 Select the Document Store tab/option to view any persistent documents in the QEWD/YottaDB Database
 
 Select the Sessions tab/option to view and optionally shut down any active QEWD user sessions.
-
