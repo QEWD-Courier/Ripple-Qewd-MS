@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  23 March 2018
+  28 March 2018
 
 */
 
@@ -42,8 +42,8 @@ module.exports = {
     if (!input) return new Date().toISOString();
     return new Date(input).toISOString();
   },
-  getUid: function(uid) {
-    return uid.split('::')[0];
+  getUid: function(uid, host) {
+    return host + '-' + uid.split('::')[0];
   },
   fhirSnomed: function(input, inverse) {
     if (input === '') return '<!delete>';

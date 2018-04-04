@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,14 +24,14 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  15 January 2018
+  28 March 2018
 
 */
 
 var getHeadingBySourceId = require('./getHeadingBySourceId');
 
 function getHeadingDetailFromCache(sourceId, session) {
-  return getHeadingBySourceId(sourceId, session, 'detail');
+  return getHeadingBySourceId.call(this, sourceId, session, 'detail');
 }
 
 module.exports = getHeadingDetailFromCache;

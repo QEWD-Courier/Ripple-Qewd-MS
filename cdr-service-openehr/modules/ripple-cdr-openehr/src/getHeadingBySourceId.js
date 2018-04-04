@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  17 January 2018
+  28 March 2018
 
 */
 
@@ -34,7 +34,7 @@ var headingMap = {};
 
 module.exports = function(sourceId, session, format) {
 
-  // format = synopsys || summary || detail
+  // format = synopsis || summary || detail
 
   format = format || 'detail';
   var sourceIdCache = session.data.$(['headings', 'bySourceId', sourceId]);
@@ -44,26 +44,43 @@ module.exports = function(sourceId, session, format) {
   var cachedObj = sourceIdCache.getDocument(true);
   //console.log('cachedObj = ' + JSON.stringify(cachedObj));
   var heading = cachedObj.heading;
+  var output;
+  var synopsisField;
+  var summaryFields;
 
-  if (!headingMap[heading]) {
-    // load on demand
-    headingMap[heading] = require('../headings/' + heading);
+  if (cachedObj.pulsetile) {
+    output = cachedObj.pulsetile;
+    var headingDef = this.userDefined.headings[heading];
+    synopsisField = headingDef.synopsisField;
+    console.log('heading: ' + heading + '; synopsisField = ' + synopsisField);
+    console.log('headingDef: ' + JSON.stringify(headingDef));
+    summaryFields = headingDef.summaryTableFields.slice(0);
   }
+  else {
 
-  var host = cachedObj.host;
-  var template = headingMap[heading].get.transformTemplate;
-  var helpers = headingHelpers(host, heading, 'get');
-  var output = transform(template, cachedObj.data, helpers);
+    if (!headingMap[heading]) {
+      // load on demand
+      headingMap[heading] = require('../headings/' + heading);
+    }
+
+    var host = cachedObj.host;
+    var template = headingMap[heading].get.transformTemplate;
+    var helpers = headingHelpers(host, heading, 'get');
+    output = transform(template, cachedObj.data, helpers);
+    synopsisField = headingMap[heading].textFieldName;
+    summaryFields = headingMap[heading].headingTableFields.slice(0);
+    output.source = cachedObj.host;
+    output.sourceId = sourceId;
+
+  }
 
   if (format === 'synopsis') {
     // only return the synopsis headings
 
-    var fieldName = headingMap[heading].textFieldName;
-    var summaryText = output[fieldName] || '';
     return {
       sourceId: sourceId,
       source: host,
-      text: summaryText
+      text: output[synopsisField] || ''
     }
   }
 
@@ -71,11 +88,8 @@ module.exports = function(sourceId, session, format) {
     // only return the summary headings
 
     var results = {};
-    var summaryFields = headingMap[heading].headingTableFields;
     summaryFields.push('source');
     summaryFields.push('sourceId');
-    output.source = cachedObj.host;
-    output.sourceId = sourceId;
     summaryFields.forEach(function(fieldName) {
       results[fieldName] = output[fieldName] || '';
     });
@@ -84,7 +98,7 @@ module.exports = function(sourceId, session, format) {
   else {
     // return detail
 
-    output.sourceId = sourceId; // over-ride old calculated one
+    //output.sourceId = sourceId; // over-ride old calculated one
     return output;
   }
 };

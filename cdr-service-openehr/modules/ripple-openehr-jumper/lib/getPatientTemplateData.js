@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  23 March 2018
+  29 March 2018
 
 */
 
@@ -64,7 +64,7 @@ function initialise() {
   initialised = true;
 }
 
-function formatResults(data, args, headingPath, host, sourceIdCache) {
+function formatResults(data, args, headingPath, sourceIdCache) {
 
   if (args.req.query && args.req.query.format) {
     var format = args.req.query.format.toLowerCase();
@@ -78,8 +78,8 @@ function formatResults(data, args, headingPath, host, sourceIdCache) {
       var count = 0;
       data.forEach(function(record) {
         count++;
-        var sourceId = host + '-' + record.uid.split('::')[0];
-        console.log('formatResults - record.uid = ' + record.uid + '; sourceId = ' + sourceId);
+        var sourceId = record.host + '-' + record.uid.split('::')[0];
+        //console.log('formatResults - record.uid = ' + record.uid + '; sourceId = ' + sourceId);
 
         var cachedRecord = sourceIdCache.$([sourceId, 'data']);
         if (format === 'pulsetile' && cachedRecord.exists) {
@@ -87,7 +87,7 @@ function formatResults(data, args, headingPath, host, sourceIdCache) {
         }
         else {
           result = transform(template, record, helpers);
-          console.log('cachedRecord for ' + sourceId + ': ' + JSON.stringify(cachedRecord.getDocument()));
+          //console.log('cachedRecord for ' + sourceId + ': ' + JSON.stringify(cachedRecord.getDocument()));
           cachedRecord.setDocument(result);
         }
         results.push(result);
@@ -109,6 +109,45 @@ function formatResults(data, args, headingPath, host, sourceIdCache) {
     return data;
   }
 }
+
+function fetchTopLevelAQL(host, patientId, aqlFields, callback) {
+
+  var self = this;
+
+  openEHR.startSession(host, null, function (openEHRSession) {
+    mapNHSNoByHost.call(self, patientId, host, openEHRSession, function(ehrId) {
+      var aql = {
+        aql: "select a as data from EHR e[ehr_id/value='" + ehrId + "'] contains COMPOSITION a[" + aqlFields.composition + "] where a/name/value='" + aqlFields.name + "'"
+      };
+
+      var params = {
+        host: host,
+        url: '/rest/v1/query',
+        method: 'POST',
+        options: {
+          body: aql
+        },
+        session: openEHRSession.id
+      };
+
+      params.processBody = function(body) {
+        openEHR.stopSession(host, openEHRSession.id);
+
+        if (body.status === 404) {
+          console.log('** error accessing ' + host + ': ' + body.developerMessage);
+          return callback({
+            error: body.developerMessage
+          });
+        }
+
+        callback(body, host);
+      };
+
+      openEHR.request(params);
+    });
+  });
+}
+
 
 module.exports = function(args, finished) {
 
@@ -133,20 +172,18 @@ module.exports = function(args, finished) {
     return finished({error: 'Template is not available for use with this API'});
   }
 
-  console.log('&&& &&& QEWD session id = ' + args.req.qewdSession.id);
   var qewdSession = args.req.qewdSession.data;
 
   var heading = templateIndex[templateName];
 
   // note - eventually we'll fetch from both
-  //var host = 'marand';
-  var host = 'ethercis';
-  var platform = this.userDefined.openehr[host].platform;
+  var host = 'marand';
+  //var host = 'ethercis';
 
 
-  console.log('templateName = ' + templateName);
+  //console.log('templateName = ' + templateName);
   var documentName = this.userDefined.documentNames.jumperTemplateFields || 'OpenEHRJumper';
-  console.log('documentName = ' + documentName);
+  //console.log('documentName = ' + documentName);
   var templateId;
   var templateReg = this.db.use(documentName, 'templates');
   var templateByName = templateReg.$(['byName', templateName]);
@@ -160,10 +197,10 @@ module.exports = function(args, finished) {
   var headingPath = __dirname + '/../templates/' + heading;
   var templateCache = qewdSession.$(['headings', 'byTemplateId', templateId]);
   var sourceIdCache = qewdSession.$(['headings', 'bySourceId']);
+  var results = [];
 
   if (templateCache.exists) {
     // fetch from session cache
-    var results = [];
     templateCache.forEachChild(function(sourceId) {
       var data = sourceIdCache.$([sourceId, 'jumperFormatData']).getDocument();
       results.push(data);
@@ -179,46 +216,52 @@ module.exports = function(args, finished) {
 
   var self = this;
   openEHR.init.call(this);
-  openEHR.startSession(host, null, function (openEHRSession) {
-    mapNHSNoByHost.call(self, patientId, host, openEHRSession, function(ehrId) {
-      var aql = {
-        aql: "select a as data from EHR e[ehr_id/value='" + ehrId + "'] contains COMPOSITION a[" + aqlFields.composition + "] where a/name/value='" + aqlFields.name + "'"
-      };
+  var host;
+  var resultsByHost = {};
+  var noOfServers = 0;
+  for (host in this.userDefined.openehr) {
+    noOfServers++;
+  }
+  var count = 0;
+  for (host in this.userDefined.openehr) {
 
-      var params = {
-        host: host,
-        url: '/rest/v1/query',
-        method: 'POST',
-        options: {
-          body: aql
-        },
-        session: openEHRSession.id
-      };
-
-      params.processBody = function(body) {
-        openEHR.stopSession(host, openEHRSession.id);
-
-        if (body.status === 404) {
-          return finished({
-            error: body.developerMessage
-          });
+    fetchTopLevelAQL.call(this, host, patientId, aqlFields, function(responseObj, server) {
+      if (typeof responseObj === 'string') {
+        console.log('*** ' + host + ' returned a string, probably an error');
+        console.log(responseObj);
+        count++;
+        if (count === noOfServers) {
+          if (results.length > 0) results = formatResults(results, args, headingPath, sourceIdCache);
+          finished(results);
         }
+      }
+      else if (responseObj.error) {
+        // no data from host
+        count++;
+        if (count === noOfServers) {
+          if (results.length > 0) results = formatResults(results, args, headingPath, sourceIdCache);
+          finished(results);
+        }
+      }
+      else {
 
-        buildJSONFile.call(self, body, headingPath, 'patient_data_raw_example.json');
+        // save a copy of the raw response
+        buildJSONFile.call(self, responseObj, headingPath, 'patient_data_raw_example_' + server + '.json');
 
         var params = {
-          data: body,
+          data: responseObj,
           templateId: templateId,
           documentName: documentName,
-          host: host,
+          host: server,
           patientId: patientId
         };
 
-        var results = mapRawJSON.call(self, params);
+        var resultArr = mapRawJSON.call(self, params);
 
-        buildJSONFile.call(self, results, headingPath, 'patient_data_formatted_example.json');
+        // save a copy of the processed results
+        buildJSONFile.call(self, resultArr, headingPath, 'patient_data_formatted_example_' + server + '.json');
 
-        addPatientDataToCache(results, patientId, host, templateId, heading, qewdSession);
+        addPatientDataToCache(resultArr, patientId, server, templateId, heading, qewdSession);
 
         /*
 
@@ -241,13 +284,14 @@ module.exports = function(args, finished) {
 
         */
 
-        results = formatResults(results, args, headingPath, host, sourceIdCache);
+        results.push(...resultArr);
 
-        finished(results);
-      };
-
-      openEHR.request(params);
+        count++;
+        if (count === noOfServers) {
+          results = formatResults(results, args, headingPath, sourceIdCache);
+          finished(results);
+        }
+      }
     });
-  });
-
+  }
 };

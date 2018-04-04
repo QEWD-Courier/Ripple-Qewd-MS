@@ -7,7 +7,7 @@
   "author": "{{composer.value}}",
   "dateCreated": "=> getTime(start_time)",
   "source": "{{host}}",
-  "sourceId": "=> getUid(uid)",
+  "sourceId": "=> getUid(uid, host)",
   "patientId": "{{patientId}}"
 
 }

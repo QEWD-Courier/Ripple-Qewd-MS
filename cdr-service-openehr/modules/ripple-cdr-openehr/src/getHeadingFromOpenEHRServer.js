@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,13 +24,20 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  20 February 2018
+  28 March 2018
 
 */
 
 var loadAQLFile = require('./loadAQLFile');
 var openEHR = require('./openEHR');
 var template = require('qewd-template');
+var getHeadingByJumper;
+
+//try {
+  getHeadingByJumper = require('../../ripple-openehr-jumper/lib/getHeadingFromOpenEHRServer');
+//}
+//catch(err) {
+//}
 
 var aql = {};
 
@@ -52,6 +59,23 @@ function getTransformedAQL(host, nhsNo, aql) {
 
 function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
 
+  if (getHeadingByJumper && this.userDefined.headings[heading] && this.userDefined.headings[heading].template && this.userDefined.headings[heading].template.name) {
+    // use Jumper instead to get the heading
+
+    var params = {
+      patientId: nhsNo,
+      heading: heading,
+      host: host,
+      qewdSession: session,
+      openEHR: openEHR,
+      openEHRSession: openEHRSession,
+      ehrId: getEhrId.call(this, nhsNo, host)
+    };
+
+    getHeadingByJumper.call(this, params, callback);
+    return;
+  }
+
   if (!aql[heading]) {
     aql[heading] = loadAQLFile(heading);
     console.log('heading = ' + heading + ': aql = ' + JSON.stringify(aql));
@@ -63,7 +87,8 @@ function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
     callback: callback,
     url: '/rest/v1/query',
     method: 'GET',
-    session: openEHRSession.id
+    session: openEHRSession.id,
+    logResponse: false
   };
 
   params.queryString = getTransformedAQL.call(this, host, nhsNo, aql[heading]);  

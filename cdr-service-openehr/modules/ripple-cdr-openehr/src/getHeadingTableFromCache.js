@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 January 2018
+  28 March 2018
 
 */
 
@@ -37,10 +37,11 @@ function getHeadingTableFromCache(patientId, heading, session) {
 
   var cachedHeading = session.data.$(['headings', 'byPatientId', patientId, heading, 'byHost']);
   var results = [];
+  var self = this;
 
   cachedHeading.forEachChild(function(host, hostNode) {
     hostNode.forEachChild(function(sourceId) {
-      var summary = getHeadingBySourceId(sourceId, session, 'summary');
+      var summary = getHeadingBySourceId.call(self, sourceId, session, 'summary');
       results.push(summary);
     });
   });

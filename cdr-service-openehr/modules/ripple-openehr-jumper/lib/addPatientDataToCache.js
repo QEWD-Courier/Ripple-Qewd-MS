@@ -24,17 +24,17 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  23 March 2018
+  27 March 2018
 
 */
 
 function addPatientDataToCache(results, patientId, host, templateId, heading, qewdSession) {
-  console.log('** adding data to session cache');
-  console.log('patientId: ' + patientId);
-  console.log('host: ' + host);
-  console.log('templateId: ' + templateId);
-  console.log('heading: ' + heading);
-  console.log('-------');
+  //console.log('** adding data to session cache');
+  //console.log('patientId: ' + patientId);
+  //console.log('host: ' + host);
+  //console.log('templateId: ' + templateId);
+  //console.log('heading: ' + heading);
+  //console.log('-------');
 
   var headingCache = qewdSession.$('headings');
   var cacheBySourceId = headingCache.$('bySourceId');
@@ -43,7 +43,7 @@ function addPatientDataToCache(results, patientId, host, templateId, heading, qe
 
   results.forEach(function(result) {
     var sourceId = host + '-' + result.uid.split('::')[0];
-    console.log('cacheing result for ' + sourceId);
+    //console.log('cacheing result for ' + sourceId);
     var date = result.start_time;
     if (date.indexOf('UTC') !== -1) date = date.split('UTC')[0];
     date = new Date(date).getTime();
@@ -60,7 +60,7 @@ function addPatientDataToCache(results, patientId, host, templateId, heading, qe
     cacheBySourceId.$('jumperFormatData').setDocument(result);
     cacheBySourceId.$('data').delete(); // temporary - get rid of standard data cache
   });
-  console.log('results cached');
+  //console.log('results cached');
 }
 
 module.exports = addPatientDataToCache;

@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  23 March 2018
+  28 March 2018
 
 */
 
@@ -100,7 +100,10 @@ function processWebTemplate(templateName, headingPath, body, host) {
   var fieldObj = getTemplateFields.call(this, templateName);
 
   var flatJSON = createFlatJSON(body);
-  templateDoc.$('flatJSON').setDocument(flatJSON);
+  //templateDoc.$('flatJSON').setDocument(flatJSON);
+
+  filePath = headingPath + '/QEWD-ProcessingDoc.json';
+  fs.writeJsonSync(filePath, templateDoc.getDocument(true), {spaces: 2});
 
   var filePath = headingPath + '/flatJSON_template.json';
   fs.writeJsonSync(filePath, flatJSON, {spaces: 2});

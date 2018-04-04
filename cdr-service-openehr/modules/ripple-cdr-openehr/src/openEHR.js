@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  22 March 2018
+  28 March 2018
 
 */
 
@@ -278,7 +278,12 @@ function openEHRRequest(params, userObj) {
       console.log(process.pid + ': error returned from ' + host + ': ' + error);
     }
     else {
-      console.log(process.pid + ': response from ' + host + ': ' + JSON.stringify(body));
+      if (params.logResponse === false) {
+        console.log(process.pid + ': response received from ' + host);
+      }
+      else {
+        console.log(process.pid + ': response from ' + host + ': ' + JSON.stringify(body));
+      }
       //if (!body) console.log('***** no body returned from ' + host);
       //if (body && typeof body === 'string') console.log('body returned from ' + host + ' is a string');
       //if (body && typeof body !== 'string' && params.processBody) params.processBody(body, host, userObj);

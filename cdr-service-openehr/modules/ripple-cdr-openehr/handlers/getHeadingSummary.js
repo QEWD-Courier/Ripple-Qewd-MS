@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 January 2018
+  28 March 2018
 
 */
 
@@ -33,7 +33,7 @@ var getHeadingTableFromCache = require('../src/getHeadingTableFromCache');
 var tools = require('../src/tools');
 
 function getHeadingTable(patientId, heading, session, finished) {
-  var results = getHeadingTableFromCache(patientId, heading, session);
+  var results = getHeadingTableFromCache.call(this, patientId, heading, session);
   finished({
     responseFrom: 'phr_service',
     results: results
@@ -59,6 +59,7 @@ module.exports = function(args, finished) {
   }
 
   var session = args.req.qewdSession;
+  var self = this;
 
   fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
     if (!response.ok) {
@@ -67,7 +68,7 @@ module.exports = function(args, finished) {
     }
     else {
       console.log('heading ' + heading + ' for ' + patientId + ' is cached');
-      getHeadingTable(patientId, heading, session, finished)
+      getHeadingTable.call(self, patientId, heading, session, finished)
     }
   });
 

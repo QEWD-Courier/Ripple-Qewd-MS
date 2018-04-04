@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  15 January 2018
+  28 March 2018
 
 */
 
@@ -70,7 +70,7 @@ function getSynopsisFromCache(patientId, max, session, callback) {
 
     headingByDateCache.forEachChild({direction: 'reverse'}, function(date, dateNode) {
       dateNode.forEachChild(function(sourceId) {
-        var summary = getHeadingBySourceId(sourceId, session, 'synopsis');
+        var summary = getHeadingBySourceId.call(self, sourceId, session, 'synopsis');
         results[heading].push(summary);
         count++;
         if (count === max) return true;

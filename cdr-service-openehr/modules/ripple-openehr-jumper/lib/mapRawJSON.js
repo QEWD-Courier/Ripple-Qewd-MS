@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  23 March 2018
+  27 March 2018
 
 */
 
@@ -46,8 +46,8 @@ module.exports = function(params) {
 
   rawjson.resultSet.forEach(function(record, index) {
 
-    console.log('** index = ' + index);
-    console.log('** record = ' + JSON.stringify(record));
+    //console.log('** index = ' + index);
+    //console.log('** record = ' + JSON.stringify(record));
 
     var start_time = '';
     if (record.data.context && record.data.context.start_time && record.data.context.start_time.value) {
@@ -72,7 +72,7 @@ module.exports = function(params) {
           var parent = this.parent;
           var path = '';
           do {
-            console.log('*** parent.key = ' + parent.key);
+            //console.log('*** parent.key = ' + parent.key);
             if (Number.isInteger(parseInt(parent.key))) {
               piece = parent.node.archetype_node_id;
               path = '[' + piece + ']/' + path;
@@ -84,7 +84,7 @@ module.exports = function(params) {
               if (path !== '' && path[0] !== '[') path = '/' + path;
               path = piece + path;
             }
-            console.log('*** path - ' + path);
+            //console.log('*** path - ' + path);
             parent = parent.parent;
           }
           while (parent);
@@ -96,20 +96,20 @@ module.exports = function(params) {
           aqlArr.shift();
 
           aqlArr.push(node.name.value);
-          console.log('aqlArr = ' + JSON.stringify(aqlArr));
+          //console.log('aqlArr = ' + JSON.stringify(aqlArr));
           var index = templateIndex.$(aqlArr);
 
           if (index.exists) {
-            console.log('** index exists in global');
+            //console.log('** index exists in global');
             var fieldId = index.value;
-            console.log('fieldId = ' + fieldId);
+            //console.log('fieldId = ' + fieldId);
             var fieldDoc = templateFields.$(fieldId);
             var fieldArr = fieldDoc.$('path').getDocument(true);
-            console.log('fieldArr = ' + JSON.stringify(fieldArr));
+            //console.log('fieldArr = ' + JSON.stringify(fieldArr));
             var obj = result;
             var max = fieldArr.length - 1;
             fieldArr.forEach(function(name, index) {
-              console.log('name = ' + name);
+              //console.log('name = ' + name);
               if (typeof obj[name] === 'undefined') obj[name] = {};
               if (index === max) {
                 obj[name] = {
@@ -125,7 +125,7 @@ module.exports = function(params) {
                   if (node.value.defining_code.terminology_id) obj[name].terminology = node.value.defining_code.terminology_id.value;
                 }
               }
-              console.log('name = ' + name + '; obj[name] = ' + JSON.stringify(obj[name], null, 2));
+              //console.log('name = ' + name + '; obj[name] = ' + JSON.stringify(obj[name], null, 2));
               obj = obj[name];
             });
           

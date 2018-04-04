@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  23 March 2018
+  29 March 2018
 
 */
 
@@ -38,7 +38,7 @@ module.exports = function(jumperPath) {
     //dateCreated: "=> getTime(start_time)",
     dateCreated: "=> rippleDateTime(start_time, true)",
     source: "{{host}}",
-    sourceId: "=> getUid(uid)",
+    sourceId: "=> getUid(uid, host)",
     patientId: "{{patientId}}"
   };
 
