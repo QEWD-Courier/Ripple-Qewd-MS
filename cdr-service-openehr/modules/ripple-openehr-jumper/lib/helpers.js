@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  28 March 2018
+  13 April 2018
 
 */
 
@@ -55,11 +55,20 @@ module.exports = {
     return input;
   },
   dvText: function(inputObj) {
-    if (typeof inputObj.value !== 'undefined' && inputObj.value !== '') {
-      if (typeof inputObj.code === 'undefined' || inputObj.code === '') {
+    // if value property defined, but neither code nor terminology are defined, then return the
+    //  value and make sure it can't be used for the |value Flat JSON field that will follow in the
+    //  template
+
+    if (typeof inputObj === 'string') {
+      if (inputObj === '') {
         return '<!delete>';
       }
-      if (typeof inputObj.terminology === 'undefined' || inputObj.terminology === '') {
+      else {
+        return inputObj;
+      }
+    }
+    if (typeof inputObj.value !== 'undefined' && inputObj.value !== '') {
+      if ((typeof inputObj.code !== 'undefined' && inputObj.code !== '') || (typeof inputObj.terminology !== 'undefined' && inputObj.terminology !== '')) {
         return '<!delete>';
       }
       var result = inputObj.value.toString();

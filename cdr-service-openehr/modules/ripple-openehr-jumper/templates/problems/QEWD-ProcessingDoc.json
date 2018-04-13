@@ -1,0 +1,218 @@
+{
+  "aql": {
+    "composition": "openEHR-EHR-COMPOSITION.problem_list.v1",
+    "name": "Problem list"
+  },
+  "field": {
+    "1": {
+      "id": "last_updated",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "last_updated"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "2": {
+      "id": "problem_diagnosis_name",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_name"
+      ],
+      "type": "DV_TEXT"
+    },
+    "3": {
+      "id": "date_time_clinically_recognised",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "date_time_clinically_recognised"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "4": {
+      "id": "comment",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "comment"
+      ],
+      "type": "DV_TEXT"
+    },
+    "5": {
+      "id": "severity",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "severity"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "6": {
+      "id": "date_time_of_onset",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "date_time_of_onset"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "7": {
+      "id": "body_site",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "body_site"
+      ],
+      "type": "DV_TEXT"
+    },
+    "8": {
+      "id": "diagnostic_certainty",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "diagnostic_certainty"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "9": {
+      "id": "date_time_of_resolution",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "date_time_of_resolution"
+      ],
+      "type": "DV_DATE"
+    },
+    "10": {
+      "id": "diagnostic_status",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "diagnostic_status"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "11": {
+      "id": "active_inactive",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "active_inactive"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "12": {
+      "id": "episodicity",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "episodicity"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "13": {
+      "id": "resolution_status",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "resolution_status"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "14": {
+      "id": "drg_category",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "drg_category"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "15": {
+      "id": "first_occurrence",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "first_occurrence"
+      ],
+      "type": "DV_BOOLEAN"
+    },
+    "16": {
+      "id": "clinical_description",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "clinical_description"
+      ],
+      "type": "DV_TEXT"
+    }
+  },
+  "index": {
+    "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]": {
+      "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]": {
+        "data[at0001]": {
+          "items[at0002]": {
+            "Problem/Diagnosis name": "2"
+          },
+          "items[at0003]": {
+            "Date/time clinically recognised": "3"
+          },
+          "items[at0005]": {
+            "Severity": "5"
+          },
+          "items[at0009]": {
+            "Clinical description": "16"
+          },
+          "items[at0012]": {
+            "Body site": "7"
+          },
+          "items[at0030]": {
+            "Date/time of resolution": "9"
+          },
+          "items[at0069]": {
+            "Comment": "4"
+          },
+          "items[at0073]": {
+            "Diagnostic certainty": "8"
+          },
+          "items[at0077]": {
+            "Date/time of onset": "6"
+          },
+          "items[openEHR-EHR-CLUSTER.problem_status.v0]": {
+            "items[at0001]": {
+              "Episodicity": "12"
+            },
+            "items[at0003]": {
+              "Active/Inactive?": "11"
+            },
+            "items[at0004]": {
+              "Diagnostic status": "10"
+            },
+            "items[at0063]": {
+              "DRG category": "14"
+            },
+            "items[at0071]": {
+              "First occurrence?": "15"
+            },
+            "items[at0083]": {
+              "Resolution status": "13"
+            }
+          }
+        },
+        "protocol[at0032]": {
+          "items[at0070]": {
+            "Last updated": "1"
+          }
+        }
+      }
+    }
+  }
+}

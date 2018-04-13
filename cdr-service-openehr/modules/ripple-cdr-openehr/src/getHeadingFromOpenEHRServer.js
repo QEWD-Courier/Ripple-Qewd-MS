@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  28 March 2018
+  11 April 2018
 
 */
 
@@ -33,11 +33,11 @@ var openEHR = require('./openEHR');
 var template = require('qewd-template');
 var getHeadingByJumper;
 
-//try {
+try {
   getHeadingByJumper = require('../../ripple-openehr-jumper/lib/getHeadingFromOpenEHRServer');
-//}
-//catch(err) {
-//}
+}
+catch(err) {
+}
 
 var aql = {};
 
@@ -58,9 +58,15 @@ function getTransformedAQL(host, nhsNo, aql) {
 }
 
 function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
+  console.log('** getHeadingFromOpenEHRServer: ');
+  console.log('host = ' + host);
+  console.log('heading = ' + heading);
+  console.log('userDefined: ' + JSON.stringify(this.userDefined.headings[heading]));
 
   if (getHeadingByJumper && this.userDefined.headings[heading] && this.userDefined.headings[heading].template && this.userDefined.headings[heading].template.name) {
     // use Jumper instead to get the heading
+
+    console.log('** using Jumper to fetch this heading');
 
     var params = {
       patientId: nhsNo,

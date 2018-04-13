@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-oauth: Ripple MicroServices for Authentication Services           |
+ | ripple-auth: Ripple MicroServices for Authentication Services            |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |

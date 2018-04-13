@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  28 March 2018
+  12 April 2018
 
 */
 
@@ -39,6 +39,7 @@ var helpers = require('./helpers');
 var initialised = false;
 var templateIndex = {};
 var servers;
+var formatTemplates = {};
 
 function initialise() {
   if (initialised) return;
@@ -62,65 +63,49 @@ function initialise() {
   initialised = true;
 }
 
-function formatResults(data, format, headingPath, sourceIdCache) {
-  console.log('format ' + format + ' results');
-  console.log('headingPath = ' + headingPath);
+function formatResults(record, heading, sourceId, format, headingPath, sourceIdCache) {
+  //console.log('formatResults: record = ' + JSON.stringify(record));
+  //console.log('format ' + format + ' results');
+  //console.log('headingPath = ' + headingPath);
 
   if (format === 'pulsetile' || format === 'fhir') {
-    var template;
-    if (format === 'pulsetile') template = require(headingPath + '/openEHR_to_Ripple.json');
-    if (format === 'fhir') template = require(headingPath + '/openEHR_to_FHIR.json');
+    if (!formatTemplates[heading]) formatTemplates[heading] = {};
 
-    console.log('template = ' + JSON.stringify(template));
-
-    var results = [];
-    var result;
-    var count = 0;
-    data.forEach(function(record) {
-      count++;
-      var sourceId = record.host + '-' + record.uid.split('::')[0];
-      console.log('formatResults - record.uid = ' + record.uid + '; sourceId = ' + sourceId);
-
-      var cachedRecord = sourceIdCache.$([sourceId, format]);
-      if (cachedRecord.exists) {
-        console.log('record ' + count + ': already cached');
-        result = cachedRecord.getDocument();
-      }
-      else {
-        result = transform(template, record, helpers);
-        console.log(count + ': creating cachedRecord for ' + sourceId + ': ' + JSON.stringify(result));
-        cachedRecord.setDocument(result);
-      }
-      results.push(result);
-    });
-    if (format === 'fhir') {
-      results = {
-        resourceType: 'Bundle',
-        total: count,
-        entry: results
-      };
+    if (!formatTemplates[heading][format]) {
+      if (format === 'pulsetile') formatTemplates[heading][format] = require(headingPath + '/openEHR_to_Ripple.json');
+      if (format === 'fhir') formatTemplates[heading][format] = require(headingPath + '/openEHR_to_FHIR.json');
     }
-    return results;
-  }
-  else {
-    return data;
+    var template = formatTemplates[heading][format];
+
+    var cachedRecord = sourceIdCache.$([sourceId, format]);
+    if (!cachedRecord.exists) {
+      var result = transform(template, record, helpers);
+      //console.log('saving cachedRecord for ' + sourceId + ': ' + JSON.stringify(result));
+      cachedRecord.setDocument(result);
+    }
   }
 }
 
-function pulseTileCache(templateCache, sourceIdCache, headingPath) {
-  var results = [];
-  templateCache.forEachChild(function(sourceId) {
+function pulseTileCache(hostCache, sourceIdCache, heading, headingPath) {
+
+  // uses hostCache: qewdSession.$(['headings', 'byPatientId', patientId, heading, 'byHost', host]);
+
+  hostCache.forEachChild(function(sourceId) {
+    //console.log('hostCache sourceId = ' + sourceId);
     var data = sourceIdCache.$([sourceId, 'jumperFormatData']).getDocument();
-    results.push(data);
+    //console.log('** data = ' + JSON.stringify(data));
+    formatResults(data, heading, sourceId, 'pulsetile', headingPath, sourceIdCache);
   });
-  results = formatResults(results, 'pulsetile', headingPath, sourceIdCache);
-  return results;
 }
 
 module.exports = function(params, callback) {
 
   // called by ripple-cdr-openehd/getHeadingFromOpenEHR Server
   //  retrieving and caching heading data using Jumper instead
+
+  // Note - all this does is fetch the heading from the OpenEHR host
+  //  and caches it in the user's session cache.  It does not retrieve
+  //  the data
 
   var patientId = params.patientId;
   var heading = params.heading;
@@ -141,17 +126,18 @@ module.exports = function(params, callback) {
 
   console.log('*** ripple-openehr-jumper/getHeadingFromOpenEHRServer: headingPath = ' + headingPath);
 
-  var templateCache = qewdSession.$(['headings', 'byTemplateId', templateId]);
+  console.log('** templateId = ' + templateId);
+
+  var hostCache = qewdSession.$(['headings', 'byPatientId', patientId, heading, 'byHost', host]);
   var sourceIdCache = qewdSession.$(['headings', 'bySourceId']);
   var results = [];
 
-  if (templateCache.exists) {
-    // fetch from session cache
-    console.log('** fetching results from session cache');
-    results = pulseTileCache(templateCache, sourceIdCache, headingPath);
-    console.log('invoking callback');
-    return callback(results);
+  // check the byHost cache - if a heading has been added, it will have been deleted
 
+  if (hostCache.exists) {
+    // should never get here, but just in case!
+    console.log('** jumper/getHeadingFromOpenEHRServer - heading already cached');
+    return callback();
   }
 
   console.log('&& documentName = ' + documentName);
@@ -180,7 +166,6 @@ module.exports = function(params, callback) {
 
   params.processBody = function(body) {
     console.log('Top level AQL response from ' + host);
-    openEHR.stopSession(host, openEHRSession.id);
 
     if (body.status === 404) {
       console.log('** error accessing ' + host + ': ' + body.developerMessage);
@@ -216,7 +201,7 @@ module.exports = function(params, callback) {
 
       // finally, create the PulseTile-formatted session cached data
 
-      pulseTileCache(templateCache, sourceIdCache, headingPath);
+      pulseTileCache(hostCache, sourceIdCache, heading, headingPath);
 
       console.log('invoke callback');
       callback();

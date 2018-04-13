@@ -6,14 +6,25 @@
       "value": "{{uid}}"
     }
   ],
-  "onset": "=> rippleDateTime(start_time, false)",
-  "recordedDate": "=> rippleDateTime(start_time, false)",
-  "recorder": {
-    "reference": "=> fhirReference(composer.code, 'Practitioner', false)",
+  "onsetDateTime": "=> getDate(start_time)",
+  "dateRecorded": "=> getDate(start_time)",
+  "asserter": {
+    "reference": "Practitioner/{{composer.code}}",
     "display": "{{composer.value}}"
   },
   "patient": {
-    "reference": "=> fhirReference(patientId, 'Patient', false)",
+    "reference": "Patient/{{patientId}}",
     "display": "{{patientName}}"
-  }
+  },
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "{{problems_and_issues.problem_diagnosis.problem_diagnosis_name.code}}",
+        "display": "{{problems_and_issues.problem_diagnosis.problem_diagnosis_name.value}}"
+      }
+    ]
+  },
+  "clinicalStatus": "active",
+  "notes": "{{problems_and_issues.problem_diagnosis.comment.value}}"
 }

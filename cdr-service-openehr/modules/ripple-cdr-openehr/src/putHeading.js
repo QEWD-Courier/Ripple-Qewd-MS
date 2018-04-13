@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  15 February 2018
+  12 April 2018
 
 */
 
@@ -33,18 +33,44 @@ var mapNHSNoByHost = require('./mapNHSNoByHost');
 var deleteSessionCaches = require('./deleteSessionCaches');
 var putHeadingData = require('./putHeadingData');
 
+try {
+  postHeadingByJumper = require('../../ripple-openehr-jumper/lib/postHeading');
+}
+catch(err) {
+  console.log('Unable to load jumper version of postHeading: ' + err);
+}
+
 var headingMap = {};
 var defaultHost;
 
 function putHeading(patientId, heading, compositionId, data, qewdSession, callback) {
 
+  if (!defaultHost) {
+    defaultHost = this.userDefined.defaultPostHost || 'ethercis';
+  }
+
+  if (postHeadingByJumper && this.userDefined.headings[heading] && this.userDefined.headings[heading].template && this.userDefined.headings[heading].template.name) {
+    // use Jumper instead to get the heading
+
+    var params = {
+      patientId: patientId,
+      heading: heading,
+      data: data,
+      qewdSession: qewdSession,
+      defaultHost: defaultHost,
+      method: 'put',
+      compositionId: compositionId,
+    };
+
+    console.log('calling postHeadingByJumper: params = ' + JSON.stringify(params, null, 2));
+
+    postHeadingByJumper.call(this, params, callback);
+    return;
+  }
+
   if (!headingMap[heading]) {
     // load on demand
     headingMap[heading] = require('../headings/' + heading);
-  }
-
-  if (!defaultHost) {
-    defaultHost = this.userDefined.defaultPostHost || 'ethercis';
   }
 
   if (headingMap[heading].post) {

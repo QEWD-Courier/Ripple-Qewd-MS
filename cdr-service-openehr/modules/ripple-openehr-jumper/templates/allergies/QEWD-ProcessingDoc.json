@@ -1,0 +1,220 @@
+{
+  "aql": {
+    "composition": "openEHR-EHR-COMPOSITION.adverse_reaction_list.v1",
+    "name": "Adverse reaction list"
+  },
+  "field": {
+    "1": {
+      "id": "last_updated",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "last_updated"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "2": {
+      "id": "category",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "category"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "3": {
+      "id": "causative_agent",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "causative_agent"
+      ],
+      "type": "DV_TEXT"
+    },
+    "4": {
+      "id": "criticality",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "criticality"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "5": {
+      "id": "reaction_mechanism",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_mechanism"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "6": {
+      "id": "comment",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "comment"
+      ],
+      "type": "DV_TEXT"
+    },
+    "7": {
+      "id": "onset_of_last_reaction",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "onset_of_last_reaction"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "8": {
+      "id": "onset_of_reaction",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "onset_of_reaction"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "9": {
+      "id": "route_of_exposure",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "route_of_exposure"
+      ],
+      "type": "DV_TEXT"
+    },
+    "10": {
+      "id": "manifestation",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "manifestation"
+      ],
+      "type": "DV_TEXT"
+    },
+    "11": {
+      "id": "specific_substance",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "specific_substance"
+      ],
+      "type": "DV_TEXT"
+    },
+    "12": {
+      "id": "certainty",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "certainty"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "13": {
+      "id": "comment",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "comment"
+      ],
+      "type": "DV_TEXT"
+    },
+    "14": {
+      "id": "reaction_description",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "reaction_description"
+      ],
+      "type": "DV_TEXT"
+    },
+    "15": {
+      "id": "severity",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "severity"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "16": {
+      "id": "status",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "status"
+      ],
+      "type": "DV_CODED_TEXT"
+    }
+  },
+  "index": {
+    "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]": {
+      "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]": {
+        "data[at0001]": {
+          "items[at0002]": {
+            "Causative agent": "3"
+          },
+          "items[at0006]": {
+            "Comment": "6"
+          },
+          "items[at0009]": {
+            "items[at0010]": {
+              "Specific substance": "11"
+            },
+            "items[at0011]": {
+              "Manifestation": "10"
+            },
+            "items[at0012]": {
+              "Reaction description": "14"
+            },
+            "items[at0021]": {
+              "Certainty": "12"
+            },
+            "items[at0027]": {
+              "Onset of reaction": "8"
+            },
+            "items[at0032]": {
+              "Comment": "13"
+            },
+            "items[at0089]": {
+              "Severity": "15"
+            },
+            "items[at0106]": {
+              "Route of exposure": "9"
+            }
+          },
+          "items[at0058]": {
+            "Reaction mechanism": "5"
+          },
+          "items[at0063]": {
+            "Status": "16"
+          },
+          "items[at0101]": {
+            "Criticality": "4"
+          },
+          "items[at0117]": {
+            "Onset of last reaction": "7"
+          },
+          "items[at0120]": {
+            "Category": "2"
+          }
+        },
+        "protocol[at0042]": {
+          "items[at0062]": {
+            "Last updated": "1"
+          }
+        }
+      }
+    }
+  }
+}

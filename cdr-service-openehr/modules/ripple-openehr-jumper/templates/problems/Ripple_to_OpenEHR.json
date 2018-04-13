@@ -1,4 +1,19 @@
 {
+  "problems_and_issues": {
+    "problem_diagnosis": {
+      "problem_diagnosis_name": {
+        "value": "{{problem}}",
+        "code": "{{code}}",
+        "terminology": "{{terminology}}"
+      },
+      "date_time_of_onset": {
+        "value": ""=> rippleDateTime(dateOfOnset,false)","
+      },
+      "comment": {
+        "value": "{{description}}"
+      }
+    }
+  },
   "composer": {
     "value": "{{author}}"
   },

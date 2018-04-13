@@ -93,6 +93,7 @@ module.exports = function(args, finished) {
     delete args.session.nhsNumber;
 
     args.session.authenticated = true;
+    args.session.timeout = 1200;
     return finished({
       ok: true,
       mode: user.type

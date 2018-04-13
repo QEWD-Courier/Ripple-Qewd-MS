@@ -1,14 +1,15 @@
 /*
+
  ----------------------------------------------------------------------------
- | qewd-conduit: QEWD Implementation of the Conduit Back-end                |
+ | ripple-auth: Ripple Authentication MicroServices                         |
  |                                                                          |
- | Copyright (c) 2017 M/Gateway Developments Ltd,                           |
- | Reigate, Surrey UK.                                                      |
+ | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
  |                                                                          |
- | http://www.mgateway.com                                                  |
- | Email: rtweed@mgateway.com                                               |
+ | http://rippleosi.org                                                     |
+ | Email: code.custodian@rippleosi.org                                      |
  |                                                                          |
+ | Author: Rob Tweed, M/Gateway Developments Ltd                            |
  |                                                                          |
  | Licensed under the Apache License, Version 2.0 (the "License");          |
  | you may not use this file except in compliance with the License.         |
@@ -23,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  3 May 2017
+  3 May 2018
 
 */
 

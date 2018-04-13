@@ -5,83 +5,41 @@
   },
   "host": "{{host}}",
   "patientId": "{{patientId}}",
-  "context": {
-    "xds_metadata": {
-      "author_specialty": {
-        "value": "{{author_specialty}}",
-        "code": "{{author_specialty_codeString}}",
-        "terminology": "{{author_specialty_terminology}}"
-      },
-      "class_code": {
-        "value": "{{class_code}}",
-        "code": "{{class_code_codeString}}",
-        "terminology": "{{class_code_terminology}}"
-      },
-      "document_type": {
-        "value": "{{document_type}}",
-        "code": "{{document_type_codeString}}",
-        "terminology": "{{document_type_terminology}}"
-      },
-      "confidentiality_code": {
-        "value": "{{confidentiality_code}}",
-        "code": "{{confidentiality_code_codeString}}",
-        "terminology": "{{confidentiality_code_terminology}}"
-      },
-      "health_care_facility_type": {
-        "value": "{{health_care_facility_type}}",
-        "code": "{{health_care_facility_type_codeString}}",
-        "terminology": "{{health_care_facility_type_terminology}}"
-      },
-      "practice_setting_code": {
-        "value": "{{practice_setting_code}}",
-        "code": "{{practice_setting_code_codeString}}",
-        "terminology": "{{practice_setting_code_terminology}}"
-      },
-      "event_code": {
-        "value": "{{event_code}}",
-        "code": "{{event_code_codeString}}",
-        "terminology": "{{event_code_terminology}}"
-      },
-      "document_media": {
-        "value": "{{document_media}}"
-      }
-    },
-    "start_time": {
-      "value": "{{start_time}}"
-    },
-    "setting": {
-      "value": "{{setting}}",
-      "code": "{{setting_codeString}}",
-      "terminology": "{{setting_terminology}}"
-    }
-  },
   "problems_and_issues": {
     "problem_diagnosis": {
+      "last_updated": {
+        "value": "{{last_updated}}"
+      },
       "problem_diagnosis_name": {
         "value": "{{problem_diagnosis_name}}",
         "code": "{{problem_diagnosis_name_codeString}}",
         "terminology": "{{problem_diagnosis_name_terminology}}"
       },
-      "clinical_description": {
-        "value": "{{clinical_description}}",
-        "code": "{{clinical_description_codeString}}",
-        "terminology": "{{clinical_description_terminology}}"
+      "date_time_clinically_recognised": {
+        "value": "{{date_time_clinically_recognised}}"
+      },
+      "comment": {
+        "value": "{{comment}}",
+        "code": "{{comment_codeString}}",
+        "terminology": "{{comment_terminology}}"
+      },
+      "severity": {
+        "value": "{{severity}}",
+        "code": "{{severity_codeString}}",
+        "terminology": "{{severity_terminology}}"
+      },
+      "date_time_of_onset": {
+        "value": "{{date_time_of_onset}}"
       },
       "body_site": {
         "value": "{{body_site}}",
         "code": "{{body_site_codeString}}",
         "terminology": "{{body_site_terminology}}"
       },
-      "date_time_of_onset": {
-        "value": "{{date_time_of_onset}}"
-      },
-      "date_time_clinically_recognised": {
-        "value": "{{date_time_clinically_recognised}}"
-      },
-      "severity": {
-        "value": "{{severity}}",
-        "code": "{{severity_codeString}}",
-        "terminology": "{{severity_terminology}}"
+      "diagnostic_certainty": {
+        "value": "{{diagnostic_certainty}}",
+        "code": "{{diagnostic_certainty_codeString}}",
+        "terminology": "{{diagnostic_certainty_terminology}}"
       },
       "date_time_of_resolution": {
         "value": "{{date_time_of_resolution}}"
@@ -97,93 +55,29 @@
           "code": "{{active_inactive_codeString}}",
           "terminology": "{{active_inactive_terminology}}"
         },
-        "resolution_status": {
-          "value": "{{resolution_status}}",
-          "code": "{{resolution_status_codeString}}",
-          "terminology": "{{resolution_status_terminology}}"
-        },
         "episodicity": {
           "value": "{{episodicity}}",
           "code": "{{episodicity_codeString}}",
           "terminology": "{{episodicity_terminology}}"
         },
-        "first_occurrence": {
-          "value": "{{first_occurrence}}"
+        "resolution_status": {
+          "value": "{{resolution_status}}",
+          "code": "{{resolution_status_codeString}}",
+          "terminology": "{{resolution_status_terminology}}"
         },
         "drg_category": {
           "value": "{{drg_category}}",
           "code": "{{drg_category_codeString}}",
           "terminology": "{{drg_category_terminology}}"
+        },
+        "first_occurrence": {
+          "value": "{{first_occurrence}}"
         }
       },
-      "diagnostic_certainty": {
-        "value": "{{diagnostic_certainty}}",
-        "code": "{{diagnostic_certainty_codeString}}",
-        "terminology": "{{diagnostic_certainty_terminology}}"
-      },
-      "comment": {
-        "value": "{{comment}}",
-        "code": "{{comment_codeString}}",
-        "terminology": "{{comment_terminology}}"
-      },
-      "last_updated": {
-        "value": "{{last_updated}}"
-      },
-      "language": {
-        "value": "{{language}}"
-      },
-      "encoding": {
-        "value": "{{encoding}}"
-      },
-      "subject": {
-        "value": "{{subject}}"
-      }
-    },
-    "empty_list_info": {
-      "exclusion_-_global": {
-        "global_exclusion_of_problems_diagnoses": {
-          "value": "{{global_exclusion_of_problems_diagnoses}}",
-          "code": "{{global_exclusion_of_problems_diagnoses_codeString}}",
-          "terminology": "{{global_exclusion_of_problems_diagnoses_terminology}}"
-        },
-        "comment": {
-          "value": "{{comment}}",
-          "code": "{{comment_codeString}}",
-          "terminology": "{{comment_terminology}}"
-        },
-        "language": {
-          "value": "{{language}}"
-        },
-        "encoding": {
-          "value": "{{encoding}}"
-        },
-        "subject": {
-          "value": "{{subject}}"
-        }
-      },
-      "absence_of_information": {
-        "absence_statement": {
-          "value": "{{absence_statement}}",
-          "code": "{{absence_statement_codeString}}",
-          "terminology": "{{absence_statement_terminology}}"
-        },
-        "reason_for_absence": {
-          "value": "{{reason_for_absence}}",
-          "code": "{{reason_for_absence_codeString}}",
-          "terminology": "{{reason_for_absence_terminology}}"
-        },
-        "last_updated": {
-          "value": "{{last_updated}}"
-        },
-        "language": {
-          "value": "{{language}}"
-        },
-        "encoding": {
-          "value": "{{encoding}}"
-        },
-        "subject": {
-          "value": "{{subject}}"
-        }
+      "clinical_description": {
+        "value": "{{clinical_description}}",
+        "code": "{{clinical_description_codeString}}",
+        "terminology": "{{clinical_description_terminology}}"
       }
     }
   }

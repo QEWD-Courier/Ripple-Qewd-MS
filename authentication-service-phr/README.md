@@ -14,11 +14,13 @@ This folder contains the code for the PHR Demo Authentication Microservice, whic
 
 Start up this container as a foreground process using the *rtweed/qewd-server* Docker Container:
 
-       sudo docker run -it -p 8081:8080 -v ~/ripple/authentication-service-phr:/opt/qewd/mapped rtweed/qewd-server
+       sudo docker run -it --rm -p 8081:8080 -v ~/ripple/authentication-service-phr:/opt/qewd/mapped -v ~/ripple/yottadb/authentication:/root/.yottadb/r1.20_x86_64/g rtweed/qewd-server	
+
 
 or, to run it as a daemon process:
 
-       sudo docker run -d -p 8081:8080 -v ~/ripple/authentication-service-phr:/opt/qewd/mapped rtweed/qewd-server
+       sudo docker run -d --rm -p 8081:8080 -v ~/ripple/authentication-service-phr:/opt/qewd/mapped -v ~/ripple/yottadb/authentication:/root/.yottadb/r1.20_x86_64/g rtweed/qewd-server	
+
 
 Note 1: the -p parameter defines the port mapping, using the convention:
 
@@ -31,4 +33,5 @@ and matches with its ms-hosts.json configuration.
 
 
 Note 2: if you're using a Raspberry Pi (RPi), use the RPi-specific Container: *rtweed/qewd-server-rpi*
+
 

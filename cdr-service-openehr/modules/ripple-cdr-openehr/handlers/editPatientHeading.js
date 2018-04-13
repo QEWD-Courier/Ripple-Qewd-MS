@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-phr-openehr: Ripple MicroServices for OpenEHR                     |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  15 February 2018
+  11 April 2018
 
 */
 
@@ -57,7 +57,7 @@ function editPatientHeading(args, finished) {
     return finished({error: 'No existing ' + heading + ' record found for sourceId: ' + sourceId});
   }
 
-  var compositionId = cachedRecord.$(['data', 'uid']).value;
+  var compositionId = cachedRecord.$(['uid']).value;
 
   if (compositionId === '') {
     return finished({error: 'Composition Id not found for sourceId: ' + sourceId});

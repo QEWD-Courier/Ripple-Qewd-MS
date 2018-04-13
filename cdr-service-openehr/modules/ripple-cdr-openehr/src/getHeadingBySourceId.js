@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  28 March 2018
+  6 April 2018
 
 */
 
@@ -52,8 +52,8 @@ module.exports = function(sourceId, session, format) {
     output = cachedObj.pulsetile;
     var headingDef = this.userDefined.headings[heading];
     synopsisField = headingDef.synopsisField;
-    console.log('heading: ' + heading + '; synopsisField = ' + synopsisField);
-    console.log('headingDef: ' + JSON.stringify(headingDef));
+    //console.log('heading: ' + heading + '; synopsisField = ' + synopsisField);
+    //console.log('headingDef: ' + JSON.stringify(headingDef));
     summaryFields = headingDef.summaryTableFields.slice(0);
   }
   else {

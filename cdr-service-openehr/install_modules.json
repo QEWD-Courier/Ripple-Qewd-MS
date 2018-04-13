@@ -3,5 +3,6 @@
   "qewd-template",
   "qewd-transform-json",
   "moment-timezone",
-  "traverse"
+  "traverse",
+  "jsonschema"
 ]

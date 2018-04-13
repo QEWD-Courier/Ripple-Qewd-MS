@@ -1,6 +1,6 @@
 {
-  "name": "ripple-phr-openehr",
-  "version": "1.4.0",
+  "name": "ripple-cdr-openehr",
+  "version": "2.1.0",
   "dependencies": {
     "qewd-router": "",
     "qewd-template": "",

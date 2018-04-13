@@ -10,6 +10,12 @@
         "problem_diagnosis": {
           "type": "object",
           "properties": {
+            "last_updated": {
+              "description": "Last updated",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            },
             "problem_diagnosis_name": {
               "type": "object",
               "properties": {
@@ -33,25 +39,57 @@
                 "value"
               ]
             },
-            "clinical_description": {
+            "date_time_clinically_recognised": {
+              "description": "Date/time clinically recognised",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            },
+            "comment": {
               "type": "object",
               "properties": {
                 "value": {
-                  "description": "Clinical description value",
+                  "description": "Comment value",
                   "type": "string",
                   "minLength": 1
                 },
                 "code": {
-                  "description": "Clinical description code",
+                  "description": "Comment code",
                   "type": "string",
                   "minLength": 1
                 },
                 "terminology": {
-                  "description": "Clinical description terminology",
+                  "description": "Comment terminology",
                   "type": "string",
                   "minLength": 1
                 }
               }
+            },
+            "severity": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Severity value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Severity code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Severity terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "date_time_of_onset": {
+              "description": "Date/time of onset",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
             },
             "body_site": {
               "type": "object",
@@ -73,33 +111,21 @@
                 }
               }
             },
-            "date_time_of_onset": {
-              "description": "Date/time of onset",
-              "type": "string",
-              "minLength": 1,
-              "format": "date-time"
-            },
-            "date_time_clinically_recognised": {
-              "description": "Date/time clinically recognised",
-              "type": "string",
-              "minLength": 1,
-              "format": "date-time"
-            },
-            "severity": {
+            "diagnostic_certainty": {
               "type": "object",
               "properties": {
                 "value": {
-                  "description": "Severity value",
+                  "description": "Diagnostic certainty value",
                   "type": "string",
                   "minLength": 1
                 },
                 "code": {
-                  "description": "Severity code",
+                  "description": "Diagnostic certainty code",
                   "type": "string",
                   "minLength": 1
                 },
                 "terminology": {
-                  "description": "Severity terminology",
+                  "description": "Diagnostic certainty terminology",
                   "type": "string",
                   "minLength": 1
                 }
@@ -153,26 +179,6 @@
                     }
                   }
                 },
-                "resolution_status": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "description": "Resolution status value",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "code": {
-                      "description": "Resolution status code",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "terminology": {
-                      "description": "Resolution status terminology",
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                },
                 "episodicity": {
                   "type": "object",
                   "properties": {
@@ -193,10 +199,25 @@
                     }
                   }
                 },
-                "first_occurrence": {
-                  "description": "First occurrence?",
-                  "type": "boolean",
-                  "minLength": 1
+                "resolution_status": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Resolution status value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Resolution status code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Resolution status terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
                 },
                 "drg_category": {
                   "type": "object",
@@ -217,156 +238,31 @@
                       "minLength": 1
                     }
                   }
+                },
+                "first_occurrence": {
+                  "description": "First occurrence?",
+                  "type": "boolean",
+                  "minLength": 1
                 }
               }
             },
-            "diagnostic_certainty": {
+            "clinical_description": {
               "type": "object",
               "properties": {
                 "value": {
-                  "description": "Diagnostic certainty value",
+                  "description": "Clinical description value",
                   "type": "string",
                   "minLength": 1
                 },
                 "code": {
-                  "description": "Diagnostic certainty code",
+                  "description": "Clinical description code",
                   "type": "string",
                   "minLength": 1
                 },
                 "terminology": {
-                  "description": "Diagnostic certainty terminology",
+                  "description": "Clinical description terminology",
                   "type": "string",
                   "minLength": 1
-                }
-              }
-            },
-            "comment": {
-              "type": "object",
-              "properties": {
-                "value": {
-                  "description": "Comment value",
-                  "type": "string",
-                  "minLength": 1
-                },
-                "code": {
-                  "description": "Comment code",
-                  "type": "string",
-                  "minLength": 1
-                },
-                "terminology": {
-                  "description": "Comment terminology",
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "last_updated": {
-              "description": "Last updated",
-              "type": "string",
-              "minLength": 1,
-              "format": "date-time"
-            }
-          }
-        },
-        "empty_list_info": {
-          "type": "object",
-          "properties": {
-            "exclusion_-_global": {
-              "type": "object",
-              "properties": {
-                "global_exclusion_of_problems_diagnoses": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "description": "Global exclusion of problems/diagnoses value",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "code": {
-                      "description": "Global exclusion of problems/diagnoses code",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "terminology": {
-                      "description": "Global exclusion of problems/diagnoses terminology",
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  },
-                  "required": [
-                    "value"
-                  ]
-                },
-                "comment": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "description": "Comment value",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "code": {
-                      "description": "Comment code",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "terminology": {
-                      "description": "Comment terminology",
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                }
-              }
-            },
-            "absence_of_information": {
-              "type": "object",
-              "properties": {
-                "absence_statement": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "description": "Absence statement value",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "code": {
-                      "description": "Absence statement code",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "terminology": {
-                      "description": "Absence statement terminology",
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                },
-                "reason_for_absence": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "description": "Reason for absence value",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "code": {
-                      "description": "Reason for absence code",
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "terminology": {
-                      "description": "Reason for absence terminology",
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                },
-                "last_updated": {
-                  "description": "Last updated",
-                  "type": "string",
-                  "minLength": 1,
-                  "format": "date-time"
                 }
               }
             }

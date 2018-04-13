@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  27 March 2018
+  11 April 2018
 
 */
 
@@ -50,9 +50,26 @@ module.exports = function(params) {
     //console.log('** record = ' + JSON.stringify(record));
 
     var start_time = '';
-    if (record.data.context && record.data.context.start_time && record.data.context.start_time.value) {
-      start_time = record.data.context.start_time.value;
-      if (start_time.indexOf('UTC') !== -1) start_time = start_time.split('UTC')[0];
+    var hc_facility = {};
+    var context = record.data.context;
+    if (context) {
+      if  (context.start_time && context.start_time.value) {
+        start_time = context.start_time.value;
+        if (start_time.indexOf('UTC') !== -1) start_time = start_time.split('UTC')[0];
+      }
+      var hcf = context.health_care_facility;
+      if  (hcf) {
+        if (hcf.name) hc_facility.name = hcf.name;
+        var extref = hcf.external_ref;
+        if (extref) {
+          if (extref.id) {
+            hc_facility.id = {};
+            if (extref.id.value) hc_facility.id.value = extref.id.value;
+            if (extref.id.scheme) hc_facility.id.scheme = extref.id.scheme;
+          }
+          if (extref.namespace) hc_facility.id.namespace = extref.namespace;
+        }
+      }
     }
 
     var result = {
@@ -61,6 +78,7 @@ module.exports = function(params) {
         value: record.data.composer.name
       },
       start_time: start_time,
+      health_care_facility: hc_facility,
       patientId: patientId,
       host: host
     };

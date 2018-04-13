@@ -16,13 +16,13 @@ forwards them to the appropriate MicroService(s) for execution.
 
 Start up this container as a foreground process using the *rtweed/qewd-server* Docker Container:
 
-       sudo docker run -it -p 8080:8080 -v ~/ripple/conductor-service-phr:/opt/qewd/mapped -v ~/ripple/conductor-service-phr/www:/opt/qewd/www rtweed/qewd-server
+       sudo docker run -it --rm -p 8080:8080 -v ~/ripple/conductor-service-phr:/opt/qewd/mapped -v ~/ripple/conductor-service-phr/www:/opt/qewd/www rtweed/qewd-server
 
 
 
 or, to run it as a daemon process:
 
-       sudo docker run -d -p 8080:8080 -v ~/ripple/conductor-service-phr:/opt/qewd/mapped -v ~/ripple/conductor-service-phr/www:/opt/qewd/www rtweed/qewd-server
+       sudo docker run -d --rm -p 8080:8080 -v ~/ripple/conductor-service-phr:/opt/qewd/mapped -v ~/ripple/conductor-service-phr/www:/opt/qewd/www rtweed/qewd-server
 
 
 Note 1: the -p parameter defines the port mapping, using the convention:

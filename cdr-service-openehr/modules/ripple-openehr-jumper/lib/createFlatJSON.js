@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  26 March 2018
+  10 April 2018
 
 */
 
@@ -139,7 +139,7 @@ function getPaths(obj, path, paths, host) {
         });
         paths.push({
           id: getSource(currentPath, 'value'),
-          path: currentPath + '|text'
+          path: currentPath + '|value'
         });
         paths.push({
           id: getSource(currentPath, 'code'),
@@ -179,8 +179,8 @@ function createFlatJSONTemplate(webTemplate) {
   var path = '';
   var paths = [
     {id: "=> either(composer.value, 'Dr Tony Shannon')", path: 'ctx/composer_name'},
-    {id: "=> either(facility_id, '999999-345')", path: 'ctx/healthcare_facility|id'},
-    {id: "=> either(facility_name, 'Rippleburgh GP Practice')", path: 'ctx/healthcare_facility|name'},
+    {id: "=> either(facility_id, '999999-345')", path: 'ctx/health_care_facility|id'},
+    {id: "=> either(facility_name, 'Rippleburgh GP Practice')", path: 'ctx/health_care_facility|name'},
     {id: '== NHS-UK', path: 'ctx/id_namespace'},
     {id: '== 2.16.840.1.113883.2.1.4.3', path: 'ctx/id_scheme'},
     {id: '== en', path: 'ctx/language'},
