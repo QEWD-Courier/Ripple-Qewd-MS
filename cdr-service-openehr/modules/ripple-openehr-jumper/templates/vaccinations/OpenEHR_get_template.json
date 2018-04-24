@@ -1,0 +1,28 @@
+{
+  "uid": "{{uid}}",
+  "composer": {
+    "value": "{{composer}}"
+  },
+  "host": "{{host}}",
+  "patientId": "{{patientId}}",
+  "immunisation_procedure": {
+    "immunisation_name": {
+      "value": "{{immunisation_name}}",
+      "code": "{{immunisation_name_codeString}}",
+      "terminology": "{{immunisation_name_terminology}}"
+    },
+    "series_number": {
+      "value": "{{series_number}}"
+    },
+    "comment": {
+      "value": "{{comment}}",
+      "code": "{{comment_codeString}}",
+      "terminology": "{{comment_terminology}}"
+    },
+    "reason_withheld": {
+      "value": "{{reason_withheld}}",
+      "code": "{{reason_withheld_codeString}}",
+      "terminology": "{{reason_withheld_terminology}}"
+    }
+  }
+}

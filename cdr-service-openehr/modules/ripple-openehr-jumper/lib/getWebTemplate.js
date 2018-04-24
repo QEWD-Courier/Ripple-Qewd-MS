@@ -24,16 +24,18 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  16 April 2018
 
 */
 
-var openEHR = require(__dirname + '/../../ripple-cdr-openehr/src/openEHR');
+var openEHR; // = require(__dirname + '/../../ripple-cdr-openehr/src/openEHR');
 var processWebTemplate = require('./processWebTemplate');
 
 
 function getWebTemplate(templateName, headingPath, callback) {
+  if (!openEHR) openEHR = require(this.userDefined.paths.openEHR_modules + 'openEHR');
   openEHR.init.call(this)
+  
 
   var host = 'ethercis';
   //var host = 'marand';

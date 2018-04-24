@@ -1,0 +1,208 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "IDCR - Medication Statement List.v0",
+  "description": "Data Entry Schema for OpenEHR Template IDCR - Medication Statement List.v0",
+  "type": "object",
+  "properties": {
+    "medication_and_medical_devices": {
+      "type": "object",
+      "properties": {
+        "medication_order": {
+          "type": "object",
+          "properties": {
+            "order": {
+              "type": "object",
+              "properties": {
+                "medication_item": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Medication item value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Medication item code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Medication item terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "value"
+                  ]
+                },
+                "body_site": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Body site value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Body site code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Body site terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "overall_directions_description": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Overall directions description value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Overall directions description code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Overall directions description terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "route": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Route value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Route code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Route terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "clinical_indication": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Clinical indication value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Clinical indication code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Clinical indication terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "dose_timing_description": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Dose timing description value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Dose timing description code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Dose timing description terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "additional_instruction": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Additional instruction value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Additional instruction code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Additional instruction terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "order_details": {
+                  "type": "object",
+                  "properties": {
+                    "order_start_date_time": {
+                      "description": "Order start date/time",
+                      "type": "string",
+                      "minLength": 1,
+                      "format": "date-time"
+                    },
+                    "order_stop_date_time": {
+                      "description": "Order stop date/time",
+                      "type": "string",
+                      "minLength": 1,
+                      "format": "date-time"
+                    },
+                    "order_summary": {
+                      "type": "object",
+                      "properties": {
+                        "course_status": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "description": "Course status value",
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "code": {
+                              "description": "Course status code",
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "terminology": {
+                              "description": "Course status terminology",
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

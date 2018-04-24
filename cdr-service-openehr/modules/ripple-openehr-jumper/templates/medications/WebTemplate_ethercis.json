@@ -1,0 +1,797 @@
+{
+  "uid": "b37ead97-371c-4b63-8823-49668dc6fd52",
+  "languages": [
+    "en"
+  ],
+  "concept": "IDCR - Medication Statement List.v0",
+  "tree": {
+    "min": 1,
+    "max": 1,
+    "children": [
+      {
+        "mandatory_attributes": [
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "attribute_name": "name",
+        "constraint": {
+          "occurrence": {
+            "min": 1,
+            "max_op": "<=",
+            "min_op": ">=",
+            "max": 1
+          }
+        },
+        "type": "DV_TEXT"
+      },
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "max": 1,
+        "children": [
+          {
+            "min": 0,
+            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+            "max": -1,
+            "children": [
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]",
+                "max": -1,
+                "children": [
+                  {
+                    "min": 1,
+                    "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]",
+                    "max": 1,
+                    "children": [
+                      {
+                        "min": 1,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0070]",
+                        "max": 1,
+                        "name": "Medication item",
+                        "description": "Name of the medication, vaccine or other therapeutic/prescribable item being ordered.",
+                        "id": "medication_item",
+                        "category": "ELEMENT",
+                        "type": "DV_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0070]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "node_id": "at0070"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0092]",
+                        "max": 1,
+                        "name": "Body site",
+                        "description": "Name of the site of administration of the ordered item.",
+                        "id": "body_site",
+                        "category": "ELEMENT",
+                        "type": "DV_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0092]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "node_id": "at0092"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0009]",
+                        "max": 1,
+                        "name": "Overall directions description",
+                        "description": "Complete narrative description about how the ordered item is to be used.",
+                        "id": "overall_directions_description",
+                        "category": "ELEMENT",
+                        "type": "DV_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0009]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "node_id": "at0009"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0091]",
+                        "max": 1,
+                        "name": "Route",
+                        "description": "The route by which the ordered item is to be administered into the subject's body.",
+                        "id": "route",
+                        "category": "ELEMENT",
+                        "type": "DV_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0091]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "node_id": "at0091"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0018]",
+                        "max": -1,
+                        "name": "Clinical indication",
+                        "description": "The clinical reason for use of the ordered item.",
+                        "id": "clinical_indication",
+                        "category": "ELEMENT",
+                        "type": "DV_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0018]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "node_id": "at0018"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0173]",
+                        "max": 1,
+                        "name": "Dose timing description",
+                        "description": "A narrative description of a specific part of overall directions.",
+                        "id": "dose_timing_description",
+                        "category": "ELEMENT",
+                        "type": "DV_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0173]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          },
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "name",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "node_id": "at0173"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0044]",
+                        "max": -1,
+                        "name": "Additional instruction",
+                        "description": "An additional instruction on how to use or store the ordered item.",
+                        "id": "additional_instruction",
+                        "category": "ELEMENT",
+                        "type": "DV_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0044]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "node_id": "at0044"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[at0012]",
+                            "max": 1,
+                            "name": "Order start date/time",
+                            "description": "The date and optional time to commence use of the ordered item.",
+                            "id": "order_start_date_time",
+                            "category": "ELEMENT",
+                            "type": "DV_DATE_TIME",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[at0012]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_DATE_TIME"
+                              }
+                            ],
+                            "node_id": "at0012"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[at0013]",
+                            "max": 1,
+                            "name": "Order stop date/time",
+                            "description": "The date and optional time when it is planned to cease use of the ordered item.",
+                            "id": "order_stop_date_time",
+                            "category": "ELEMENT",
+                            "type": "DV_DATE_TIME",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[at0013]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_DATE_TIME"
+                              }
+                            ],
+                            "node_id": "at0013"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[openEHR-EHR-CLUSTER.medication_course_summary.v0]",
+                            "max": 1,
+                            "children": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "name",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              },
+                              {
+                                "min": 0,
+                                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[openEHR-EHR-CLUSTER.medication_course_summary.v0]/items[at0001]",
+                                "max": 1,
+                                "name": "Course status",
+                                "description": "The overall status of this order.",
+                                "id": "course_status",
+                                "category": "ELEMENT",
+                                "type": "DV_CODED_TEXT",
+                                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[openEHR-EHR-CLUSTER.medication_course_summary.v0],0,/items[at0001]}'",
+                                "constraints": [
+                                  {
+                                    "mandatory_attributes": [
+                                      {
+                                        "attribute": "defining_code",
+                                        "type": "CODE_PHRASE"
+                                      },
+                                      {
+                                        "attribute": "value",
+                                        "type": "STRING"
+                                      }
+                                    ],
+                                    "constraint": {
+                                      "defining_code": [
+                                        {
+                                          "code_string": "at0021",
+                                          "terminology": "local",
+                                          "description": "This is an active medication.",
+                                          "value": "Active"
+                                        },
+                                        {
+                                          "code_string": "at0022",
+                                          "terminology": "local",
+                                          "description": "This is a medication that has previously been issued, dispensed or administered but has now been discontinued.",
+                                          "value": "Stopped"
+                                        },
+                                        {
+                                          "code_string": "at0023",
+                                          "terminology": "local",
+                                          "description": "A medication which was ordered or authorised but has been cancelled prior to being issued, dispensed or adiminstered.",
+                                          "value": "Never active"
+                                        },
+                                        {
+                                          "code_string": "at0024",
+                                          "terminology": "local",
+                                          "description": "The medication course has been completed.",
+                                          "value": "Completed"
+                                        },
+                                        {
+                                          "code_string": "at0025",
+                                          "terminology": "local",
+                                          "description": "This medication order has been superseded by another.",
+                                          "value": "Obsolete"
+                                        },
+                                        {
+                                          "code_string": "at0026",
+                                          "terminology": "local",
+                                          "description": "Actions reuulting from the order are to be temporarily halted, but are expected to continue later. May also be called 'on-hold'.",
+                                          "value": "Suspended"
+                                        },
+                                        {
+                                          "code_string": "at0027",
+                                          "terminology": "local",
+                                          "description": "The medication order has been made but further processes e.g. sign-off or verification are required before it becomes actionable.",
+                                          "value": "Draft"
+                                        }
+                                      ],
+                                      "occurrence": {
+                                        "min": 1,
+                                        "max_op": "<=",
+                                        "min_op": ">=",
+                                        "max": 1
+                                      }
+                                    },
+                                    "attribute_name": "value",
+                                    "type": "DV_CODED_TEXT"
+                                  }
+                                ],
+                                "node_id": "at0001"
+                              }
+                            ],
+                            "name": "Order summary",
+                            "description": "Overall summary of the medication course.",
+                            "id": "order_summary",
+                            "type": "CLUSTER",
+                            "category": "DATA_STRUCTURE",
+                            "node_id": "openEHR-EHR-CLUSTER.medication_course_summary.v0"
+                          }
+                        ],
+                        "name": "Order details",
+                        "description": "Details about the whole medication order.",
+                        "id": "order_details",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "at0113"
+                      }
+                    ],
+                    "name": "Tree",
+                    "description": "@ internal @",
+                    "id": "tree",
+                    "type": "ITEM_TREE",
+                    "category": "DATA_STRUCTURE",
+                    "node_id": "at0002"
+                  },
+                  {
+                    "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/action_archetype_id",
+                    "name": "ActionArchetypeId",
+                    "attribute": "action_archetype_id",
+                    "occurrence": {
+                      "min": 1,
+                      "max_op": "<=",
+                      "min_op": ">=",
+                      "max": 1
+                    },
+                    "category": "ATTRIBUTE",
+                    "type": "STRING"
+                  },
+                  {
+                    "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/timing",
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "formalism",
+                        "type": "STRING"
+                      },
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "name": "Timing",
+                    "attribute": "timing",
+                    "occurrence": {
+                      "min": 1,
+                      "max_op": "<=",
+                      "min_op": ">=",
+                      "max": 1
+                    },
+                    "category": "ATTRIBUTE",
+                    "type": "DV_PARSABLE"
+                  }
+                ],
+                "name": "Order",
+                "description": "Details of the requested order.",
+                "id": "order",
+                "type": "ACTIVITY",
+                "category": "DATA_STRUCTURE",
+                "node_id": "at0001"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/subject",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "namespace",
+                    "type": "STRING"
+                  },
+                  {
+                    "attribute": "id",
+                    "type": "OBJECT_ID"
+                  },
+                  {
+                    "attribute": "type",
+                    "type": "STRING"
+                  }
+                ],
+                "name": "Subject",
+                "attribute": "subject",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "PARTY_PROXY"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/narrative",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "name": "Narrative",
+                "attribute": "narrative",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "DV_TEXT"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/language",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "code_string",
+                    "type": "STRING"
+                  },
+                  {
+                    "attribute": "terminology_id",
+                    "type": "TERMINOLOGY_ID"
+                  }
+                ],
+                "name": "Language",
+                "attribute": "language",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/encoding",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "code_string",
+                    "type": "STRING"
+                  },
+                  {
+                    "attribute": "terminology_id",
+                    "type": "TERMINOLOGY_ID"
+                  }
+                ],
+                "name": "Encoding",
+                "attribute": "encoding",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "CODE_PHRASE"
+              }
+            ],
+            "name": "Medication order",
+            "description": "An order for a medication, vaccine, nutritional product or other therapeutic item for an identified individual.",
+            "id": "medication_order",
+            "type": "INSTRUCTION",
+            "category": "DATA_STRUCTURE",
+            "node_id": "openEHR-EHR-INSTRUCTION.medication_order.v1"
+          }
+        ],
+        "name": "Medication and medical devices",
+        "description": "Medication and medical devices heading (AoMRC).",
+        "id": "medication_and_medical_devices",
+        "type": "SECTION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-SECTION.medication_medical_devices_rcp.v1"
+      },
+      {
+        "aql_path": "/composer",
+        "mandatory_attributes": [
+          {
+            "attribute": "namespace",
+            "type": "STRING"
+          },
+          {
+            "attribute": "id",
+            "type": "OBJECT_ID"
+          },
+          {
+            "attribute": "type",
+            "type": "STRING"
+          }
+        ],
+        "name": "Composer",
+        "attribute": "composer",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "PARTY_PROXY"
+      },
+      {
+        "aql_path": "/language",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Language",
+        "attribute": "language",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "aql_path": "/category",
+        "mandatory_attributes": [
+          {
+            "attribute": "defining_code",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "name": "Category",
+        "attribute": "category",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "DV_CODED_TEXT"
+      },
+      {
+        "aql_path": "/territory",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Territory",
+        "attribute": "territory",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "min": 1,
+        "aql_path": "/context",
+        "max": 1,
+        "children": [
+          {
+            "aql_path": "/context/start_time",
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "StartTime",
+            "attribute": "start_time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/context/setting",
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Setting",
+            "attribute": "setting",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_CODED_TEXT"
+          }
+        ],
+        "rm_type": "EVENT_CONTEXT",
+        "attribute": "context",
+        "node_id": ""
+      }
+    ],
+    "name": "Medication statement list",
+    "description": "A persistent and managed list of medications that are reasonably assumed to be taken by the individual and that may influence clinical decision-making and care provision.",
+    "id": "medication_statement_list",
+    "type": "COMPOSITION",
+    "category": "DATA_STRUCTURE",
+    "node_id": "openEHR-EHR-COMPOSITION.medication_list.v0"
+  },
+  "template_id": "IDCR - Medication Statement List.v0",
+  "default_language": "en"
+}

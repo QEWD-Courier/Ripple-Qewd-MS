@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 April 2018
+  16 April 2018
 
 */
 
@@ -53,7 +53,8 @@ function initialise() {
   for (var heading in this.userDefined.headings) {
     headingObj = this.userDefined.headings[heading];
     if (typeof headingObj === 'object' && headingObj.template && headingObj.template.name) {
-      getTemplate = __dirname + '/../templates/' + heading + '/OpenEHR_get_template.json';
+      //getTemplate = __dirname + '/../templates/' + heading + '/OpenEHR_get_template.json';
+      getTemplate = this.userDefined.paths.jumper_templates + heading + '/OpenEHR_get_template.json';
       if (fs.existsSync(getTemplate)) {
         templateIndex[headingObj.template.name] = heading;
       }
@@ -64,18 +65,20 @@ function initialise() {
 }
 
 function formatResults(record, heading, sourceId, format, headingPath, sourceIdCache) {
-  //console.log('formatResults: record = ' + JSON.stringify(record));
-  //console.log('format ' + format + ' results');
-  //console.log('headingPath = ' + headingPath);
+  console.log('formatResults: record = ' + JSON.stringify(record));
+  console.log('heading: ' + heading);
+  console.log('format ' + format + ' results');
+  console.log('headingPath = ' + headingPath);
 
   if (format === 'pulsetile' || format === 'fhir') {
     if (!formatTemplates[heading]) formatTemplates[heading] = {};
 
     if (!formatTemplates[heading][format]) {
-      if (format === 'pulsetile') formatTemplates[heading][format] = require(headingPath + '/openEHR_to_Ripple.json');
+      if (format === 'pulsetile') formatTemplates[heading][format] = require(headingPath + '/openEHR_to_Pulsetile.json');
       if (format === 'fhir') formatTemplates[heading][format] = require(headingPath + '/openEHR_to_FHIR.json');
     }
     var template = formatTemplates[heading][format];
+    console.log('template = ' + JSON.stringify(template));
 
     var cachedRecord = sourceIdCache.$([sourceId, format]);
     if (!cachedRecord.exists) {
@@ -122,7 +125,7 @@ module.exports = function(params, callback) {
   var templateByName = templateReg.$(['byName', templateName]);
   var templateId = templateByName.value;
 
-  var headingPath = __dirname + '/../templates/' + heading;
+  var headingPath = this.userDefined.paths.jumper_templates + heading;
 
   console.log('*** ripple-openehr-jumper/getHeadingFromOpenEHRServer: headingPath = ' + headingPath);
 

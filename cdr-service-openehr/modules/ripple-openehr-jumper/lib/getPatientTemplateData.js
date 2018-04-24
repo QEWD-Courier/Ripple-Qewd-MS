@@ -24,15 +24,15 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 April 2018
+  16 April 2018
 
 */
 
 var fs = require('fs-extra');
 var getPatientDataFromCache = require('./getPatientDataFromCache');
-var openEHRPath = __dirname + '/../../ripple-cdr-openehr/src/';
-var tools = require(openEHRPath + 'tools');
-var fetchAndCacheHeading = require(openEHRPath + 'fetchAndCacheHeading');
+var openEHRPath; // = __dirname + '/../../ripple-cdr-openehr/src/';
+var tools; // = require(openEHRPath + 'tools');
+var fetchAndCacheHeading; // = require(openEHRPath + 'fetchAndCacheHeading');
 
 var initialised = false;
 var templateIndex = {};
@@ -41,6 +41,10 @@ var servers;
 function initialise() {
 
   if (initialised) return;
+
+  openEHRPath = this.userDefined.paths.openEHR_modules;
+  tools = require(openEHRPath + 'tools');
+  fetchAndCacheHeading = require(openEHRPath + 'fetchAndCacheHeading');
 
   var templateName;
   var headingObj;
@@ -51,7 +55,7 @@ function initialise() {
   for (var heading in this.userDefined.headings) {
     headingObj = this.userDefined.headings[heading];
     if (typeof headingObj === 'object' && headingObj.template && headingObj.template.name) {
-      getTemplate = __dirname + '/../templates/' + heading + '/OpenEHR_get_template.json';
+      getTemplate = this.userDefined.paths.jumper_templates + heading + '/OpenEHR_get_template.json';
       if (fs.existsSync(getTemplate)) {
         templateIndex[headingObj.template.name] = heading;
       }

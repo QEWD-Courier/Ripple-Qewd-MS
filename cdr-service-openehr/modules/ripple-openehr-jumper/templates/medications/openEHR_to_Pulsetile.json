@@ -1,0 +1,16 @@
+{
+  "name": "{{medication_and_medical_devices.medication_order.order.medication_item.value}}",
+  "medicationCode": "{{medication_and_medical_devices.medication_order.order.medication_item.code}}",
+  "medicationTerminology": "{{medication_and_medical_devices.medication_order.order.medication_item.terminology}}",
+  "doseAmount": "{{medication_and_medical_devices.medication_order.order.dose_amount_description.value}}",
+  "doseDirections": "{{medication_and_medical_devices.medication_order.order.additional_instruction.value}}",
+  "doseTiming": "{{medication_and_medical_devices.medication_order.order.dose_timing_description.value}}",
+  "route": "{{medication_and_medical_devices.medication_order.order.route.value}}",
+  "startDate": "=> getRippleTime(medication_and_medical_devices.medication_order.order.order_details.order_start_date_time.value)",
+  "startTime": "=> msAfterMidnight(medication_and_medical_devices.medication_order.order.order_details.order_start_date_time.value)",
+  "author": "{{composer.value}}",
+  "dateCreated": "=> rippleDateTime(start_time, true)",
+  "source": "{{host}}",
+  "sourceId": "=> getUid(uid, host)",
+  "patientId": "{{patientId}}"
+}

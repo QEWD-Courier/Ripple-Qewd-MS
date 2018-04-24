@@ -1,0 +1,63 @@
+{
+  "uid": "{{uid}}",
+  "composer": {
+    "value": "{{composer}}"
+  },
+  "host": "{{host}}",
+  "patientId": "{{patientId}}",
+  "relevant_contacts": {
+    "relevant_contact": {
+      "individual_person": {
+        "contact_details": {
+          "comms_description": {
+            "value": "{{comms_description}}",
+            "code": "{{comms_description_codeString}}",
+            "terminology": "{{comms_description_terminology}}"
+          },
+          "method": {
+            "value": "{{method}}",
+            "code": "{{method_codeString}}",
+            "terminology": "{{method_terminology}}"
+          }
+        },
+        "person_name": {
+          "unstructured_name": {
+            "value": "{{unstructured_name}}",
+            "code": "{{unstructured_name_codeString}}",
+            "terminology": "{{unstructured_name_terminology}}"
+          }
+        },
+        "address": {
+          "address_description": {
+            "value": "{{address_description}}",
+            "code": "{{address_description_codeString}}",
+            "terminology": "{{address_description_terminology}}"
+          },
+          "state": {
+            "value": "{{state}}",
+            "code": "{{state_codeString}}",
+            "terminology": "{{state_terminology}}"
+          }
+        }
+      },
+      "note": {
+        "value": "{{note}}",
+        "code": "{{note_codeString}}",
+        "terminology": "{{note_terminology}}"
+      },
+      "is_next_of_kin": {
+        "value": "{{is_next_of_kin}}"
+      },
+      "relationship_category": {
+        "value": "{{relationship_category}}",
+        "code": "{{relationship_category_codeString}}",
+        "terminology": "{{relationship_category_terminology}}"
+      },
+      "relationship_role": {
+        "value": "{{relationship_role}}",
+        "code": "{{relationship_role_codeString}}",
+        "terminology": "{{relationship_role_terminology}}"
+      }
+    }
+  }
+}

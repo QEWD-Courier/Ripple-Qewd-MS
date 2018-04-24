@@ -1,0 +1,23 @@
+{
+  "ctx/composer_name": "=> either(composer.value, 'Dr Tony Shannon')",
+  "ctx/health_care_facility|id": "=> either(facility_id, '999999-345')",
+  "ctx/health_care_facility|name": "=> either(facility_name, 'Rippleburgh GP Practice')",
+  "ctx/id_namespace": "NHS-UK",
+  "ctx/id_scheme": "2.16.840.1.113883.2.1.4.3",
+  "ctx/language": "en",
+  "ctx/territory": "GB",
+  "ctx/time": "=> now()",
+  "immunisation_summary/immunisation_procedure:0/immunisation_name": "=> dvText(immunisation_procedure.immunisation_name)",
+  "immunisation_summary/immunisation_procedure:0/immunisation_name|value": "=> either(immunisation_procedure.immunisation_name.value, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/immunisation_name|code": "=> either(immunisation_procedure.immunisation_name.code, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/immunisation_name|terminology": "=> either(immunisation_procedure.immunisation_name.terminology, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/series_number": "=> either(immunisation_procedure.series_number, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/comment": "=> dvText(immunisation_procedure.comment)",
+  "immunisation_summary/immunisation_procedure:0/comment|value": "=> either(immunisation_procedure.comment.value, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/comment|code": "=> either(immunisation_procedure.comment.code, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/comment|terminology": "=> either(immunisation_procedure.comment.terminology, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/reason_withheld": "=> dvText(immunisation_procedure.reason_withheld)",
+  "immunisation_summary/immunisation_procedure:0/reason_withheld|value": "=> either(immunisation_procedure.reason_withheld.value, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/reason_withheld|code": "=> either(immunisation_procedure.reason_withheld.code, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/reason_withheld|terminology": "=> either(immunisation_procedure.reason_withheld.terminology, <!delete>)"
+}

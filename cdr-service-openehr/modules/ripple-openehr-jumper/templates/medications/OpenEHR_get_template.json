@@ -1,0 +1,64 @@
+{
+  "uid": "{{uid}}",
+  "composer": {
+    "value": "{{composer}}"
+  },
+  "host": "{{host}}",
+  "patientId": "{{patientId}}",
+  "medication_and_medical_devices": {
+    "medication_order": {
+      "order": {
+        "medication_item": {
+          "value": "{{medication_item}}",
+          "code": "{{medication_item_codeString}}",
+          "terminology": "{{medication_item_terminology}}"
+        },
+        "body_site": {
+          "value": "{{body_site}}",
+          "code": "{{body_site_codeString}}",
+          "terminology": "{{body_site_terminology}}"
+        },
+        "overall_directions_description": {
+          "value": "{{overall_directions_description}}",
+          "code": "{{overall_directions_description_codeString}}",
+          "terminology": "{{overall_directions_description_terminology}}"
+        },
+        "route": {
+          "value": "{{route}}",
+          "code": "{{route_codeString}}",
+          "terminology": "{{route_terminology}}"
+        },
+        "clinical_indication": {
+          "value": "{{clinical_indication}}",
+          "code": "{{clinical_indication_codeString}}",
+          "terminology": "{{clinical_indication_terminology}}"
+        },
+        "dose_timing_description": {
+          "value": "{{dose_timing_description}}",
+          "code": "{{dose_timing_description_codeString}}",
+          "terminology": "{{dose_timing_description_terminology}}"
+        },
+        "additional_instruction": {
+          "value": "{{additional_instruction}}",
+          "code": "{{additional_instruction_codeString}}",
+          "terminology": "{{additional_instruction_terminology}}"
+        },
+        "order_details": {
+          "order_start_date_time": {
+            "value": "{{order_start_date_time}}"
+          },
+          "order_stop_date_time": {
+            "value": "{{order_stop_date_time}}"
+          },
+          "order_summary": {
+            "course_status": {
+              "value": "{{course_status}}",
+              "code": "{{course_status_codeString}}",
+              "terminology": "{{course_status_terminology}}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

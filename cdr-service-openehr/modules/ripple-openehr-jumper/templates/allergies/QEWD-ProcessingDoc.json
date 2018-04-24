@@ -158,63 +158,101 @@
     }
   },
   "index": {
-    "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]": {
-      "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]": {
-        "data[at0001]": {
-          "items[at0002]": {
-            "Causative agent": "3"
-          },
-          "items[at0006]": {
-            "Comment": "6"
-          },
-          "items[at0009]": {
-            "items[at0010]": {
-              "Specific substance": "11"
-            },
-            "items[at0011]": {
-              "Manifestation": "10"
-            },
-            "items[at0012]": {
-              "Reaction description": "14"
-            },
-            "items[at0021]": {
-              "Certainty": "12"
-            },
-            "items[at0027]": {
-              "Onset of reaction": "8"
-            },
-            "items[at0032]": {
-              "Comment": "13"
-            },
-            "items[at0089]": {
-              "Severity": "15"
-            },
-            "items[at0106]": {
-              "Route of exposure": "9"
-            }
-          },
-          "items[at0058]": {
-            "Reaction mechanism": "5"
-          },
-          "items[at0063]": {
-            "Status": "16"
-          },
-          "items[at0101]": {
-            "Criticality": "4"
-          },
-          "items[at0117]": {
-            "Onset of last reaction": "7"
-          },
-          "items[at0120]": {
-            "Category": "2"
+    "1": {
+      "2": {
+        "3": {
+          "4": {
+            "5": 1
           }
         },
-        "protocol[at0042]": {
-          "items[at0062]": {
-            "Last updated": "1"
+        "6": {
+          "7": {
+            "8": 2
+          },
+          "9": {
+            "10": 3
+          },
+          "11": {
+            "12": 4
+          },
+          "13": {
+            "14": 5
+          },
+          "15": {
+            "16": 6
+          },
+          "17": {
+            "18": 7
+          },
+          "19": {
+            "20": {
+              "21": 8
+            },
+            "22": {
+              "23": 9
+            },
+            "24": {
+              "25": 10
+            },
+            "26": {
+              "27": 11
+            },
+            "28": {
+              "29": 12
+            },
+            "30": {
+              "16": 13
+            },
+            "31": {
+              "32": 14
+            },
+            "33": {
+              "34": 15
+            }
+          },
+          "35": {
+            "36": 16
           }
         }
       }
     }
+  },
+  "indexSubs": {
+    "Category": 8,
+    "Causative agent": 10,
+    "Certainty": 29,
+    "Comment": 16,
+    "Criticality": 12,
+    "Last updated": 5,
+    "Manifestation": 25,
+    "Onset of last reaction": 18,
+    "Onset of reaction": 21,
+    "Reaction description": 32,
+    "Reaction mechanism": 14,
+    "Route of exposure": 23,
+    "Severity": 34,
+    "Specific substance": 27,
+    "Status": 36,
+    "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]": 1,
+    "data[at0001]": 6,
+    "items[at0002]": 9,
+    "items[at0006]": 15,
+    "items[at0009]": 19,
+    "items[at0010]": 26,
+    "items[at0011]": 24,
+    "items[at0012]": 31,
+    "items[at0021]": 28,
+    "items[at0027]": 20,
+    "items[at0032]": 30,
+    "items[at0058]": 13,
+    "items[at0062]": 4,
+    "items[at0063]": 35,
+    "items[at0089]": 33,
+    "items[at0101]": 11,
+    "items[at0106]": 22,
+    "items[at0117]": 17,
+    "items[at0120]": 7,
+    "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]": 2,
+    "protocol[at0042]": 3
   }
 }

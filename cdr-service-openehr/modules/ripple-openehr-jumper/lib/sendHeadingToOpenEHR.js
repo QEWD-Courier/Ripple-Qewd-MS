@@ -24,18 +24,25 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 April 2018
+  16 April 2018
 
 
 */
 
-var openEHRPath = __dirname + '/../../ripple-cdr-openehr/src/';
-var openEHR = require(openEHRPath + 'openEHR');
-var mapNHSNoByHost = require(openEHRPath + 'mapNHSNoByHost');
-var deleteSessionCaches = require(openEHRPath + 'deleteSessionCaches');
+//var openEHRPath = __dirname + '/../../ripple-cdr-openehr/src/';
+var openEHR; // = require(openEHRPath + 'openEHR');
+//var mapNHSNoByHost = require(openEHRPath + 'mapNHSNoByHost');
+//var deleteSessionCaches = require(openEHRPath + 'deleteSessionCaches');
 var sendHeadingData = require('./sendHeadingData');
 
 function sendHeadingToOpenEHR(params, callback) {
+
+  if (!openEHR) {
+    var openEHRPath = this.userDefined.paths.openEHR_modules;
+    var openEHR = require(openEHRPath + 'openEHR');
+    var mapNHSNoByHost = require(openEHRPath + 'mapNHSNoByHost');
+    var deleteSessionCaches = require(openEHRPath + 'deleteSessionCaches');
+  }
 
   openEHR.init.call(this);
   var self = this;

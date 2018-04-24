@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  16 April 2018
 
 */
 
@@ -38,19 +38,27 @@ var getTop3ThingsSummary = require('../top3Things/getTop3ThingsSummarySync');
 function cacheSummaryHeadings(patientId, session, callback) {
 
   var count = 0;
-  var max = 4;
+  var noOfHeadingsInSynopsis = 0;
   var self = this;
 
   this.userDefined.synopsis.headings.forEach(function(heading) {
-    if (heading === 'top3Things') return;
+    noOfHeadingsInSynopsis++;
+  });
+
+  this.userDefined.synopsis.headings.forEach(function(heading) {
+    if (heading === 'top3Things') {
+      count++;
+      if (count === noOfHeadingsInSynopsis && callback) callback();
+      return;
+    }
     fetchAndCacheHeading.call(self, patientId, heading, session, function(response) {
       count++;
-      if (count === max && callback) callback();
+      if (count === noOfHeadingsInSynopsis && callback) callback();
     });
   });
 }
 
-function getSynopsisFromCache(patientId, max, session, callback) {
+function getSynopsisFromCache(patientId, noToDisplayInSynopsis, session, callback) {
   var results = {};
   var patientHeadingCache = session.data.$(['headings', 'byPatientId', patientId]);
   var self = this;
@@ -73,9 +81,9 @@ function getSynopsisFromCache(patientId, max, session, callback) {
         var summary = getHeadingBySourceId.call(self, sourceId, session, 'synopsis');
         results[heading].push(summary);
         count++;
-        if (count === max) return true;
+        if (count === noToDisplayInSynopsis) return true;
       });
-      if (count === max) return true;
+      if (count === noToDisplayInSynopsis) return true;
     });
   });
   callback(results);
@@ -89,12 +97,12 @@ function patientSynopsis(args, finished) {
   var valid = isPatientIdValid(patientId);
   if (valid.error) return finished(valid);
   
-  var max = this.userDefined.synopsis.maximum; 
-  if (args.req.query && args.req.query.maximum) max = args.req.query.maximum;
+  var noToDisplayInSynopsis = this.userDefined.synopsis.maximum; 
+  if (args.req.query && args.req.query.maximum) noToDisplayInSynopsis = args.req.query.maximum;
   var session = args.req.qewdSession; // QEWD Session
 
   cacheSummaryHeadings.call(this, patientId, session, function() {
-    getSynopsisFromCache.call(self, patientId, max, session, function(results) {
+    getSynopsisFromCache.call(self, patientId, noToDisplayInSynopsis, session, function(results) {
       finished(results);
     });
   });

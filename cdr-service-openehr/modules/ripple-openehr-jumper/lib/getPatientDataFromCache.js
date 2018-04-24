@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 April 2018
+  16 April 2018
 
 */
 
@@ -39,7 +39,7 @@ module.exports = function(patientId, heading, format, qewdSession, callback) {
 
     if (!jumperModules[heading]) {
       jumperModules[heading] = {
-        path: __dirname + '/../templates/' + heading
+        path: this.userDefined.paths.jumper_templates + heading
       };
     }
     var headingPath = jumperModules[heading].path;

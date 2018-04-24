@@ -1,0 +1,689 @@
+{
+  "uid": "8c13ad3d-f2f3-4d39-b840-5353a3b0ff65",
+  "languages": [
+    "en"
+  ],
+  "concept": "IDCR - Relevant contacts.v0",
+  "tree": {
+    "min": 1,
+    "max": 1,
+    "children": [
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "max": 1,
+        "children": [
+          {
+            "min": 0,
+            "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+            "max": -1,
+            "children": [
+              {
+                "min": 1,
+                "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]",
+                "max": 1,
+                "children": [
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]",
+                    "max": 1,
+                    "children": [
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.telecom_uk.v1]",
+                        "max": -1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.telecom_uk.v1]/items[at0002]",
+                            "max": 1,
+                            "name": "Comms description",
+                            "description": "An unstructured description of telecoms.",
+                            "id": "comms_description",
+                            "category": "ELEMENT",
+                            "type": "DV_TEXT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.individual_person_uk.v1],0,/items[openEHR-EHR-CLUSTER.telecom_uk.v1],0,/items[at0002]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "node_id": "at0002"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.telecom_uk.v1]/items[at0020]",
+                            "max": 1,
+                            "name": "Method",
+                            "description": "The communications mode e.g Fax. Mobile, Landline, Skype",
+                            "id": "method",
+                            "category": "ELEMENT",
+                            "type": "DV_TEXT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.individual_person_uk.v1],0,/items[openEHR-EHR-CLUSTER.telecom_uk.v1],0,/items[at0020]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "node_id": "at0020"
+                          }
+                        ],
+                        "name": "Contact details",
+                        "description": "Personal or organisational telecommunication details, including telephone, fax, and email or other telecommunications details e.g skype address.",
+                        "id": "contact_details",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "openEHR-EHR-CLUSTER.telecom_uk.v1"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.person_name.v1]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.person_name.v1]/items[at0001]",
+                            "max": 1,
+                            "name": "Unstructured name",
+                            "description": "Name in free text unstructured format.",
+                            "id": "unstructured_name",
+                            "category": "ELEMENT",
+                            "type": "DV_TEXT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.individual_person_uk.v1],0,/items[openEHR-EHR-CLUSTER.person_name.v1],0,/items[at0001]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "node_id": "at0001"
+                          }
+                        ],
+                        "name": "Person name",
+                        "description": "Details of personal name of an individual, provider or third party.",
+                        "id": "person_name",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "openEHR-EHR-CLUSTER.person_name.v1"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.address_uk.v0]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "name",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.address_uk.v0]/items[at0002]",
+                            "max": 1,
+                            "name": "Address description",
+                            "description": "A full postal address expressed in an unstructured, narrative form.",
+                            "id": "address_description",
+                            "category": "ELEMENT",
+                            "type": "DV_TEXT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.individual_person_uk.v1],0,/items[openEHR-EHR-CLUSTER.address_uk.v0],0,/items[at0002]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "node_id": "at0002"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.address_uk.v0]/items[at0023]",
+                            "max": 1,
+                            "name": "State",
+                            "description": "Sub-unit of a country.",
+                            "id": "state",
+                            "category": "ELEMENT",
+                            "type": "DV_TEXT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.individual_person_uk.v1],0,/items[openEHR-EHR-CLUSTER.address_uk.v0],0,/items[at0023]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "node_id": "at0023"
+                          }
+                        ],
+                        "name": "Address",
+                        "description": "To record details of an address for an individual or organisation.",
+                        "id": "address",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "openEHR-EHR-CLUSTER.address_uk.v0"
+                      }
+                    ],
+                    "name": "Individual person",
+                    "description": "Personal demographics including name(s) , addresse(s) and telecommunication contact details.",
+                    "id": "individual_person",
+                    "type": "CLUSTER",
+                    "category": "DATA_STRUCTURE",
+                    "node_id": "openEHR-EHR-CLUSTER.individual_person_uk.v1"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0017]",
+                    "max": 1,
+                    "name": "Note",
+                    "description": "Any additional comment or note about the carer or their role.",
+                    "id": "note",
+                    "category": "ELEMENT",
+                    "type": "DV_TEXT",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[at0017]}'",
+                    "constraints": [
+                      {
+                        "mandatory_attributes": [
+                          {
+                            "attribute": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_TEXT"
+                      }
+                    ],
+                    "node_id": "at0017"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0025]",
+                    "max": 1,
+                    "name": "Is next of kin?",
+                    "description": "True if this informal care is  the person's next-of-kin.",
+                    "id": "is_next_of_kin?",
+                    "category": "ELEMENT",
+                    "type": "DV_BOOLEAN",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[at0025]}'",
+                    "constraints": [
+                      {
+                        "mandatory_attributes": [
+                          {
+                            "attribute": "value",
+                            "type": "BOOLEAN"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "true_valid": true,
+                          "false_valid": false,
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_BOOLEAN"
+                      }
+                    ],
+                    "node_id": "at0025"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0035]",
+                    "max": 1,
+                    "name": "Relationship category",
+                    "description": "The broad category of care relationship which the contact hods with the subject.",
+                    "id": "relationship_category",
+                    "category": "ELEMENT",
+                    "type": "DV_CODED_TEXT",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[at0035]}'",
+                    "constraints": [
+                      {
+                        "mandatory_attributes": [
+                          {
+                            "attribute": "defining_code",
+                            "type": "CODE_PHRASE"
+                          },
+                          {
+                            "attribute": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "constraint": {
+                          "defining_code": [
+                            {
+                              "code_string": "at0036",
+                              "terminology": "local",
+                              "description": "An individual identified by the person as offering care and support, excluding paid carers or carers from voluntary agencies.",
+                              "value": "Informal carer"
+                            },
+                            {
+                              "code_string": "at0037",
+                              "terminology": "local",
+                              "description": "The contact is identified by the subject as being a primary informal source of care and support.",
+                              "value": "Main informal carer"
+                            },
+                            {
+                              "code_string": "at0038",
+                              "terminology": "local",
+                              "description": "A health and social care professional or staff member, including a carer from voluntary sector.",
+                              "value": "Formal care worker"
+                            },
+                            {
+                              "code_string": "at0039",
+                              "terminology": "local",
+                              "description": "The formal carer is the subject's key worker.",
+                              "value": "Key formal care worker"
+                            }
+                          ],
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "attribute_name": "value",
+                        "type": "DV_CODED_TEXT"
+                      }
+                    ],
+                    "node_id": "at0035"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0030]",
+                    "max": 1,
+                    "name": "Relationship/ role",
+                    "description": "For an informal carer, the personal relationship with the client/carer e.g spouse or friend . For a formal carer, the professional role or responsibility of the carer with respect to the person which should help identify them as being an appropriate contact for an aspect of care, usually a professional role or care pathway name.",
+                    "id": "relationship__role",
+                    "category": "ELEMENT",
+                    "type": "DV_TEXT",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1],0,/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1],0,/data[at0001],/items[at0030]}'",
+                    "constraints": [
+                      {
+                        "mandatory_attributes": [
+                          {
+                            "attribute": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_TEXT"
+                      }
+                    ],
+                    "node_id": "at0030"
+                  }
+                ],
+                "name": "Tree",
+                "description": "@ internal @",
+                "id": "tree",
+                "type": "ITEM_TREE",
+                "category": "DATA_STRUCTURE",
+                "node_id": "at0001"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/subject",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "namespace",
+                    "type": "STRING"
+                  },
+                  {
+                    "attribute": "id",
+                    "type": "OBJECT_ID"
+                  },
+                  {
+                    "attribute": "type",
+                    "type": "STRING"
+                  }
+                ],
+                "name": "Subject",
+                "attribute": "subject",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "PARTY_PROXY"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/language",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "code_string",
+                    "type": "STRING"
+                  },
+                  {
+                    "attribute": "terminology_id",
+                    "type": "TERMINOLOGY_ID"
+                  }
+                ],
+                "name": "Language",
+                "attribute": "language",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/encoding",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "code_string",
+                    "type": "STRING"
+                  },
+                  {
+                    "attribute": "terminology_id",
+                    "type": "TERMINOLOGY_ID"
+                  }
+                ],
+                "name": "Encoding",
+                "attribute": "encoding",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "CODE_PHRASE"
+              }
+            ],
+            "name": "Relevant contact",
+            "description": "Relevant contact for the patient or client, including formal and informal carers, next of kin and key workers.",
+            "id": "relevant_contact",
+            "type": "ADMIN_ENTRY",
+            "category": "DATA_STRUCTURE",
+            "node_id": "openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1"
+          }
+        ],
+        "name": "Relevant contacts",
+        "description": "Relevant contacts heading.",
+        "id": "relevant_contacts",
+        "type": "SECTION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-SECTION.relevant_contacts_rcp.v1"
+      },
+      {
+        "mandatory_attributes": [
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "attribute_name": "name",
+        "constraint": {
+          "occurrence": {
+            "min": 1,
+            "max_op": "<=",
+            "min_op": ">=",
+            "max": 1
+          }
+        },
+        "type": "DV_TEXT"
+      },
+      {
+        "aql_path": "/composer",
+        "mandatory_attributes": [
+          {
+            "attribute": "namespace",
+            "type": "STRING"
+          },
+          {
+            "attribute": "id",
+            "type": "OBJECT_ID"
+          },
+          {
+            "attribute": "type",
+            "type": "STRING"
+          }
+        ],
+        "name": "Composer",
+        "attribute": "composer",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "PARTY_PROXY"
+      },
+      {
+        "aql_path": "/language",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Language",
+        "attribute": "language",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "aql_path": "/category",
+        "mandatory_attributes": [
+          {
+            "attribute": "defining_code",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "name": "Category",
+        "attribute": "category",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "DV_CODED_TEXT"
+      },
+      {
+        "aql_path": "/territory",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Territory",
+        "attribute": "territory",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "min": 1,
+        "aql_path": "/context",
+        "max": 1,
+        "children": [
+          {
+            "aql_path": "/context/start_time",
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "StartTime",
+            "attribute": "start_time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/context/setting",
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Setting",
+            "attribute": "setting",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_CODED_TEXT"
+          }
+        ],
+        "rm_type": "EVENT_CONTEXT",
+        "attribute": "context",
+        "node_id": ""
+      }
+    ],
+    "name": "Relevant Contacts List",
+    "description": "Generic document containing a summary of health information about an individual.",
+    "id": "relevant_contacts_list",
+    "type": "COMPOSITION",
+    "category": "DATA_STRUCTURE",
+    "node_id": "openEHR-EHR-COMPOSITION.health_summary.v1"
+  },
+  "template_id": "IDCR - Relevant contacts.v0",
+  "default_language": "en"
+}

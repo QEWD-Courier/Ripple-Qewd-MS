@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  5 March 2018
+  16 April 2018
 
 */
 
@@ -45,7 +45,7 @@ function build(headings) {
   var fhirResourceName;
   var chowner = this.userDefined.chowner;
 
-  var jumperHeadingPath = __dirname + '/../templates/';
+  var jumperHeadingPath = this.userDefined.paths.jumper_templates;
 
   for (var heading in headings) {
     headingTemplate = headings[heading].template;

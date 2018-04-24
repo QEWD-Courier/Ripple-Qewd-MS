@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 April 2018
+  16 April 2018
 
 */
 
@@ -52,7 +52,7 @@ function initialise() {
   for (var heading in this.userDefined.headings) {
     headingObj = this.userDefined.headings[heading];
     if (typeof headingObj === 'object' && headingObj.template && headingObj.template.name) {
-      postTemplate = __dirname + '/../templates/' + heading + '/flatJSON_template.json';
+      postTemplate = this.userDefined.paths.jumper_templates + heading + '/flatJSON_template.json';
       if (fs.existsSync(postTemplate)) {
         templateIndex[headingObj.template.name] = heading;
       }
@@ -77,14 +77,14 @@ module.exports = function(params, callback) {
 
   if (!jumperModules[heading]) {
     jumperModules[heading] = {
-      path: __dirname + '/../templates/' + heading
+      path: this.userDefined.paths.jumper_templates + heading
     }
   }
   var headingPath = jumperModules[heading].path;
-  if (!jumperModules[heading].ripple_to_openehr) {
-    jumperModules[heading].ripple_to_openehr = require(headingPath + '/Ripple_to_OpenEHR.json');
+  if (!jumperModules[heading].pulsetile_to_openehr) {
+    jumperModules[heading].pulsetile_to_openehr = require(headingPath + '/PulseTile_to_OpenEHR.json');
   }
-  var template = jumperModules[heading].ripple_to_openehr;
+  var template = jumperModules[heading].pulsetile_to_openehr;
   var openEHRFormatData = transform(template, data, helpers);
   console.log('openEHRFormatData = ' + JSON.stringify(openEHRFormatData, null, 2));
 

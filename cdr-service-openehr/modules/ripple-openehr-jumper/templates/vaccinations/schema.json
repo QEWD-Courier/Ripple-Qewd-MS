@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "IDCR - Immunisation summary.v0",
+  "description": "Data Entry Schema for OpenEHR Template IDCR - Immunisation summary.v0",
+  "type": "object",
+  "properties": {
+    "immunisation_procedure": {
+      "type": "object",
+      "properties": {
+        "immunisation_name": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Immunisation name value",
+              "type": "string",
+              "minLength": 1
+            },
+            "code": {
+              "description": "Immunisation name code",
+              "type": "string",
+              "minLength": 1
+            },
+            "terminology": {
+              "description": "Immunisation name terminology",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "series_number": {
+          "description": "Series number",
+          "type": "string",
+          "minLength": 1
+        },
+        "comment": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Comment value",
+              "type": "string",
+              "minLength": 1
+            },
+            "code": {
+              "description": "Comment code",
+              "type": "string",
+              "minLength": 1
+            },
+            "terminology": {
+              "description": "Comment terminology",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "reason_withheld": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Reason withheld value",
+              "type": "string",
+              "minLength": 1
+            },
+            "code": {
+              "description": "Reason withheld code",
+              "type": "string",
+              "minLength": 1
+            },
+            "terminology": {
+              "description": "Reason withheld terminology",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

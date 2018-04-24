@@ -24,12 +24,12 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  16 April 2018
 
 */
 
 var buildJsonFile = require('./buildJsonFile');
-var buildRippleToOpenEHR = require('./buildRippleToOpenEHR');
+var buildPulsetileToOpenEHR = require('./buildPulsetileToOpenEHR');
 
 module.exports = function(jumperPath) {
 
@@ -42,7 +42,7 @@ module.exports = function(jumperPath) {
     patientId: "{{patientId}}"
   };
 
-  buildJsonFile(text, jumperPath, 'openEHR_to_Ripple.json');
-  buildRippleToOpenEHR(jumperPath); // create inverse
+  buildJsonFile(text, jumperPath, 'openEHR_to_Pulsetile.json');
+  buildPulsetileToOpenEHR(jumperPath); // create inverse
   
 };

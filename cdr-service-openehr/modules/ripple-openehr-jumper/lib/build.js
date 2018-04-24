@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  16 April 2018
 
 */
 
@@ -47,7 +47,7 @@ function build(args, finished) {
 
   var headings = this.userDefined.headings;
 
-  var jumperHeadingPath = __dirname + '/../templates/';
+  var jumperHeadingPath = this.userDefined.paths.jumper_templates;
 
   var headingsToBuild = {};
   var headingsBuilt = [];

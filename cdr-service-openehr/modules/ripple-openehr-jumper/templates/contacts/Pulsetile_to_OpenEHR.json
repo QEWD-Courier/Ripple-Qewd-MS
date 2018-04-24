@@ -1,0 +1,37 @@
+{
+  "composer": {
+    "value": "{{author}}"
+  },
+  "host": "{{source}}",
+  "patientId": "{{patientId}}",
+  "relevant_contacts": {
+    "relevant_contact": {
+      "individual_person": {
+        "person_name": {
+          "unstructured_name": {
+            "value": "{{name}}"
+          }
+        },
+        "contact_details": {
+          "comms_description": {
+            "value": "{{contactInformation}}"
+          }
+        }
+      },
+      "relationship_role": {
+        "value": "{{relationship}}"
+      },
+      "relationship_category": {
+        "value": "{{relationshipType}}"
+        "code": "{{relationshipCode}}",
+        "terminology": "{{relationshipTerminology}}",
+      },
+      "is_next_of_kin": {
+        "value": "{{nextOfKin}}"
+      },
+      "note": {
+        "value": "{{notes}}"
+      }
+    }
+  }
+}

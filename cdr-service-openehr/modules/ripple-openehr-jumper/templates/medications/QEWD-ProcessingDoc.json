@@ -1,0 +1,184 @@
+{
+  "aql": {
+    "composition": "openEHR-EHR-COMPOSITION.medication_list.v0",
+    "name": "Medication statement list"
+  },
+  "field": {
+    "1": {
+      "id": "medication_item",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "medication_item"
+      ],
+      "type": "DV_TEXT"
+    },
+    "2": {
+      "id": "body_site",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "body_site"
+      ],
+      "type": "DV_TEXT"
+    },
+    "3": {
+      "id": "overall_directions_description",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "overall_directions_description"
+      ],
+      "type": "DV_TEXT"
+    },
+    "4": {
+      "id": "route",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "route"
+      ],
+      "type": "DV_TEXT"
+    },
+    "5": {
+      "id": "clinical_indication",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "clinical_indication"
+      ],
+      "type": "DV_TEXT"
+    },
+    "6": {
+      "id": "dose_timing_description",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "dose_timing_description"
+      ],
+      "type": "DV_TEXT"
+    },
+    "7": {
+      "id": "additional_instruction",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "additional_instruction"
+      ],
+      "type": "DV_TEXT"
+    },
+    "8": {
+      "id": "order_start_date_time",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "order_details",
+        "order_start_date_time"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "9": {
+      "id": "order_stop_date_time",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "order_details",
+        "order_stop_date_time"
+      ],
+      "type": "DV_DATE_TIME"
+    },
+    "10": {
+      "id": "course_status",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "order_details",
+        "order_summary",
+        "course_status"
+      ],
+      "type": "DV_CODED_TEXT"
+    }
+  },
+  "index": {
+    "1": {
+      "2": {
+        "3": {
+          "4": {
+            "5": {
+              "6": 1
+            },
+            "7": {
+              "8": 2
+            },
+            "9": {
+              "10": 3
+            },
+            "11": {
+              "12": 4
+            },
+            "13": {
+              "14": 5
+            },
+            "15": {
+              "16": 6
+            },
+            "17": {
+              "18": 7
+            },
+            "19": {
+              "20": {
+                "21": 8
+              },
+              "22": {
+                "23": 9
+              },
+              "24": {
+                "25": {
+                  "26": 10
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "indexSubs": {
+    "Additional instruction": 18,
+    "Body site": 8,
+    "Clinical indication": 14,
+    "Course status": 26,
+    "Dose timing description": 16,
+    "Medication item": 6,
+    "Order start date/time": 21,
+    "Order stop date/time": 23,
+    "Overall directions description": 10,
+    "Route": 12,
+    "activities[at0001]": 3,
+    "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]": 1,
+    "description[at0002]": 4,
+    "items[at0001]": 25,
+    "items[at0009]": 9,
+    "items[at0012]": 20,
+    "items[at0013]": 22,
+    "items[at0018]": 13,
+    "items[at0044]": 17,
+    "items[at0070]": 5,
+    "items[at0091]": 11,
+    "items[at0092]": 7,
+    "items[at0113]": 19,
+    "items[at0173]": 15,
+    "items[openEHR-EHR-CLUSTER.medication_course_summary.v0]": 24,
+    "items[openEHR-EHR-INSTRUCTION.medication_order.v1]": 2
+  }
+}

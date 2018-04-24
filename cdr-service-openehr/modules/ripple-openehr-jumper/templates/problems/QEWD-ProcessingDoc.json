@@ -156,63 +156,101 @@
     }
   },
   "index": {
-    "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]": {
-      "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]": {
-        "data[at0001]": {
-          "items[at0002]": {
-            "Problem/Diagnosis name": "2"
-          },
-          "items[at0003]": {
-            "Date/time clinically recognised": "3"
-          },
-          "items[at0005]": {
-            "Severity": "5"
-          },
-          "items[at0009]": {
-            "Clinical description": "16"
-          },
-          "items[at0012]": {
-            "Body site": "7"
-          },
-          "items[at0030]": {
-            "Date/time of resolution": "9"
-          },
-          "items[at0069]": {
-            "Comment": "4"
-          },
-          "items[at0073]": {
-            "Diagnostic certainty": "8"
-          },
-          "items[at0077]": {
-            "Date/time of onset": "6"
-          },
-          "items[openEHR-EHR-CLUSTER.problem_status.v0]": {
-            "items[at0001]": {
-              "Episodicity": "12"
-            },
-            "items[at0003]": {
-              "Active/Inactive?": "11"
-            },
-            "items[at0004]": {
-              "Diagnostic status": "10"
-            },
-            "items[at0063]": {
-              "DRG category": "14"
-            },
-            "items[at0071]": {
-              "First occurrence?": "15"
-            },
-            "items[at0083]": {
-              "Resolution status": "13"
-            }
+    "1": {
+      "2": {
+        "3": {
+          "4": {
+            "5": 1
           }
         },
-        "protocol[at0032]": {
-          "items[at0070]": {
-            "Last updated": "1"
+        "6": {
+          "7": {
+            "8": 2
+          },
+          "9": {
+            "10": 3
+          },
+          "11": {
+            "12": 4
+          },
+          "13": {
+            "14": 5
+          },
+          "15": {
+            "16": 6
+          },
+          "17": {
+            "18": 7
+          },
+          "19": {
+            "20": 8
+          },
+          "21": {
+            "22": 9
+          },
+          "23": {
+            "9": {
+              "26": 11
+            },
+            "24": {
+              "25": 10
+            },
+            "27": {
+              "28": 12
+            },
+            "29": {
+              "30": 13
+            },
+            "31": {
+              "32": 14
+            },
+            "33": {
+              "34": 15
+            }
+          },
+          "35": {
+            "36": 16
           }
         }
       }
     }
+  },
+  "indexSubs": {
+    "Active/Inactive?": 26,
+    "Body site": 18,
+    "Clinical description": 36,
+    "Comment": 12,
+    "DRG category": 32,
+    "Date/time clinically recognised": 10,
+    "Date/time of onset": 16,
+    "Date/time of resolution": 22,
+    "Diagnostic certainty": 20,
+    "Diagnostic status": 25,
+    "Episodicity": 28,
+    "First occurrence?": 34,
+    "Last updated": 5,
+    "Problem/Diagnosis name": 8,
+    "Resolution status": 30,
+    "Severity": 14,
+    "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]": 1,
+    "data[at0001]": 6,
+    "items[at0001]": 27,
+    "items[at0002]": 7,
+    "items[at0003]": 9,
+    "items[at0004]": 24,
+    "items[at0005]": 13,
+    "items[at0009]": 35,
+    "items[at0012]": 17,
+    "items[at0030]": 21,
+    "items[at0063]": 31,
+    "items[at0069]": 11,
+    "items[at0070]": 4,
+    "items[at0071]": 33,
+    "items[at0073]": 19,
+    "items[at0077]": 15,
+    "items[at0083]": 29,
+    "items[openEHR-EHR-CLUSTER.problem_status.v0]": 23,
+    "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]": 2,
+    "protocol[at0032]": 3
   }
 }

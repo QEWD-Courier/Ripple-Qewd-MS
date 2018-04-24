@@ -1,0 +1,15 @@
+{
+  "name": "{{relevant_contacts.relevant_contact.individual_person.person_name.unstructured_name.value}}",
+  "relationship": "{{relevant_contacts.relevant_contact.relationship_role.value}}",
+  "relationshipType": "{{relevant_contacts.relevant_contact.relationship_category.value}}",
+  "relationshipCode": "{{relevant_contacts.relevant_contact.relationship_category.code}}",
+  "relationshipTerminology": "{{relevant_contacts.relevant_contact.relationship_category.terminology}}",
+  "contactInformation": "{{relevant_contacts.relevant_contact.individual_person.contact_details.comms_description.value}}",
+  "nextOfKin": "{{relevant_contacts.relevant_contact.is_next_of_kin.value}}",
+  "notes": "{{relevant_contacts.relevant_contact.note.value}}",
+  "author": "{{composer.value}}",
+  "dateCreated": "=> rippleDateTime(start_time, true)",
+  "source": "{{host}}",
+  "sourceId": "=> getUid(uid, host)",
+  "patientId": "{{patientId}}"
+}

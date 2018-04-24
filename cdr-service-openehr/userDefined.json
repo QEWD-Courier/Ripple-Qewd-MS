@@ -26,6 +26,10 @@
     ],
     "maximum": 4
   },
+  "paths": {
+    "jumper_templates": "/opt/qewd/mapped/modules/ripple-openehr-jumper/templates/",
+    "openEHR_modules": "/opt/qewd/mapped/modules/ripple-cdr-openehr/src/"
+  },
   "headings": {
     "allergies": {
       "template": {
@@ -33,13 +37,11 @@
       },
       "fhir": {
         "name": "AllergyIntolerance"
-      }
+      },
+      "synopsisField": "cause",
+      "summaryTableFields": ["cause", "reaction"]
     },
-    "contacts": {
-      "template": {
-        "name": "IDCR - Relevant contacts.v0"
-      }
-    },
+    "contacts": true,
     "counts": true,
     "eolcareplans": true,
     "events": true,
@@ -54,13 +56,17 @@
       },
       "fhir": {
         "name": "Condition"
-      }
+      },
+      "synopsisField": "problem",
+      "summaryTableFields": ["problem", "dateOfOnset"]
     },
     "procedures": true,
     "proms": {
       "template": {
-        "name": "Ripple PROMS.v0"
-      }
+        "name": "Ripple Generic PROMS.v0"
+      },
+      "synopsisField": "name",
+      "summaryTableFields": ["name", "score", "dateCreated"]
     },
     "referrals": true,
     "vaccinations": true,

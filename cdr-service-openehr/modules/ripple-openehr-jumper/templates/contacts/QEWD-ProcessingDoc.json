@@ -1,0 +1,168 @@
+{
+  "aql": {
+    "composition": "openEHR-EHR-COMPOSITION.health_summary.v1",
+    "name": "Relevant Contacts List"
+  },
+  "field": {
+    "1": {
+      "id": "comms_description",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "contact_details",
+        "comms_description"
+      ],
+      "type": "DV_TEXT"
+    },
+    "2": {
+      "id": "method",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "contact_details",
+        "method"
+      ],
+      "type": "DV_TEXT"
+    },
+    "3": {
+      "id": "unstructured_name",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "person_name",
+        "unstructured_name"
+      ],
+      "type": "DV_TEXT"
+    },
+    "4": {
+      "id": "address_description",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "address",
+        "address_description"
+      ],
+      "type": "DV_TEXT"
+    },
+    "5": {
+      "id": "state",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "address",
+        "state"
+      ],
+      "type": "DV_TEXT"
+    },
+    "6": {
+      "id": "note",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "note"
+      ],
+      "type": "DV_TEXT"
+    },
+    "7": {
+      "id": "is_next_of_kin",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "is_next_of_kin"
+      ],
+      "type": "DV_BOOLEAN"
+    },
+    "8": {
+      "id": "relationship_category",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "relationship_category"
+      ],
+      "type": "DV_CODED_TEXT"
+    },
+    "9": {
+      "id": "relationship_role",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "relationship_role"
+      ],
+      "type": "DV_TEXT"
+    }
+  },
+  "index": {
+    "1": {
+      "2": {
+        "3": {
+          "4": {
+            "5": {
+              "6": {
+                "7": 1
+              },
+              "8": {
+                "9": 2
+              }
+            },
+            "10": {
+              "11": {
+                "12": 3
+              }
+            },
+            "13": {
+              "6": {
+                "14": 4
+              },
+              "15": {
+                "16": 5
+              }
+            }
+          },
+          "17": {
+            "18": 6
+          },
+          "19": {
+            "20": 7
+          },
+          "21": {
+            "22": 8
+          },
+          "23": {
+            "24": 9
+          }
+        }
+      }
+    }
+  },
+  "indexSubs": {
+    "Address description": 14,
+    "Comms description": 7,
+    "Is next of kin?": 20,
+    "Method": 9,
+    "Note": 18,
+    "Relationship category": 22,
+    "Relationship/ role": 24,
+    "State": 16,
+    "Unstructured name": 12,
+    "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]": 1,
+    "data[at0001]": 3,
+    "items[at0001]": 11,
+    "items[at0002]": 6,
+    "items[at0017]": 17,
+    "items[at0020]": 8,
+    "items[at0023]": 15,
+    "items[at0025]": 19,
+    "items[at0030]": 23,
+    "items[at0035]": 21,
+    "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]": 2,
+    "items[openEHR-EHR-CLUSTER.address_uk.v0]": 13,
+    "items[openEHR-EHR-CLUSTER.individual_person_uk.v1]": 4,
+    "items[openEHR-EHR-CLUSTER.person_name.v1]": 10,
+    "items[openEHR-EHR-CLUSTER.telecom_uk.v1]": 5
+  }
+}

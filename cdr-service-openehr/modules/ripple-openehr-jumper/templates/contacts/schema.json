@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "IDCR - Relevant contacts.v0",
+  "description": "Data Entry Schema for OpenEHR Template IDCR - Relevant contacts.v0",
+  "type": "object",
+  "properties": {
+    "relevant_contacts": {
+      "type": "object",
+      "properties": {
+        "relevant_contact": {
+          "type": "object",
+          "properties": {
+            "individual_person": {
+              "type": "object",
+              "properties": {
+                "contact_details": {
+                  "type": "object",
+                  "properties": {
+                    "comms_description": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "description": "Comms description value",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "description": "Comms description code",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "terminology": {
+                          "description": "Comms description terminology",
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "method": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "description": "Method value",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "description": "Method code",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "terminology": {
+                          "description": "Method terminology",
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "person_name": {
+                  "type": "object",
+                  "properties": {
+                    "unstructured_name": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "description": "Unstructured name value",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "description": "Unstructured name code",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "terminology": {
+                          "description": "Unstructured name terminology",
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "address_description": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "description": "Address description value",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "description": "Address description code",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "terminology": {
+                          "description": "Address description terminology",
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "state": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "description": "State value",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "description": "State code",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "terminology": {
+                          "description": "State terminology",
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "note": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Note value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Note code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Note terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "is_next_of_kin": {
+              "description": "Is next of kin?",
+              "type": "boolean",
+              "minLength": 1
+            },
+            "relationship_category": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Relationship category value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Relationship category code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Relationship category terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "relationship_role": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Relationship/ role value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Relationship/ role code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Relationship/ role terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

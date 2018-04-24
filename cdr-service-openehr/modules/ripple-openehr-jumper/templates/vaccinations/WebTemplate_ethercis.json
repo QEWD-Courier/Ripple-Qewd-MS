@@ -1,0 +1,1268 @@
+{
+  "uid": "d49067f7-d401-4803-85b1-f49b0fe462b3",
+  "languages": [
+    "en"
+  ],
+  "concept": "IDCR - Immunisation summary.v0",
+  "tree": {
+    "min": 1,
+    "max": 1,
+    "children": [
+      {
+        "mandatory_attributes": [
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "attribute_name": "name",
+        "constraint": {
+          "occurrence": {
+            "min": 1,
+            "max_op": "<=",
+            "min_op": ">=",
+            "max": 1
+          }
+        },
+        "type": "DV_TEXT"
+      },
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "max": -1,
+        "children": [
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0007",
+                  "terminology": "local",
+                  "description": "Administration of the immunisation has been deferred.",
+                  "value": "Immunisation administration deferred"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "530",
+                  "terminology": "openehr",
+                  "value": "suspended"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0010",
+                  "terminology": "local",
+                  "description": "The course of immunisations has been refused.",
+                  "value": "Immunisation course refused"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "532",
+                  "terminology": "openehr",
+                  "value": "completed"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0009",
+                  "terminology": "local",
+                  "description": "The immunisation course has been completed.",
+                  "value": "Immunisation course completed"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "528",
+                  "terminology": "openehr",
+                  "value": "cancelled"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "245",
+                  "terminology": "openehr",
+                  "value": "active"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "529",
+                  "terminology": "openehr",
+                  "value": "scheduled"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0006",
+                  "terminology": "local",
+                  "description": "The immunisation has been administered.",
+                  "value": "Immunisation administered"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "531",
+                      "terminology": "openehr",
+                      "value": "aborted"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0012",
+                      "terminology": "local",
+                      "description": "The immunisation course has been permanently discontinued.",
+                      "value": "Immunisation course discontinued"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "528",
+                      "terminology": "openehr",
+                      "value": "cancelled"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0010",
+                      "terminology": "local",
+                      "description": "The course of immunisations has been refused.",
+                      "value": "Immunisation course refused"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0008",
+                  "terminology": "local",
+                  "description": "The first call for immunisation has been issued.",
+                  "value": "First call issued"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "531",
+                  "terminology": "openehr",
+                  "value": "aborted"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "min": 1,
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]",
+            "max": 1,
+            "children": [
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0002]",
+                "max": 1,
+                "name": "Immunisation name",
+                "description": "The name or type of immunisation given, often the name of the target disease e.g. 'Hepatitis B'.",
+                "id": "immunisation_name",
+                "category": "ELEMENT",
+                "type": "DV_TEXT",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0002]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  }
+                ],
+                "node_id": "at0002"
+              },
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0004]",
+                "max": 1,
+                "name": "Series number",
+                "description": "The sequence number in a series of immunisations e.g. 3rd DTP.",
+                "id": "series_number",
+                "category": "ELEMENT",
+                "type": "DV_COUNT",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0004]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "magnitude",
+                        "type": "INT"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_COUNT"
+                  }
+                ],
+                "node_id": "at0004"
+              },
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0015]",
+                "max": 1,
+                "name": "Comment",
+                "description": "An additional comment about the vaccination process.",
+                "id": "comment",
+                "category": "ELEMENT",
+                "type": "DV_TEXT",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0015]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  }
+                ],
+                "node_id": "at0015"
+              },
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0005]",
+                "max": 1,
+                "name": "Reason withheld",
+                "description": "The reason why a vaccination was withheld.",
+                "id": "reason_withheld",
+                "category": "ELEMENT",
+                "type": "DV_TEXT",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0005]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  }
+                ],
+                "node_id": "at0005"
+              }
+            ],
+            "name": "Tree",
+            "description": "@ internal @",
+            "id": "tree",
+            "type": "ITEM_TREE",
+            "category": "DATA_STRUCTURE",
+            "node_id": "at0001"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0012",
+                  "terminology": "local",
+                  "description": "The immunisation course has been permanently discontinued.",
+                  "value": "Immunisation course discontinued"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "532",
+                      "terminology": "openehr",
+                      "value": "completed"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0009",
+                      "terminology": "local",
+                      "description": "The immunisation course has been completed.",
+                      "value": "Immunisation course completed"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "529",
+                      "terminology": "openehr",
+                      "value": "scheduled"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0008",
+                      "terminology": "local",
+                      "description": "The first call for immunisation has been issued.",
+                      "value": "First call issued"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "530",
+                      "terminology": "openehr",
+                      "value": "suspended"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0007",
+                      "terminology": "local",
+                      "description": "Administration of the immunisation has been deferred.",
+                      "value": "Immunisation administration deferred"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "245",
+                      "terminology": "openehr",
+                      "value": "active"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0006",
+                      "terminology": "local",
+                      "description": "The immunisation has been administered.",
+                      "value": "Immunisation administered"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "name": "IsmTransition",
+            "attribute": "ism_transition",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/subject",
+            "mandatory_attributes": [
+              {
+                "attribute": "namespace",
+                "type": "STRING"
+              },
+              {
+                "attribute": "id",
+                "type": "OBJECT_ID"
+              },
+              {
+                "attribute": "type",
+                "type": "STRING"
+              }
+            ],
+            "name": "Subject",
+            "attribute": "subject",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "PARTY_PROXY"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/language",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Language",
+            "attribute": "language",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/time",
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Time",
+            "attribute": "time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/encoding",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Encoding",
+            "attribute": "encoding",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          }
+        ],
+        "name": "Immunisation procedure",
+        "description": "Record of a vaccine administration procedure.",
+        "id": "immunisation_procedure",
+        "type": "ACTION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-ACTION.immunisation_procedure.v1"
+      },
+      {
+        "aql_path": "/composer",
+        "mandatory_attributes": [
+          {
+            "attribute": "namespace",
+            "type": "STRING"
+          },
+          {
+            "attribute": "id",
+            "type": "OBJECT_ID"
+          },
+          {
+            "attribute": "type",
+            "type": "STRING"
+          }
+        ],
+        "name": "Composer",
+        "attribute": "composer",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "PARTY_PROXY"
+      },
+      {
+        "aql_path": "/language",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Language",
+        "attribute": "language",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "aql_path": "/category",
+        "mandatory_attributes": [
+          {
+            "attribute": "defining_code",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "name": "Category",
+        "attribute": "category",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "DV_CODED_TEXT"
+      },
+      {
+        "aql_path": "/territory",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Territory",
+        "attribute": "territory",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "min": 1,
+        "aql_path": "/context",
+        "max": 1,
+        "children": [
+          {
+            "aql_path": "/context/start_time",
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "StartTime",
+            "attribute": "start_time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/context/setting",
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Setting",
+            "attribute": "setting",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_CODED_TEXT"
+          }
+        ],
+        "rm_type": "EVENT_CONTEXT",
+        "attribute": "context",
+        "node_id": ""
+      }
+    ],
+    "name": "Immunisation summary",
+    "description": "Generic document containing a summary of health information about an individual.",
+    "id": "immunisation_summary",
+    "type": "COMPOSITION",
+    "category": "DATA_STRUCTURE",
+    "node_id": "openEHR-EHR-COMPOSITION.health_summary.v1"
+  },
+  "template_id": "IDCR - Immunisation summary.v0",
+  "default_language": "en"
+}

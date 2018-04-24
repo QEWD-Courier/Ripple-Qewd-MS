@@ -1,9 +1,9 @@
 /*
 
  ----------------------------------------------------------------------------
- | cdr-service-openehr: Ripple MicroServices for OpenEHR                    |
+ | ripple-openehr-jumper: Automated OpenEHR Template Access                 |
  |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
+ | Copyright (c) 2016-18 Ripple Foundation Community Interest Company       |
  | All rights reserved.                                                     |
  |                                                                          |
  | http://rippleosi.org                                                     |
@@ -28,58 +28,10 @@
 
 */
 
-var config = require('./startup_config.json');
-config.jwt = require('./jwt_secret.json');
-var local_routes = require('./local_routes.json');
-var userDefined = require('./userDefined.json');
+var buildInverse = require('./buildInverse');
+var path = require('path');
 
-
-function onStarted() {
-  //var jumper = require('./modules/ripple-openehr-jumper');
-  //jumper.build.call(this, userDefined.headings);
-
-  var now = Math.floor(Date.now()/1000);
-  var timeout = this.userDefined.config.initialSessionTimeout;
-
-  var payload = {
-    exp: now + timeout,
-    iat: now,
-    iss: 'qewd.jwt',
-    application: 'ripple-openehr-jumper',
-    qewd: {authenticated: true},
-    timeout: timeout,
-    userMode: 'openehr_startup'
-  };
-  var jwt = this.jwt.handlers.updateJWT.call(this, payload);
-
-  var message = {
-    application: "ripple-openehr-jumper",
-    type: "restRequest",
-    path: "/api/openehr/jumper/build",
-    pathTemplate: "/api/openehr/jumper/build",
-    method: "GET",
-    token: jwt,
-    headers: {
-      authorization: 'Bearer ' + jwt
-    },
-    jwt: true
-  };
-
-  this.handleMessage(message, function(response) {
-    console.log('*** onStarted response: ' + JSON.stringify(response));
-  });
-
-  for (var path in this.userDefined.paths) {
-    if (this.userDefined.paths[path].slice(-1) !== '/') {
-      this.userDefined.paths[path] = this.userDefined.paths[path] + '/';
-    }
-  }
-
-}
-
-module.exports = {
-  config: config,
-  routes: local_routes,
-  onStarted: onStarted
+module.exports = function(jumperPath) {
+  buildInverse('openEHR_to_Pulsetile.json', 'Pulsetile_to_OpenEHR.json', jumperPath);
+  console.log('*** done ***');
 };
-

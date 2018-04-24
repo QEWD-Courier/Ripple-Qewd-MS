@@ -1,0 +1,70 @@
+{
+  "aql": {
+    "composition": "openEHR-EHR-COMPOSITION.health_summary.v1",
+    "name": "Immunisation summary"
+  },
+  "field": {
+    "1": {
+      "id": "immunisation_name",
+      "path": [
+        "immunisation_procedure",
+        "immunisation_name"
+      ],
+      "type": "DV_TEXT"
+    },
+    "2": {
+      "id": "series_number",
+      "path": [
+        "immunisation_procedure",
+        "series_number"
+      ],
+      "type": "DV_COUNT"
+    },
+    "3": {
+      "id": "comment",
+      "path": [
+        "immunisation_procedure",
+        "comment"
+      ],
+      "type": "DV_TEXT"
+    },
+    "4": {
+      "id": "reason_withheld",
+      "path": [
+        "immunisation_procedure",
+        "reason_withheld"
+      ],
+      "type": "DV_TEXT"
+    }
+  },
+  "index": {
+    "1": {
+      "2": {
+        "3": {
+          "4": 1
+        },
+        "5": {
+          "6": 2
+        },
+        "7": {
+          "8": 3
+        },
+        "9": {
+          "10": 4
+        }
+      }
+    }
+  },
+  "indexSubs": {
+    "Comment": 8,
+    "Immunisation name": 4,
+    "Reason withheld": 10,
+    "Series number": 6,
+    "content[openEHR-EHR-ACTION.immunisation_procedure.v1]": 1,
+    "description[at0001]": 2,
+    "items[at0002]": 3,
+    "items[at0004]": 5,
+    "items[at0005]": 9,
+    "items[at0015]": 7
+  }
+}

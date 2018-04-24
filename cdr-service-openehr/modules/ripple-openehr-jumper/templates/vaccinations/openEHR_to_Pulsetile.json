@@ -1,0 +1,11 @@
+{
+  "vaccinationName":     "{{immunisation_procedure.immunisation_name.value}}",
+  "comment":             "{{immunisation_procedure.comment.value}}",
+  "series":              "{{immunisation_procedure.series_number.value}}",
+  "vaccinationDateTime": "=> getRippleTime(immunisation_procedure.time.value)",
+  "author": "{{composer.value}}",
+  "dateCreated": "=> rippleDateTime(start_time, true)",
+  "source": "{{host}}",
+  "sourceId": "=> getUid(uid, host)",
+  "patientId": "{{patientId}}"
+}
