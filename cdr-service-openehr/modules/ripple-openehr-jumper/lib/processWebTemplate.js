@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  1 May 2018
 
 */
 
@@ -43,85 +43,34 @@ function processWebTemplate(templateName, headingPath, body, host) {
   var platform = this.userDefined.openehr[host].platform;
   buildJSONFile.call(this, body, headingPath, 'WebTemplate_' + platform + '.json');
 
-  var results = parseWebTemplate(body, platform);
+  var parsed = parseWebTemplate(body, platform);
   //return results;
 
-  var templateId;
-  var documentName = this.userDefined.documentNames.jumperTemplateFields || 'OpenEHRJumper';
-  var templateReg = this.db.use(documentName, 'templates');
-  var templateByName = templateReg.$(['byName', templateName]);
-  if (templateByName.exists) {
-    templateId = templateByName.value;
-  }
-  else {
-    templateId = templateReg.increment();
-    templateByName.value = templateId;
-    templateReg.$(['byId', templateId]).value = templateName;
-  }
+  //var fieldObj = getTemplateFields.call(this, templateName);
 
-  var templateDoc = this.db.use(documentName, 'templateMap', templateId);
-  templateDoc.delete();
-  var composition;
-  var name;
-  if (platform === 'marand') {
-    composition = body.webTemplate.tree.nodeId;
-    name = body.webTemplate.tree.name;
-  }
-  else {
-    composition = body.tree.node_id;
-    name = body.tree.name;
-  }
-
-  templateDoc.$('aql').setDocument({
-    composition: composition,
-    name: name
-  });
-
-  templateIndex = templateDoc.$('index');
-  templateFields = templateDoc.$('field');
-  var fieldId = 0;
-
-  console.log('\n&&&& results: ' + JSON.stringify(results) + '\n');
-
-  results.forEach(function(result) {
-    fieldId++;
-    var arr = result.pathArr;
-    var name = result.name || result.id;
-    arr.push(name);
-    templateIndex.$(arr).value = fieldId;
-
-    templateFields.$(fieldId).setDocument({
-      id: result.id,
-      type: result.type,
-      path: result.path
-    });
-  });
-
-  var fieldObj = getTemplateFields.call(this, templateName);
-
-  var flatJSON = createFlatJSON(body);
+  var flatJSON = createFlatJSON(parsed.metadata);
   //templateDoc.$('flatJSON').setDocument(flatJSON);
 
-  filePath = headingPath + '/QEWD-ProcessingDoc.json';
-  fs.writeJsonSync(filePath, templateDoc.getDocument(true), {spaces: 2});
+  filePath = headingPath + '/metaData.json';
+  fs.writeJsonSync(filePath, parsed, {spaces: 2});
 
   var filePath = headingPath + '/flatJSON_template.json';
   fs.writeJsonSync(filePath, flatJSON, {spaces: 2});
 
-  filePath = headingPath + '/OpenEHR_get_template.json';
-  fs.writeJsonSync(filePath, fieldObj, {spaces: 2});
+  //filePath = headingPath + '/OpenEHR_get_template.json';
+  //fs.writeJsonSync(filePath, fieldObj, {spaces: 2});
 
   // Create JSON Schema for data entry validation, using parse results
 
-  console.log('Creating JSON Schema for ' + templateName + '; ' + headingPath);
-  createJSONSchema(templateName, results, headingPath);
+  //console.log('Creating JSON Schema for ' + templateName + '; ' + headingPath);
+  createJSONSchema(templateName, parsed.metadata, headingPath);
 
   return {
     ok: true,
     template: templateName,
-    fields: fieldObj,
+    //fields: fieldObj,
     flatJSON: flatJSON,
-    results: results
+    metadata: parsed
   };
 }
 

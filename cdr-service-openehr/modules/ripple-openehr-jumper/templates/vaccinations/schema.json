@@ -71,8 +71,44 @@
               "minLength": 1
             }
           }
+        },
+        "ism_transition": {
+          "description": "IsmTransition",
+          "type": "string",
+          "minLength": 1
+        },
+        "time": {
+          "description": "Time",
+          "type": "string",
+          "minLength": 1,
+          "format": "date-time"
         }
       }
+    },
+    "category": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Category value",
+          "type": "string",
+          "minLength": 1
+        },
+        "code": {
+          "description": "Category code",
+          "type": "string",
+          "minLength": 1
+        },
+        "terminology": {
+          "description": "Category terminology",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "territory": {
+      "description": "Territory",
+      "type": "string",
+      "minLength": 1
     }
   }
 }

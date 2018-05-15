@@ -1,0 +1,2611 @@
+{
+  "meta": {
+    "href": "http://test.operon.systems/rest/v1/query/?aql=select%20a%20as%20data%20from%20EHR%20e%5Behr_id/value%3D'dabcbf61-94bb-45df-a472-9c7a489a200d'%5D%20contains%20COMPOSITION%20a%5BopenEHR-EHR-COMPOSITION.problem_list.v1%5D%20where%20a/name/value%3D'Problem%20list'"
+  },
+  "aql": "select a as data from EHR e[ehr_id/value='dabcbf61-94bb-45df-a472-9c7a489a200d'] contains COMPOSITION a[openEHR-EHR-COMPOSITION.problem_list.v1] where a/name/value='Problem list'",
+  "executedAql": "select a as data from EHR e[ehr_id/value='dabcbf61-94bb-45df-a472-9c7a489a200d'] contains COMPOSITION a[openEHR-EHR-COMPOSITION.problem_list.v1] where a/name/value='Problem list'",
+  "resultSet": [
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "023ad0e6-4cc3-434e-bc74-af4da7ce0d59::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "angina pectoris",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "299757012"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2000-07-17T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "41ba0c0c-69cf-4217-9728-b6942d0f2901::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "Myocardial infarction",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "22298006"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2002-07-17T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "ddcba113-f22c-4b2d-b456-d2e3943bdddf::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "Myocardial infarction",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "22298006"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2006-07-14T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "fd903f36-0600-4250-8cf5-67313a3a4e66::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "angina pectoris",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "299757012"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2000-07-17T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "4129006c-492b-4d72-83bc-d73d9b8926f4::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "angina pectoris",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "299757012"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2000-07-17T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "960311d3-e720-4558-8fe6-4d46e6ead1b4::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-11-02T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "psoriasis",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "9014002"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Body site"
+                      },
+                      "archetype_node_id": "at0012",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "Left elbow",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "1927002"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "1975-03-22T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "a190c390-8709-4550-b9f5-626836dbfc3a::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr George Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2016-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "myocardial infarction",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "22298006"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2003-07-17T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "040c60ab-d067-41a2-84c8-09c7b2fcf2b0::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "angina pectoris",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "299757012"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2000-07-17T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "d1c55e0d-6dbd-4f31-80a5-952b52be32ae::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-10-22T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "asthma",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "301485011"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "1984-07-17T12:30:37+02:00"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "73e72bc4-3c93-49c5-bb9f-ccec563092c7::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33567",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2015-11-02T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "psoriasis",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "9014002"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "1975-03-22T12:30:37.553Z"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "6ef5e942-6c39-4b3c-9419-32374720bba2::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "external_ref": {
+            "@class": "PARTY_REF",
+            "id": {
+              "@class": "GENERIC_ID",
+              "value": "G33278",
+              "scheme": "2.16.840.1.113883.2.1.4.3"
+            },
+            "namespace": "NHS-UK",
+            "type": "PERSON"
+          },
+          "name": "Dr Josh Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2017-11-02T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple Valley Hospital NHS"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "protocol": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "Tree"
+                  },
+                  "archetype_node_id": "at0032",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Last updated"
+                      },
+                      "archetype_node_id": "at0070",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2018-01-03T11:11:16.038+01:00"
+                      }
+                    }
+                  ]
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "psoriasis",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "9014002"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Body site"
+                      },
+                      "archetype_node_id": "at0012",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "Left elbow",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "1927002"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "1975-03-22T12:30:37.553Z"
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Severity"
+                      },
+                      "archetype_node_id": "at0005",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "Moderate",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "local"
+                          },
+                          "code_string": "at0048"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of resolution"
+                      },
+                      "archetype_node_id": "at0030",
+                      "value": {
+                        "@class": "DV_DATE",
+                        "value": "2018-01-03"
+                      }
+                    },
+                    {
+                      "@class": "CLUSTER",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis status"
+                      },
+                      "archetype_details": {
+                        "@class": "ARCHETYPED",
+                        "archetype_id": {
+                          "@class": "ARCHETYPE_ID",
+                          "value": "openEHR-EHR-CLUSTER.problem_status.v0"
+                        },
+                        "rm_version": "1.0.1"
+                      },
+                      "archetype_node_id": "openEHR-EHR-CLUSTER.problem_status.v0",
+                      "items": [
+                        {
+                          "@class": "ELEMENT",
+                          "name": {
+                            "@class": "DV_TEXT",
+                            "value": "Diagnostic status"
+                          },
+                          "archetype_node_id": "at0004",
+                          "value": {
+                            "@class": "DV_CODED_TEXT",
+                            "value": "Established",
+                            "defining_code": {
+                              "@class": "CODE_PHRASE",
+                              "terminology_id": {
+                                "@class": "TERMINOLOGY_ID",
+                                "value": "local"
+                              },
+                              "code_string": "at0018"
+                            }
+                          }
+                        },
+                        {
+                          "@class": "ELEMENT",
+                          "name": {
+                            "@class": "DV_TEXT",
+                            "value": "Active/Inactive?"
+                          },
+                          "archetype_node_id": "at0003",
+                          "value": {
+                            "@class": "DV_CODED_TEXT",
+                            "value": "Inactive",
+                            "defining_code": {
+                              "@class": "CODE_PHRASE",
+                              "terminology_id": {
+                                "@class": "TERMINOLOGY_ID",
+                                "value": "local"
+                              },
+                              "code_string": "at0027"
+                            }
+                          }
+                        },
+                        {
+                          "@class": "ELEMENT",
+                          "name": {
+                            "@class": "DV_TEXT",
+                            "value": "Resolution status"
+                          },
+                          "archetype_node_id": "at0083",
+                          "value": {
+                            "@class": "DV_CODED_TEXT",
+                            "value": "Resolving",
+                            "defining_code": {
+                              "@class": "CODE_PHRASE",
+                              "terminology_id": {
+                                "@class": "TERMINOLOGY_ID",
+                                "value": "local"
+                              },
+                              "code_string": "at0085"
+                            }
+                          }
+                        },
+                        {
+                          "@class": "ELEMENT",
+                          "name": {
+                            "@class": "DV_TEXT",
+                            "value": "Episodicity"
+                          },
+                          "archetype_node_id": "at0001",
+                          "value": {
+                            "@class": "DV_CODED_TEXT",
+                            "value": "Ongoing episode",
+                            "defining_code": {
+                              "@class": "CODE_PHRASE",
+                              "terminology_id": {
+                                "@class": "TERMINOLOGY_ID",
+                                "value": "local"
+                              },
+                              "code_string": "at0035"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Diagnostic certainty"
+                      },
+                      "archetype_node_id": "at0073",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "Confirmed",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "local"
+                          },
+                          "code_string": "at0076"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Comment"
+                      },
+                      "archetype_node_id": "at0069",
+                      "value": {
+                        "@class": "DV_TEXT",
+                        "value": "Only small patches now"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Problem list"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "c306f597-6edf-4805-ab78-6190e21c4348::hcbox.oprn.ehrscape.com::3"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.problem_list.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Problem List.v1"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.problem_list.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2018-01-09T13:56:17Z"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Rippleburgh GP Practice"
+          }
+        },
+        "content": [
+          {
+            "@class": "SECTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Problems and issues"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1",
+            "items": [
+              {
+                "@class": "EVALUATION",
+                "name": {
+                  "@class": "DV_TEXT",
+                  "value": "Problem/Diagnosis"
+                },
+                "archetype_details": {
+                  "@class": "ARCHETYPED",
+                  "archetype_id": {
+                    "@class": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+                  },
+                  "rm_version": "1.0.1"
+                },
+                "archetype_node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+                "language": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                  },
+                  "code_string": "en"
+                },
+                "encoding": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                  },
+                  "code_string": "UTF-8"
+                },
+                "subject": {
+                  "@class": "PARTY_SELF"
+                },
+                "data": {
+                  "@class": "ITEM_TREE",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "structure"
+                  },
+                  "archetype_node_id": "at0001",
+                  "items": [
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Problem/Diagnosis name"
+                      },
+                      "archetype_node_id": "at0002",
+                      "value": {
+                        "@class": "DV_CODED_TEXT",
+                        "value": "Adenocarcinoma of prostate",
+                        "defining_code": {
+                          "@class": "CODE_PHRASE",
+                          "terminology_id": {
+                            "@class": "TERMINOLOGY_ID",
+                            "value": "SNOMED-CT"
+                          },
+                          "code_string": "399490008"
+                        }
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Clinical description"
+                      },
+                      "archetype_node_id": "at0009",
+                      "value": {
+                        "@class": "DV_TEXT",
+                        "value": "test"
+                      }
+                    },
+                    {
+                      "@class": "ELEMENT",
+                      "name": {
+                        "@class": "DV_TEXT",
+                        "value": "Date/time of onset"
+                      },
+                      "archetype_node_id": "at0077",
+                      "value": {
+                        "@class": "DV_DATE_TIME",
+                        "value": "2004-07-16T00:00:00+02:00"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

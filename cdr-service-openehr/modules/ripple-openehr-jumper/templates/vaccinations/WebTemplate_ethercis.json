@@ -9,9 +9,12 @@
     "max": 1,
     "children": [
       {
+        "aql_path": "/name",
         "mandatory_attributes": [
           {
+            "name": "Value",
             "attribute": "value",
+            "id": "value",
             "type": "STRING"
           }
         ],
@@ -32,13 +35,18 @@
         "max": -1,
         "children": [
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0007]/careflow_step",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -62,13 +70,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0007]/current_state",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -91,13 +104,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0010]/careflow_step",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -121,13 +139,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0009]/current_state",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -150,13 +173,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0009]/careflow_step",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -180,13 +208,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0010]/current_state",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -209,13 +242,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0006]/current_state",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -238,13 +276,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0008]/current_state",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -267,13 +310,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0006]/careflow_step",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -297,9 +345,12 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
             "mandatory_attributes": [
               {
+                "name": "CurrentState",
                 "attribute": "current_state",
+                "id": "current_state",
                 "type": "DV_CODED_TEXT"
               }
             ],
@@ -308,11 +359,15 @@
               "current_state": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -337,11 +392,15 @@
               "careflow_step": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -374,9 +433,12 @@
             "type": "ISM_TRANSITION"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
             "mandatory_attributes": [
               {
+                "name": "CurrentState",
                 "attribute": "current_state",
+                "id": "current_state",
                 "type": "DV_CODED_TEXT"
               }
             ],
@@ -385,11 +447,15 @@
               "current_state": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -414,11 +480,15 @@
               "careflow_step": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -451,13 +521,18 @@
             "type": "ISM_TRANSITION"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0008]/careflow_step",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -481,13 +556,18 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0012]/current_state",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -511,7 +591,7 @@
           },
           {
             "min": 1,
-            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]",
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description",
             "max": 1,
             "children": [
               {
@@ -523,12 +603,15 @@
                 "id": "immunisation_name",
                 "category": "ELEMENT",
                 "type": "DV_TEXT",
-                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0002]}'",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0002],0,/Value}'",
                 "constraints": [
                   {
+                    "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0002]/value",
                     "mandatory_attributes": [
                       {
+                        "name": "Value",
                         "attribute": "value",
+                        "id": "value",
                         "type": "STRING"
                       }
                     ],
@@ -555,12 +638,15 @@
                 "id": "series_number",
                 "category": "ELEMENT",
                 "type": "DV_COUNT",
-                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0004]}'",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0004],0,/Magnitude}'",
                 "constraints": [
                   {
+                    "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0004]/value",
                     "mandatory_attributes": [
                       {
+                        "name": "Magnitude",
                         "attribute": "magnitude",
+                        "id": "magnitude",
                         "type": "INT"
                       }
                     ],
@@ -587,12 +673,15 @@
                 "id": "comment",
                 "category": "ELEMENT",
                 "type": "DV_TEXT",
-                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0015]}'",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0015],0,/Value}'",
                 "constraints": [
                   {
+                    "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0015]/value",
                     "mandatory_attributes": [
                       {
+                        "name": "Value",
                         "attribute": "value",
+                        "id": "value",
                         "type": "STRING"
                       }
                     ],
@@ -619,12 +708,15 @@
                 "id": "reason_withheld",
                 "category": "ELEMENT",
                 "type": "DV_TEXT",
-                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0005]}'",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.immunisation_procedure.v1],0,/description[at0001],/items[at0005],0,/Value}'",
                 "constraints": [
                   {
+                    "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0005]/value",
                     "mandatory_attributes": [
                       {
+                        "name": "Value",
                         "attribute": "value",
+                        "id": "value",
                         "type": "STRING"
                       }
                     ],
@@ -651,13 +743,18 @@
             "node_id": "at0001"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition[at0012]/careflow_step",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
@@ -681,9 +778,12 @@
             "type": "DV_CODED_TEXT"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
             "mandatory_attributes": [
               {
+                "name": "CurrentState",
                 "attribute": "current_state",
+                "id": "current_state",
                 "type": "DV_CODED_TEXT"
               }
             ],
@@ -692,11 +792,15 @@
               "current_state": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -721,11 +825,15 @@
               "careflow_step": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -758,9 +866,12 @@
             "type": "ISM_TRANSITION"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
             "mandatory_attributes": [
               {
+                "name": "CurrentState",
                 "attribute": "current_state",
+                "id": "current_state",
                 "type": "DV_CODED_TEXT"
               }
             ],
@@ -769,11 +880,15 @@
               "current_state": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -798,11 +913,15 @@
               "careflow_step": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -835,9 +954,12 @@
             "type": "ISM_TRANSITION"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
             "mandatory_attributes": [
               {
+                "name": "CurrentState",
                 "attribute": "current_state",
+                "id": "current_state",
                 "type": "DV_CODED_TEXT"
               }
             ],
@@ -846,11 +968,15 @@
               "current_state": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -875,11 +1001,15 @@
               "careflow_step": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -912,9 +1042,12 @@
             "type": "ISM_TRANSITION"
           },
           {
+            "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
             "mandatory_attributes": [
               {
+                "name": "CurrentState",
                 "attribute": "current_state",
+                "id": "current_state",
                 "type": "DV_CODED_TEXT"
               }
             ],
@@ -923,11 +1056,15 @@
               "current_state": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -952,11 +1089,15 @@
               "careflow_step": {
                 "mandatory_attributes": [
                   {
+                    "name": "DefiningCode",
                     "attribute": "defining_code",
+                    "id": "defining_code",
                     "type": "CODE_PHRASE"
                   },
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
@@ -992,12 +1133,15 @@
             "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
             "mandatory_attributes": [
               {
+                "name": "CurrentState",
                 "attribute": "current_state",
+                "id": "current_state",
                 "type": "DV_CODED_TEXT"
               }
             ],
             "name": "IsmTransition",
             "attribute": "ism_transition",
+            "id": "ism_transition",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1011,20 +1155,27 @@
             "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/subject",
             "mandatory_attributes": [
               {
+                "name": "Namespace",
                 "attribute": "namespace",
+                "id": "namespace",
                 "type": "STRING"
               },
               {
+                "name": "Id",
                 "attribute": "id",
+                "id": "id",
                 "type": "OBJECT_ID"
               },
               {
+                "name": "Type",
                 "attribute": "type",
+                "id": "type",
                 "type": "STRING"
               }
             ],
             "name": "Subject",
             "attribute": "subject",
+            "id": "subject",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1038,16 +1189,21 @@
             "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/language",
             "mandatory_attributes": [
               {
+                "name": "CodeString",
                 "attribute": "code_string",
+                "id": "code_string",
                 "type": "STRING"
               },
               {
+                "name": "TerminologyId",
                 "attribute": "terminology_id",
+                "id": "terminology_id",
                 "type": "TERMINOLOGY_ID"
               }
             ],
             "name": "Language",
             "attribute": "language",
+            "id": "language",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1061,12 +1217,15 @@
             "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/time",
             "mandatory_attributes": [
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
             "name": "Time",
             "attribute": "time",
+            "id": "time",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1080,16 +1239,21 @@
             "aql_path": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/encoding",
             "mandatory_attributes": [
               {
+                "name": "CodeString",
                 "attribute": "code_string",
+                "id": "code_string",
                 "type": "STRING"
               },
               {
+                "name": "TerminologyId",
                 "attribute": "terminology_id",
+                "id": "terminology_id",
                 "type": "TERMINOLOGY_ID"
               }
             ],
             "name": "Encoding",
             "attribute": "encoding",
+            "id": "encoding",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1111,20 +1275,27 @@
         "aql_path": "/composer",
         "mandatory_attributes": [
           {
+            "name": "Namespace",
             "attribute": "namespace",
+            "id": "namespace",
             "type": "STRING"
           },
           {
+            "name": "Id",
             "attribute": "id",
+            "id": "id",
             "type": "OBJECT_ID"
           },
           {
+            "name": "Type",
             "attribute": "type",
+            "id": "type",
             "type": "STRING"
           }
         ],
         "name": "Composer",
         "attribute": "composer",
+        "id": "composer",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -1138,16 +1309,21 @@
         "aql_path": "/language",
         "mandatory_attributes": [
           {
+            "name": "CodeString",
             "attribute": "code_string",
+            "id": "code_string",
             "type": "STRING"
           },
           {
+            "name": "TerminologyId",
             "attribute": "terminology_id",
+            "id": "terminology_id",
             "type": "TERMINOLOGY_ID"
           }
         ],
         "name": "Language",
         "attribute": "language",
+        "id": "language",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -1161,16 +1337,21 @@
         "aql_path": "/category",
         "mandatory_attributes": [
           {
+            "name": "DefiningCode",
             "attribute": "defining_code",
+            "id": "defining_code",
             "type": "CODE_PHRASE"
           },
           {
+            "name": "Value",
             "attribute": "value",
+            "id": "value",
             "type": "STRING"
           }
         ],
         "name": "Category",
         "attribute": "category",
+        "id": "category",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -1184,16 +1365,21 @@
         "aql_path": "/territory",
         "mandatory_attributes": [
           {
+            "name": "CodeString",
             "attribute": "code_string",
+            "id": "code_string",
             "type": "STRING"
           },
           {
+            "name": "TerminologyId",
             "attribute": "terminology_id",
+            "id": "terminology_id",
             "type": "TERMINOLOGY_ID"
           }
         ],
         "name": "Territory",
         "attribute": "territory",
+        "id": "territory",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -1212,12 +1398,15 @@
             "aql_path": "/context/start_time",
             "mandatory_attributes": [
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
             "name": "StartTime",
             "attribute": "start_time",
+            "id": "start_time",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1231,16 +1420,21 @@
             "aql_path": "/context/setting",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
             "name": "Setting",
             "attribute": "setting",
+            "id": "setting",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1251,8 +1445,10 @@
             "type": "DV_CODED_TEXT"
           }
         ],
+        "name": "Context",
         "rm_type": "EVENT_CONTEXT",
         "attribute": "context",
+        "id": "context",
         "node_id": ""
       }
     ],

@@ -4,7 +4,7 @@
   "series":              "{{immunisation_procedure.series_number.value}}",
   "vaccinationDateTime": "=> getRippleTime(immunisation_procedure.time.value)",
   "author": "{{composer.value}}",
-  "dateCreated": "=> rippleDateTime(start_time, true)",
+  "dateCreated": "=> rippleDateTime(context.start_time.value, true)",
   "source": "{{host}}",
   "sourceId": "=> getUid(uid, host)",
   "patientId": "{{patientId}}"

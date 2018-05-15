@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  10 April 2018
+  1 May 2018
 
 */
 
@@ -160,10 +160,12 @@ function getPaths(obj, path, paths, host) {
   });
 }
 
-function createFlatJSONTemplate(webTemplate) {
+function createFlatJSONTemplate(metaDataArray) {
 
-  console.log('** createFlatJSONTemplate');
-  console.log('** webTemplate: ' + JSON.stringify(webTemplate));
+  console.log('\n** createFlatJSONTemplate');
+  console.log('** metaDataArray: ' + JSON.stringify(metaDataArray, null, 2));
+
+  /*
 
   var templateTree;
   var host;
@@ -176,7 +178,9 @@ function createFlatJSONTemplate(webTemplate) {
     templateTree = webTemplate.tree;
     host = 'ethercis';
   }
+
   var path = '';
+
   var paths = [
     {id: "=> either(composer.value, 'Dr Tony Shannon')", path: 'ctx/composer_name'},
     {id: "=> either(facility_id, '999999-345')", path: 'ctx/health_care_facility|id'},
@@ -187,23 +191,49 @@ function createFlatJSONTemplate(webTemplate) {
     {id: '== GB', path: 'ctx/territory'},
     {id: '=> now()', path: 'ctx/time'}
   ];
-  getPaths([templateTree], path, paths, host);
 
-  var results = {};
-  paths.forEach(function(path) {
-    var id = path.id;
-    if (id.substring(0,2) === '=>') {
-      results[path.path] = id;
-    }
-    else if (id.substring(0,2) === '==') {
-      results[path.path] = id.split('== ')[1];
+  */
+
+  var paths = {
+    "ctx/composer_name": "=> either(composer.value, 'Dr Tony Shannon')",
+    "ctx/health_care_facility|id": "=> either(facility_id, '999999-345')",
+    "ctx/health_care_facility|name": "=> either(facility_name, 'Rippleburgh GP Practice')",
+    "ctx/id_namespace": "NHS-UK",
+    "ctx/id_scheme": "2.16.840.1.113883.2.1.4.3",
+    "ctx/language": "en",
+    "ctx/territory": "GB",
+    "ctx/time": "=> now()"
+  };
+
+  metaDataArray.forEach(function(field) {
+    if (!field.aqlPath.startsWith('/content[')) return; // ignore for now
+ 
+    var flatJson = field.flatJSONPath; // + '/' + field.id;
+    var type = field.type;
+    var path = '';
+    var dot = '';
+    field.path.forEach(function(name) {
+      path = path + dot + name;
+      dot = '.';
+    });
+
+
+    if (type === 'DV_CODED_TEXT' || type === 'DV_TEXT') {
+      if (type === 'DV_TEXT') {
+        paths[flatJson] = '=> dvText(' + path + ')';
+      }
+      paths[flatJson + '|value'] = '=> either(' + path + '.value, <!delete>)';
+      paths[flatJson + '|code'] = '=> either(' + path + '.code, <!delete>)';
+      paths[flatJson + '|terminology'] = '=> either(' + path + '.terminology, <!delete>)';
     }
     else {
-      results[path.path] = '{{' + id + '}}';
+      paths[flatJson] = '=> either(' + path + ', <!delete>)';
     }
+
   });
 
-  return results;
+
+  return paths;
 }
 
 module.exports = createFlatJSONTemplate;

@@ -38,6 +38,55 @@ function onStarted() {
   //var jumper = require('./modules/ripple-openehr-jumper');
   //jumper.build.call(this, userDefined.headings);
 
+  // initialise / load database
+
+  var documents;
+  try {
+    documents = require('./documents.json');
+  }
+  catch(err) {};
+
+  if (documents) {
+
+    var msg = {
+      type: 'ewd-save-documents',
+      params: {
+        documents: documents,
+        password: this.userDefined.config.managementPassword
+      }
+    };
+    console.log('Initialising Documents from documents.json');
+    this.handleMessage(msg, function(response) {
+      console.log('QEWD Documents created from text file');
+    });
+  }
+
+  // set up timed event to dump out documents to a text file
+
+  var self = this;
+  this.dumpDocumentsTimer = setInterval(function() {
+    var msg = {
+      type: 'ewd-dump-documents',
+      params: {
+        rootPath: __dirname,
+        fileName: 'documents.json',
+        password: self.userDefined.config.managementPassword
+      }
+    };
+    console.log('Saving QEWD Database to documents.json');
+    self.handleMessage(msg, function(response) {
+      console.log('QEWD Database saved');
+    });
+
+  }, 300000);
+
+  this.on('stop', function() {
+    console.log('Stopping dumpDocumentsTimer');
+    clearInterval(self.dumpDocumentsTimer);
+  });
+
+  // =================
+
   var now = Math.floor(Date.now()/1000);
   var timeout = this.userDefined.config.initialSessionTimeout;
 

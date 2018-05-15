@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  6 February 2018
+  10 May 2018
 
 */
 
@@ -35,11 +35,62 @@ var local_routes = require('./local_routes.json');
 // set userDefined to either Auth0 or OpenId Connect version
 
 //var userDefined = require('./userDefined-auth0.json');
+
+function onStarted() {
+
+  var documents;
+  try {
+    documents = require('./documents.json');
+  }
+  catch(err) {}
+
+  if (documents) {
+    var msg = {
+      type: 'ewd-save-documents',
+      params: {
+        documents: documents,
+        password: this.userDefined.config.managementPassword
+      }
+    };
+    console.log('Initialising Documents from documents.json');
+    this.handleMessage(msg, function(response) {
+      console.log('QEWD Documents created from text file');
+    });
+  }
+
+  // set up timed event to dump out documents to a text file
+
+  var self = this;
+  this.dumpDocumentsTimer = setInterval(function() {
+    var msg = {
+      type: 'ewd-dump-documents',
+      params: {
+        rootPath: __dirname,
+        fileName: 'documents.json',
+        password: self.userDefined.config.managementPassword
+      }
+    };
+    console.log('Saving QEWD Database to documents.json');
+    self.handleMessage(msg, function(response) {
+      console.log('QEWD Database saved');
+    });
+
+  }, 300000);
+
+  this.on('stop', function() {
+    console.log('Stopping dumpDocumentsTimer');
+    clearInterval(self.dumpDocumentsTimer);
+  });
+}
+
 var userDefined = require('./userDefined-openid.json');
 
 module.exports = {
   config: config,
   routes: local_routes,
-  userDefined: userDefined
+  userDefined: userDefined,
+  onStarted: function() {
+    onStarted.call(this);
+  }
 };
 

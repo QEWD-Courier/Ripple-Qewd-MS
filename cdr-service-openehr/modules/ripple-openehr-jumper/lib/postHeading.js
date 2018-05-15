@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 April 2018
+  1 May 2018
 
 */
 
@@ -82,7 +82,7 @@ module.exports = function(params, callback) {
   }
   var headingPath = jumperModules[heading].path;
   if (!jumperModules[heading].pulsetile_to_openehr) {
-    jumperModules[heading].pulsetile_to_openehr = require(headingPath + '/PulseTile_to_OpenEHR.json');
+    jumperModules[heading].pulsetile_to_openehr = require(headingPath + '/Pulsetile_to_OpenEHR.json');
   }
   var template = jumperModules[heading].pulsetile_to_openehr;
   var openEHRFormatData = transform(template, data, helpers);

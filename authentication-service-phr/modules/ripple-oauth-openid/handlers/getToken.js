@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  15 January 2018
+  9 May 2018
 
 */
 
@@ -60,9 +60,17 @@ module.exports = function(args, finished) {
       var session = args.session;
       session.authenticated = true;
       //session.uid = uuid();
-      session.timeout = tokenSet.refresh_expires_in;
       var verify_jwt = jwt.decode(tokenSet.id_token, null, true);
       session.nhsNumber = verify_jwt.nhsNumber;
+      session.email = verify_jwt.email;
+
+      if (tokenSet.refresh_expires_in) {
+        session.timeout = tokenSet.refresh_expires_in;
+      }
+      else {
+        session.timeout = verify_jwt.exp - verify_jwt.iat;
+      }
+
       session.role = 'phrUser';
       session.uid = tokenSet.session_state;
       session.openid = verify_jwt;

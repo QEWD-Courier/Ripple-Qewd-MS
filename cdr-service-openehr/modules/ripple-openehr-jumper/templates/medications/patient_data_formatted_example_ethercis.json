@@ -1,0 +1,3820 @@
+[
+  {
+    "uid": "00038f25-b307-4342-8211-29fb923c0d63::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T19:21:45",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "Smart",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "023933e7-7b38-4cc8-bfd4-9a5a00f62059::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2018-01-04T13:21:41",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "67"
+          },
+          "medication_item": {
+            "value": "67",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "03683e5f-01be-4707-9ab2-5f078b9ef70b::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-08T13:16:34",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "2.0"
+          },
+          "medication_item": {
+            "value": "1ioio",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "05025219-d614-44f0-ab26-69b67a7e1e0a::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-27T17:09:40",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "jmjhmjhm oo"
+          },
+          "medication_item": {
+            "value": "ooo",
+            "code": "1.23456789E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PR Per Rectum"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "05c757b1-1e7b-4418-8ca8-ec15fc5e4935::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-02-06T10:41:06",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test a"
+          },
+          "medication_item": {
+            "value": "1 7",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IM Intra Muscular"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "086e77e5-dacd-4aec-a7d9-e24f5de62a58::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-06T16:11:25",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "0ec8e276-9a5a-45cf-8581-181c5ac4405e::vm01.ethercis.org::4",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-08T11:50:37",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "90"
+          },
+          "medication_item": {
+            "value": "tesd gerts 0",
+            "code": "1.23456789E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PN Per Nasal"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "0f06094a-79b3-47c8-96fb-1fa09de6d1d8::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-10T17:13:33",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Directions"
+          },
+          "medication_item": {
+            "value": "test 1011 -2",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "SL Sub Lingual"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "0f151c7b-683c-4b82-99bc-dead05afe66c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-27T13:08:20",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "kl"
+          },
+          "medication_item": {
+            "value": "28today12",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "10a245c8-257f-4812-9e59-b4c51a77b885::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:50:29",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "1327d55e-1f45-4804-b3fe-e7626ee207e1::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-08T13:44:01",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Dose Directions"
+          },
+          "medication_item": {
+            "value": "test 811 3",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "158cd2cd-d566-4ab3-87b6-28ba5bff18cd::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-14T12:19:27",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "1b"
+          },
+          "medication_item": {
+            "value": "1b",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "1893365f-4961-4af1-847c-8ccf205aa7a1::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-11T11:37:52",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Dose Direction"
+          },
+          "medication_item": {
+            "value": "test medication 11.01",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "1cb69ddc-b9ff-4df9-8f99-ccab0b5a29dc::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:48:07",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "269f6658-d56d-40c7-a9f6-6ee485ce78c7::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-13T16:00:32",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test"
+          },
+          "medication_item": {
+            "value": "1",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PN Per Nasal"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "2b8ce017-d31a-4d6c-b51e-b5cfa73f9b24::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-15T10:50:56",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "199.0"
+          },
+          "medication_item": {
+            "value": "2",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IM Intra Muscular"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "33ded495-e1b9-4d36-adef-af2d4db3e80e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-15T10:51:51",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "1"
+          },
+          "medication_item": {
+            "value": "1",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "35cc6926-bb3d-4d48-bc11-4d93b2ea154a::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-15T15:18:01",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "1.0"
+          },
+          "medication_item": {
+            "value": "1ertyu",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "36b30065-864a-4a93-a248-bcef72b0aa3a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2018-01-11T13:56:22",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "f"
+          },
+          "medication_item": {
+            "value": "test name edication m 1",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IM Intra Muscular"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "383186aa-6b88-4f7e-a395-7a3a96be2bb8::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:39:40",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "3c54c9d4-7238-4d84-9e13-3f4555f60654::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:57:14",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "416fc34f-241f-464d-a1e4-ee858601708a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-11T14:56:01",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "qwe"
+          },
+          "medication_item": {
+            "value": "qwe",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "46029db0-00fb-4223-94fe-3989187f2cad::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T19:15:57",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "Smart",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "4670194e-1e68-410b-ad32-aa56ee4baa99::vm01.ethercis.org::5",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-06T17:04:53",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "160"
+          },
+          "medication_item": {
+            "value": "1test 6 dec",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "4bb50001-c80c-4edd-b6b6-4c28b246fc1e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T00:01:40",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "5200ead7-9ad1-4f4d-ad26-95009dfa5929::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:37:40",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "532804fc-5988-45a3-b2b2-2e09c20f005e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-27T17:37:32",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "yy"
+          },
+          "medication_item": {
+            "value": "yy",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "5a9aaa74-70ea-4619-9759-3189742479dc::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T00:24:03",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "Smart",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "5aefa40d-e9d8-42bf-9c9f-a75535b1bb33::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-19T14:05:52",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Per Oral"
+          },
+          "medication_item": {
+            "value": "Paracetamol",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "5bd7ed02-589f-437e-9e06-262635ad4747::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-06T15:51:07",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "sfs"
+          },
+          "medication_item": {
+            "value": "fsfs",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IM Intra Muscular"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "610689f0-6896-4b95-af24-949e1ed77f55::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:40:28",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "62e95e05-b2e8-487a-bf43-8e5cd823e965::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-06T15:36:35",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "6523761e-3c36-42e4-8a7c-d256ea704bbe::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-11T12:01:08",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "dose f2"
+          },
+          "medication_item": {
+            "value": "test medication 11.01 updated2 new2",
+            "code": "1.23456789E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "6c3dfdc8-2412-4c15-9c39-ec925e4ec2e2::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-15T11:03:52",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "1b"
+          },
+          "medication_item": {
+            "value": "1b",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "737bc85b-6306-40fa-bce9-f284abf10a06::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-30T15:48:21",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Panadol Extra is a paracetamol-based analgesic that provides relief from fever and strong pain such as\nHeadaches, including Migraine\nMuscular Aches & Pains\nPeriod Pain\nToothaches\nSore Throat"
+          },
+          "medication_item": {
+            "value": "panadol",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "77784414-5f7d-4b23-ae6e-28247a55a87c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-16T13:51:40",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "123"
+          },
+          "medication_item": {
+            "value": "aaqwerty",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "7968287a-abd9-4e4f-abc5-4f97c755c625::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-08-10T13:06:40+01:00",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "After meals"
+          },
+          "medication_item": {
+            "value": "Test medication 4",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8563d4f3-e3c2-4db5-b1fc-b2517f5822fe::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-11T15:43:06",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "eqeqe"
+          },
+          "medication_item": {
+            "value": "qeq",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "883f784c-11f3-4a5e-8147-bb935219a054::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:44:51",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "886f7914-0a29-4bb6-bbdc-8a3518143a56::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-11T11:57:59",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Dose  new"
+          },
+          "medication_item": {
+            "value": "test medication 11.01 updated new",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8b6a5c6f-dbda-435b-8aa1-46d3dd9ba4e4::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-24T10:25:19",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "hhh"
+          },
+          "medication_item": {
+            "value": "test create",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PN Per Nasal"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8bc431b4-0680-4938-ab8f-907983fdcdbe::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-18T11:32:59",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "6613131"
+          },
+          "medication_item": {
+            "value": "3131",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "8f70ac23-83d4-415c-a8e8-93920d579ebf::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T00:22:47",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "906a0f65-a5e8-46e3-a1e1-c6f322f3c7c0::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-08-10T12:56:54+01:00",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "medication_item": {
+            "value": "Test medication 3",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "92d3aa30-41f3-4d3d-b523-9e6db4d99cd2::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-15T11:26:44",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "1bab"
+          },
+          "medication_item": {
+            "value": "1bab",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "9715f5d5-c7c0-4f8b-9c88-060330e1d578::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-11T12:32:36",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "yy"
+          },
+          "medication_item": {
+            "value": "hhh",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "974be3b2-22c9-46d2-b393-2efc19870050::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-13T15:30:31",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Dose Directions"
+          },
+          "medication_item": {
+            "value": "test1311",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PN Per Nasal"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "97ef0947-48d2-421b-9a9d-0bbb7caa6ee8::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-13T13:46:58",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "ljl;m"
+          },
+          "medication_item": {
+            "value": "teraflu",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "99bb4943-6193-4507-9c41-7cb7ff7684c0::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-15T11:06:28",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "2bb"
+          },
+          "medication_item": {
+            "value": "2bb",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "9b29d641-6d16-465f-ab7c-b23adcca2c21::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2018-01-11T15:00:04",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "sdf"
+          },
+          "medication_item": {
+            "value": "sdf",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PN Per Nasal"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "9d5ed651-830b-4508-bf64-b1d4ddb1f3c3::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-06T16:11:06",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a057c46f-9752-494f-9ce4-8149eb2fc7e1::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-08T13:43:01",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Dose Directions"
+          },
+          "medication_item": {
+            "value": "Test811-2",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a1dadaa6-0570-4a00-b765-76ea5db592ac::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T00:22:04",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a3c55f79-9d6c-4b48-8326-4b826421daac::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:53:15",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a5adc5a9-a042-47f0-b20f-42c4b90de136::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-27T17:15:16",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "mjkkk"
+          },
+          "medication_item": {
+            "value": "yyy",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "a5ec4daa-80cf-4020-a39d-88684bee386a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T19:26:01",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "Smart",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b02b7c5a-fb95-4017-aa4f-9eefd6effafa::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-08T12:47:02",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "1.0111"
+          },
+          "medication_item": {
+            "value": "1.0111",
+            "code": "1.23456789E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b152eac5-266c-4818-b885-f588f6971e11::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T00:06:44",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b371ae6e-4c2d-4c1d-8a8f-1043e848b0ad::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-20T11:22:40",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "sfs"
+          },
+          "medication_item": {
+            "value": "defsdf",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IM Intra Muscular"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "b46bbb11-d40a-4289-aa9f-f61cfbfb13f4::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-24T10:24:09",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "155"
+          },
+          "medication_item": {
+            "value": "1234",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "bb5f8ce1-09b8-4eaf-bd4e-bc3e32313773::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-14T10:21:51",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "rbg"
+          },
+          "medication_item": {
+            "value": "1test",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "bd344dc3-c352-4348-afb5-8b8043f49ee4::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-24T09:51:21",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "hjkl"
+          },
+          "medication_item": {
+            "value": "uy",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "bee6a192-b7ca-40a3-864b-acc684745e12::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-06T15:36:25",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c2b3c62a-7d2c-4fff-b7fe-343afab79d8a::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T16:57:24",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c2e8f449-1a43-43df-8071-4a468e143d20::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-10T17:12:05",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test direc"
+          },
+          "medication_item": {
+            "value": "test name1011",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IM Intra Muscular"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c91de72d-3437-4dbd-955d-ec04bd798ac6::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-23T15:20:46",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test1"
+          },
+          "medication_item": {
+            "value": "test1",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "c9f7d4ba-a99c-4962-bd90-26712364749f::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-15T12:06:54",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Dose DirectionsCHAN"
+          },
+          "medication_item": {
+            "value": "test1511CHAN",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PN Per Nasal"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "cc373ceb-69dc-495b-a634-fdbbf5176829::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-08-10T12:38:16+01:00",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "medication_item": {
+            "value": "Test medication 2",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d095beb5-a964-461e-96db-9b50a117720b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-20T12:08:27",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "33"
+          },
+          "medication_item": {
+            "value": "Anna",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d14e94a4-5160-4ad7-9bac-0b5710605bf5::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-06T16:07:39",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d14ffeda-49e4-4942-9114-9727a1815c3f::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-11T15:36:45",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "tes"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IM Intra Muscular"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d26af59d-547a-4e18-817f-e7f83996d3da::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-11T12:31:38",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "dose d"
+          },
+          "medication_item": {
+            "value": "new medication test for Rob",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PR Per Rectum"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "d2f1a97c-772b-4922-a464-c5fae7e3ab92::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2018-01-17T15:28:35",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "0"
+          },
+          "medication_item": {
+            "value": "123456789",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "dd16f853-a570-4b1f-9b4d-01c4ccf8ca1d::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-08-10T11:37:01+01:00",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "medication_item": {
+            "value": "Test medication",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e31ea712-686d-4410-821c-9d4331025794::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-05T12:21:08",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "adada777r"
+          },
+          "medication_item": {
+            "value": "dadada777r",
+            "code": "1.23456789E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e31f201e-5f75-402b-86d0-747052015b2c::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-28T20:21:53",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "no"
+          },
+          "medication_item": {
+            "value": "ename",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e6f56c2b-10fc-468c-9c1b-9825695ce13b::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T00:18:17",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e7fba0fc-7989-4cfd-9089-7712c0db06c8::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2018-01-11T15:00:23",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "t"
+          },
+          "medication_item": {
+            "value": "mis",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "e939720f-9874-4012-81af-8bb079ff2d2d::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-05T12:55:23",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "1rrr"
+          },
+          "medication_item": {
+            "value": "1rrr",
+            "code": "1.23456789E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ea74d350-c12c-4959-821f-53281b48f315::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-08T11:29:31",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test 4"
+          },
+          "medication_item": {
+            "value": "ute 8.12 4",
+            "code": "173134014",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "eb42d6f3-4e8f-440a-a3f4-f7c2770b6d22::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-27T13:07:14",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "rg"
+          },
+          "medication_item": {
+            "value": "27today12",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "IV Intra Venous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ed11f376-3978-4121-b0c4-f0184b28e60e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-06T09:12:57",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "test"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "eecd7cbc-ee82-4dbb-8066-3cf9d7116e21::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-24T00:08:41",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f1858223-6692-460c-9572-ce1c0df5cbda::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-08T12:14:02",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "tt"
+          },
+          "medication_item": {
+            "value": "test create yes",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "PN Per Nasal"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f1c009ca-a518-442d-8985-2cdd1355db28::vm01.ethercis.org::2",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-29T11:42:53",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "45777"
+          },
+          "medication_item": {
+            "value": "11se777",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "SL Sub Lingual"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f3f15cb9-c549-4e59-8943-2d7dd6f6aa8e::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-23T23:59:48",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "Contact GP if using more than 4 times per day"
+          },
+          "medication_item": {
+            "value": "test",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "f5b7b944-c81f-4c25-96c6-36b9e60d0e52::vm01.ethercis.org::3",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-12-08T11:53:51",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "123br"
+          },
+          "medication_item": {
+            "value": "123brt",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ff176fa3-1274-4461-8326-f888d24bb411::vm01.ethercis.org::1",
+    "composer": {
+      "value": "aschenputtel123912@gmail.com"
+    },
+    "start_time": "2017-12-25T12:39:54",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "ich"
+          },
+          "medication_item": {
+            "value": "test1",
+            "code": "123456789",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "Po Per Oral"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "uid": "ff227562-4020-4c6b-887a-6552b69d6e19::vm01.ethercis.org::1",
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    },
+    "start_time": "2017-11-24T10:27:58",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "ethercis",
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "additional_instruction": {
+            "value": "res"
+          },
+          "medication_item": {
+            "value": "oest",
+            "code": "1.73134014E8",
+            "terminology": "external"
+          },
+          "route": {
+            "value": "SC Sub Cutaneous"
+          },
+          "order_details": {
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

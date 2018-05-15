@@ -8,7 +8,7 @@
   "nextOfKin": "{{relevant_contacts.relevant_contact.is_next_of_kin.value}}",
   "notes": "{{relevant_contacts.relevant_contact.note.value}}",
   "author": "{{composer.value}}",
-  "dateCreated": "=> rippleDateTime(start_time, true)",
+  "dateCreated": "=> rippleDateTime(context.start_time.value, true)",
   "source": "{{host}}",
   "sourceId": "=> getUid(uid, host)",
   "patientId": "{{patientId}}"

@@ -69,6 +69,11 @@
     "destination": "mpi_service"
   },
   {
+    "path": "/api/patients/querySearch",
+    "method": "POST",
+    "destination": "mpi_service"
+  },
+  {
     "path": "/api/patients/:patientId/top3Things",
     "method": "POST",
     "destination": "cdr_openehr_service"

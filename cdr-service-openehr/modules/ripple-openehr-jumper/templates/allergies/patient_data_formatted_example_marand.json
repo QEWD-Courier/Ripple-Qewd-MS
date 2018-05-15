@@ -1,0 +1,2143 @@
+[
+  {
+    "uid": "71358a66-9f77-4234-af58-1cee6a93f721::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Home",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Erythromycin",
+          "code": "304270095",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Vomiting",
+            "code": "422400008",
+            "terminology": "SNOMED-CT"
+          },
+          "comment": {
+            "value": "Reported by patient's carer"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "e06b6760-8efe-4b40-840a-3f71de7be6ed::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Home",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Erythromycin",
+          "code": "304270095",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Vomiting",
+            "code": "422400008",
+            "terminology": "SNOMED-CT"
+          },
+          "comment": {
+            "value": "Reported by patient's carer"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "9809c9bd-daca-4a6d-8a7f-e78fc947af8c::hcbox.oprn.ehrscape.com::2",
+    "health_care_facility": {
+      "name": "Home",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "eruption due to drug",
+            "code": "28926001",
+            "terminology": "SNOMED-CT"
+          },
+          "comment": {
+            "value": "History unclear"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "91a65e46-e6f3-44a6-bfc8-a4fd6c45f815::hcbox.oprn.ehrscape.com::2",
+    "health_care_facility": {
+      "name": "Home",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "eruption due to drug",
+            "code": "28926001",
+            "terminology": "SNOMED-CT"
+          },
+          "comment": {
+            "value": "History unclear"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "9d552254-731e-414d-a5dd-6a5991a55cfb::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Home",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "eruption due to drug",
+            "code": "28926001",
+            "terminology": "SNOMED-CT"
+          },
+          "comment": {
+            "value": "History unclear"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "6fe4570a-8e49-4a37-9905-26f4a57368b3::hcbox.oprn.ehrscape.com::3",
+    "health_care_facility": {
+      "name": "Ripple junction DGH",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Grass pollen allergy with 2 manifestations"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "sneezing"
+          },
+          "comment": {
+            "value": "only in spring"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr George Crooks"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2015-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "f3c55ce4-9fcc-4bad-b772-4293242fd233::hcbox.oprn.ehrscape.com::2",
+    "health_care_facility": {
+      "name": "Ripple junction DGH",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Grass pollen allergy"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "sneezing"
+          },
+          "comment": {
+            "value": "only in spring"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr George Crooks"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2015-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "03186bc1-1d49-4952-891a-954fac1529dc::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Home",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "last_updated": {
+          "value": "2017-12-07T15:47:43.073+01:00"
+        },
+        "category": {
+          "value": "Medication",
+          "code": "at0122",
+          "terminology": "local"
+        },
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "criticality": {
+          "value": "High",
+          "code": "at0103",
+          "terminology": "local"
+        },
+        "reaction_mechanism": {
+          "value": "Indeterminate",
+          "code": "at0126",
+          "terminology": "local"
+        },
+        "comment": {
+          "value": "Not observed/confirmed but seems likely"
+        },
+        "onset_of_last_reaction": {
+          "value": "2017-12-07T15:47:43.072+01:00"
+        },
+        "reaction_details": {
+          "onset_of_reaction": {
+            "value": "2017-12-07T00:00:00+01:00"
+          },
+          "manifestation": {
+            "value": "eruption due to drug",
+            "code": "28926001",
+            "terminology": "SNOMED-CT"
+          },
+          "specific_substance": {
+            "value": "Phenoxymethylpenicillin 250mg tablets",
+            "code": "323416001",
+            "terminology": "SNOMED-CT"
+          },
+          "certainty": {
+            "value": "Confirmed",
+            "code": "at0118",
+            "terminology": "local"
+          },
+          "comment": {
+            "value": "History unclear - reported by mum"
+          },
+          "reaction_description": {
+            "value": "Marked masculo-papular rash on extermities"
+          },
+          "severity": {
+            "value": "Moderate",
+            "code": "at0092",
+            "terminology": "local"
+          }
+        },
+        "status": {
+          "value": "Suspected",
+          "code": "at0127",
+          "terminology": "local"
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Ian Smith"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "a066bab0-07b8-4020-bd7e-d69315016240::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Test Allergy",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Sneezing"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-07T14:22:08Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "cd8c45ff-8614-413e-a609-08541c0bec97::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Ripple junction DGH",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Grass pollen allergy"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "sneezing"
+          },
+          "comment": {
+            "value": "only in spring"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr George Crooks"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2015-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "f5d6b2ae-eb07-411f-ba4a-64837e995da2::hcbox.oprn.ehrscape.com::2",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "honey bee",
+          "code": "SNOMED-CT",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "rush, red skin"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-11T12:03:39Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "12374661-2df1-454c-8902-0781ce1678aa::hcbox.oprn.ehrscape.com::4",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "for tests 8.12",
+          "code": "4",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "4 t"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-08T13:18:59Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "6a09e2c4-eaf0-4178-b3ba-3544234c1292::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "rest",
+          "code": "1239085",
+          "terminology": "12393890"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "rest"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-13T11:14:31Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "dc220834-bdd3-4c65-84a9-1227b69b4cef::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "mem",
+          "code": "1239085",
+          "terminology": "y"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "rush"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-13T11:09:31Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "43868701-70ed-4f7e-80a7-7dc97915d539::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "222222 test 20 updated",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "rr"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-19T15:57:42Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "c1d3686f-1084-475d-b0bd-b599887dea85::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test cause 19.20",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "yy"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-19T15:56:49Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "6af31902-6625-4301-a774-f6de465636c9::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "222222 test 20 22",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "22"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-19T15:57:25Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "6d44e1da-0a92-4e13-a4bc-27350133101a::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "20.12.2017",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-20T11:14:59Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "98e5f4b0-c4f9-4172-b9f0-2919691d1134::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "20.12.2017",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-20T11:16:49Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "71c2e4b0-5480-49ab-baf7-83b74192d2a8::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "21.12.17",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-20T11:17:07Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "6a3aab7c-15fa-46ac-abda-19372030bbed::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-20T11:15:38Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "d5c71a90-0015-4a7b-ba34-ac218a86c0d1::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Allergy to the cats",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "rush"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-20T13:17:52Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "2dd10798-bb66-455c-913b-8909e24583e4::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to Life",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Fever"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-25T00:20:46Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "45f2e51d-de6d-4185-9a12-54dee0b3734a::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "23.12.2017",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-20T11:18:34Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "60a976f1-f594-4d4e-95cb-98e62a5d5d76::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "dfsf",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "fsf"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-20T11:18:44Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "6455516a-cbc9-46f4-968f-c6fdbffa56a7::hcbox.oprn.ehrscape.com::5",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Cause",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Reaction"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-29T09:26:17Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "4fefed18-7a9d-4fd5-9a18-1782b32ce64a::hcbox.oprn.ehrscape.com::3",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test cause 29.24",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2017-12-29T15:10:49Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "0132af91-a962-4095-80eb-e10fcb6d37a8::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "test",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-01-09T00:30:37Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "8dc83657-bf62-4c6f-bbb4-17977dc2be1d::hcbox.oprn.ehrscape.com::2",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Allergy to the cats (updated)",
+          "code": "SNOMED-CT",
+          "terminology": "1239085"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "bad rush"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-01-09T13:58:07Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "dc7bab82-3261-4a88-aa92-9e41c73d2001::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "today is date 9.01",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "test"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-01-09T13:54:53Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "f70ae645-6194-4343-8184-e0b95e3be819::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "qwe",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "qwe"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-01-11T13:50:11Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "8fdd82af-a464-4bb9-8dbc-b2084a9f636a::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "123",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "12333333333"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-01-13T12:23:41Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "d57693d0-c592-46b5-bb7d-d533f1123f5a::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Rob Test Allergy 3",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "Rob Allergy Reaction"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-01-16T13:39:37Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "89fcbf8d-0347-442a-ba3f-ffa528d2218a::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "1",
+          "code": "1239085",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "20.01.2018"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Tony Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-01-20T09:59:19Z"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "f50306b4-5275-42c4-a823-210882377bef::hcbox.oprn.ehrscape.com::1",
+    "health_care_facility": {
+      "name": "Ripple junction DGH",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "Seafood"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "swollen lips"
+          },
+          "comment": {
+            "value": "eating crabmeat and prawns"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr George Brooks"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-19T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  },
+  {
+    "uid": "66e07c06-411c-4b1e-99c2-5a21ae9f2a5a::hcbox.oprn.ehrscape.com::2",
+    "health_care_facility": {
+      "name": "Home",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": "9999999000",
+    "host": "marand",
+    "allergies_and_adverse_reactions": {
+      "adverse_reaction_risk": {
+        "causative_agent": {
+          "value": "allergy to penicillin",
+          "code": "91936005",
+          "terminology": "SNOMED-CT"
+        },
+        "reaction_details": {
+          "manifestation": {
+            "value": "eruption due to drug",
+            "code": "28926001",
+            "terminology": "SNOMED-CT"
+          },
+          "comment": {
+            "value": "History unclear"
+          }
+        },
+        "language": {
+          "value": "en"
+        },
+        "encoding": {
+          "value": "UTF-8"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Ian Shannon"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2016-12-20T00:11:02.518+02:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  }
+]

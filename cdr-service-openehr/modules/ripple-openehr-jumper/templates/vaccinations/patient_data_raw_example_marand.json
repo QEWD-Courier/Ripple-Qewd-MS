@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "href": "http://test.operon.systems/rest/v1/query/?aql=select%20a%20as%20data%20from%20EHR%20e%5Behr_id/value%3D'dabcbf61-94bb-45df-a472-9c7a489a200d'%5D%20contains%20COMPOSITION%20a%5BopenEHR-EHR-COMPOSITION.health_summary.v1%5D%20where%20a/name/value%3D'Immunisation%20summary'"
+  },
+  "aql": "select a as data from EHR e[ehr_id/value='dabcbf61-94bb-45df-a472-9c7a489a200d'] contains COMPOSITION a[openEHR-EHR-COMPOSITION.health_summary.v1] where a/name/value='Immunisation summary'",
+  "executedAql": "select a as data from EHR e[ehr_id/value='dabcbf61-94bb-45df-a472-9c7a489a200d'] contains COMPOSITION a[openEHR-EHR-COMPOSITION.health_summary.v1] where a/name/value='Immunisation summary'",
+  "resultSet": [
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Immunisation summary"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "abb04e3b-9030-4814-9ff8-80eb6ae05f34::hcbox.oprn.ehrscape.com::1"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.health_summary.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Immunisation summary.v0"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.health_summary.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2016-12-24T00:11:02.518+02:00"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple View Care Home"
+          }
+        },
+        "content": [
+          {
+            "@class": "ACTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Immunisation procedure"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-ACTION.immunisation_procedure.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-ACTION.immunisation_procedure.v1",
+            "language": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "ISO_639-1"
+              },
+              "code_string": "en"
+            },
+            "encoding": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "IANA_character-sets"
+              },
+              "code_string": "UTF-8"
+            },
+            "subject": {
+              "@class": "PARTY_SELF"
+            },
+            "time": {
+              "@class": "DV_DATE_TIME",
+              "value": "2016-12-20T07:45:20.622Z"
+            },
+            "description": {
+              "@class": "ITEM_TREE",
+              "name": {
+                "@class": "DV_TEXT",
+                "value": "Tree"
+              },
+              "archetype_node_id": "at0001",
+              "items": [
+                {
+                  "@class": "ELEMENT",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "Immunisation name"
+                  },
+                  "archetype_node_id": "at0002",
+                  "value": {
+                    "@class": "DV_TEXT",
+                    "value": "Hepatitis B"
+                  }
+                },
+                {
+                  "@class": "ELEMENT",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "Series number"
+                  },
+                  "archetype_node_id": "at0004",
+                  "value": {
+                    "@class": "DV_COUNT",
+                    "magnitude": 3
+                  }
+                },
+                {
+                  "@class": "ELEMENT",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "Comment"
+                  },
+                  "archetype_node_id": "at0015",
+                  "value": {
+                    "@class": "DV_TEXT",
+                    "value": "Immunisation complete"
+                  }
+                }
+              ]
+            },
+            "ism_transition": {
+              "@class": "ISM_TRANSITION",
+              "current_state": {
+                "@class": "DV_CODED_TEXT",
+                "value": "completed",
+                "defining_code": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                  },
+                  "code_string": "532"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "name": {
+          "@class": "DV_TEXT",
+          "value": "Immunisation summary"
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "2020ad3c-8072-4b38-95f7-d8adbbbfb07a::hcbox.oprn.ehrscape.com::3"
+        },
+        "archetype_details": {
+          "@class": "ARCHETYPED",
+          "archetype_id": {
+            "@class": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.health_summary.v1"
+          },
+          "template_id": {
+            "@class": "TEMPLATE_ID",
+            "value": "IDCR - Immunisation summary.v0"
+          },
+          "rm_version": "1.0.1"
+        },
+        "archetype_node_id": "openEHR-EHR-COMPOSITION.health_summary.v1",
+        "language": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+          },
+          "code_string": "en"
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "terminology_id": {
+            "@class": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+          },
+          "code_string": "GB"
+        },
+        "category": {
+          "@class": "DV_CODED_TEXT",
+          "value": "event",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "terminology_id": {
+              "@class": "TERMINOLOGY_ID",
+              "value": "openehr"
+            },
+            "code_string": "433"
+          }
+        },
+        "composer": {
+          "@class": "PARTY_IDENTIFIED",
+          "name": "Dr Tony Shannon"
+        },
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "start_time": {
+            "@class": "DV_DATE_TIME",
+            "value": "2018-01-09T14:00:03Z"
+          },
+          "setting": {
+            "@class": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "openehr"
+              },
+              "code_string": "238"
+            }
+          },
+          "health_care_facility": {
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "@class": "PARTY_REF",
+              "id": {
+                "@class": "GENERIC_ID",
+                "value": "999999-345",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "namespace": "NHS-UK",
+              "type": "PARTY"
+            },
+            "name": "Ripple View Care Home"
+          }
+        },
+        "content": [
+          {
+            "@class": "ACTION",
+            "name": {
+              "@class": "DV_TEXT",
+              "value": "Immunisation procedure"
+            },
+            "archetype_details": {
+              "@class": "ARCHETYPED",
+              "archetype_id": {
+                "@class": "ARCHETYPE_ID",
+                "value": "openEHR-EHR-ACTION.immunisation_procedure.v1"
+              },
+              "rm_version": "1.0.1"
+            },
+            "archetype_node_id": "openEHR-EHR-ACTION.immunisation_procedure.v1",
+            "language": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "ISO_639-1"
+              },
+              "code_string": "en"
+            },
+            "encoding": {
+              "@class": "CODE_PHRASE",
+              "terminology_id": {
+                "@class": "TERMINOLOGY_ID",
+                "value": "IANA_character-sets"
+              },
+              "code_string": "UTF-8"
+            },
+            "subject": {
+              "@class": "PARTY_SELF"
+            },
+            "time": {
+              "@class": "DV_DATE_TIME",
+              "value": "2016-12-20T07:45:20Z"
+            },
+            "description": {
+              "@class": "ITEM_TREE",
+              "name": {
+                "@class": "DV_TEXT",
+                "value": "Tree"
+              },
+              "archetype_node_id": "at0001",
+              "items": [
+                {
+                  "@class": "ELEMENT",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "Immunisation name"
+                  },
+                  "archetype_node_id": "at0002",
+                  "value": {
+                    "@class": "DV_TEXT",
+                    "value": "Hepatitis B1 C1"
+                  }
+                },
+                {
+                  "@class": "ELEMENT",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "Series number"
+                  },
+                  "archetype_node_id": "at0004",
+                  "value": {
+                    "@class": "DV_COUNT",
+                    "magnitude": 2
+                  }
+                },
+                {
+                  "@class": "ELEMENT",
+                  "name": {
+                    "@class": "DV_TEXT",
+                    "value": "Comment"
+                  },
+                  "archetype_node_id": "at0015",
+                  "value": {
+                    "@class": "DV_TEXT",
+                    "value": "Immunisation complete"
+                  }
+                }
+              ]
+            },
+            "ism_transition": {
+              "@class": "ISM_TRANSITION",
+              "current_state": {
+                "@class": "DV_CODED_TEXT",
+                "value": "completed",
+                "defining_code": {
+                  "@class": "CODE_PHRASE",
+                  "terminology_id": {
+                    "@class": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                  },
+                  "code_string": "532"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

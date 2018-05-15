@@ -1,19 +1,19 @@
 {
   "auth": {
     "type": "OpenID Connect",
-    "client_id": "xxxxxxxxxx",
-    "client_secret": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
-    "callback_url": "http://www.mgateway.com:8080/api/auth/token",
+    "client_id": "xxx",
+    "client_secret": "yyy",
+    "callback_url": "http://dev.ripple.foundation:8000/api/auth/token",
     "scope": {
       "login": "openid"
     },
-    "issuer": "https://blue.testlab.nhs.uk/auth/realms/sandpit",
-    "authorization_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/auth",
-    "token_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/token",
-    "userinfo_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/userinfo",
-    "introspection_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/token/introspect",
-    "jwks_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/certs",
-    "end_session_endpoint": "https://blue.testlab.nhs.uk/auth/realms/sandpit/protocol/openid-connect/logout",
+    "issuer": "http://www.xxx.com:8089",
+    "authorization_endpoint": "http://www.xxx.com:8089/auth",
+    "token_endpoint": "http://www.xxx.com:8089/token",
+    "userinfo_endpoint": "http://www.xxx.com:8089/me",
+    "introspection_endpoint": "http://www.xxx.com:8089/token/introspect",
+    "jwks_endpoint": "http://www.xxx.com:8089/certs",
+    "end_session_endpoint": "http://www.xxx.com:8089/session/end",
     "index_url": "/index.html",
     "cookie_name": "JSESSIONID"
   }

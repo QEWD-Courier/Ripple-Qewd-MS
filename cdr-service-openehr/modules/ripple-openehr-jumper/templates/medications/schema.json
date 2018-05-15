@@ -197,12 +197,67 @@
                       }
                     }
                   }
+                },
+                "action_archetype_id": {
+                  "description": "ActionArchetypeId",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "timing": {
+                  "description": "Timing",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "narrative": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Narrative value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Narrative code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Narrative terminology",
+                  "type": "string",
+                  "minLength": 1
                 }
               }
             }
           }
         }
       }
+    },
+    "category": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Category value",
+          "type": "string",
+          "minLength": 1
+        },
+        "code": {
+          "description": "Category code",
+          "type": "string",
+          "minLength": 1
+        },
+        "terminology": {
+          "description": "Category terminology",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "territory": {
+      "description": "Territory",
+      "type": "string",
+      "minLength": 1
     }
   }
 }

@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 March 2018
+  8 May 2018
 
 */
 
@@ -35,6 +35,7 @@ var getDemographics = require('./handlers/getDemographics');
 var getPatients = require('./handlers/getPatients');
 var getUser = require('./handlers/getUser');
 var advancedSearch = require('./handlers/advancedSearch');
+var clinicalSearch = require('./handlers/clinicalSearch');
 
 var routes = {
   '/api/my/demographics': {
@@ -45,6 +46,12 @@ var routes = {
   },
   '/api/patients/advancedSearch': {
     POST: advancedSearch
+  },
+  '/api/patients/querySearch': {
+    POST: clinicalSearch
+  },
+  '/api/demographics/:patientId': {
+    GET: getDemographics
   },
   '/api/patients/:patientId': {
     GET: getDemographics

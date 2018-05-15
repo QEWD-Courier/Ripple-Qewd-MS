@@ -39,5 +39,14 @@
   "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_stop_date_time": "=> either(medication_and_medical_devices.medication_order.order.order_details.order_stop_date_time, <!delete>)",
   "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_summary/course_status|value": "=> either(medication_and_medical_devices.medication_order.order.order_details.order_summary.course_status.value, <!delete>)",
   "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_summary/course_status|code": "=> either(medication_and_medical_devices.medication_order.order.order_details.order_summary.course_status.code, <!delete>)",
-  "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_summary/course_status|terminology": "=> either(medication_and_medical_devices.medication_order.order.order_details.order_summary.course_status.terminology, <!delete>)"
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_summary/course_status|terminology": "=> either(medication_and_medical_devices.medication_order.order.order_details.order_summary.course_status.terminology, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/action_archetype_id": "=> either(medication_and_medical_devices.medication_order.order.action_archetype_id, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/timing": "=> either(medication_and_medical_devices.medication_order.order.timing, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/subject": "=> either(medication_and_medical_devices.medication_order.subject, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/narrative": "=> dvText(medication_and_medical_devices.medication_order.narrative)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/narrative|value": "=> either(medication_and_medical_devices.medication_order.narrative.value, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/narrative|code": "=> either(medication_and_medical_devices.medication_order.narrative.code, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/narrative|terminology": "=> either(medication_and_medical_devices.medication_order.narrative.terminology, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/language": "=> either(medication_and_medical_devices.medication_order.language, <!delete>)",
+  "medication_statement_list/medication_and_medical_devices/medication_order:0/encoding": "=> either(medication_and_medical_devices.medication_order.encoding, <!delete>)"
 }

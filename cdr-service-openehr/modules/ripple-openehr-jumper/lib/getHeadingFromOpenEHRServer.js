@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 April 2018
+  30 April 2018
 
 */
 
@@ -40,6 +40,9 @@ var initialised = false;
 var templateIndex = {};
 var servers;
 var formatTemplates = {};
+var exampleSavedToFile = {};
+
+var metaDataByHeading = {};
 
 function initialise() {
   if (initialised) return;
@@ -65,10 +68,10 @@ function initialise() {
 }
 
 function formatResults(record, heading, sourceId, format, headingPath, sourceIdCache) {
-  console.log('formatResults: record = ' + JSON.stringify(record));
-  console.log('heading: ' + heading);
-  console.log('format ' + format + ' results');
-  console.log('headingPath = ' + headingPath);
+  //console.log('formatResults: record = ' + JSON.stringify(record));
+  //console.log('heading: ' + heading);
+  //console.log('format ' + format + ' results');
+  //console.log('headingPath = ' + headingPath);
 
   if (format === 'pulsetile' || format === 'fhir') {
     if (!formatTemplates[heading]) formatTemplates[heading] = {};
@@ -78,7 +81,7 @@ function formatResults(record, heading, sourceId, format, headingPath, sourceIdC
       if (format === 'fhir') formatTemplates[heading][format] = require(headingPath + '/openEHR_to_FHIR.json');
     }
     var template = formatTemplates[heading][format];
-    console.log('template = ' + JSON.stringify(template));
+    //console.log('template = ' + JSON.stringify(template));
 
     var cachedRecord = sourceIdCache.$([sourceId, format]);
     if (!cachedRecord.exists) {
@@ -118,18 +121,25 @@ module.exports = function(params, callback) {
   var openEHRSession = params.openEHRSession;
   var ehrId = params.ehrId;
 
-  initialise.call(this);
+  //initialise.call(this);
+
   var templateName = this.userDefined.headings[heading].template.name;  // already checked it exists by now
-  var documentName = this.userDefined.documentNames.jumperTemplateFields || 'OpenEHRJumper';
-  var templateReg = this.db.use(documentName, 'templates');
-  var templateByName = templateReg.$(['byName', templateName]);
-  var templateId = templateByName.value;
+  //var documentName = this.userDefined.documentNames.jumperTemplateFields || 'OpenEHRJumper';
+  //var templateReg = this.db.use(documentName, 'templates');
+  //var templateByName = templateReg.$(['byName', templateName]);
+  //var templateId = templateByName.value;
 
   var headingPath = this.userDefined.paths.jumper_templates + heading;
 
   console.log('*** ripple-openehr-jumper/getHeadingFromOpenEHRServer: headingPath = ' + headingPath);
 
-  console.log('** templateId = ' + templateId);
+  if (!metaDataByHeading[heading]) {
+    metaDataByHeading[heading] = require(headingPath + '/metaData.json');
+  }
+
+  //console.log('** templateId = ' + templateId);
+
+  if (!exampleSavedToFile[host]) exampleSavedToFile[host] = {};
 
   var hostCache = qewdSession.$(['headings', 'byPatientId', patientId, heading, 'byHost', host]);
   var sourceIdCache = qewdSession.$(['headings', 'bySourceId']);
@@ -143,13 +153,13 @@ module.exports = function(params, callback) {
     return callback();
   }
 
-  console.log('&& documentName = ' + documentName);
-  console.log('&& templateName = ' + templateName);
-  console.log('&& templateId = ' + templateId);
+  //console.log('&& documentName = ' + documentName);
+  //console.log('&& templateName = ' + templateName);
+  //console.log('&& templateId = ' + templateId);
 
-  var aqlFields = this.db.use(documentName, 'templateMap', templateId, 'aql').getDocument();  
+  //var aqlFields = this.db.use(documentName, 'templateMap', templateId, 'aql').getDocument();  
   var aql = {
-    aql: "select a as data from EHR e[ehr_id/value='" + ehrId + "'] contains COMPOSITION a[" + aqlFields.composition + "] where a/name/value='" + aqlFields.name + "'"
+    aql: "select a as data from EHR e[ehr_id/value='" + ehrId + "'] contains COMPOSITION a[" + metaDataByHeading[heading].composition_name + "] where a/name/value='" + metaDataByHeading[heading].template_name + "'"
   };
 
   var params = {
@@ -168,7 +178,21 @@ module.exports = function(params, callback) {
   var self = this;
 
   params.processBody = function(body) {
-    console.log('Top level AQL response from ' + host);
+    console.log(new Date().getTime() + ' Top level AQL response from ' + host + ': ' + heading);
+
+    if (!body || body === '') {
+      console.log('** error accessing ' + host + ': Response was empty');
+      return callback({
+        error: 'Missing body'
+      });
+    }
+
+    if (typeof body !== 'object') {
+      console.log('** error accessing ' + host + ': String body response: ' + body);
+      return callback({
+        error: 'Invalid body content'
+      });
+    }
 
     if (body.status === 404) {
       console.log('** error accessing ' + host + ': ' + body.developerMessage);
@@ -183,30 +207,39 @@ module.exports = function(params, callback) {
     else {
 
       // save a copy of the raw response
-      console.log('Top level raw copy saved for ' + host);
-      buildJSONFile.call(self, body, headingPath, 'patient_data_raw_example_' + host + '.json');
+      if (!exampleSavedToFile[host][heading]) {
+        console.log(new Date().getTime() + ' Top level raw copy will be saved for ' + host + ' - ' + heading);
+        buildJSONFile.call(self, body, headingPath, 'patient_data_raw_example_' + host + '.json');
+        console.log(new Date().getTime() + ' Top level raw copy saved for ' + host + ' - ' + heading);
+      }
 
       var params = {
         data: body,
-        templateId: templateId,
-        documentName: documentName,
+        metadata: metaDataByHeading[heading].metadata,
         host: host,
         patientId: patientId
+
       };
 
+      console.log(new Date().getTime() + ' Start mapRawJSON for ' + host + ' - ' + heading);
       var resultArr = mapRawJSON.call(self, params);
+      console.log(new Date().getTime() + ' End mapRawJSON for ' + host + ' - ' + heading);
 
       // save a copy of the processed results
-      console.log('Top level formatted copy saved for ' + host);
-      buildJSONFile.call(self, resultArr, headingPath, 'patient_data_formatted_example_' + host + '.json');
-      console.log('add ' + host + ' - ' + heading + ' to cache for ' + patientId);
-      addPatientDataToCache(resultArr, patientId, host, templateId, heading, qewdSession);
+      if (!exampleSavedToFile[host][heading]) {
+        
+        buildJSONFile.call(self, resultArr, headingPath, 'patient_data_formatted_example_' + host + '.json');
+        console.log(new Date().getTime() + ' Top level formatted copy saved for ' + host);
+        exampleSavedToFile[host][heading] = true;
+      }
+      console.log(new Date().getTime() + ' add ' + host + ' - ' + heading + ' to cache for ' + patientId);
+      addPatientDataToCache(resultArr, patientId, host, heading, qewdSession);
 
       // finally, create the PulseTile-formatted session cached data
 
-      pulseTileCache(hostCache, sourceIdCache, heading, headingPath);
+      //pulseTileCache(hostCache, sourceIdCache, heading, headingPath);
 
-      console.log('invoke callback');
+      console.log(new Date().getTime() + ' invoke callback');
       callback();
 
     };

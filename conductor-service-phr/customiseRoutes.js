@@ -74,7 +74,24 @@ module.exports = function(routes, config) {
         //console.log('** res.locals.message = ' + JSON.stringify(res.locals.message));
         var messageObj = res.locals.message;
         if (messageObj.qewd_redirect) {
-          res.cookie(messageObj.cookieName, messageObj.token, {path: messageObj.cookiePath});
+          if (messageObj.cookieName) {
+            var value = messageObj.cookieValue || messageObj.token;
+            var options = {path: messageObj.cookiePath};
+            if (messageObj.cookieDelete) {
+              res.clearCookie(messageObj.cookieName, options);
+            }
+            else {
+              res.cookie(messageObj.cookieName, value, options);
+            }
+          }
+          if (messageObj.cors) {
+            console.log('** adding CORS headers');
+            res.header('Access-Control-Allow-Credentials', 'true');
+            res.header('Access-Control-Allow-Headers', 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization');
+            res.header('Access-Control-Allow-Methods', 'GET, PUT, DELETE, POST, OPTIONS');
+            res.header('Access-Control-Allow-Origin', '*');
+          }
+          console.log('redirecting browser to ' + messageObj.qewd_redirect);
           res.redirect(messageObj.qewd_redirect);
         }
         else {

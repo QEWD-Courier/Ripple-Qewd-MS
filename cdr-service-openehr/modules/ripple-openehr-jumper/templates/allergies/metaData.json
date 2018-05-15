@@ -1,0 +1,493 @@
+{
+  "template_name": "Adverse reaction list",
+  "composition_name": "openEHR-EHR-COMPOSITION.adverse_reaction_list.v1",
+  "metadata": [
+    {
+      "id": "last_updated",
+      "name": "Last updated",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "last_updated"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/protocol[at0042]/items[at0062]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "protocol[at0042]",
+        "items[at0062]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/last_updated"
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0120]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0120]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/category"
+    },
+    {
+      "id": "causative_agent",
+      "name": "Causative agent",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "causative_agent"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0002]"
+      ],
+      "required": true,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/causative_agent"
+    },
+    {
+      "id": "criticality",
+      "name": "Criticality",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "criticality"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0101]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0101]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/criticality"
+    },
+    {
+      "id": "reaction_mechanism",
+      "name": "Reaction mechanism",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_mechanism"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0058]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0058]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_mechanism"
+    },
+    {
+      "id": "comment",
+      "name": "Comment",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "comment"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0006]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0006]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/comment"
+    },
+    {
+      "id": "onset_of_last_reaction",
+      "name": "Onset of last reaction",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "onset_of_last_reaction"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0117]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0117]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/onset_of_last_reaction"
+    },
+    {
+      "id": "onset_of_reaction",
+      "name": "Onset of reaction",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "onset_of_reaction"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0027]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0027]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/onset_of_reaction"
+    },
+    {
+      "id": "route_of_exposure",
+      "name": "Route of exposure",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "route_of_exposure"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0106]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0106]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/route_of_exposure"
+    },
+    {
+      "id": "manifestation",
+      "name": "Manifestation",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "manifestation"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0011]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0011]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/manifestation:0"
+    },
+    {
+      "id": "specific_substance",
+      "name": "Specific substance",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "specific_substance"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0010]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0010]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/specific_substance"
+    },
+    {
+      "id": "certainty",
+      "name": "Certainty",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "certainty"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0021]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0021]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/certainty"
+    },
+    {
+      "id": "comment",
+      "name": "Comment",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "comment"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0032]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0032]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/comment"
+    },
+    {
+      "id": "reaction_description",
+      "name": "Reaction description",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "reaction_description"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0012]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0012]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/reaction_description"
+    },
+    {
+      "id": "severity",
+      "name": "Severity",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "reaction_details",
+        "severity"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0089]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0009]",
+        "items[at0089]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/severity"
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "status"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0063]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "data[at0001]",
+        "items[at0063]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/status"
+    },
+    {
+      "id": "subject",
+      "name": "Subject",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "subject"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/subject",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "subject"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/subject"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/language",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/language"
+    },
+    {
+      "id": "encoding",
+      "name": "Encoding",
+      "path": [
+        "allergies_and_adverse_reactions",
+        "adverse_reaction_risk",
+        "encoding"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/encoding",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]",
+        "encoding"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/encoding"
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "path": [
+        "composer"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/composer",
+      "pathArr": [
+        "composer"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/composer"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/language",
+      "pathArr": [
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/language"
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "path": [
+        "category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/category",
+      "pathArr": [
+        "category"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/category"
+    },
+    {
+      "id": "territory",
+      "name": "Territory",
+      "path": [
+        "territory"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/territory",
+      "pathArr": [
+        "territory"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/territory"
+    },
+    {
+      "id": "start_time",
+      "name": "StartTime",
+      "path": [
+        "context",
+        "start_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/context/start_time",
+      "pathArr": [
+        "context",
+        "start_time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/context/start_time"
+    },
+    {
+      "id": "setting",
+      "name": "Setting",
+      "path": [
+        "context",
+        "setting"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/context/setting",
+      "pathArr": [
+        "context",
+        "setting"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "adverse_reaction_list/context/setting"
+    }
+  ]
+}

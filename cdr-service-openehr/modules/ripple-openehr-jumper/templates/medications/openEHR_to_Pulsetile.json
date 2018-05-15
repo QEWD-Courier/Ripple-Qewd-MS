@@ -9,7 +9,7 @@
   "startDate": "=> getRippleTime(medication_and_medical_devices.medication_order.order.order_details.order_start_date_time.value)",
   "startTime": "=> msAfterMidnight(medication_and_medical_devices.medication_order.order.order_details.order_start_date_time.value)",
   "author": "{{composer.value}}",
-  "dateCreated": "=> rippleDateTime(start_time, true)",
+  "dateCreated": "=> rippleDateTime(context.start_time.value, true)",
   "source": "{{host}}",
   "sourceId": "=> getUid(uid, host)",
   "patientId": "{{patientId}}"

@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  30 April 2018
 
 */
 
@@ -32,15 +32,20 @@
 function parseWebTemplate(templateObj, platform) {
   var path = [];
   var info = [];
+  var tree;
 
   if (platform === 'marand') {
-    parse(templateObj.webTemplate.tree.children, path, info, platform);
+    tree = templateObj.webTemplate.tree;
   }
   else {
-    //path.push(templateObj.tree.id);
-    parse(templateObj.tree.children, path, info, platform);
+    tree = templateObj.tree;
   }
-  return info;
+  parse(tree.children, path, info, platform, tree.id);
+  return {
+    template_name: tree.name,
+    composition_name: tree.node_id,
+    metadata: info
+  };
 }
 
 function removePunctuation(string) {
@@ -48,7 +53,7 @@ function removePunctuation(string) {
   return string.replace(/[.,\/#!$%\^&\*;:?{}=`~()]/g,"");
 }
 
-function parse(obj, path, info, platform) {
+function parse(obj, path, info, platform, flatJSONPath) {
   console.log('\n path = ' + JSON.stringify(path) + '\n');
 
   obj.forEach(function(node, index) {
@@ -56,10 +61,18 @@ function parse(obj, path, info, platform) {
     console.log('&& aql_path = ' + node.aql_path);
 
     var currentPath = path.slice(0);
+    var newFlatJSONPath = flatJSONPath;
+
     if (typeof node.id === 'undefined') {
       if (node.children) {
-        parse(node.children, currentPath, info, platform);
-        console.log('!! popped parse');
+        console.log('\n** nodeId undefined; parsing children');
+        //if (!tree_structure && node.max === -1) flatJSONPath = flatJSONPath + ':0';
+        parse(node.children, currentPath, info, platform, newFlatJSONPath);
+        console.log('!! finished processing children for ' + currentPath + ' (nodeId undefined)\n');
+      }
+      else {
+        console.log('** node.id undefined but no children - ignore?');
+        console.log('type = ' + node.type + '; category = ' + node.category);
       }
     }
     else {
@@ -69,12 +82,21 @@ function parse(obj, path, info, platform) {
       if (node.type === 'HISTORY' && node.id === 'event_series') tree_structure = true;
       if (node.type === 'POINT_EVENT') tree_structure = true;
 
-      if (!tree_structure) currentPath.push(nodeId);
+      if (!tree_structure) {
+        currentPath.push(nodeId);
+        newFlatJSONPath = newFlatJSONPath + '/' + node.id;
+      }
       if (node.children) {
-        parse(node.children, currentPath, info, platform);
-        console.log('!! popped parse');
+        console.log('\n** nodeId: ' + nodeId + '; parsing children');
+        if (!tree_structure && node.max === -1) newFlatJSONPath = newFlatJSONPath + ':0';
+        parse(node.children, currentPath, info, platform, newFlatJSONPath);
+        console.log('!! finished processing children for ' + nodeId + '\n');
       }
       else {
+        console.log('\n** nodeId: ' + nodeId + '; no children, so working on this node');
+
+        if (!tree_structure && node.max === -1) newFlatJSONPath = newFlatJSONPath + ':0';
+
         var pieces;
         var aqlPath;
         if (platform === 'marand') {
@@ -106,7 +128,7 @@ function parse(obj, path, info, platform) {
         var min;
         var type;
 
-       console.log('parseTemplate: node = ' + JSON.stringify(node));
+        console.log('parseTemplate: node = ' + JSON.stringify(node, null, 2) + '\n');
 
         if (platform === 'marand') {
           max = node.max;
@@ -139,7 +161,8 @@ function parse(obj, path, info, platform) {
           aqlPath: aqlPath,
           pathArr: newPath,
           required: required,
-          max: max
+          max: max,
+          flatJSONPath: newFlatJSONPath
         });
       }
     }

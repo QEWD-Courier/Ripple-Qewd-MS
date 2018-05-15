@@ -117,7 +117,7 @@ function postTop3Things(args, finished) {
   var doc = this.db.use('Top3Things');
   // create a sourceId uuid
   var sourceId = uuid();
-  var dateCreated = new Date().getTime()
+  var dateCreated = new Date().getTime();
 
   doc.$(['bySourceId', sourceId]).setDocument({
     patientId: patientId,

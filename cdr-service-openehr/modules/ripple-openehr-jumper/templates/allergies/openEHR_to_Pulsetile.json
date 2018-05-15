@@ -5,7 +5,7 @@
   "terminologyCode": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.code}}",
   "reaction": "{{allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.manifestation.value}}",
   "author": "{{composer.value}}",
-  "dateCreated": "=> getTime(start_time)",
+  "dateCreated": "=> rippleDateTime(context.start_time.value, true)",
   "source": "{{host}}",
   "sourceId": "=> getUid(uid, host)",
   "patientId": "{{patientId}}"

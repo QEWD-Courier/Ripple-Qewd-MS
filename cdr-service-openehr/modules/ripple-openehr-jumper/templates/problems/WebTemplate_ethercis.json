@@ -1,0 +1,1087 @@
+{
+  "uid": "93c39e9e-86b0-45c7-a1ed-9752d8270011",
+  "languages": [
+    "en"
+  ],
+  "concept": "IDCR - Problem List.v1",
+  "tree": {
+    "min": 1,
+    "max": 1,
+    "children": [
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "max": 1,
+        "children": [
+          {
+            "min": 0,
+            "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+            "max": -1,
+            "children": [
+              {
+                "min": 1,
+                "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol",
+                "max": 1,
+                "children": [
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[at0070]",
+                    "max": 1,
+                    "name": "Last updated",
+                    "description": "The date this problem or diagnosis was last updated.",
+                    "id": "last_updated",
+                    "category": "ELEMENT",
+                    "type": "DV_DATE_TIME",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/protocol[at0032],/items[at0070],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[at0070]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_DATE_TIME"
+                      }
+                    ],
+                    "node_id": "at0070"
+                  }
+                ],
+                "name": "Tree",
+                "description": "@ internal @",
+                "id": "tree",
+                "type": "ITEM_TREE",
+                "category": "DATA_STRUCTURE",
+                "node_id": "at0032"
+              },
+              {
+                "min": 1,
+                "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data",
+                "max": 1,
+                "children": [
+                  {
+                    "min": 1,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002]",
+                    "max": 1,
+                    "name": "Problem/Diagnosis name",
+                    "description": "Identification of the problem or diagnosis, by name.",
+                    "id": "problem_diagnosis_name",
+                    "category": "ELEMENT",
+                    "type": "DV_TEXT",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0002],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_TEXT"
+                      }
+                    ],
+                    "node_id": "at0002"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0003]",
+                    "max": 1,
+                    "name": "Date/time clinically recognised",
+                    "description": "Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.",
+                    "id": "date_time_clinically_recognised",
+                    "category": "ELEMENT",
+                    "type": "DV_DATE_TIME",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0003],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0003]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_DATE_TIME"
+                      }
+                    ],
+                    "node_id": "at0003"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0069]",
+                    "max": 1,
+                    "name": "Comment",
+                    "description": "Additional narrative about the problem or diagnosis not captured in other fields.",
+                    "id": "comment",
+                    "category": "ELEMENT",
+                    "type": "DV_TEXT",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0069],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0069]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_TEXT"
+                      }
+                    ],
+                    "node_id": "at0069"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0005]",
+                    "max": 1,
+                    "name": "Severity",
+                    "description": "An assessment of the overall severity of the problem or diagnosis.",
+                    "id": "severity",
+                    "category": "ELEMENT",
+                    "type": "MULTIPLE",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0005],0,/DefiningCode}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0005]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "DefiningCode",
+                            "attribute": "defining_code",
+                            "id": "defining_code",
+                            "type": "CODE_PHRASE"
+                          },
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "constraint": {
+                          "defining_code": [
+                            {
+                              "code_string": "at0047",
+                              "terminology": "local",
+                              "description": "The problem or diagnosis does not interfere with normal activity or may cause damage to health if left untreated.",
+                              "value": "Mild"
+                            },
+                            {
+                              "code_string": "at0048",
+                              "terminology": "local",
+                              "description": "The problem or diagnosis causes interference with normal activity or will damage health if left untreated.",
+                              "value": "Moderate"
+                            },
+                            {
+                              "code_string": "at0049",
+                              "terminology": "local",
+                              "description": "The problem or diagnosis prevents normal activity or will seriously damage health if left untreated.",
+                              "value": "Severe"
+                            }
+                          ],
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "attribute_name": "value",
+                        "type": "DV_CODED_TEXT"
+                      },
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0005]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_TEXT"
+                      }
+                    ],
+                    "node_id": "at0005"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0077]",
+                    "max": 1,
+                    "name": "Date/time of onset",
+                    "description": "Estimated or actual date/time that signs or symptoms of the problem/diagnosis were first observed.",
+                    "id": "date_time_of_onset",
+                    "category": "ELEMENT",
+                    "type": "DV_DATE_TIME",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0077],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0077]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_DATE_TIME"
+                      }
+                    ],
+                    "node_id": "at0077"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0012]",
+                    "max": 1,
+                    "name": "Body site",
+                    "description": "Identification of a simple body site for the location of the problem or diagnosis.",
+                    "id": "body_site",
+                    "category": "ELEMENT",
+                    "type": "DV_TEXT",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0012],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0012]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_TEXT"
+                      }
+                    ],
+                    "node_id": "at0012"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0073]",
+                    "max": 1,
+                    "name": "Diagnostic certainty",
+                    "description": "The level of confidence in the identification of the diagnosis.",
+                    "id": "diagnostic_certainty",
+                    "category": "ELEMENT",
+                    "type": "DV_CODED_TEXT",
+                    "constraints": [
+                      {
+                        "limits": {
+                          "min": 1,
+                          "max_op": "<=",
+                          "min_op": ">=",
+                          "max": 1
+                        }
+                      }
+                    ],
+                    "node_id": "at0073"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0030]",
+                    "max": 1,
+                    "name": "Date/time of resolution",
+                    "description": "Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.",
+                    "id": "date_time_of_resolution",
+                    "category": "ELEMENT",
+                    "type": "DV_DATE",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0030],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0030]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_DATE"
+                      }
+                    ],
+                    "node_id": "at0030"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]",
+                    "max": 1,
+                    "children": [
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0004]",
+                        "max": 1,
+                        "name": "Diagnostic status",
+                        "description": "Stage or phase of diagnostic process.",
+                        "id": "diagnostic_status",
+                        "category": "ELEMENT",
+                        "type": "DV_CODED_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.problem_status.v0],0,/items[at0004],0,/DefiningCode}'",
+                        "constraints": [
+                          {
+                            "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0004]/value",
+                            "mandatory_attributes": [
+                              {
+                                "name": "DefiningCode",
+                                "attribute": "defining_code",
+                                "id": "defining_code",
+                                "type": "CODE_PHRASE"
+                              },
+                              {
+                                "name": "Value",
+                                "attribute": "value",
+                                "id": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "constraint": {
+                              "defining_code": [
+                                {
+                                  "code_string": "at0016",
+                                  "terminology": "local",
+                                  "description": "The initial diagnosis made, usually associated with a low level of clinical certainty. It may change as test results or advice become available.",
+                                  "value": "Preliminary"
+                                },
+                                {
+                                  "code_string": "at0017",
+                                  "terminology": "local",
+                                  "description": "Interim diagnosis, based on a reasonable amount of clinical certainty but pending further test results or clinical advice. It may still change as test results or advice become available.",
+                                  "value": "Working"
+                                },
+                                {
+                                  "code_string": "at0018",
+                                  "terminology": "local",
+                                  "description": "Final substantiated diagnosis, based on a high level of clinical certainty, which includes clinical evidence from test results. It is not expected to change.",
+                                  "value": "Established"
+                                },
+                                {
+                                  "code_string": "at0088",
+                                  "terminology": "local",
+                                  "description": "The diagnosis has been clinically reassessed or has been disproved with a high level of clinical certainty.",
+                                  "value": "Refuted"
+                                }
+                              ],
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "attribute_name": "value",
+                            "type": "DV_CODED_TEXT"
+                          }
+                        ],
+                        "node_id": "at0004"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0003]",
+                        "max": 1,
+                        "name": "Active/Inactive?",
+                        "description": "Category that supports division of problems and diagnoses into Active or Inactive problem lists.",
+                        "id": "active_inactive?",
+                        "category": "ELEMENT",
+                        "type": "DV_CODED_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.problem_status.v0],0,/items[at0003],0,/DefiningCode}'",
+                        "constraints": [
+                          {
+                            "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0003]/value",
+                            "mandatory_attributes": [
+                              {
+                                "name": "DefiningCode",
+                                "attribute": "defining_code",
+                                "id": "defining_code",
+                                "type": "CODE_PHRASE"
+                              },
+                              {
+                                "name": "Value",
+                                "attribute": "value",
+                                "id": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "constraint": {
+                              "defining_code": [
+                                {
+                                  "code_string": "at0026",
+                                  "terminology": "local",
+                                  "description": "The problem or diagnosis is currently active and clinically relevant.",
+                                  "value": "Active"
+                                },
+                                {
+                                  "code_string": "at0027",
+                                  "terminology": "local",
+                                  "description": "The problem or diagnosis is not completely resolved but is inactive or felt less relevant to the current clinical context.",
+                                  "value": "Inactive"
+                                }
+                              ],
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "attribute_name": "value",
+                            "type": "DV_CODED_TEXT"
+                          }
+                        ],
+                        "node_id": "at0003"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0001]",
+                        "max": 1,
+                        "name": "Episodicity",
+                        "description": "Category  new, recurring and ongoing issues, problems or diagnoses.",
+                        "id": "episodicity",
+                        "category": "ELEMENT",
+                        "type": "DV_CODED_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.problem_status.v0],0,/items[at0001],0,/DefiningCode}'",
+                        "constraints": [
+                          {
+                            "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0001]/value",
+                            "mandatory_attributes": [
+                              {
+                                "name": "DefiningCode",
+                                "attribute": "defining_code",
+                                "id": "defining_code",
+                                "type": "CODE_PHRASE"
+                              },
+                              {
+                                "name": "Value",
+                                "attribute": "value",
+                                "id": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "constraint": {
+                              "defining_code": [
+                                {
+                                  "code_string": "at0034",
+                                  "terminology": "local",
+                                  "description": "A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.",
+                                  "value": "New episode"
+                                },
+                                {
+                                  "code_string": "at0035",
+                                  "terminology": "local",
+                                  "description": "The issue, problem or diagnosis continues, without occurrences of new episodes.",
+                                  "value": "Ongoing episode"
+                                },
+                                {
+                                  "code_string": "at0070",
+                                  "terminology": "local",
+                                  "description": "It is not possible to determine if this occurrence of the problem or diagnosis is new or ongoing.",
+                                  "value": "Indeterminate"
+                                }
+                              ],
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "attribute_name": "value",
+                            "type": "DV_CODED_TEXT"
+                          }
+                        ],
+                        "node_id": "at0001"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0083]",
+                        "max": 1,
+                        "name": "Resolution status",
+                        "description": "Status of resolution or healing of an acute problem or diagnosis.",
+                        "id": "resolution_status",
+                        "category": "ELEMENT",
+                        "type": "DV_CODED_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.problem_status.v0],0,/items[at0083],0,/DefiningCode}'",
+                        "constraints": [
+                          {
+                            "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0083]/value",
+                            "mandatory_attributes": [
+                              {
+                                "name": "DefiningCode",
+                                "attribute": "defining_code",
+                                "id": "defining_code",
+                                "type": "CODE_PHRASE"
+                              },
+                              {
+                                "name": "Value",
+                                "attribute": "value",
+                                "id": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "constraint": {
+                              "defining_code": [
+                                {
+                                  "code_string": "at0084",
+                                  "terminology": "local",
+                                  "description": "Problem or diagnosis has completed the normal phases of restoration or healing and can be considered resolved.",
+                                  "value": "Resolved"
+                                },
+                                {
+                                  "code_string": "at0085",
+                                  "terminology": "local",
+                                  "description": "Problem or diagnosis is progressing satisfactorily through the normal stages of restoration or healing towards resolution.",
+                                  "value": "Resolving"
+                                },
+                                {
+                                  "code_string": "at0086",
+                                  "terminology": "local",
+                                  "description": "Problem or diagnosis is not progressing satisfactorily through the normal stages of restoration or healing towards resolution.",
+                                  "value": "Not resolving"
+                                },
+                                {
+                                  "code_string": "at0087",
+                                  "terminology": "local",
+                                  "description": "It is not possible to determine the resolution or healing status of the problem or diagnosis.",
+                                  "value": "Indeterminate"
+                                }
+                              ],
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "attribute_name": "value",
+                            "type": "DV_CODED_TEXT"
+                          }
+                        ],
+                        "node_id": "at0083"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0063]",
+                        "max": 1,
+                        "name": "DRG category",
+                        "description": "In episodic care contexts (commonly  secondary care) it is common to categorise/ organise problems according to their relationship to the principal problem or diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes.",
+                        "id": "drg_category",
+                        "category": "ELEMENT",
+                        "type": "DV_CODED_TEXT",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.problem_status.v0],0,/items[at0063],0,/DefiningCode}'",
+                        "constraints": [
+                          {
+                            "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0063]/value",
+                            "mandatory_attributes": [
+                              {
+                                "name": "DefiningCode",
+                                "attribute": "defining_code",
+                                "id": "defining_code",
+                                "type": "CODE_PHRASE"
+                              },
+                              {
+                                "name": "Value",
+                                "attribute": "value",
+                                "id": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "constraint": {
+                              "defining_code": [
+                                {
+                                  "code_string": "at0064",
+                                  "terminology": "local",
+                                  "description": "The diagnosis determined to be chiefly responsible for occasionaing an episode of admitted patient care, an episode of residential care or an attendance at the health care establishment.",
+                                  "value": "Principal diagnosis"
+                                },
+                                {
+                                  "code_string": "at0066",
+                                  "terminology": "local",
+                                  "description": "A problem or diagnosis that is occurs at the same time as the primary problem or diagnosis. May also be known as a comorbid condition.",
+                                  "value": "Secondary diagnosis"
+                                },
+                                {
+                                  "code_string": "at0076",
+                                  "terminology": "local",
+                                  "description": "An unfavorable evolution of a problem or diagnosis.",
+                                  "value": "Complication"
+                                }
+                              ],
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "attribute_name": "value",
+                            "type": "DV_CODED_TEXT"
+                          }
+                        ],
+                        "node_id": "at0063"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0071]",
+                        "max": 1,
+                        "name": "First occurrence?",
+                        "description": "Is this the first ever occurrence of this problem or diagnosis?",
+                        "id": "first_occurrence?",
+                        "category": "ELEMENT",
+                        "type": "DV_BOOLEAN",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[openEHR-EHR-CLUSTER.problem_status.v0],0,/items[at0071],0,/Value}'",
+                        "constraints": [
+                          {
+                            "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0071]/value",
+                            "mandatory_attributes": [
+                              {
+                                "name": "Value",
+                                "attribute": "value",
+                                "id": "value",
+                                "type": "BOOLEAN"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "true_valid": true,
+                              "false_valid": false,
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_BOOLEAN"
+                          }
+                        ],
+                        "node_id": "at0071"
+                      }
+                    ],
+                    "name": "Problem/Diagnosis status",
+                    "description": "Qualifiers for a specified problem or diagnosis.",
+                    "id": "problem_diagnosis_status",
+                    "type": "CLUSTER",
+                    "category": "DATA_STRUCTURE",
+                    "node_id": "openEHR-EHR-CLUSTER.problem_status.v0"
+                  },
+                  {
+                    "min": 0,
+                    "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0009]",
+                    "max": 1,
+                    "name": "Clinical description",
+                    "description": "Narrative description about the problem or diagnosis.",
+                    "id": "clinical_description",
+                    "category": "ELEMENT",
+                    "type": "DV_TEXT",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.problems_issues_rcp.v1],0,/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1],0,/data[at0001],/items[at0009],0,/Value}'",
+                    "constraints": [
+                      {
+                        "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0009]/value",
+                        "mandatory_attributes": [
+                          {
+                            "name": "Value",
+                            "attribute": "value",
+                            "id": "value",
+                            "type": "STRING"
+                          }
+                        ],
+                        "attribute_name": "value",
+                        "constraint": {
+                          "occurrence": {
+                            "min": 1,
+                            "max_op": "<=",
+                            "min_op": ">=",
+                            "max": 1
+                          }
+                        },
+                        "type": "DV_TEXT"
+                      }
+                    ],
+                    "node_id": "at0009"
+                  }
+                ],
+                "name": "structure",
+                "description": "@ internal @",
+                "id": "structure",
+                "type": "ITEM_TREE",
+                "category": "DATA_STRUCTURE",
+                "node_id": "at0001"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/subject",
+                "mandatory_attributes": [
+                  {
+                    "name": "Namespace",
+                    "attribute": "namespace",
+                    "id": "namespace",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "Id",
+                    "attribute": "id",
+                    "id": "id",
+                    "type": "OBJECT_ID"
+                  },
+                  {
+                    "name": "Type",
+                    "attribute": "type",
+                    "id": "type",
+                    "type": "STRING"
+                  }
+                ],
+                "name": "Subject",
+                "attribute": "subject",
+                "id": "subject",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "PARTY_PROXY"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/language",
+                "mandatory_attributes": [
+                  {
+                    "name": "CodeString",
+                    "attribute": "code_string",
+                    "id": "code_string",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "TerminologyId",
+                    "attribute": "terminology_id",
+                    "id": "terminology_id",
+                    "type": "TERMINOLOGY_ID"
+                  }
+                ],
+                "name": "Language",
+                "attribute": "language",
+                "id": "language",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/encoding",
+                "mandatory_attributes": [
+                  {
+                    "name": "CodeString",
+                    "attribute": "code_string",
+                    "id": "code_string",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "TerminologyId",
+                    "attribute": "terminology_id",
+                    "id": "terminology_id",
+                    "type": "TERMINOLOGY_ID"
+                  }
+                ],
+                "name": "Encoding",
+                "attribute": "encoding",
+                "id": "encoding",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "CODE_PHRASE"
+              }
+            ],
+            "name": "Problem/Diagnosis",
+            "description": "Details about a single identified health condition, injury, disability or any other issue which impacts on the physical, mental and/or social well-being of an individual.",
+            "id": "problem_diagnosis",
+            "type": "EVALUATION",
+            "category": "DATA_STRUCTURE",
+            "node_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+          }
+        ],
+        "name": "Problems and issues",
+        "description": "Problems and issues heading (AoMRC).",
+        "id": "problems_and_issues",
+        "type": "SECTION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-SECTION.problems_issues_rcp.v1"
+      },
+      {
+        "aql_path": "/composer",
+        "mandatory_attributes": [
+          {
+            "name": "Namespace",
+            "attribute": "namespace",
+            "id": "namespace",
+            "type": "STRING"
+          },
+          {
+            "name": "Id",
+            "attribute": "id",
+            "id": "id",
+            "type": "OBJECT_ID"
+          },
+          {
+            "name": "Type",
+            "attribute": "type",
+            "id": "type",
+            "type": "STRING"
+          }
+        ],
+        "name": "Composer",
+        "attribute": "composer",
+        "id": "composer",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "PARTY_PROXY"
+      },
+      {
+        "aql_path": "/language",
+        "mandatory_attributes": [
+          {
+            "name": "CodeString",
+            "attribute": "code_string",
+            "id": "code_string",
+            "type": "STRING"
+          },
+          {
+            "name": "TerminologyId",
+            "attribute": "terminology_id",
+            "id": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Language",
+        "attribute": "language",
+        "id": "language",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "aql_path": "/category",
+        "mandatory_attributes": [
+          {
+            "name": "DefiningCode",
+            "attribute": "defining_code",
+            "id": "defining_code",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "name": "Value",
+            "attribute": "value",
+            "id": "value",
+            "type": "STRING"
+          }
+        ],
+        "name": "Category",
+        "attribute": "category",
+        "id": "category",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "DV_CODED_TEXT"
+      },
+      {
+        "aql_path": "/territory",
+        "mandatory_attributes": [
+          {
+            "name": "CodeString",
+            "attribute": "code_string",
+            "id": "code_string",
+            "type": "STRING"
+          },
+          {
+            "name": "TerminologyId",
+            "attribute": "terminology_id",
+            "id": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Territory",
+        "attribute": "territory",
+        "id": "territory",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "min": 1,
+        "aql_path": "/context",
+        "max": 1,
+        "children": [
+          {
+            "aql_path": "/context/start_time",
+            "mandatory_attributes": [
+              {
+                "name": "Value",
+                "attribute": "value",
+                "id": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "StartTime",
+            "attribute": "start_time",
+            "id": "start_time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/context/setting",
+            "mandatory_attributes": [
+              {
+                "name": "DefiningCode",
+                "attribute": "defining_code",
+                "id": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "name": "Value",
+                "attribute": "value",
+                "id": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Setting",
+            "attribute": "setting",
+            "id": "setting",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_CODED_TEXT"
+          }
+        ],
+        "name": "Context",
+        "rm_type": "EVENT_CONTEXT",
+        "attribute": "context",
+        "id": "context",
+        "node_id": ""
+      }
+    ],
+    "name": "Problem list",
+    "description": "A persistent and managed list of any combination of diagnoses, problems and/or procedures that may influence clinical decision-making and care provision for the subject of care.",
+    "id": "problem_list",
+    "type": "COMPOSITION",
+    "category": "DATA_STRUCTURE",
+    "node_id": "openEHR-EHR-COMPOSITION.problem_list.v1"
+  },
+  "template_id": "IDCR - Problem List.v1",
+  "default_language": "en"
+}

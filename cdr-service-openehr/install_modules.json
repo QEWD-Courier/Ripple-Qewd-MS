@@ -4,5 +4,6 @@
   "qewd-transform-json",
   "moment-timezone",
   "traverse",
-  "jsonschema"
+  "jsonschema",
+  "valid-url"
 ]

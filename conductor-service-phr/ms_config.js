@@ -36,7 +36,41 @@ function findRoute(path, routes, method) {
   }
 }
 
+function returnArrayResponse(route, routes, property) {
+  var index = findRoute(route, routes);
+  property = property || 'results';
+
+  routes[index].onResponse = function(args) {
+    if (!args.responseObj.message.error) {
+      args.handleResponse({
+        message: args.responseObj.message[property]
+      });
+      return true;
+    }
+  };
+}
+
 module.exports = function(routes, ms_hosts) {
+
+  returnArrayResponse('/api/feeds', routes, 'feeds');
+  returnArrayResponse('/api/feeds/:sourceId', routes, 'feed');
+  returnArrayResponse('/api/patients/:patientId/:heading', routes);
+  returnArrayResponse('/api/patients/:patientId/:heading/:sourceId', routes);
+  returnArrayResponse('/api/patients/:patientId/top3Things', routes);
+
+  /*
+
+  var index = findRoute('/api/feeds', routes);
+
+  routes[index].onResponse = function(args) {
+    console.log('onResponse handler for /api/feeds');
+    if (!args.responseObj.message.error) {
+      args.handleResponse({
+        message: args.responseObj.message.feeds
+      });
+      return true;
+    }
+  };
 
   var index = findRoute('/api/patients/:patientId/:heading', routes);
 
@@ -73,6 +107,8 @@ module.exports = function(routes, ms_hosts) {
       return true;
     }
   };
+
+  */
 
   index = findRoute('/api/patients/:patientId', routes);
 

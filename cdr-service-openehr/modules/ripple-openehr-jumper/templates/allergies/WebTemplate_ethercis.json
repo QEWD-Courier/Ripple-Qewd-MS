@@ -20,7 +20,7 @@
             "children": [
               {
                 "min": 1,
-                "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/protocol[at0042]",
+                "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/protocol",
                 "max": 1,
                 "children": [
                   {
@@ -32,12 +32,15 @@
                     "id": "last_updated",
                     "category": "ELEMENT",
                     "type": "DV_DATE_TIME",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/protocol[at0042],/items[at0062]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/protocol[at0042],/items[at0062],0,/Value}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/protocol[at0042]/items[at0062]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -65,7 +68,7 @@
               },
               {
                 "min": 1,
-                "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]",
+                "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data",
                 "max": 1,
                 "children": [
                   {
@@ -77,16 +80,21 @@
                     "id": "category",
                     "category": "ELEMENT",
                     "type": "MULTIPLE",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0120]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0120],0,/DefiningCode}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0120]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "DefiningCode",
                             "attribute": "defining_code",
+                            "id": "defining_code",
                             "type": "CODE_PHRASE"
                           },
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -122,9 +130,12 @@
                         "type": "DV_CODED_TEXT"
                       },
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0120]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -151,12 +162,15 @@
                     "id": "causative_agent",
                     "category": "ELEMENT",
                     "type": "DV_TEXT",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0002]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0002],0,/Value}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0002]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -172,9 +186,12 @@
                         "type": "DV_TEXT"
                       },
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0002]/name",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -201,16 +218,21 @@
                     "id": "criticality",
                     "category": "ELEMENT",
                     "type": "DV_CODED_TEXT",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0101]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0101],0,/DefiningCode}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0101]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "DefiningCode",
                             "attribute": "defining_code",
+                            "id": "defining_code",
                             "type": "CODE_PHRASE"
                           },
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -257,16 +279,21 @@
                     "id": "reaction_mechanism",
                     "category": "ELEMENT",
                     "type": "MULTIPLE",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0058]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0058],0,/DefiningCode}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0058]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "DefiningCode",
                             "attribute": "defining_code",
+                            "id": "defining_code",
                             "type": "CODE_PHRASE"
                           },
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -302,9 +329,12 @@
                         "type": "DV_CODED_TEXT"
                       },
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0058]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -331,12 +361,15 @@
                     "id": "comment",
                     "category": "ELEMENT",
                     "type": "DV_TEXT",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0006]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0006],0,/Value}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0006]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -363,12 +396,15 @@
                     "id": "onset_of_last_reaction",
                     "category": "ELEMENT",
                     "type": "DV_DATE_TIME",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0117]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0117],0,/Value}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0117]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -400,12 +436,15 @@
                         "id": "onset_of_reaction",
                         "category": "ELEMENT",
                         "type": "DV_DATE_TIME",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0027]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0027],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0027]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -432,12 +471,15 @@
                         "id": "route_of_exposure",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0106]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0106],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0106]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -456,9 +498,12 @@
                         "node_id": "at0106"
                       },
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/name",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -482,12 +527,15 @@
                         "id": "manifestation",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0011]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0011],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0011]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -514,12 +562,15 @@
                         "id": "specific_substance",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0010]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0010],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0010]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -546,16 +597,21 @@
                         "id": "certainty",
                         "category": "ELEMENT",
                         "type": "DV_CODED_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0021]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0021],0,/DefiningCode}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0021]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "DefiningCode",
                                 "attribute": "defining_code",
+                                "id": "defining_code",
                                 "type": "CODE_PHRASE"
                               },
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -602,12 +658,15 @@
                         "id": "comment",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0032]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0032],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0032]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -623,9 +682,12 @@
                             "type": "DV_TEXT"
                           },
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0032]/name",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -652,12 +714,15 @@
                         "id": "reaction_description",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0012]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0012],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0012]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -684,16 +749,21 @@
                         "id": "severity",
                         "category": "ELEMENT",
                         "type": "MULTIPLE",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0089]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0009],0,/items[at0089],0,/DefiningCode}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0089]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "DefiningCode",
                                 "attribute": "defining_code",
+                                "id": "defining_code",
                                 "type": "CODE_PHRASE"
                               },
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -729,9 +799,12 @@
                             "type": "DV_CODED_TEXT"
                           },
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0089]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -747,9 +820,12 @@
                             "type": "DV_TEXT"
                           },
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0009]/items[at0089]/name",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -784,16 +860,21 @@
                     "id": "status",
                     "category": "ELEMENT",
                     "type": "MULTIPLE",
-                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0063]}'",
+                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1],0,/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1],0,/data[at0001],/items[at0063],0,/DefiningCode}'",
                     "constraints": [
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0063]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "DefiningCode",
                             "attribute": "defining_code",
+                            "id": "defining_code",
                             "type": "CODE_PHRASE"
                           },
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -841,9 +922,12 @@
                         "type": "DV_CODED_TEXT"
                       },
                       {
+                        "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/data[at0001]/items[at0063]/value",
                         "mandatory_attributes": [
                           {
+                            "name": "Value",
                             "attribute": "value",
+                            "id": "value",
                             "type": "STRING"
                           }
                         ],
@@ -873,20 +957,27 @@
                 "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/subject",
                 "mandatory_attributes": [
                   {
+                    "name": "Namespace",
                     "attribute": "namespace",
+                    "id": "namespace",
                     "type": "STRING"
                   },
                   {
+                    "name": "Id",
                     "attribute": "id",
+                    "id": "id",
                     "type": "OBJECT_ID"
                   },
                   {
+                    "name": "Type",
                     "attribute": "type",
+                    "id": "type",
                     "type": "STRING"
                   }
                 ],
                 "name": "Subject",
                 "attribute": "subject",
+                "id": "subject",
                 "occurrence": {
                   "min": 1,
                   "max_op": "<=",
@@ -900,16 +991,21 @@
                 "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/language",
                 "mandatory_attributes": [
                   {
+                    "name": "CodeString",
                     "attribute": "code_string",
+                    "id": "code_string",
                     "type": "STRING"
                   },
                   {
+                    "name": "TerminologyId",
                     "attribute": "terminology_id",
+                    "id": "terminology_id",
                     "type": "TERMINOLOGY_ID"
                   }
                 ],
                 "name": "Language",
                 "attribute": "language",
+                "id": "language",
                 "occurrence": {
                   "min": 1,
                   "max_op": "<=",
@@ -923,16 +1019,21 @@
                 "aql_path": "/content[openEHR-EHR-SECTION.allergies_adverse_reactions_rcp.v1]/items[openEHR-EHR-EVALUATION.adverse_reaction_risk.v1]/encoding",
                 "mandatory_attributes": [
                   {
+                    "name": "CodeString",
                     "attribute": "code_string",
+                    "id": "code_string",
                     "type": "STRING"
                   },
                   {
+                    "name": "TerminologyId",
                     "attribute": "terminology_id",
+                    "id": "terminology_id",
                     "type": "TERMINOLOGY_ID"
                   }
                 ],
                 "name": "Encoding",
                 "attribute": "encoding",
+                "id": "encoding",
                 "occurrence": {
                   "min": 1,
                   "max_op": "<=",
@@ -962,20 +1063,27 @@
         "aql_path": "/composer",
         "mandatory_attributes": [
           {
+            "name": "Namespace",
             "attribute": "namespace",
+            "id": "namespace",
             "type": "STRING"
           },
           {
+            "name": "Id",
             "attribute": "id",
+            "id": "id",
             "type": "OBJECT_ID"
           },
           {
+            "name": "Type",
             "attribute": "type",
+            "id": "type",
             "type": "STRING"
           }
         ],
         "name": "Composer",
         "attribute": "composer",
+        "id": "composer",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -989,16 +1097,21 @@
         "aql_path": "/language",
         "mandatory_attributes": [
           {
+            "name": "CodeString",
             "attribute": "code_string",
+            "id": "code_string",
             "type": "STRING"
           },
           {
+            "name": "TerminologyId",
             "attribute": "terminology_id",
+            "id": "terminology_id",
             "type": "TERMINOLOGY_ID"
           }
         ],
         "name": "Language",
         "attribute": "language",
+        "id": "language",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -1012,16 +1125,21 @@
         "aql_path": "/category",
         "mandatory_attributes": [
           {
+            "name": "DefiningCode",
             "attribute": "defining_code",
+            "id": "defining_code",
             "type": "CODE_PHRASE"
           },
           {
+            "name": "Value",
             "attribute": "value",
+            "id": "value",
             "type": "STRING"
           }
         ],
         "name": "Category",
         "attribute": "category",
+        "id": "category",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -1035,16 +1153,21 @@
         "aql_path": "/territory",
         "mandatory_attributes": [
           {
+            "name": "CodeString",
             "attribute": "code_string",
+            "id": "code_string",
             "type": "STRING"
           },
           {
+            "name": "TerminologyId",
             "attribute": "terminology_id",
+            "id": "terminology_id",
             "type": "TERMINOLOGY_ID"
           }
         ],
         "name": "Territory",
         "attribute": "territory",
+        "id": "territory",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -1063,12 +1186,15 @@
             "aql_path": "/context/start_time",
             "mandatory_attributes": [
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
             "name": "StartTime",
             "attribute": "start_time",
+            "id": "start_time",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1082,16 +1208,21 @@
             "aql_path": "/context/setting",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
             "name": "Setting",
             "attribute": "setting",
+            "id": "setting",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -1102,8 +1233,10 @@
             "type": "DV_CODED_TEXT"
           }
         ],
+        "name": "Context",
         "rm_type": "EVENT_CONTEXT",
         "attribute": "context",
+        "id": "context",
         "node_id": ""
       }
     ],

@@ -31,12 +31,15 @@
   "relevant_contacts_list/relevant_contacts/relevant_contact:0/note|value": "=> either(relevant_contacts.relevant_contact.note.value, <!delete>)",
   "relevant_contacts_list/relevant_contacts/relevant_contact:0/note|code": "=> either(relevant_contacts.relevant_contact.note.code, <!delete>)",
   "relevant_contacts_list/relevant_contacts/relevant_contact:0/note|terminology": "=> either(relevant_contacts.relevant_contact.note.terminology, <!delete>)",
-  "relevant_contacts_list/relevant_contacts/relevant_contact:0/is_next_of_kin": "=> either(relevant_contacts.relevant_contact.is_next_of_kin, <!delete>)",
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/is_next_of_kin?": "=> either(relevant_contacts.relevant_contact.is_next_of_kin, <!delete>)",
   "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_category|value": "=> either(relevant_contacts.relevant_contact.relationship_category.value, <!delete>)",
   "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_category|code": "=> either(relevant_contacts.relevant_contact.relationship_category.code, <!delete>)",
   "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_category|terminology": "=> either(relevant_contacts.relevant_contact.relationship_category.terminology, <!delete>)",
-  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_role": "=> dvText(relevant_contacts.relevant_contact.relationship_role)",
-  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_role|value": "=> either(relevant_contacts.relevant_contact.relationship_role.value, <!delete>)",
-  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_role|code": "=> either(relevant_contacts.relevant_contact.relationship_role.code, <!delete>)",
-  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_role|terminology": "=> either(relevant_contacts.relevant_contact.relationship_role.terminology, <!delete>)"
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship__role": "=> dvText(relevant_contacts.relevant_contact.relationship_role)",
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship__role|value": "=> either(relevant_contacts.relevant_contact.relationship_role.value, <!delete>)",
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship__role|code": "=> either(relevant_contacts.relevant_contact.relationship_role.code, <!delete>)",
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship__role|terminology": "=> either(relevant_contacts.relevant_contact.relationship_role.terminology, <!delete>)",
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/subject": "=> either(relevant_contacts.relevant_contact.subject, <!delete>)",
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/language": "=> either(relevant_contacts.relevant_contact.language, <!delete>)",
+  "relevant_contacts_list/relevant_contacts/relevant_contact:0/encoding": "=> either(relevant_contacts.relevant_contact.encoding, <!delete>)"
 }

@@ -9,9 +9,12 @@
     "max": 1,
     "children": [
       {
+        "aql_path": "/name",
         "mandatory_attributes": [
           {
+            "name": "Value",
             "attribute": "value",
+            "id": "value",
             "type": "STRING"
           }
         ],
@@ -43,7 +46,7 @@
                 "children": [
                   {
                     "min": 1,
-                    "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]",
+                    "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description",
                     "max": 1,
                     "children": [
                       {
@@ -55,12 +58,15 @@
                         "id": "medication_item",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0070]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0070],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0070]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -87,12 +93,15 @@
                         "id": "body_site",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0092]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0092],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0092]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -119,12 +128,15 @@
                         "id": "overall_directions_description",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0009]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0009],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0009]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -151,12 +163,15 @@
                         "id": "route",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0091]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0091],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0091]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -183,12 +198,15 @@
                         "id": "clinical_indication",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0018]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0018],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0018]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -215,12 +233,15 @@
                         "id": "dose_timing_description",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0173]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0173],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0173]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -236,9 +257,12 @@
                             "type": "DV_TEXT"
                           },
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0173]/name",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -265,12 +289,15 @@
                         "id": "additional_instruction",
                         "category": "ELEMENT",
                         "type": "DV_TEXT",
-                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0044]}'",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0044],0,/Value}'",
                         "constraints": [
                           {
+                            "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0044]/value",
                             "mandatory_attributes": [
                               {
+                                "name": "Value",
                                 "attribute": "value",
+                                "id": "value",
                                 "type": "STRING"
                               }
                             ],
@@ -302,12 +329,15 @@
                             "id": "order_start_date_time",
                             "category": "ELEMENT",
                             "type": "DV_DATE_TIME",
-                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[at0012]}'",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[at0012],0,/Value}'",
                             "constraints": [
                               {
+                                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[at0012]/value",
                                 "mandatory_attributes": [
                                   {
+                                    "name": "Value",
                                     "attribute": "value",
+                                    "id": "value",
                                     "type": "STRING"
                                   }
                                 ],
@@ -334,12 +364,15 @@
                             "id": "order_stop_date_time",
                             "category": "ELEMENT",
                             "type": "DV_DATE_TIME",
-                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[at0013]}'",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[at0013],0,/Value}'",
                             "constraints": [
                               {
+                                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[at0013]/value",
                                 "mandatory_attributes": [
                                   {
+                                    "name": "Value",
                                     "attribute": "value",
+                                    "id": "value",
                                     "type": "STRING"
                                   }
                                 ],
@@ -363,9 +396,12 @@
                             "max": 1,
                             "children": [
                               {
+                                "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[openEHR-EHR-CLUSTER.medication_course_summary.v0]/name",
                                 "mandatory_attributes": [
                                   {
+                                    "name": "Value",
                                     "attribute": "value",
+                                    "id": "value",
                                     "type": "STRING"
                                   }
                                 ],
@@ -389,16 +425,21 @@
                                 "id": "course_status",
                                 "category": "ELEMENT",
                                 "type": "DV_CODED_TEXT",
-                                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[openEHR-EHR-CLUSTER.medication_course_summary.v0],0,/items[at0001]}'",
+                                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1],0,/items[openEHR-EHR-INSTRUCTION.medication_order.v1],0,/activities,/activities[at0001],0,/description[at0002],/items[at0113],0,/items[openEHR-EHR-CLUSTER.medication_course_summary.v0],0,/items[at0001],0,/DefiningCode}'",
                                 "constraints": [
                                   {
+                                    "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[openEHR-EHR-CLUSTER.medication_course_summary.v0]/items[at0001]/value",
                                     "mandatory_attributes": [
                                       {
+                                        "name": "DefiningCode",
                                         "attribute": "defining_code",
+                                        "id": "defining_code",
                                         "type": "CODE_PHRASE"
                                       },
                                       {
+                                        "name": "Value",
                                         "attribute": "value",
+                                        "id": "value",
                                         "type": "STRING"
                                       }
                                     ],
@@ -488,6 +529,7 @@
                     "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/action_archetype_id",
                     "name": "ActionArchetypeId",
                     "attribute": "action_archetype_id",
+                    "id": "action_archetype_id",
                     "occurrence": {
                       "min": 1,
                       "max_op": "<=",
@@ -501,16 +543,21 @@
                     "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/timing",
                     "mandatory_attributes": [
                       {
+                        "name": "Formalism",
                         "attribute": "formalism",
+                        "id": "formalism",
                         "type": "STRING"
                       },
                       {
+                        "name": "Value",
                         "attribute": "value",
+                        "id": "value",
                         "type": "STRING"
                       }
                     ],
                     "name": "Timing",
                     "attribute": "timing",
+                    "id": "timing",
                     "occurrence": {
                       "min": 1,
                       "max_op": "<=",
@@ -532,20 +579,27 @@
                 "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/subject",
                 "mandatory_attributes": [
                   {
+                    "name": "Namespace",
                     "attribute": "namespace",
+                    "id": "namespace",
                     "type": "STRING"
                   },
                   {
+                    "name": "Id",
                     "attribute": "id",
+                    "id": "id",
                     "type": "OBJECT_ID"
                   },
                   {
+                    "name": "Type",
                     "attribute": "type",
+                    "id": "type",
                     "type": "STRING"
                   }
                 ],
                 "name": "Subject",
                 "attribute": "subject",
+                "id": "subject",
                 "occurrence": {
                   "min": 1,
                   "max_op": "<=",
@@ -559,12 +613,15 @@
                 "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/narrative",
                 "mandatory_attributes": [
                   {
+                    "name": "Value",
                     "attribute": "value",
+                    "id": "value",
                     "type": "STRING"
                   }
                 ],
                 "name": "Narrative",
                 "attribute": "narrative",
+                "id": "narrative",
                 "occurrence": {
                   "min": 1,
                   "max_op": "<=",
@@ -578,16 +635,21 @@
                 "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/language",
                 "mandatory_attributes": [
                   {
+                    "name": "CodeString",
                     "attribute": "code_string",
+                    "id": "code_string",
                     "type": "STRING"
                   },
                   {
+                    "name": "TerminologyId",
                     "attribute": "terminology_id",
+                    "id": "terminology_id",
                     "type": "TERMINOLOGY_ID"
                   }
                 ],
                 "name": "Language",
                 "attribute": "language",
+                "id": "language",
                 "occurrence": {
                   "min": 1,
                   "max_op": "<=",
@@ -601,16 +663,21 @@
                 "aql_path": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/encoding",
                 "mandatory_attributes": [
                   {
+                    "name": "CodeString",
                     "attribute": "code_string",
+                    "id": "code_string",
                     "type": "STRING"
                   },
                   {
+                    "name": "TerminologyId",
                     "attribute": "terminology_id",
+                    "id": "terminology_id",
                     "type": "TERMINOLOGY_ID"
                   }
                 ],
                 "name": "Encoding",
                 "attribute": "encoding",
+                "id": "encoding",
                 "occurrence": {
                   "min": 1,
                   "max_op": "<=",
@@ -640,20 +707,27 @@
         "aql_path": "/composer",
         "mandatory_attributes": [
           {
+            "name": "Namespace",
             "attribute": "namespace",
+            "id": "namespace",
             "type": "STRING"
           },
           {
+            "name": "Id",
             "attribute": "id",
+            "id": "id",
             "type": "OBJECT_ID"
           },
           {
+            "name": "Type",
             "attribute": "type",
+            "id": "type",
             "type": "STRING"
           }
         ],
         "name": "Composer",
         "attribute": "composer",
+        "id": "composer",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -667,16 +741,21 @@
         "aql_path": "/language",
         "mandatory_attributes": [
           {
+            "name": "CodeString",
             "attribute": "code_string",
+            "id": "code_string",
             "type": "STRING"
           },
           {
+            "name": "TerminologyId",
             "attribute": "terminology_id",
+            "id": "terminology_id",
             "type": "TERMINOLOGY_ID"
           }
         ],
         "name": "Language",
         "attribute": "language",
+        "id": "language",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -690,16 +769,21 @@
         "aql_path": "/category",
         "mandatory_attributes": [
           {
+            "name": "DefiningCode",
             "attribute": "defining_code",
+            "id": "defining_code",
             "type": "CODE_PHRASE"
           },
           {
+            "name": "Value",
             "attribute": "value",
+            "id": "value",
             "type": "STRING"
           }
         ],
         "name": "Category",
         "attribute": "category",
+        "id": "category",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -713,16 +797,21 @@
         "aql_path": "/territory",
         "mandatory_attributes": [
           {
+            "name": "CodeString",
             "attribute": "code_string",
+            "id": "code_string",
             "type": "STRING"
           },
           {
+            "name": "TerminologyId",
             "attribute": "terminology_id",
+            "id": "terminology_id",
             "type": "TERMINOLOGY_ID"
           }
         ],
         "name": "Territory",
         "attribute": "territory",
+        "id": "territory",
         "occurrence": {
           "min": 1,
           "max_op": "<=",
@@ -741,12 +830,15 @@
             "aql_path": "/context/start_time",
             "mandatory_attributes": [
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
             "name": "StartTime",
             "attribute": "start_time",
+            "id": "start_time",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -760,16 +852,21 @@
             "aql_path": "/context/setting",
             "mandatory_attributes": [
               {
+                "name": "DefiningCode",
                 "attribute": "defining_code",
+                "id": "defining_code",
                 "type": "CODE_PHRASE"
               },
               {
+                "name": "Value",
                 "attribute": "value",
+                "id": "value",
                 "type": "STRING"
               }
             ],
             "name": "Setting",
             "attribute": "setting",
+            "id": "setting",
             "occurrence": {
               "min": 1,
               "max_op": "<=",
@@ -780,8 +877,10 @@
             "type": "DV_CODED_TEXT"
           }
         ],
+        "name": "Context",
         "rm_type": "EVENT_CONTEXT",
         "attribute": "context",
+        "id": "context",
         "node_id": ""
       }
     ],

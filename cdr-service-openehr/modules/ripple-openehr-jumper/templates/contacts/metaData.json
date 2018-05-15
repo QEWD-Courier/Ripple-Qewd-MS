@@ -1,0 +1,357 @@
+{
+  "template_name": "Relevant Contacts List",
+  "composition_name": "openEHR-EHR-COMPOSITION.health_summary.v1",
+  "metadata": [
+    {
+      "id": "comms_description",
+      "name": "Comms description",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "contact_details",
+        "comms_description"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.telecom_uk.v1]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.individual_person_uk.v1]",
+        "items[openEHR-EHR-CLUSTER.telecom_uk.v1]",
+        "items[at0002]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/individual_person/contact_details:0/comms_description"
+    },
+    {
+      "id": "method",
+      "name": "Method",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "contact_details",
+        "method"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.telecom_uk.v1]/items[at0020]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.individual_person_uk.v1]",
+        "items[openEHR-EHR-CLUSTER.telecom_uk.v1]",
+        "items[at0020]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/individual_person/contact_details:0/method"
+    },
+    {
+      "id": "unstructured_name",
+      "name": "Unstructured name",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "person_name",
+        "unstructured_name"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.person_name.v1]/items[at0001]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.individual_person_uk.v1]",
+        "items[openEHR-EHR-CLUSTER.person_name.v1]",
+        "items[at0001]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/individual_person/person_name/unstructured_name"
+    },
+    {
+      "id": "address_description",
+      "name": "Address description",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "address",
+        "address_description"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.address_uk.v0]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.individual_person_uk.v1]",
+        "items[openEHR-EHR-CLUSTER.address_uk.v0]",
+        "items[at0002]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/individual_person/address/address_description"
+    },
+    {
+      "id": "state",
+      "name": "State",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "individual_person",
+        "address",
+        "state"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.individual_person_uk.v1]/items[openEHR-EHR-CLUSTER.address_uk.v0]/items[at0023]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.individual_person_uk.v1]",
+        "items[openEHR-EHR-CLUSTER.address_uk.v0]",
+        "items[at0023]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/individual_person/address/state"
+    },
+    {
+      "id": "note",
+      "name": "Note",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "note"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0017]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[at0017]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/note"
+    },
+    {
+      "id": "is_next_of_kin",
+      "name": "Is next of kin?",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "is_next_of_kin"
+      ],
+      "type": "DV_BOOLEAN",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0025]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[at0025]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/is_next_of_kin?"
+    },
+    {
+      "id": "relationship_category",
+      "name": "Relationship category",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "relationship_category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0035]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[at0035]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_category"
+    },
+    {
+      "id": "relationship_role",
+      "name": "Relationship/ role",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "relationship_role"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/data[at0001]/items[at0030]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "data[at0001]",
+        "items[at0030]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship__role"
+    },
+    {
+      "id": "subject",
+      "name": "Subject",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "subject"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/subject",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "subject"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/subject"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/language",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/language"
+    },
+    {
+      "id": "encoding",
+      "name": "Encoding",
+      "path": [
+        "relevant_contacts",
+        "relevant_contact",
+        "encoding"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]/items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]/encoding",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.relevant_contacts_rcp.v1]",
+        "items[openEHR-EHR-ADMIN_ENTRY.relevant_contact_rcp.v1]",
+        "encoding"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/encoding"
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "path": [
+        "composer"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/composer",
+      "pathArr": [
+        "composer"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/composer"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/language",
+      "pathArr": [
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/language"
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "path": [
+        "category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/category",
+      "pathArr": [
+        "category"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/category"
+    },
+    {
+      "id": "territory",
+      "name": "Territory",
+      "path": [
+        "territory"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/territory",
+      "pathArr": [
+        "territory"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/territory"
+    },
+    {
+      "id": "start_time",
+      "name": "StartTime",
+      "path": [
+        "context",
+        "start_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/context/start_time",
+      "pathArr": [
+        "context",
+        "start_time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/context/start_time"
+    },
+    {
+      "id": "setting",
+      "name": "Setting",
+      "path": [
+        "context",
+        "setting"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/context/setting",
+      "pathArr": [
+        "context",
+        "setting"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "relevant_contacts_list/context/setting"
+    }
+  ]
+}

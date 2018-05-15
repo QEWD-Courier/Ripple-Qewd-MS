@@ -24,13 +24,13 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  7 March 2018
+  1 May 2018
 
 */
 
 var buildJsonFile = require('./buildJsonFile');
 
-module.exports = function(templateName, parsedResults, filePath) {
+module.exports = function(templateName, metadata, filePath) {
 
   var schema = {
     "$schema": "http://json-schema.org/draft-06/schema#",
@@ -46,8 +46,8 @@ module.exports = function(templateName, parsedResults, filePath) {
   var parent;
   //var notNull = '/(.|\s)*\S(.|\s)*/';
 
-  parsedResults.forEach(function(field) {
-    if (field.path[0] === 'context' || field.path[0] === 'composer') return; // ignore
+  metadata.forEach(function(field) {
+    if (field.path[0] === 'context' || field.path[0] === 'composer') return; // ignore for now
     obj = schema.properties;
     parent = schema;
     var max = field.path.length;

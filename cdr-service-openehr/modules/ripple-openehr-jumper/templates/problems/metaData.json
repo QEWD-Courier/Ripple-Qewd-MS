@@ -1,0 +1,489 @@
+{
+  "template_name": "Problem list",
+  "composition_name": "openEHR-EHR-COMPOSITION.problem_list.v1",
+  "metadata": [
+    {
+      "id": "last_updated",
+      "name": "Last updated",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "last_updated"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[at0070]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "protocol[at0032]",
+        "items[at0070]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/last_updated"
+    },
+    {
+      "id": "problem_diagnosis_name",
+      "name": "Problem/Diagnosis name",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_name"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0002]"
+      ],
+      "required": true,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/problem_diagnosis_name"
+    },
+    {
+      "id": "date_time_clinically_recognised",
+      "name": "Date/time clinically recognised",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "date_time_clinically_recognised"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0003]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0003]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/date_time_clinically_recognised"
+    },
+    {
+      "id": "comment",
+      "name": "Comment",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "comment"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0069]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0069]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/comment"
+    },
+    {
+      "id": "severity",
+      "name": "Severity",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "severity"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0005]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0005]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/severity"
+    },
+    {
+      "id": "date_time_of_onset",
+      "name": "Date/time of onset",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "date_time_of_onset"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0077]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0077]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/date_time_of_onset"
+    },
+    {
+      "id": "body_site",
+      "name": "Body site",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "body_site"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0012]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0012]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/body_site"
+    },
+    {
+      "id": "diagnostic_certainty",
+      "name": "Diagnostic certainty",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "diagnostic_certainty"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0073]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0073]"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/diagnostic_certainty"
+    },
+    {
+      "id": "date_time_of_resolution",
+      "name": "Date/time of resolution",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "date_time_of_resolution"
+      ],
+      "type": "DV_DATE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0030]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0030]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/date_time_of_resolution"
+    },
+    {
+      "id": "diagnostic_status",
+      "name": "Diagnostic status",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "diagnostic_status"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0004]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.problem_status.v0]",
+        "items[at0004]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/problem_diagnosis_status/diagnostic_status"
+    },
+    {
+      "id": "active_inactive",
+      "name": "Active/Inactive?",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "active_inactive"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0003]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.problem_status.v0]",
+        "items[at0003]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/problem_diagnosis_status/active_inactive?"
+    },
+    {
+      "id": "episodicity",
+      "name": "Episodicity",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "episodicity"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0001]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.problem_status.v0]",
+        "items[at0001]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/problem_diagnosis_status/episodicity"
+    },
+    {
+      "id": "resolution_status",
+      "name": "Resolution status",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "resolution_status"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0083]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.problem_status.v0]",
+        "items[at0083]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/problem_diagnosis_status/resolution_status"
+    },
+    {
+      "id": "drg_category",
+      "name": "DRG category",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "drg_category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0063]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.problem_status.v0]",
+        "items[at0063]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/problem_diagnosis_status/drg_category"
+    },
+    {
+      "id": "first_occurrence",
+      "name": "First occurrence?",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "problem_diagnosis_status",
+        "first_occurrence"
+      ],
+      "type": "DV_BOOLEAN",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.problem_status.v0]/items[at0071]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[openEHR-EHR-CLUSTER.problem_status.v0]",
+        "items[at0071]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/problem_diagnosis_status/first_occurrence?"
+    },
+    {
+      "id": "clinical_description",
+      "name": "Clinical description",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "clinical_description"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0009]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "data[at0001]",
+        "items[at0009]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/clinical_description"
+    },
+    {
+      "id": "subject",
+      "name": "Subject",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "subject"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/subject",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "subject"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/subject"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/language",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/language"
+    },
+    {
+      "id": "encoding",
+      "name": "Encoding",
+      "path": [
+        "problems_and_issues",
+        "problem_diagnosis",
+        "encoding"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.problems_issues_rcp.v1]/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/encoding",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.problems_issues_rcp.v1]",
+        "items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+        "encoding"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/problems_and_issues/problem_diagnosis:0/encoding"
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "path": [
+        "composer"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/composer",
+      "pathArr": [
+        "composer"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/composer"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/language",
+      "pathArr": [
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/language"
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "path": [
+        "category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/category",
+      "pathArr": [
+        "category"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/category"
+    },
+    {
+      "id": "territory",
+      "name": "Territory",
+      "path": [
+        "territory"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/territory",
+      "pathArr": [
+        "territory"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/territory"
+    },
+    {
+      "id": "start_time",
+      "name": "StartTime",
+      "path": [
+        "context",
+        "start_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/context/start_time",
+      "pathArr": [
+        "context",
+        "start_time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/context/start_time"
+    },
+    {
+      "id": "setting",
+      "name": "Setting",
+      "path": [
+        "context",
+        "setting"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/context/setting",
+      "pathArr": [
+        "context",
+        "setting"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "problem_list/context/setting"
+    }
+  ]
+}

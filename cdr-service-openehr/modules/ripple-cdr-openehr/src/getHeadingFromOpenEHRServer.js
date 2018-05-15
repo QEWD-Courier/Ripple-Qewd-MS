@@ -37,6 +37,7 @@ try {
   getHeadingByJumper = require('../../ripple-openehr-jumper/lib/getHeadingFromOpenEHRServer');
 }
 catch(err) {
+  console.log('!*!*!*!*! Error - unable to load ripple-openehr-jumper/lib/getHeadingFromOpenEHRServer');
 }
 
 var aql = {};
@@ -50,7 +51,7 @@ function getTransformedAQL(host, nhsNo, aql) {
     ehrId: getEhrId.call(this, nhsNo, host)
   };
 
-  console.log('\ngetTransformedAQL: subs = ' + JSON.stringify(subs) + '; aql: ' + aql);
+  //console.log('\ngetTransformedAQL: subs = ' + JSON.stringify(subs) + '; aql: ' + aql);
 
   return {
     aql: template.replace(aql, subs)
@@ -62,6 +63,11 @@ function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
   console.log('host = ' + host);
   console.log('heading = ' + heading);
   console.log('userDefined: ' + JSON.stringify(this.userDefined.headings[heading]));
+  if (getHeadingByJumper) console.log('getHeadingByJumper: true');
+  if (this.userDefined.headings[heading].template) {
+    console.log('this.userDefined.headings[heading].template: true');
+    if (this.userDefined.headings[heading].template.name) console.log('this.userDefined.headings[heading].template.name: ' + this.userDefined.headings[heading].template.name);
+  }
 
   if (getHeadingByJumper && this.userDefined.headings[heading] && this.userDefined.headings[heading].template && this.userDefined.headings[heading].template.name) {
     // use Jumper instead to get the heading
@@ -99,7 +105,8 @@ function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
 
   params.queryString = getTransformedAQL.call(this, host, nhsNo, aql[heading]);  
 
-  params.processBody = function(body) { 
+  params.processBody = function(body) {
+    console.log(new Date().getTime() + ' response received from ' + host + ': ' + heading);
     //console.log('**** processBody for host ' + host + ': body = ' + body);
     var results = [];
     if (!body) body = {
@@ -136,6 +143,7 @@ function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
         byPatientIdCache.$(['byHost', host, sourceId]).value = '';
       }
     });
+    console.log(new Date().getTime() + ' Finished processing response from ' + host + ': ' + heading);
   };
 
   openEHR.request(params);

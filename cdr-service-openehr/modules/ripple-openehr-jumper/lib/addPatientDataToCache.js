@@ -24,11 +24,11 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  30 April 2018
 
 */
 
-function addPatientDataToCache(results, patientId, host, templateId, heading, qewdSession) {
+function addPatientDataToCache(results, patientId, host, heading, qewdSession) {
   //console.log('** adding data to session cache');
   //console.log('patientId: ' + patientId);
   //console.log('host: ' + host);
@@ -39,22 +39,25 @@ function addPatientDataToCache(results, patientId, host, templateId, heading, qe
   var headingCache = qewdSession.$('headings');
   var cacheBySourceId = headingCache.$('bySourceId');
   var cacheByPatientId = headingCache.$(['byPatientId', patientId, heading]);
-  var cacheByTemplateId = headingCache.$('byTemplateId');
+  var cacheByHeading = headingCache.$('byHeading');
 
   results.forEach(function(result) {
+    //console.log('*** result = ' + JSON.stringify(result, null, 2));
     var sourceId = host + '-' + result.uid.split('::')[0];
     //console.log('cacheing result for ' + sourceId);
-    var date = result.start_time;
-    if (date.indexOf('UTC') !== -1) date = date.split('UTC')[0];
-    date = new Date(date).getTime();
-    cacheByPatientId.$(['byDate', date, sourceId]).value = '';
+    var date;
+    if (result.context && result.context.start_time) { 
+      date = result.context.start_time.value;
+      if (date.indexOf('UTC') !== -1) date = date.split('UTC')[0];
+      date = new Date(date).getTime();
+      cacheByPatientId.$(['byDate', date, sourceId]).value = '';
+    }
     cacheByPatientId.$(['byHost', host, sourceId]).value = '';
-    cacheByTemplateId.$([templateId, sourceId]).value = '';
+    cacheByHeading.$([heading, sourceId]).value = '';
 
     var cacheBySourceId = headingCache.$(['bySourceId', sourceId]);
-    cacheBySourceId.$('date').value = date;
+    if (date) cacheBySourceId.$('date').value = date;
     cacheBySourceId.$('heading').value = heading;
-    cacheBySourceId.$('templateId').value = templateId;
     cacheBySourceId.$('patientId').value = patientId;
     cacheBySourceId.$('uid').value = result.uid;
     cacheBySourceId.$('jumperFormatData').setDocument(result);

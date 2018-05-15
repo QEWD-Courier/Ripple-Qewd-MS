@@ -54,6 +54,11 @@
     "destination": "mpi_service"
   },
   {
+    "path": "/api/demographics/:patientId",
+    "method": "GET",
+    "destination": "mpi_service"
+  },
+  {
     "path": "/api/patients",
     "method": "GET",
     "destination": "mpi_service"
@@ -90,6 +95,11 @@
   },
   {
     "path": "/api/patients/:patientId/headings/synopsis",
+    "method": "GET",
+    "destination": "cdr_openehr_service"
+  },
+  {
+    "path": "/api/patients/:patientId/synopsis/:heading",
     "method": "GET",
     "destination": "cdr_openehr_service"
   },
@@ -142,5 +152,25 @@
     "path": "/api/openehr/jumper/patient/:patientId/template/:templateName",
     "method": "GET",
     "destination": "openehr_jumper_service"
+  },
+  {
+    "path": "/api/feeds",
+    "method": "GET",
+    "destination": "cdr_openehr_service"
+  },
+  {
+    "path": "/api/feeds",
+    "method": "POST",
+    "destination": "cdr_openehr_service"
+  },
+  {
+    "path": "/api/feeds/:sourceId",
+    "method": "GET",
+    "destination": "cdr_openehr_service"
+  },
+  {
+    "path": "/api/feeds/:sourceId",
+    "method": "PUT",
+    "destination": "cdr_openehr_service"
   }
 ]

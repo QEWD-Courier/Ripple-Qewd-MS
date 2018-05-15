@@ -1,0 +1,257 @@
+{
+  "template_name": "Immunisation summary",
+  "composition_name": "openEHR-EHR-COMPOSITION.health_summary.v1",
+  "metadata": [
+    {
+      "id": "immunisation_name",
+      "name": "Immunisation name",
+      "path": [
+        "immunisation_procedure",
+        "immunisation_name"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "description[at0001]",
+        "items[at0002]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/immunisation_name"
+    },
+    {
+      "id": "series_number",
+      "name": "Series number",
+      "path": [
+        "immunisation_procedure",
+        "series_number"
+      ],
+      "type": "DV_COUNT",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0004]",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "description[at0001]",
+        "items[at0004]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/series_number"
+    },
+    {
+      "id": "comment",
+      "name": "Comment",
+      "path": [
+        "immunisation_procedure",
+        "comment"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0015]",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "description[at0001]",
+        "items[at0015]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/comment"
+    },
+    {
+      "id": "reason_withheld",
+      "name": "Reason withheld",
+      "path": [
+        "immunisation_procedure",
+        "reason_withheld"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/description[at0001]/items[at0005]",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "description[at0001]",
+        "items[at0005]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/reason_withheld"
+    },
+    {
+      "id": "ism_transition",
+      "name": "IsmTransition",
+      "path": [
+        "immunisation_procedure",
+        "ism_transition"
+      ],
+      "type": "ISM_TRANSITION",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/ism_transition",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "ism_transition"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/ism_transition"
+    },
+    {
+      "id": "subject",
+      "name": "Subject",
+      "path": [
+        "immunisation_procedure",
+        "subject"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/subject",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "subject"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/subject"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "immunisation_procedure",
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/language",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/language"
+    },
+    {
+      "id": "time",
+      "name": "Time",
+      "path": [
+        "immunisation_procedure",
+        "time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/time",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/time"
+    },
+    {
+      "id": "encoding",
+      "name": "Encoding",
+      "path": [
+        "immunisation_procedure",
+        "encoding"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-ACTION.immunisation_procedure.v1]/encoding",
+      "pathArr": [
+        "content[openEHR-EHR-ACTION.immunisation_procedure.v1]",
+        "encoding"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/immunisation_procedure:0/encoding"
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "path": [
+        "composer"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/composer",
+      "pathArr": [
+        "composer"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/composer"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/language",
+      "pathArr": [
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/language"
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "path": [
+        "category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/category",
+      "pathArr": [
+        "category"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/category"
+    },
+    {
+      "id": "territory",
+      "name": "Territory",
+      "path": [
+        "territory"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/territory",
+      "pathArr": [
+        "territory"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/territory"
+    },
+    {
+      "id": "start_time",
+      "name": "StartTime",
+      "path": [
+        "context",
+        "start_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/context/start_time",
+      "pathArr": [
+        "context",
+        "start_time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/context/start_time"
+    },
+    {
+      "id": "setting",
+      "name": "Setting",
+      "path": [
+        "context",
+        "setting"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/context/setting",
+      "pathArr": [
+        "context",
+        "setting"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "immunisation_summary/context/setting"
+    }
+  ]
+}

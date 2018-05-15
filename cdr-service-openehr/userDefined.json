@@ -41,13 +41,25 @@
       "synopsisField": "cause",
       "summaryTableFields": ["cause", "reaction"]
     },
-    "contacts": true,
+    "contacts": {
+      "template": {
+        "name": "IDCR - Relevant contacts.v0"
+      },
+      "synopsisField": "name",
+      "summaryTableFields": ["name", "relationship", "nextOfKin"]
+    },
     "counts": true,
     "eolcareplans": true,
     "events": true,
     "laborders": true,
     "labresults": true,
-    "medications": true,
+    "medications": {
+      "template": {
+        "name": "IDCR - Medication Statement List.v0"
+      },
+      "synopsisField": "name",
+      "summaryTableFields": ["name", "doseAmount", "dateCreated"]
+    },
     "mdtreports": true,
     "personalnotes": true,
     "problems": {
@@ -69,7 +81,13 @@
       "summaryTableFields": ["name", "score", "dateCreated"]
     },
     "referrals": true,
-    "vaccinations": true,
+    "vaccinations": {
+      "template": {
+        "name": "IDCR - Immunisation summary.v0"
+      },
+      "synopsisField": "vaccinationName",
+      "summaryTableFields": ["vaccinationName", "dateCreated"]
+    },
     "vitalsigns": true
   },
   "documentNames": {

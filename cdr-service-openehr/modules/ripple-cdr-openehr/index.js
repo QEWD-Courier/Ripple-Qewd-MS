@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 March 2018
+  9 May 2018
 
 */
 
@@ -36,6 +36,7 @@ var getMyHeadingDetail = require('./handlers/getMyHeadingDetail');
 var getHeadingDetail = require('./handlers/getHeadingDetail');
 var getMySynopsis = require('./handlers/getMySynopsis');
 var getPatientSynopsis = require('./handlers/getPatientSynopsis');
+var getPatientHeadingSynopsis = require('./handlers/getPatientHeadingSynopsis');
 var postMyHeading = require('./handlers/postMyHeading');
 var postPatientHeading = require('./handlers/postPatientHeading');
 var editPatientHeading = require('./handlers/editPatientHeading');
@@ -43,6 +44,11 @@ var editPatientHeading = require('./handlers/editPatientHeading');
 var getTop3ThingsSummary = require('./top3Things/getTop3ThingsSummary');
 var getTop3ThingsDetail = require('./top3Things/getTop3ThingsDetail');
 var postTop3Things = require('./top3Things/postTop3Things');
+
+var getFeedSummary = require('./feeds/getSummary');
+var getFeedDetail = require('./feeds/getDetail');
+var postFeed = require('./feeds/post');
+var editFeed = require('./feeds/edit');
 
 var routes = {
   '/api/my/heading/:heading': {
@@ -57,6 +63,9 @@ var routes = {
   },
   '/api/patients/:patientId/headings/synopsis': {
     GET: getPatientSynopsis
+  },
+  '/api/patients/:patientId/synopsis/:heading': {
+    GET: getPatientHeadingSynopsis
   },
   '/api/patients/:patientId/top3Things': {
     POST: postTop3Things,
@@ -73,6 +82,14 @@ var routes = {
   '/api/patients/:patientId/:heading/:sourceId': {
     GET: getHeadingDetail,
     PUT: editPatientHeading
+  },
+  '/api/feeds': {
+    GET: getFeedSummary,
+    POST: postFeed
+  },
+  '/api/feeds/:sourceId': {
+    GET: getFeedDetail,
+    PUT: editFeed
   }
 };
 

@@ -1,0 +1,446 @@
+{
+  "template_name": "Medication statement list",
+  "composition_name": "openEHR-EHR-COMPOSITION.medication_list.v0",
+  "metadata": [
+    {
+      "id": "medication_item",
+      "name": "Medication item",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "medication_item"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0070]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0070]"
+      ],
+      "required": true,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/medication_item"
+    },
+    {
+      "id": "body_site",
+      "name": "Body site",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "body_site"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0092]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0092]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/body_site"
+    },
+    {
+      "id": "overall_directions_description",
+      "name": "Overall directions description",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "overall_directions_description"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0009]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0009]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/overall_directions_description"
+    },
+    {
+      "id": "route",
+      "name": "Route",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "route"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0091]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0091]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/route"
+    },
+    {
+      "id": "clinical_indication",
+      "name": "Clinical indication",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "clinical_indication"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0018]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0018]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/clinical_indication:0"
+    },
+    {
+      "id": "dose_timing_description",
+      "name": "Dose timing description",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "dose_timing_description"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0173]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0173]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/dose_timing_description"
+    },
+    {
+      "id": "additional_instruction",
+      "name": "Additional instruction",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "additional_instruction"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0044]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0044]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/additional_instruction:0"
+    },
+    {
+      "id": "order_start_date_time",
+      "name": "Order start date/time",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "order_details",
+        "order_start_date_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[at0012]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0113]",
+        "items[at0012]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_start_date_time"
+    },
+    {
+      "id": "order_stop_date_time",
+      "name": "Order stop date/time",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "order_details",
+        "order_stop_date_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[at0013]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0113]",
+        "items[at0013]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_stop_date_time"
+    },
+    {
+      "id": "course_status",
+      "name": "Course status",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "order_details",
+        "order_summary",
+        "course_status"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/description[at0002]/items[at0113]/items[openEHR-EHR-CLUSTER.medication_course_summary.v0]/items[at0001]",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "description[at0002]",
+        "items[at0113]",
+        "items[openEHR-EHR-CLUSTER.medication_course_summary.v0]",
+        "items[at0001]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/order_details/order_summary/course_status"
+    },
+    {
+      "id": "action_archetype_id",
+      "name": "ActionArchetypeId",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "action_archetype_id"
+      ],
+      "type": "STRING",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/action_archetype_id",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "action_archetype_id"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/action_archetype_id"
+    },
+    {
+      "id": "timing",
+      "name": "Timing",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "order",
+        "timing"
+      ],
+      "type": "DV_PARSABLE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/activities[at0001]/timing",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "activities[at0001]",
+        "timing"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/timing"
+    },
+    {
+      "id": "subject",
+      "name": "Subject",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "subject"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/subject",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "subject"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/subject"
+    },
+    {
+      "id": "narrative",
+      "name": "Narrative",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "narrative"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/narrative",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "narrative"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/narrative"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/language",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/language"
+    },
+    {
+      "id": "encoding",
+      "name": "Encoding",
+      "path": [
+        "medication_and_medical_devices",
+        "medication_order",
+        "encoding"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]/items[openEHR-EHR-INSTRUCTION.medication_order.v1]/encoding",
+      "pathArr": [
+        "content[openEHR-EHR-SECTION.medication_medical_devices_rcp.v1]",
+        "items[openEHR-EHR-INSTRUCTION.medication_order.v1]",
+        "encoding"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/medication_and_medical_devices/medication_order:0/encoding"
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "path": [
+        "composer"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/composer",
+      "pathArr": [
+        "composer"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/composer"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/language",
+      "pathArr": [
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/language"
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "path": [
+        "category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/category",
+      "pathArr": [
+        "category"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/category"
+    },
+    {
+      "id": "territory",
+      "name": "Territory",
+      "path": [
+        "territory"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/territory",
+      "pathArr": [
+        "territory"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/territory"
+    },
+    {
+      "id": "start_time",
+      "name": "StartTime",
+      "path": [
+        "context",
+        "start_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/context/start_time",
+      "pathArr": [
+        "context",
+        "start_time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/context/start_time"
+    },
+    {
+      "id": "setting",
+      "name": "Setting",
+      "path": [
+        "context",
+        "setting"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/context/setting",
+      "pathArr": [
+        "context",
+        "setting"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "medication_statement_list/context/setting"
+    }
+  ]
+}

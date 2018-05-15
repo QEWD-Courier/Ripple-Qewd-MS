@@ -55,5 +55,8 @@
   "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/reaction_details/severity|terminology": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.reaction_details.severity.terminology, <!delete>)",
   "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/status|value": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.status.value, <!delete>)",
   "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/status|code": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.status.code, <!delete>)",
-  "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/status|terminology": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.status.terminology, <!delete>)"
+  "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/status|terminology": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.status.terminology, <!delete>)",
+  "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/subject": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.subject, <!delete>)",
+  "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/language": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.language, <!delete>)",
+  "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/encoding": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.encoding, <!delete>)"
 }

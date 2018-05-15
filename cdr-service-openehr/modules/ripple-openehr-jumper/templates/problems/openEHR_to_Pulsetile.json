@@ -5,7 +5,7 @@
   "terminology": "{{problems_and_issues.problem_diagnosis.problem_diagnosis_name.terminology}}",
   "code": "{{problems_and_issues.problem_diagnosis.problem_diagnosis_name.code}}",
   "author": "{{composer.value}}",
-  "dateCreated": "=> getTime(start_time)",
+  "dateCreated": "=> rippleDateTime(context.start_time.value, true)",
   "source": "{{host}}",
   "sourceId": "=> getUid(uid, host)",
   "patientId": "{{patientId}}",

@@ -2,5 +2,6 @@
   "managementPassword": "R!ppl$",
   "serverName": "PHR Conductor MicroService Server",
   "port": 8080,
-  "poolSize": 2
+  "poolSize": 2,
+  "cors": true
 }

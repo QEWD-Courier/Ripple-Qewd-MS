@@ -31,11 +31,18 @@
 var headingHelpers = require('./headingHelpers');
 var transform = require('qewd-transform-json').transform;
 var headingMap = {};
+try {
+  getFormattedRecordFromCache = require('../../ripple-openehr-jumper/lib/getFormattedRecordFromCache');
+}
+catch(err) {
+  console.log('!*!*!*! unable to load module getFormattedRecordFromCache *!*!*!*!');
+}
 
 module.exports = function(sourceId, session, format) {
 
   // format = synopsis || summary || detail
 
+  if (!sourceId || sourceId === '') return {};
   format = format || 'detail';
   var sourceIdCache = session.data.$(['headings', 'bySourceId', sourceId]);
   if (!sourceIdCache.exists) return {};
@@ -47,31 +54,49 @@ module.exports = function(sourceId, session, format) {
   var output;
   var synopsisField;
   var summaryFields;
+  var headingDef = this.userDefined.headings[heading];
+
+  if (getFormattedRecordFromCache && headingDef && headingDef.template) {
+    synopsisField = headingDef.synopsisField;
+    summaryFields = headingDef.summaryTableFields.slice(0);
+  }
+  if (!headingMap[heading] && (!synopsisField || !summaryFields)) {
+    // load on demand
+    headingMap[heading] = require('../headings/' + heading);
+  }
+
+  if (!synopsisField) synopsisField = headingMap[heading].textFieldName;
+  if (!summaryFields) summaryFields = headingMap[heading].headingTableFields.slice(0); 
+
+  //console.log('getHeadingBySourceId: ');
+  //console.log('sourceId: ' + sourceId);
+  //console.log('heading: ' + heading);
+  //console.log('synopsisField = ' + synopsisField);
+  //console.log('cachedObj = ' + JSON.stringify(cachedObj, null, 2));
+
+  //if (cachedObj.pulsetile) console.log('cachedObj.pulsetile: true');
+  //if (getFormattedRecordFromCache) console.log('getFormattedRecordFromCache: true');
+  //if (cachedObj.jumperFormatData) console.log('cachedObj.jumperFormatData: true');
 
   if (cachedObj.pulsetile) {
     output = cachedObj.pulsetile;
-    var headingDef = this.userDefined.headings[heading];
-    synopsisField = headingDef.synopsisField;
-    //console.log('heading: ' + heading + '; synopsisField = ' + synopsisField);
-    //console.log('headingDef: ' + JSON.stringify(headingDef));
-    summaryFields = headingDef.summaryTableFields.slice(0);
   }
   else {
 
-    if (!headingMap[heading]) {
-      // load on demand
-      headingMap[heading] = require('../headings/' + heading);
+    if (getFormattedRecordFromCache && cachedObj.jumperFormatData) {
+      // fetch PulseTile-format data from cache
+      //  if it hasn't been converted to PulseTile format, this will do so and cache it in that format
+      output = getFormattedRecordFromCache.call(this, sourceId, 'pulsetile', session);
     }
-
-    var host = cachedObj.host;
-    var template = headingMap[heading].get.transformTemplate;
-    var helpers = headingHelpers(host, heading, 'get');
-    output = transform(template, cachedObj.data, helpers);
-    synopsisField = headingMap[heading].textFieldName;
-    summaryFields = headingMap[heading].headingTableFields.slice(0);
-    output.source = cachedObj.host;
-    output.sourceId = sourceId;
-
+    else {
+      var host = cachedObj.host;
+      var template = headingMap[heading].get.transformTemplate;
+      var helpers = headingHelpers(host, heading, 'get');
+      output = transform(template, cachedObj.data, helpers);
+      output.source = cachedObj.host;
+      output.sourceId = sourceId;
+      sourceIdCache.$('pulsetile').setDocument(output);
+    }
   }
 
   if (format === 'synopsis') {
