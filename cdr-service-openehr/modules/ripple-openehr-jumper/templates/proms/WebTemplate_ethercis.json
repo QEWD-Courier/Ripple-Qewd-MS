@@ -1,0 +1,4292 @@
+{
+  "uid": "b09d82b0-2e89-40d3-8eca-6bee09bd46da",
+  "languages": [
+    "en"
+  ],
+  "concept": "Ripple Generic PROMS.v0",
+  "tree": {
+    "min": 1,
+    "max": 1,
+    "children": [
+      {
+        "mandatory_attributes": [
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "attribute_name": "name",
+        "constraint": {
+          "occurrence": {
+            "min": 1,
+            "max_op": "<=",
+            "min_op": ">=",
+            "max": 1
+          }
+        },
+        "type": "DV_TEXT"
+      },
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]",
+        "max": 1,
+        "children": [
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "attribute_name": "name",
+            "constraint": {
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "DV_TEXT"
+          },
+          {
+            "min": 1,
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]",
+            "max": 1,
+            "children": [
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]",
+                "max": 1,
+                "children": [
+                  {
+                    "min": 1,
+                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]",
+                    "max": 1,
+                    "children": [
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.pain_vas.v0]",
+                        "max": -1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.pain_vas.v0]/items[at0001]",
+                            "max": 1,
+                            "name": "Pain scale",
+                            "description": "Patient-reported estimation of extent of pain on a scale of 0 to 100, where 0 indicates no pain and 100 indicates severe pain.",
+                            "id": "pain_scale",
+                            "category": "ELEMENT",
+                            "type": "DV_COUNT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.story.v1],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[openEHR-EHR-CLUSTER.pain_vas.v0],0,/items[at0001]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "magnitude",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "min": 0,
+                                  "max": 100,
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_COUNT"
+                              }
+                            ],
+                            "node_id": "at0001"
+                          }
+                        ],
+                        "name": "Pain VAS",
+                        "description": "Pain Visual Analogue Scale.",
+                        "id": "pain_vas",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "openEHR-EHR-CLUSTER.pain_vas.v0"
+                      }
+                    ],
+                    "name": "Tree",
+                    "description": "@ internal @",
+                    "id": "tree",
+                    "type": "ITEM_TREE",
+                    "category": "DATA_STRUCTURE",
+                    "node_id": "at0003"
+                  },
+                  {
+                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/time",
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "name": "Time",
+                    "attribute": "time",
+                    "occurrence": {
+                      "min": 1,
+                      "max_op": "<=",
+                      "min_op": ">=",
+                      "max": 1
+                    },
+                    "category": "ATTRIBUTE",
+                    "type": "DV_DATE_TIME"
+                  }
+                ],
+                "name": "Any event",
+                "description": "Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.",
+                "id": "any_event",
+                "type": "POINT_EVENT",
+                "category": "DATA_STRUCTURE",
+                "node_id": "at0002"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/origin",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "name": "Origin",
+                "attribute": "origin",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "DV_DATE_TIME"
+              }
+            ],
+            "name": "Event Series",
+            "description": "@ internal @",
+            "id": "event_series",
+            "type": "HISTORY",
+            "category": "DATA_STRUCTURE",
+            "node_id": "at0001"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/subject",
+            "mandatory_attributes": [
+              {
+                "attribute": "namespace",
+                "type": "STRING"
+              },
+              {
+                "attribute": "id",
+                "type": "OBJECT_ID"
+              },
+              {
+                "attribute": "type",
+                "type": "STRING"
+              }
+            ],
+            "name": "Subject",
+            "attribute": "subject",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "PARTY_PROXY"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/language",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Language",
+            "attribute": "language",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/encoding",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Encoding",
+            "attribute": "encoding",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          }
+        ],
+        "name": "Pain VAS",
+        "description": "The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.",
+        "id": "pain_vas",
+        "type": "OBSERVATION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-OBSERVATION.story.v1"
+      },
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]",
+        "max": -1,
+        "children": [
+          {
+            "min": 1,
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]",
+            "max": 1,
+            "children": [
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]",
+                "max": 1,
+                "children": [
+                  {
+                    "min": 1,
+                    "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]",
+                    "max": 1,
+                    "children": [
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0097]",
+                        "max": 1,
+                        "name": "22. Pain interfering with normal work",
+                        "description": "Patient reported extent to which pain has interfered with normal work (both outside home and housework) during the past 4 weeks.",
+                        "id": "22._pain_interfering_with_normal_work",
+                        "category": "ELEMENT",
+                        "type": "DV_ORDINAL",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0097]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "symbol",
+                                "type": "DV_CODED_TEXT"
+                              },
+                              {
+                                "attribute": "value",
+                                "type": "INT"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "symbol": [
+                                {
+                                  "code": "at0098",
+                                  "terminology": "local",
+                                  "description": "Not at all",
+                                  "value": 1
+                                },
+                                {
+                                  "code": "at0099",
+                                  "terminology": "local",
+                                  "description": "A little bit",
+                                  "value": 2
+                                },
+                                {
+                                  "code": "at0100",
+                                  "terminology": "local",
+                                  "description": "Moderately",
+                                  "value": 3
+                                },
+                                {
+                                  "code": "at0101",
+                                  "terminology": "local",
+                                  "description": "Quite a bit",
+                                  "value": 4
+                                },
+                                {
+                                  "code": "at0102",
+                                  "terminology": "local",
+                                  "description": "Extremely",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            "type": "DV_ORDINAL"
+                          }
+                        ],
+                        "node_id": "at0097"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0174]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0174]/items[at0187]",
+                            "max": 1,
+                            "name": "35. Expect health to get worse",
+                            "description": "Patient reported assessment of whether they expect their health to get worse.",
+                            "id": "35._expect_health_to_get_worse",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0174],0,/items[at0187]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0188",
+                                      "terminology": "local",
+                                      "description": "Definitely true",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0189",
+                                      "terminology": "local",
+                                      "description": "Mostly true",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0190",
+                                      "terminology": "local",
+                                      "description": "Don't know",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0191",
+                                      "terminology": "local",
+                                      "description": "Mostly false",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0192",
+                                      "terminology": "local",
+                                      "description": "Definitely false",
+                                      "value": 5
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0187"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0174]/items[at0175]",
+                            "max": 1,
+                            "name": "33. Get sick easier than other people",
+                            "description": "Patient reported assessment of whether they seem to get sick a little easier than other people.",
+                            "id": "33._get_sick_easier_than_other_people",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0174],0,/items[at0175]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0176",
+                                      "terminology": "local",
+                                      "description": "Definitely true",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0177",
+                                      "terminology": "local",
+                                      "description": "Mostly true",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0178",
+                                      "terminology": "local",
+                                      "description": "Don't know",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0179",
+                                      "terminology": "local",
+                                      "description": "Mostly false",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0180",
+                                      "terminology": "local",
+                                      "description": "Definitely false",
+                                      "value": 5
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0175"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0174]/items[at0193]",
+                            "max": 1,
+                            "name": "36. Health is excellent",
+                            "description": "Patient reported assessment of whether they think their health is excellent.",
+                            "id": "36._health_is_excellent",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0174],0,/items[at0193]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0194",
+                                      "terminology": "local",
+                                      "description": "Definitely true",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0195",
+                                      "terminology": "local",
+                                      "description": "Mostly true",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0196",
+                                      "terminology": "local",
+                                      "description": "Don't know",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0197",
+                                      "terminology": "local",
+                                      "description": "Mostly false",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0198",
+                                      "terminology": "local",
+                                      "description": "Definitely false",
+                                      "value": 5
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0193"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0174]/items[at0181]",
+                            "max": 1,
+                            "name": "34. As healthy as anybody",
+                            "description": "Patient reported assessment of whether they are as healthy as anybody they know.",
+                            "id": "34._as_healthy_as_anybody",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0174],0,/items[at0181]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0182",
+                                      "terminology": "local",
+                                      "description": "Definitely true",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0183",
+                                      "terminology": "local",
+                                      "description": "Mostly true",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0184",
+                                      "terminology": "local",
+                                      "description": "Don't know",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0185",
+                                      "terminology": "local",
+                                      "description": "Mostly false",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0186",
+                                      "terminology": "local",
+                                      "description": "Definitely false",
+                                      "value": 5
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0181"
+                          }
+                        ],
+                        "name": "General health statements",
+                        "description": "Patient reported statements about health.",
+                        "id": "general_health_statements",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "at0174"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0074]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0074]/items[at0078]",
+                            "max": 1,
+                            "name": "18. Accomplished less",
+                            "description": "Patient reported statement whether they have accomplished less than they would like in the past 4 weeks as a result of emotional problems.",
+                            "id": "18._accomplished_less",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0074],0,/items[at0078]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0079",
+                                      "terminology": "local",
+                                      "description": "Yes",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0080",
+                                      "terminology": "local",
+                                      "description": "No",
+                                      "value": 2
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0078"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0074]/items[at0075]",
+                            "max": 1,
+                            "name": "17. Cut down time spent",
+                            "description": "Patient reported statement whether they have cut down the amount of time spent on work or other activities in the past 4 weeks as a result of emotional problems.",
+                            "id": "17._cut_down_time_spent",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0074],0,/items[at0075]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0076",
+                                      "terminology": "local",
+                                      "description": "Yes",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0077",
+                                      "terminology": "local",
+                                      "description": "No",
+                                      "value": 2
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0075"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0074]/items[at0081]",
+                            "max": 1,
+                            "name": "19. Didn't do work as carefully as usual",
+                            "description": "Patient reported statement whether they didn't do work or other activities as carefully as usual in the past 4 weeks as a result of emotional problems.",
+                            "id": "19._didn't_do_work_as_carefully_as_usual",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0074],0,/items[at0081]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0082",
+                                      "terminology": "local",
+                                      "description": "Yes",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0083",
+                                      "terminology": "local",
+                                      "description": "No",
+                                      "value": 2
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0081"
+                          }
+                        ],
+                        "name": "Problems with work and daily activities emotional",
+                        "description": "Patient reported problems with work or other regular daily activities as a result of emotional problems.",
+                        "id": "problems_with_work_and_daily_activities_emotional",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "at0074"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0014]",
+                        "max": 1,
+                        "name": "2. Health compared to 1 year ago",
+                        "description": "Patient reported rating of health in general now compared to one year ago.",
+                        "id": "2._health_compared_to_1_year_ago",
+                        "category": "ELEMENT",
+                        "type": "DV_ORDINAL",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0014]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "symbol",
+                                "type": "DV_CODED_TEXT"
+                              },
+                              {
+                                "attribute": "value",
+                                "type": "INT"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "symbol": [
+                                {
+                                  "code": "at0015",
+                                  "terminology": "local",
+                                  "description": "Much better",
+                                  "value": 1
+                                },
+                                {
+                                  "code": "at0016",
+                                  "terminology": "local",
+                                  "description": "Somewhat better",
+                                  "value": 2
+                                },
+                                {
+                                  "code": "at0017",
+                                  "terminology": "local",
+                                  "description": "About the same",
+                                  "value": 3
+                                },
+                                {
+                                  "code": "at0018",
+                                  "terminology": "local",
+                                  "description": "Somewhat worse",
+                                  "value": 4
+                                },
+                                {
+                                  "code": "at0019",
+                                  "terminology": "local",
+                                  "description": "Much worse",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            "type": "DV_ORDINAL"
+                          }
+                        ],
+                        "node_id": "at0014"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0084]",
+                        "max": 1,
+                        "name": "20. Extent of interference with normal social activities",
+                        "description": "Patient reported extent of physical health or emotional problems interfering with normal social activities with family, friends, neighbours or groups in the past 4 weeks.",
+                        "id": "20._extent_of_interference_with_normal_social_activities",
+                        "category": "ELEMENT",
+                        "type": "DV_ORDINAL",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0084]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "symbol",
+                                "type": "DV_CODED_TEXT"
+                              },
+                              {
+                                "attribute": "value",
+                                "type": "INT"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "symbol": [
+                                {
+                                  "code": "at0085",
+                                  "terminology": "local",
+                                  "description": "Not at all",
+                                  "value": 1
+                                },
+                                {
+                                  "code": "at0086",
+                                  "terminology": "local",
+                                  "description": "Slightly",
+                                  "value": 2
+                                },
+                                {
+                                  "code": "at0087",
+                                  "terminology": "local",
+                                  "description": "Moderately",
+                                  "value": 3
+                                },
+                                {
+                                  "code": "at0088",
+                                  "terminology": "local",
+                                  "description": "Quite a bit",
+                                  "value": 4
+                                },
+                                {
+                                  "code": "at0089",
+                                  "terminology": "local",
+                                  "description": "Extremely",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            "type": "DV_ORDINAL"
+                          }
+                        ],
+                        "node_id": "at0084"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0168]",
+                        "max": 1,
+                        "name": "32. Amount of time of interference with social activities",
+                        "description": "Patient reported assessment of how much of the time during the past 4 weeks their physical health or emotional problems have interfered with social activities.",
+                        "id": "32._amount_of_time_of_interference_with_social_activities",
+                        "category": "ELEMENT",
+                        "type": "DV_ORDINAL",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0168]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "symbol",
+                                "type": "DV_CODED_TEXT"
+                              },
+                              {
+                                "attribute": "value",
+                                "type": "INT"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "symbol": [
+                                {
+                                  "code": "at0169",
+                                  "terminology": "local",
+                                  "description": "All of the time",
+                                  "value": 1
+                                },
+                                {
+                                  "code": "at0170",
+                                  "terminology": "local",
+                                  "description": "Most of the time",
+                                  "value": 2
+                                },
+                                {
+                                  "code": "at0171",
+                                  "terminology": "local",
+                                  "description": "Some of the time",
+                                  "value": 3
+                                },
+                                {
+                                  "code": "at0172",
+                                  "terminology": "local",
+                                  "description": "A little of the time",
+                                  "value": 4
+                                },
+                                {
+                                  "code": "at0173",
+                                  "terminology": "local",
+                                  "description": "None of the time",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            "type": "DV_ORDINAL"
+                          }
+                        ],
+                        "node_id": "at0168"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0090]",
+                        "max": 1,
+                        "name": "21. Bodily pain",
+                        "description": "Patient report extent of bodily pain in past 4 weeks.",
+                        "id": "21._bodily_pain",
+                        "category": "ELEMENT",
+                        "type": "DV_ORDINAL",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0090]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "symbol",
+                                "type": "DV_CODED_TEXT"
+                              },
+                              {
+                                "attribute": "value",
+                                "type": "INT"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "symbol": [
+                                {
+                                  "code": "at0091",
+                                  "terminology": "local",
+                                  "description": "None",
+                                  "value": 1
+                                },
+                                {
+                                  "code": "at0092",
+                                  "terminology": "local",
+                                  "description": "Very mild",
+                                  "value": 2
+                                },
+                                {
+                                  "code": "at0093",
+                                  "terminology": "local",
+                                  "description": "Mild",
+                                  "value": 3
+                                },
+                                {
+                                  "code": "at0094",
+                                  "terminology": "local",
+                                  "description": "Moderate",
+                                  "value": 4
+                                },
+                                {
+                                  "code": "at0095",
+                                  "terminology": "local",
+                                  "description": "Severe",
+                                  "value": 5
+                                },
+                                {
+                                  "code": "at0096",
+                                  "terminology": "local",
+                                  "description": "Very severe",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            "type": "DV_ORDINAL"
+                          }
+                        ],
+                        "node_id": "at0090"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0061]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0061]/items[at0068]",
+                            "max": 1,
+                            "name": "15. Limited in kind of work",
+                            "description": "Patient reported statement whether they have been limited in the kind of work or other activities in the past 4 weeks as a result of physical health.",
+                            "id": "15._limited_in_kind_of_work",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0061],0,/items[at0068]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0069",
+                                      "terminology": "local",
+                                      "description": "Yes",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0070",
+                                      "terminology": "local",
+                                      "description": "No",
+                                      "value": 2
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0068"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0061]/items[at0065]",
+                            "max": 1,
+                            "name": "14. Accomplished less",
+                            "description": "Patient reported statement whether they have accomplished less than they would like in the past 4 weeks as a result of physical health.",
+                            "id": "14._accomplished_less",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0061],0,/items[at0065]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0066",
+                                      "terminology": "local",
+                                      "description": "Yes",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0067",
+                                      "terminology": "local",
+                                      "description": "No",
+                                      "value": 2
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0065"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0061]/items[at0071]",
+                            "max": 1,
+                            "name": "16. Difficulty performing work",
+                            "description": "Patient reported statement whether they have had difficulty in performing work or other activities in the past 4 weeks as a result of physical health.",
+                            "id": "16._difficulty_performing_work",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0061],0,/items[at0071]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0072",
+                                      "terminology": "local",
+                                      "description": "Yes",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0073",
+                                      "terminology": "local",
+                                      "description": "No",
+                                      "value": 2
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0071"
+                          }
+                        ],
+                        "name": "Problems with work and daily activities physical",
+                        "description": "Patient reported problems with work or other regular daily activities as a result of physical health.",
+                        "id": "problems_with_work_and_daily_activities_physical",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "at0061"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0008]",
+                        "max": 1,
+                        "name": "1. Health in general",
+                        "description": "Patient reported rating of general health.",
+                        "id": "1._health_in_general",
+                        "category": "ELEMENT",
+                        "type": "DV_ORDINAL",
+                        "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0008]}'",
+                        "constraints": [
+                          {
+                            "mandatory_attributes": [
+                              {
+                                "attribute": "symbol",
+                                "type": "DV_CODED_TEXT"
+                              },
+                              {
+                                "attribute": "value",
+                                "type": "INT"
+                              }
+                            ],
+                            "attribute_name": "value",
+                            "constraint": {
+                              "symbol": [
+                                {
+                                  "code": "at0009",
+                                  "terminology": "local",
+                                  "description": "Excellent",
+                                  "value": 1
+                                },
+                                {
+                                  "code": "at0010",
+                                  "terminology": "local",
+                                  "description": "Very good",
+                                  "value": 2
+                                },
+                                {
+                                  "code": "at0011",
+                                  "terminology": "local",
+                                  "description": "Good",
+                                  "value": 3
+                                },
+                                {
+                                  "code": "at0012",
+                                  "terminology": "local",
+                                  "description": "Fair",
+                                  "value": 4
+                                },
+                                {
+                                  "code": "at0013",
+                                  "terminology": "local",
+                                  "description": "Poor",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            "type": "DV_ORDINAL"
+                          }
+                        ],
+                        "node_id": "at0008"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0154]",
+                            "max": 1,
+                            "name": "30. Happy",
+                            "description": "Patient reported assessment of how much of the time during the past 4 weeks they have been a happy person.",
+                            "id": "30._happy",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0154]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0155",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0156",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0157",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0158",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0159",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0160",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0154"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0133]",
+                            "max": 1,
+                            "name": "27. A lot of energy",
+                            "description": "Patient reported assessment of how much of the time during the past 4 weeks they have had a lot of energy.",
+                            "id": "27._a_lot_of_energy",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0133]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0134",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0135",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0136",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0137",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0138",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0139",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0133"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0112]",
+                            "max": 1,
+                            "name": "24. Very nervous",
+                            "description": "Patient reported assessment of how much of the time they have been a very nervous person during the past 4 weeks.",
+                            "id": "24._very_nervous",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0112]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0113",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0114",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0115",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0116",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0117",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0118",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0112"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0147]",
+                            "max": 1,
+                            "name": "29. Worn out",
+                            "description": "Patient reported assessment of how much of the time during the past 4 weeks they have felt worn out.",
+                            "id": "29._worn_out",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0147]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0148",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0149",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0150",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0151",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0152",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0153",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0147"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0126]",
+                            "max": 1,
+                            "name": "26. Calm and peaceful",
+                            "description": "Patient reported assessment of how much of the time during the past 4 weeks they have felt calm and peaceful.",
+                            "id": "26._calm_and_peaceful",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0126]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0127",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0128",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0129",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0130",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0131",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0132",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0126"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0105]",
+                            "max": 1,
+                            "name": "23. Full of pep",
+                            "description": "Patient reported assessment of how much of the time in the past 4 weeks they have felt full of pep.",
+                            "id": "23._full_of_pep",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0105]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0106",
+                                      "terminology": "local",
+                                      "description": "All the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0107",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0108",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0109",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0110",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0111",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0105"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0119]",
+                            "max": 1,
+                            "name": "25. Down in the dumps",
+                            "description": "Patient reported assessment of how much of the time during the past 4 weeks they have felt so down in the dumps that nothing could cheer them up.",
+                            "id": "25._down_in_the_dumps",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0119]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0120",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0121",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0122",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0123",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0124",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0125",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0119"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0161]",
+                            "max": 1,
+                            "name": "31. Tired",
+                            "description": "Patient reported assessment of how much of the time during the past 4 weeks they have felt tired.",
+                            "id": "31._tired",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0161]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0162",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0163",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0164",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0165",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0166",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0167",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0161"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0104]/items[at0140]",
+                            "max": 1,
+                            "name": "28. Downhearted and blue",
+                            "description": "Patient reported assessment of how much of the time during the past 4 weeks they have felt downhearted and blue.",
+                            "id": "28._downhearted_and_blue",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0104],0,/items[at0140]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0141",
+                                      "terminology": "local",
+                                      "description": "All of the time",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0142",
+                                      "terminology": "local",
+                                      "description": "Most of the time",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0143",
+                                      "terminology": "local",
+                                      "description": "A good bit of the time",
+                                      "value": 3
+                                    },
+                                    {
+                                      "code": "at0144",
+                                      "terminology": "local",
+                                      "description": "Some of the time",
+                                      "value": 4
+                                    },
+                                    {
+                                      "code": "at0145",
+                                      "terminology": "local",
+                                      "description": "A little of the time",
+                                      "value": 5
+                                    },
+                                    {
+                                      "code": "at0146",
+                                      "terminology": "local",
+                                      "description": "None of the time",
+                                      "value": 6
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0140"
+                          }
+                        ],
+                        "name": "General feeling",
+                        "description": "Patient reported assessment of how they feel and how things have been during the past 4 weeks.",
+                        "id": "general_feeling",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "at0104"
+                      },
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0029]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0024]",
+                            "max": 1,
+                            "name": "4. Moderate activities",
+                            "description": "Patient reported extent of health-related limitations to moderate activities such as moving a table, pushing a vacuum cleaner, bowling or playing golf.",
+                            "id": "4._moderate_activities",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0029],0,/items[at0024]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0025",
+                                      "terminology": "local",
+                                      "description": "Yes, limited a lot",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0026",
+                                      "terminology": "local",
+                                      "description": "Yes, limited a little",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0027",
+                                      "terminology": "local",
+                                      "description": "No, not limited at all",
+                                      "value": 3
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0024"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0020]",
+                            "max": 1,
+                            "name": "3. Vigorous activities",
+                            "description": "Patient reported extent of health-related limitations to vigorous activities such as running, lifting heavy objects, participating in strenuous sports.",
+                            "id": "3._vigorous_activities",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0029],0,/items[at0020]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0021",
+                                      "terminology": "local",
+                                      "description": "Yes, limited a lot",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0022",
+                                      "terminology": "local",
+                                      "description": "Yes, limited a little",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0023",
+                                      "terminology": "local",
+                                      "description": "No, not limited at all",
+                                      "value": 3
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0020"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0028]",
+                            "max": 1,
+                            "name": "5. Lifting or carrying groceries",
+                            "description": "Patient reported extent of health-related limitations to lifting or carrying groceries.",
+                            "id": "5._lifting_or_carrying_groceries",
+                            "category": "ELEMENT",
+                            "type": "DV_ORDINAL",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.sf36.v0],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[at0029],0,/items[at0028]}'",
+                            "constraints": [
+                              {
+                                "mandatory_attributes": [
+                                  {
+                                    "attribute": "symbol",
+                                    "type": "DV_CODED_TEXT"
+                                  },
+                                  {
+                                    "attribute": "value",
+                                    "type": "INT"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "symbol": [
+                                    {
+                                      "code": "at0030",
+                                      "terminology": "local",
+                                      "description": "Yes, limited a lot",
+                                      "value": 1
+                                    },
+                                    {
+                                      "code": "at0031",
+                                      "terminology": "local",
+                                      "description": "Yes, limited a little",
+                                      "value": 2
+                                    },
+                                    {
+                                      "code": "at0032",
+                                      "terminology": "local",
+                                      "description": "No, not limited at all",
+                                      "value": 3
+                                    }
+                                  ]
+                                },
+                                "type": "DV_ORDINAL"
+                              }
+                            ],
+                            "node_id": "at0028"
+                          }
+                        ],
+                        "name": "Limitations to activities during typical day",
+                        "description": "Patient reported extent of limitations to activities during a typical day.",
+                        "id": "limitations_to_activities_during_typical_day",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "at0029"
+                      }
+                    ],
+                    "name": "Tree",
+                    "description": "@ internal @",
+                    "id": "tree",
+                    "type": "ITEM_TREE",
+                    "category": "DATA_STRUCTURE",
+                    "node_id": "at0003"
+                  },
+                  {
+                    "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/events[at0002]/time",
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "name": "Time",
+                    "attribute": "time",
+                    "occurrence": {
+                      "min": 1,
+                      "max_op": "<=",
+                      "min_op": ">=",
+                      "max": 1
+                    },
+                    "category": "ATTRIBUTE",
+                    "type": "DV_DATE_TIME"
+                  }
+                ],
+                "name": "Point in time",
+                "description": "A specific date and/or time which may be explicitly defined in a template or at run-time.",
+                "id": "point_in_time",
+                "type": "POINT_EVENT",
+                "category": "DATA_STRUCTURE",
+                "node_id": "at0002"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/data[at0001]/origin",
+                "mandatory_attributes": [
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "name": "Origin",
+                "attribute": "origin",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "DV_DATE_TIME"
+              }
+            ],
+            "name": "Event Series",
+            "description": "@ internal @",
+            "id": "event_series",
+            "type": "HISTORY",
+            "category": "DATA_STRUCTURE",
+            "node_id": "at0001"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/subject",
+            "mandatory_attributes": [
+              {
+                "attribute": "namespace",
+                "type": "STRING"
+              },
+              {
+                "attribute": "id",
+                "type": "OBJECT_ID"
+              },
+              {
+                "attribute": "type",
+                "type": "STRING"
+              }
+            ],
+            "name": "Subject",
+            "attribute": "subject",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "PARTY_PROXY"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/language",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Language",
+            "attribute": "language",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.sf36.v0]/encoding",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Encoding",
+            "attribute": "encoding",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          }
+        ],
+        "name": "SF-36",
+        "description": "36-Item Short Form Survey.",
+        "id": "sf_36",
+        "type": "OBSERVATION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-OBSERVATION.sf36.v0"
+      },
+      {
+        "min": 1,
+        "aql_path": "/context",
+        "max": 1,
+        "children": [
+          {
+            "min": 1,
+            "aql_path": "/context/other_context[at0001]",
+            "max": 1,
+            "children": [
+              {
+                "min": 0,
+                "aql_path": "/context/other_context[at0001]/items[at0005]",
+                "max": 1,
+                "name": "ECIS procedure link",
+                "description": "The status of the entire report. Note: This is not the status of any of the report components.",
+                "id": "ecis_procedure_link",
+                "category": "ELEMENT",
+                "type": "DV_TEXT",
+                "ethercis_sql": "\"ehr\".\"event_context\".\"other_context\"->('/context/other_context[at0001]') #>> '{/context,/other_context[at0001],/items[at0005]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  },
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "name",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  }
+                ],
+                "node_id": "at0005"
+              },
+              {
+                "min": 0,
+                "aql_path": "/context/other_context[at0001]/items[at0002]",
+                "max": 1,
+                "name": "PROMS type",
+                "description": "Identification information about the report.",
+                "id": "proms_type",
+                "category": "ELEMENT",
+                "type": "DV_TEXT",
+                "ethercis_sql": "\"ehr\".\"event_context\".\"other_context\"->('/context/other_context[at0001]') #>> '{/context,/other_context[at0001],/items[at0002]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  },
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "name",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  }
+                ],
+                "node_id": "at0002"
+              }
+            ],
+            "name": "Tree",
+            "description": "@ internal @",
+            "id": "tree",
+            "type": "ITEM_TREE",
+            "category": "DATA_STRUCTURE",
+            "node_id": "at0001"
+          },
+          {
+            "aql_path": "/context/start_time",
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "StartTime",
+            "attribute": "start_time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/context/setting",
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Setting",
+            "attribute": "setting",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_CODED_TEXT"
+          }
+        ],
+        "type": "EVENT_CONTEXT",
+        "category": "DATA_STRUCTURE"
+      },
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]",
+        "max": 1,
+        "children": [
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0035",
+                  "terminology": "local",
+                  "description": "This pathway step has been deprecated as it was incorrectly associated with 'initial' status - use the new 'Procedure request sent' (at0007) pathway step  which is correctly associated with 'planned' status.",
+                  "value": "X - Procedure request sent"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "524",
+                  "terminology": "openehr",
+                  "value": "initial"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0007",
+                  "terminology": "local",
+                  "description": "Request for procedure sent.",
+                  "value": "Procedure request sent"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "526",
+                  "terminology": "openehr",
+                  "value": "planned"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "531",
+                      "terminology": "openehr",
+                      "value": "aborted"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0041",
+                      "terminology": "local",
+                      "description": "The procedure has been aborted.",
+                      "value": "Procedure aborted"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0039",
+                  "terminology": "local",
+                  "description": "The planned procedure has been cancelled prior to commencement.",
+                  "value": "Procedure cancelled"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0043",
+                  "terminology": "local",
+                  "description": "The procedure has been performed and all associated clinical activities completed.",
+                  "value": "Procedure completed"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "532",
+                  "terminology": "openehr",
+                  "value": "completed"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "532",
+                      "terminology": "openehr",
+                      "value": "completed"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0043",
+                      "terminology": "local",
+                      "description": "The procedure has been performed and all associated clinical activities completed.",
+                      "value": "Procedure completed"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "526",
+                  "terminology": "openehr",
+                  "value": "planned"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "524",
+                      "terminology": "openehr",
+                      "value": "initial"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0035",
+                      "terminology": "local",
+                      "description": "This pathway step has been deprecated as it was incorrectly associated with 'initial' status - use the new 'Procedure request sent' (at0007) pathway step  which is correctly associated with 'planned' status.",
+                      "value": "X - Procedure request sent"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "245",
+                  "terminology": "openehr",
+                  "value": "active"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0047",
+                  "terminology": "local",
+                  "description": "The procedure, or subprocedure in a multicomponent procedure, has been performed.",
+                  "value": "Procedure performed"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0068",
+                  "terminology": "local",
+                  "description": "The procedure, or subprocedure in a multicomponent procedure, has been commenced.",
+                  "value": "Procedure commenced"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "245",
+                      "terminology": "openehr",
+                      "value": "active"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0047",
+                      "terminology": "local",
+                      "description": "The procedure, or subprocedure in a multicomponent procedure, has been performed.",
+                      "value": "Procedure performed"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "524",
+                  "terminology": "openehr",
+                  "value": "initial"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0004",
+                  "terminology": "local",
+                  "description": "The procedure to be undertaken is planned.",
+                  "value": "Procedure planned"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "528",
+                      "terminology": "openehr",
+                      "value": "cancelled"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0039",
+                      "terminology": "local",
+                      "description": "The planned procedure has been cancelled prior to commencement.",
+                      "value": "Procedure cancelled"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "245",
+                  "terminology": "openehr",
+                  "value": "active"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0034",
+                  "terminology": "local",
+                  "description": "This pathway step has been deprecated as it was incorrectly associated with 'initial' status - use the new 'Procedure planned' (at0004) pathway step  which is correctly associated with 'planned' status.",
+                  "value": "X - Procedure planned"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "526",
+                      "terminology": "openehr",
+                      "value": "planned"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0007",
+                      "terminology": "local",
+                      "description": "Request for procedure sent.",
+                      "value": "Procedure request sent"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "527",
+                  "terminology": "openehr",
+                  "value": "postponed"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0038",
+                  "terminology": "local",
+                  "description": "The procedure has been postponed.",
+                  "value": "Procedure postponed"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "531",
+                  "terminology": "openehr",
+                  "value": "aborted"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0041",
+                  "terminology": "local",
+                  "description": "The procedure has been aborted.",
+                  "value": "Procedure aborted"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "528",
+                  "terminology": "openehr",
+                  "value": "cancelled"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "530",
+                      "terminology": "openehr",
+                      "value": "suspended"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0040",
+                      "terminology": "local",
+                      "description": "The procedure has been suspended.",
+                      "value": "Procedure suspended"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "530",
+                  "terminology": "openehr",
+                  "value": "suspended"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "min": 1,
+            "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/description[at0001]",
+            "max": 1,
+            "children": [
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/description[at0001]/items[at0005]",
+                "max": 1,
+                "name": "Comment",
+                "description": "Additional narrative about the activity or care pathway step not captured in other fields.",
+                "id": "comment",
+                "category": "ELEMENT",
+                "type": "DV_TEXT",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.procedure.v1],0,/description[at0001],/items[at0005]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  }
+                ],
+                "node_id": "at0005"
+              },
+              {
+                "min": 1,
+                "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/description[at0001]/items[at0002]",
+                "max": 1,
+                "name": "Procedure name",
+                "description": "Identification of the procedure by name.",
+                "id": "procedure_name",
+                "category": "ELEMENT",
+                "type": "DV_TEXT",
+                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-ACTION.procedure.v1],0,/description[at0001],/items[at0002]}'",
+                "constraints": [
+                  {
+                    "mandatory_attributes": [
+                      {
+                        "attribute": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "attribute_name": "value",
+                    "constraint": {
+                      "occurrence": {
+                        "min": 1,
+                        "max_op": "<=",
+                        "min_op": ">=",
+                        "max": 1
+                      }
+                    },
+                    "type": "DV_TEXT"
+                  }
+                ],
+                "node_id": "at0002"
+              }
+            ],
+            "name": "Tree",
+            "description": "@ internal @",
+            "id": "tree",
+            "type": "ITEM_TREE",
+            "category": "DATA_STRUCTURE",
+            "node_id": "at0001"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "524",
+                      "terminology": "openehr",
+                      "value": "initial"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0034",
+                      "terminology": "local",
+                      "description": "This pathway step has been deprecated as it was incorrectly associated with 'initial' status - use the new 'Procedure planned' (at0004) pathway step  which is correctly associated with 'planned' status.",
+                      "value": "X - Procedure planned"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0040",
+                  "terminology": "local",
+                  "description": "The procedure has been suspended.",
+                  "value": "Procedure suspended"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "526",
+                      "terminology": "openehr",
+                      "value": "planned"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0004",
+                      "terminology": "local",
+                      "description": "The procedure to be undertaken is planned.",
+                      "value": "Procedure planned"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "527",
+                      "terminology": "openehr",
+                      "value": "postponed"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0038",
+                      "terminology": "local",
+                      "description": "The procedure has been postponed.",
+                      "value": "Procedure postponed"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "245",
+                      "terminology": "openehr",
+                      "value": "active"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0068",
+                      "terminology": "local",
+                      "description": "The procedure, or subprocedure in a multicomponent procedure, has been commenced.",
+                      "value": "Procedure commenced"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "attribute_name": "ism_transition",
+            "constraint": {
+              "current_state": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "529",
+                      "terminology": "openehr",
+                      "value": "scheduled"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "current_state",
+                "type": "DV_CODED_TEXT"
+              },
+              "careflow_step": {
+                "mandatory_attributes": [
+                  {
+                    "attribute": "defining_code",
+                    "type": "CODE_PHRASE"
+                  },
+                  {
+                    "attribute": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "constraint": {
+                  "defining_code": [
+                    {
+                      "code_string": "at0036",
+                      "terminology": "local",
+                      "description": "The procedure has been scheduled.",
+                      "value": "Procedure scheduled"
+                    }
+                  ],
+                  "occurrence": {
+                    "min": 1,
+                    "max_op": "<=",
+                    "min_op": ">=",
+                    "max": 1
+                  }
+                },
+                "attribute_name": "careflow_step",
+                "type": "DV_CODED_TEXT"
+              },
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "529",
+                  "terminology": "openehr",
+                  "value": "scheduled"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "current_state",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "constraint": {
+              "defining_code": [
+                {
+                  "code_string": "at0036",
+                  "terminology": "local",
+                  "description": "The procedure has been scheduled.",
+                  "value": "Procedure scheduled"
+                }
+              ],
+              "occurrence": {
+                "min": 1,
+                "max_op": "<=",
+                "min_op": ">=",
+                "max": 1
+              }
+            },
+            "attribute_name": "careflow_step",
+            "type": "DV_CODED_TEXT"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/ism_transition",
+            "mandatory_attributes": [
+              {
+                "attribute": "current_state",
+                "type": "DV_CODED_TEXT"
+              }
+            ],
+            "name": "IsmTransition",
+            "attribute": "ism_transition",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "ISM_TRANSITION"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/subject",
+            "mandatory_attributes": [
+              {
+                "attribute": "namespace",
+                "type": "STRING"
+              },
+              {
+                "attribute": "id",
+                "type": "OBJECT_ID"
+              },
+              {
+                "attribute": "type",
+                "type": "STRING"
+              }
+            ],
+            "name": "Subject",
+            "attribute": "subject",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "PARTY_PROXY"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/language",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Language",
+            "attribute": "language",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/time",
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Time",
+            "attribute": "time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-ACTION.procedure.v1]/encoding",
+            "mandatory_attributes": [
+              {
+                "attribute": "code_string",
+                "type": "STRING"
+              },
+              {
+                "attribute": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Encoding",
+            "attribute": "encoding",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          }
+        ],
+        "name": "Procedure",
+        "description": "A clinical activity carried out for screening, investigative, diagnostic, curative, therapeutic, evaluative or palliative purposes.",
+        "id": "procedure",
+        "type": "ACTION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-ACTION.procedure.v1"
+      },
+      {
+        "aql_path": "/composer",
+        "mandatory_attributes": [
+          {
+            "attribute": "namespace",
+            "type": "STRING"
+          },
+          {
+            "attribute": "id",
+            "type": "OBJECT_ID"
+          },
+          {
+            "attribute": "type",
+            "type": "STRING"
+          }
+        ],
+        "name": "Composer",
+        "attribute": "composer",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "PARTY_PROXY"
+      },
+      {
+        "aql_path": "/language",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Language",
+        "attribute": "language",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "aql_path": "/category",
+        "mandatory_attributes": [
+          {
+            "attribute": "defining_code",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "attribute": "value",
+            "type": "STRING"
+          }
+        ],
+        "name": "Category",
+        "attribute": "category",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "DV_CODED_TEXT"
+      },
+      {
+        "aql_path": "/territory",
+        "mandatory_attributes": [
+          {
+            "attribute": "code_string",
+            "type": "STRING"
+          },
+          {
+            "attribute": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Territory",
+        "attribute": "territory",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "min": 1,
+        "aql_path": "/context",
+        "max": 1,
+        "children": [
+          {
+            "aql_path": "/context/start_time",
+            "mandatory_attributes": [
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "StartTime",
+            "attribute": "start_time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/context/setting",
+            "mandatory_attributes": [
+              {
+                "attribute": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "attribute": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Setting",
+            "attribute": "setting",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_CODED_TEXT"
+          }
+        ],
+        "rm_type": "EVENT_CONTEXT",
+        "attribute": "context",
+        "node_id": ""
+      }
+    ],
+    "name": "Generic PROMS",
+    "description": "Document to communicate information to others, commonly in response to a request from another party.",
+    "id": "generic_proms",
+    "type": "COMPOSITION",
+    "category": "DATA_STRUCTURE",
+    "node_id": "openEHR-EHR-COMPOSITION.report.v1"
+  },
+  "template_id": "Ripple Generic PROMS.v0",
+  "default_language": "en"
+}

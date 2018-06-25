@@ -9602,6 +9602,12 @@ button.close {
 .wrap-control-group.hide-indent-bottom {
   margin-bottom: -5px; }
 
+.buttoned-control-group {
+  margin-top: 23px;
+  z-index: 9999;
+  position: absolute;
+  right: 10px; }
+
 .control-group {
   margin-right: -5px; }
   .control-group > * {
@@ -11476,6 +11482,9 @@ select.textarea-big,
 .rc-slider-indent {
   padding: 0 10px; }
 
+.rc-slider-- {
+  height: 30px; }
+
 .rc-slider--warning {
   height: 30px; }
   .rc-slider--warning .rc-slider-track {
@@ -11495,6 +11504,9 @@ select.textarea-big,
   .rc-slider--warning .rc-slider-handle:hover {
     border-color: #ffbf00; }
 
+.rc-slider-- {
+  height: 30px; }
+
 .rc-slider--danger {
   height: 30px; }
   .rc-slider--danger .rc-slider-track {
@@ -11513,6 +11525,9 @@ select.textarea-big,
     box-shadow: 0 0 0 #ff7373; }
   .rc-slider--danger .rc-slider-handle:hover {
     border-color: #ff2626; }
+
+.rc-slider-- {
+  height: 30px; }
 
 .rc-slider--success {
   height: 30px; }
@@ -18785,8 +18800,6 @@ body.themeLeedsPHR { }
     color: #000000; }
   body.themeLeedsPHR {
     font-family: 'Roboto', sans-serif; }
-  body.themeLeedsPHR .main {
-    border-top: 6px solid #d3d3d3; }
   body.themeLeedsPHR .panel.panel-default {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.21); }
   body.themeLeedsPHR .panel.panel-primary {

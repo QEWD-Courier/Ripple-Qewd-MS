@@ -1,0 +1,133 @@
+{
+  "uid": "{{uid}}",
+  "composer": {
+    "value": "{{composer}}"
+  },
+  "host": "{{host}}",
+  "patientId": "{{patientId}}",
+  "pain_vas": {
+    "pain_vas": {
+      "pain_scale": {
+        "value": "{{pain_scale}}"
+      }
+    }
+  },
+  "sf_36": {
+    "22_pain_interfering_with_normal_work": {
+      "value": "{{22_pain_interfering_with_normal_work}}"
+    },
+    "general_health_statements": {
+      "35_expect_health_to_get_worse": {
+        "value": "{{35_expect_health_to_get_worse}}"
+      },
+      "33_get_sick_easier_than_other_people": {
+        "value": "{{33_get_sick_easier_than_other_people}}"
+      },
+      "36_health_is_excellent": {
+        "value": "{{36_health_is_excellent}}"
+      },
+      "34_as_healthy_as_anybody": {
+        "value": "{{34_as_healthy_as_anybody}}"
+      }
+    },
+    "problems_with_work_and_daily_activities_emotional": {
+      "18_accomplished_less": {
+        "value": "{{18_accomplished_less}}"
+      },
+      "17_cut_down_time_spent": {
+        "value": "{{17_cut_down_time_spent}}"
+      },
+      "19_didn't_do_work_as_carefully_as_usual": {
+        "value": "{{19_didn't_do_work_as_carefully_as_usual}}"
+      }
+    },
+    "2_health_compared_to_1_year_ago": {
+      "value": "{{2_health_compared_to_1_year_ago}}"
+    },
+    "20_extent_of_interference_with_normal_social_activities": {
+      "value": "{{20_extent_of_interference_with_normal_social_activities}}"
+    },
+    "32_amount_of_time_of_interference_with_social_activities": {
+      "value": "{{32_amount_of_time_of_interference_with_social_activities}}"
+    },
+    "21_bodily_pain": {
+      "value": "{{21_bodily_pain}}"
+    },
+    "problems_with_work_and_daily_activities_physical": {
+      "15_limited_in_kind_of_work": {
+        "value": "{{15_limited_in_kind_of_work}}"
+      },
+      "14_accomplished_less": {
+        "value": "{{14_accomplished_less}}"
+      },
+      "16_difficulty_performing_work": {
+        "value": "{{16_difficulty_performing_work}}"
+      }
+    },
+    "1_health_in_general": {
+      "value": "{{1_health_in_general}}"
+    },
+    "general_feeling": {
+      "30_happy": {
+        "value": "{{30_happy}}"
+      },
+      "27_a_lot_of_energy": {
+        "value": "{{27_a_lot_of_energy}}"
+      },
+      "24_very_nervous": {
+        "value": "{{24_very_nervous}}"
+      },
+      "29_worn_out": {
+        "value": "{{29_worn_out}}"
+      },
+      "26_calm_and_peaceful": {
+        "value": "{{26_calm_and_peaceful}}"
+      },
+      "23_full_of_pep": {
+        "value": "{{23_full_of_pep}}"
+      },
+      "25_down_in_the_dumps": {
+        "value": "{{25_down_in_the_dumps}}"
+      },
+      "31_tired": {
+        "value": "{{31_tired}}"
+      },
+      "28_downhearted_and_blue": {
+        "value": "{{28_downhearted_and_blue}}"
+      }
+    },
+    "limitations_to_activities_during_typical_day": {
+      "4_moderate_activities": {
+        "value": "{{4_moderate_activities}}"
+      },
+      "3_vigorous_activities": {
+        "value": "{{3_vigorous_activities}}"
+      },
+      "5_lifting_or_carrying_groceries": {
+        "value": "{{5_lifting_or_carrying_groceries}}"
+      }
+    }
+  },
+  "ecis_procedure_link": {
+    "value": "{{ecis_procedure_link}}",
+    "code": "{{ecis_procedure_link_codeString}}",
+    "terminology": "{{ecis_procedure_link_terminology}}"
+  },
+  "proms_type": {
+    "value": "{{proms_type}}",
+    "code": "{{proms_type_codeString}}",
+    "terminology": "{{proms_type_terminology}}"
+  },
+  "procedure": {
+    "comment": {
+      "value": "{{comment}}",
+      "code": "{{comment_codeString}}",
+      "terminology": "{{comment_terminology}}"
+    },
+    "procedure_name": {
+      "value": "{{procedure_name}}",
+      "code": "{{procedure_name_codeString}}",
+      "terminology": "{{procedure_name_terminology}}"
+    }
+  }
+}

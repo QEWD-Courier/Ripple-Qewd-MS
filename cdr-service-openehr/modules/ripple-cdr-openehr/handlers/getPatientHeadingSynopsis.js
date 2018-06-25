@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  3 May 2018
+  29 May 2018
 
 */
 
@@ -76,6 +76,25 @@ function patientHeadingSynopsis(args, finished) {
   var heading = args.heading;
 
   if (!heading || heading === '') return finished({error: 'Heading missing or empty'});
+
+  var synopsis = [];
+  if (heading === 'top3Things') {
+    var data = getTop3ThingsSummary.call(this, patientId);
+    console.log('** top3Things data = ' + JSON.stringify(data));
+    if (data.length !== 0) {
+      var summary = data[0];
+      synopsis = [
+        {sourceId: summary.sourceId, text: summary.name1},
+        {sourceId: summary.sourceId, text: summary.name2},
+        {sourceId: summary.sourceId, text: summary.name3},
+      ];
+    }
+
+    return finished({
+      heading: heading,
+      synopsis: synopsis
+    });
+  }
 
   if (!tools.isHeadingValid.call(this, heading)) {
     console.log('*** ' + heading + ' has not yet been added to middle-tier processing');

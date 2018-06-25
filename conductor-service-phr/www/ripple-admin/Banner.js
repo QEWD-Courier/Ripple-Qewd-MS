@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 February 2018
+  12 June 2018
 
 */
 
@@ -45,20 +45,29 @@ var Banner = createReactClass({
     this.controller = require('./controller-Banner')(this.props.controller, this);
   },
 
+  componentWillReceiveProps: function(newProps) {
+    this.onNewProps(newProps);
+  },
+
   render: function() {
-    //console.log('render Banner');
+    console.log('render Banner: this.controller.userMode = ' + this.controller.userMode);
     //this.props.controller.updateComponentPath(this);
 
 
     var navItems = [];
     var navItem;
     var count = 0;
+    var disabled = false;
+    var self = this;
     this.navs.forEach(function(nav) {
+
+      if (self.controller.userMode !== 'admin' && nav.disabled === 'dynamic') disabled = true;
 
       navItem = (
         <NavItem
           eventKey = {nav.eventKey}
           key = {count}
+          disabled = {disabled}
         >
           {nav.text}
         </NavItem>

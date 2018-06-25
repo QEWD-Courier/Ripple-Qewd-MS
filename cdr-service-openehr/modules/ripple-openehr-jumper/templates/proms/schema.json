@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Ripple Generic PROMS.v0",
+  "description": "Data Entry Schema for OpenEHR Template Ripple Generic PROMS.v0",
+  "type": "object",
+  "properties": {
+    "pain_vas": {
+      "type": "object",
+      "properties": {
+        "pain_vas": {
+          "type": "object",
+          "properties": {
+            "pain_scale": {
+              "description": "Pain scale",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "sf_36": {
+      "type": "object",
+      "properties": {
+        "22_pain_interfering_with_normal_work": {
+          "description": "22. Pain interfering with normal work",
+          "type": "string",
+          "minLength": 1
+        },
+        "general_health_statements": {
+          "type": "object",
+          "properties": {
+            "35_expect_health_to_get_worse": {
+              "description": "35. Expect health to get worse",
+              "type": "string",
+              "minLength": 1
+            },
+            "33_get_sick_easier_than_other_people": {
+              "description": "33. Get sick easier than other people",
+              "type": "string",
+              "minLength": 1
+            },
+            "36_health_is_excellent": {
+              "description": "36. Health is excellent",
+              "type": "string",
+              "minLength": 1
+            },
+            "34_as_healthy_as_anybody": {
+              "description": "34. As healthy as anybody",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "problems_with_work_and_daily_activities_emotional": {
+          "type": "object",
+          "properties": {
+            "18_accomplished_less": {
+              "description": "18. Accomplished less",
+              "type": "string",
+              "minLength": 1
+            },
+            "17_cut_down_time_spent": {
+              "description": "17. Cut down time spent",
+              "type": "string",
+              "minLength": 1
+            },
+            "19_didn't_do_work_as_carefully_as_usual": {
+              "description": "19. Didn't do work as carefully as usual",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "2_health_compared_to_1_year_ago": {
+          "description": "2. Health compared to 1 year ago",
+          "type": "string",
+          "minLength": 1
+        },
+        "20_extent_of_interference_with_normal_social_activities": {
+          "description": "20. Extent of interference with normal social activities",
+          "type": "string",
+          "minLength": 1
+        },
+        "32_amount_of_time_of_interference_with_social_activities": {
+          "description": "32. Amount of time of interference with social activities",
+          "type": "string",
+          "minLength": 1
+        },
+        "21_bodily_pain": {
+          "description": "21. Bodily pain",
+          "type": "string",
+          "minLength": 1
+        },
+        "problems_with_work_and_daily_activities_physical": {
+          "type": "object",
+          "properties": {
+            "15_limited_in_kind_of_work": {
+              "description": "15. Limited in kind of work",
+              "type": "string",
+              "minLength": 1
+            },
+            "14_accomplished_less": {
+              "description": "14. Accomplished less",
+              "type": "string",
+              "minLength": 1
+            },
+            "16_difficulty_performing_work": {
+              "description": "16. Difficulty performing work",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "1_health_in_general": {
+          "description": "1. Health in general",
+          "type": "string",
+          "minLength": 1
+        },
+        "general_feeling": {
+          "type": "object",
+          "properties": {
+            "30_happy": {
+              "description": "30. Happy",
+              "type": "string",
+              "minLength": 1
+            },
+            "27_a_lot_of_energy": {
+              "description": "27. A lot of energy",
+              "type": "string",
+              "minLength": 1
+            },
+            "24_very_nervous": {
+              "description": "24. Very nervous",
+              "type": "string",
+              "minLength": 1
+            },
+            "29_worn_out": {
+              "description": "29. Worn out",
+              "type": "string",
+              "minLength": 1
+            },
+            "26_calm_and_peaceful": {
+              "description": "26. Calm and peaceful",
+              "type": "string",
+              "minLength": 1
+            },
+            "23_full_of_pep": {
+              "description": "23. Full of pep",
+              "type": "string",
+              "minLength": 1
+            },
+            "25_down_in_the_dumps": {
+              "description": "25. Down in the dumps",
+              "type": "string",
+              "minLength": 1
+            },
+            "31_tired": {
+              "description": "31. Tired",
+              "type": "string",
+              "minLength": 1
+            },
+            "28_downhearted_and_blue": {
+              "description": "28. Downhearted and blue",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "limitations_to_activities_during_typical_day": {
+          "type": "object",
+          "properties": {
+            "4_moderate_activities": {
+              "description": "4. Moderate activities",
+              "type": "string",
+              "minLength": 1
+            },
+            "3_vigorous_activities": {
+              "description": "3. Vigorous activities",
+              "type": "string",
+              "minLength": 1
+            },
+            "5_lifting_or_carrying_groceries": {
+              "description": "5. Lifting or carrying groceries",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "ecis_procedure_link": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "ECIS procedure link value",
+          "type": "string",
+          "minLength": 1
+        },
+        "code": {
+          "description": "ECIS procedure link code",
+          "type": "string",
+          "minLength": 1
+        },
+        "terminology": {
+          "description": "ECIS procedure link terminology",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "proms_type": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "PROMS type value",
+          "type": "string",
+          "minLength": 1
+        },
+        "code": {
+          "description": "PROMS type code",
+          "type": "string",
+          "minLength": 1
+        },
+        "terminology": {
+          "description": "PROMS type terminology",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "procedure": {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Comment value",
+              "type": "string",
+              "minLength": 1
+            },
+            "code": {
+              "description": "Comment code",
+              "type": "string",
+              "minLength": 1
+            },
+            "terminology": {
+              "description": "Comment terminology",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "procedure_name": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Procedure name value",
+              "type": "string",
+              "minLength": 1
+            },
+            "code": {
+              "description": "Procedure name code",
+              "type": "string",
+              "minLength": 1
+            },
+            "terminology": {
+              "description": "Procedure name terminology",
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "value"
+          ]
+        }
+      }
+    }
+  }
+}

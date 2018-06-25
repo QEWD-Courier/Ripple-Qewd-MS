@@ -28,9 +28,14 @@
           }
         },
         "series_number": {
-          "description": "Series number",
-          "type": "string",
-          "minLength": 1
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Series number value",
+              "type": "number",
+              "minLength": 1
+            }
+          }
         },
         "comment": {
           "type": "object",
@@ -73,15 +78,25 @@
           }
         },
         "ism_transition": {
-          "description": "IsmTransition",
-          "type": "string",
-          "minLength": 1
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "IsmTransition value",
+              "type": "string",
+              "minLength": 1
+            }
+          }
         },
         "time": {
-          "description": "Time",
-          "type": "string",
-          "minLength": 1,
-          "format": "date-time"
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Time value",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            }
+          }
         }
       }
     },
@@ -106,9 +121,14 @@
       }
     },
     "territory": {
-      "description": "Territory",
-      "type": "string",
-      "minLength": 1
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Territory value",
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

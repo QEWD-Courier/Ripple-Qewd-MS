@@ -151,9 +151,14 @@
               }
             },
             "is_next_of_kin": {
-              "description": "Is next of kin?",
-              "type": "boolean",
-              "minLength": 1
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Is next of kin? value",
+                  "type": "boolean",
+                  "minLength": 1
+                }
+              }
             },
             "relationship_category": {
               "type": "object",
@@ -161,7 +166,7 @@
                 "value": {
                   "description": "Relationship category value",
                   "type": "string",
-                  "minLength": 1
+                  "minLength": 0
                 },
                 "code": {
                   "description": "Relationship category code",
@@ -220,9 +225,14 @@
       }
     },
     "territory": {
-      "description": "Territory",
-      "type": "string",
-      "minLength": 1
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Territory value",
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

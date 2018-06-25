@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  1 May 2018
+  22 June 2018
 
 */
 
@@ -68,7 +68,8 @@ module.exports = function(params, callback) {
   //  saving data using Jumper instead
 
   var heading = params.heading;
-  var data = params.data;
+  var data = params.data.data;
+  var format = params.data.format;
 
   initialise.call(this);
 
@@ -81,11 +82,18 @@ module.exports = function(params, callback) {
     }
   }
   var headingPath = jumperModules[heading].path;
-  if (!jumperModules[heading].pulsetile_to_openehr) {
-    jumperModules[heading].pulsetile_to_openehr = require(headingPath + '/Pulsetile_to_OpenEHR.json');
+  var openEHRFormatData;
+
+  if (format === 'pulsetile') {
+    if (!jumperModules[heading].pulsetile_to_openehr) {
+      jumperModules[heading].pulsetile_to_openehr = require(headingPath + '/Pulsetile_to_OpenEHR.json');
+    }
+    var template = jumperModules[heading].pulsetile_to_openehr;
+    openEHRFormatData = transform(template, data, helpers);
   }
-  var template = jumperModules[heading].pulsetile_to_openehr;
-  var openEHRFormatData = transform(template, data, helpers);
+  else {
+    openEHRFormatData = data;
+  }
   console.log('openEHRFormatData = ' + JSON.stringify(openEHRFormatData, null, 2));
 
   // validate against JSON schema
@@ -102,7 +110,7 @@ module.exports = function(params, callback) {
 
   // if any errors, finish
 
-  console.log('validation results: ' + JSON.stringify(results));
+  console.log('\nvalidation results: ' + JSON.stringify(results) + '\n');
 
   if (results.errors && results.errors.length > 0) {
     var errors = '';

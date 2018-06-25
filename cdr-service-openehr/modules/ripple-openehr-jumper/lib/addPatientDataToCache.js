@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  30 April 2018
+  5 June 2018
 
 */
 
@@ -60,6 +60,7 @@ function addPatientDataToCache(results, patientId, host, heading, qewdSession) {
     cacheBySourceId.$('heading').value = heading;
     cacheBySourceId.$('patientId').value = patientId;
     cacheBySourceId.$('uid').value = result.uid;
+    cacheBySourceId.$('host').value = host;
     cacheBySourceId.$('jumperFormatData').setDocument(result);
     cacheBySourceId.$('data').delete(); // temporary - get rid of standard data cache
   });

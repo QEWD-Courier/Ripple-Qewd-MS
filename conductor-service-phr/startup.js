@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  9 May 2018
+  20 June 2018
 
 */
 
@@ -67,6 +67,8 @@ function onStarted() {
     });
   }
 
+  /*
+
   // set up timed event to dump out documents to a text file
 
   var self = this;
@@ -90,6 +92,8 @@ function onStarted() {
     console.log('Stopping dumpDocumentsTimer');
     clearInterval(self.dumpDocumentsTimer);
   });
+
+  */
 
   var now = Math.floor(Date.now()/1000);
   var timeout = this.userDefined.config.initialSessionTimeout;

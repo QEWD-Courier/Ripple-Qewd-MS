@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  19 February 2018
+  12 June 2018
 
 */
 
@@ -32,7 +32,7 @@ var reactLoader = require('qewd-react').loader;
 
 var params = {
   applicationName: 'ripple-admin',
-  no_sockets: true,
+  //no_sockets: true,
   MainPage: require('./MainPage'),
   log: true,
   config: {
@@ -56,6 +56,16 @@ var params = {
           title: 'Administrator Portal',
           bsStyle: 'warning',
           contentComponent: require('./AdminPortal')
+        }
+      },
+      {
+        text: 'OpenEHR',
+        eventKey: 'openehr',
+        disabled: 'dynamic',
+        panel: {
+          title: 'OpenEHR Maintenance',
+          bsStyle: 'warning',
+          contentComponent: require('./OpenEHRMaint')
         }
       }
     ],

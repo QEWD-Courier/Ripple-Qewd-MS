@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 March 2018
+  29 May 2018
 
 */
 
@@ -49,6 +49,9 @@ module.exports = function(args, finished) {
   }
 
   var demographics = patient.getDocument();
+
+  demographics.telephone = demographics.phone + '';
+  delete demographics.phone;
 
   finished({
     demographics: demographics

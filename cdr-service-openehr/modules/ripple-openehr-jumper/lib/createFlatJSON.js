@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  1 May 2018
+  4 June 2018
 
 */
 
@@ -150,6 +150,12 @@ function getPaths(obj, path, paths, host) {
           path: currentPath + '|terminology'
         });
       }
+      else if (type === 'ISM_TRANSITION') {
+        paths.push({
+          id: getSource(currentPath, 'value'),
+          path: currentPath + '/current_state|code'
+        });
+      }
       else {
         paths.push({
           id: getSource(currentPath),
@@ -226,8 +232,12 @@ function createFlatJSONTemplate(metaDataArray) {
       paths[flatJson + '|code'] = '=> either(' + path + '.code, <!delete>)';
       paths[flatJson + '|terminology'] = '=> either(' + path + '.terminology, <!delete>)';
     }
+    else if (type === 'ISM_TRANSITION') {
+      paths[flatJson + '/current_state|code'] = '=> either(' + path + '.value, <!delete>)';
+    }
     else {
-      paths[flatJson] = '=> either(' + path + ', <!delete>)';
+      //paths[flatJson] = '=> either(' + path + ', <!delete>)';
+      paths[flatJson] = '=> either(' + path + '.value, <!delete>)';
     }
 
   });

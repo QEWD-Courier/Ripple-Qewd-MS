@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  22 June 2018
 
 */
 
@@ -54,8 +54,18 @@ function postPatientHeading(args, finished) {
   }
 
   var session = args.req.qewdSession;
+  var data = {
+    data: body
+  };
 
-  postHeading.call(this, patientId, heading, body, session, function(response) {
+  if (args.req.query && args.req.query.format === 'openehr-jumper') {
+    data.format = 'openehr-jumper';
+  }
+  else {
+    data.format = 'pulsetile';
+  }
+
+  postHeading.call(this, patientId, heading, data, session, function(response) {
     finished(response);
   });
 

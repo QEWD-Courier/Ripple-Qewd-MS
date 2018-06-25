@@ -24,11 +24,52 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 April 2018
+  8 June 2018
 
 */
 
+var moment = require('moment-timezone');
+var timezone = 'Europe/London';
+
+function formatDate(date) {
+  if (typeof date !== 'object') date = new Date(date);
+  return moment(date).tz(timezone).format();
+}
+
 module.exports = {
+  getStartDateTime: function(date, time) {
+    console.log('getStartDateTime: ' + date + '; ' + time);
+    return formatDate(new Date(date + time));
+  },
+  msAfterMidnight: function(date) {
+    var e = new Date(date);
+    console.log('\n msAfterMidnight: e.setHours(0,0,0,0) = ' + e.setHours(0,0,0,0) + '; e = ' + e.getTime());
+    return e.getTime() - e.setHours(0,0,0,0);
+  },
+  getNarrative: function(name, route, doseAmount, doseTiming) {
+    return name + 'Route: ' + route + '; Dose: ' + doseAmount + '; Timing: ' + doseTiming;
+  },
+  fromNarrative: function(text) {
+    if (text.indexOf(' - ') !== -1) {
+      var pieces = text.split(' - ');
+      if (!pieces[1]) return '';
+      if (!pieces[2]) return pieces[1];
+      var dose = pieces[2].split(' ')[0];
+      return dose;
+      //return pieces[1] + ' - ' + pieces[2];
+    }
+    var pieces = text.split('; Dose: ');
+    if (!pieces[1]) return '';
+    var dose = pieces[1].split('; Timing: ')[0];
+    return dose;
+  },
+  toInteger: function(input) {
+    return parseInt(input);
+  },
+  trueOnly: function(input) {
+    if (input === true) return true;
+    return '<!delete>';
+  },
   fhirReference: function(input, prefix, inverse) {
     if (!inverse) return prefix + '/' + input;
     return input.split(prefix + '/')[1];

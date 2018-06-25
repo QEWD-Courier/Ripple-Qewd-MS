@@ -1,0 +1,430 @@
+{
+  "aql": {
+    "composition": "openEHR-EHR-COMPOSITION.report.v1",
+    "name": "Generic PROMS"
+  },
+  "field": {
+    "1": {
+      "id": "pain_scale",
+      "path": [
+        "pain_vas",
+        "pain_vas",
+        "pain_scale"
+      ],
+      "type": "DV_COUNT"
+    },
+    "2": {
+      "id": "22_pain_interfering_with_normal_work",
+      "path": [
+        "sf_36",
+        "22_pain_interfering_with_normal_work"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "3": {
+      "id": "35_expect_health_to_get_worse",
+      "path": [
+        "sf_36",
+        "general_health_statements",
+        "35_expect_health_to_get_worse"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "4": {
+      "id": "33_get_sick_easier_than_other_people",
+      "path": [
+        "sf_36",
+        "general_health_statements",
+        "33_get_sick_easier_than_other_people"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "5": {
+      "id": "36_health_is_excellent",
+      "path": [
+        "sf_36",
+        "general_health_statements",
+        "36_health_is_excellent"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "6": {
+      "id": "34_as_healthy_as_anybody",
+      "path": [
+        "sf_36",
+        "general_health_statements",
+        "34_as_healthy_as_anybody"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "7": {
+      "id": "18_accomplished_less",
+      "path": [
+        "sf_36",
+        "problems_with_work_and_daily_activities_emotional",
+        "18_accomplished_less"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "8": {
+      "id": "17_cut_down_time_spent",
+      "path": [
+        "sf_36",
+        "problems_with_work_and_daily_activities_emotional",
+        "17_cut_down_time_spent"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "9": {
+      "id": "19_didn't_do_work_as_carefully_as_usual",
+      "path": [
+        "sf_36",
+        "problems_with_work_and_daily_activities_emotional",
+        "19_didn't_do_work_as_carefully_as_usual"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "10": {
+      "id": "2_health_compared_to_1_year_ago",
+      "path": [
+        "sf_36",
+        "2_health_compared_to_1_year_ago"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "11": {
+      "id": "20_extent_of_interference_with_normal_social_activities",
+      "path": [
+        "sf_36",
+        "20_extent_of_interference_with_normal_social_activities"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "12": {
+      "id": "32_amount_of_time_of_interference_with_social_activities",
+      "path": [
+        "sf_36",
+        "32_amount_of_time_of_interference_with_social_activities"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "13": {
+      "id": "21_bodily_pain",
+      "path": [
+        "sf_36",
+        "21_bodily_pain"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "14": {
+      "id": "15_limited_in_kind_of_work",
+      "path": [
+        "sf_36",
+        "problems_with_work_and_daily_activities_physical",
+        "15_limited_in_kind_of_work"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "15": {
+      "id": "14_accomplished_less",
+      "path": [
+        "sf_36",
+        "problems_with_work_and_daily_activities_physical",
+        "14_accomplished_less"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "16": {
+      "id": "16_difficulty_performing_work",
+      "path": [
+        "sf_36",
+        "problems_with_work_and_daily_activities_physical",
+        "16_difficulty_performing_work"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "17": {
+      "id": "1_health_in_general",
+      "path": [
+        "sf_36",
+        "1_health_in_general"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "18": {
+      "id": "30_happy",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "30_happy"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "19": {
+      "id": "27_a_lot_of_energy",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "27_a_lot_of_energy"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "20": {
+      "id": "24_very_nervous",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "24_very_nervous"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "21": {
+      "id": "29_worn_out",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "29_worn_out"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "22": {
+      "id": "26_calm_and_peaceful",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "26_calm_and_peaceful"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "23": {
+      "id": "23_full_of_pep",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "23_full_of_pep"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "24": {
+      "id": "25_down_in_the_dumps",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "25_down_in_the_dumps"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "25": {
+      "id": "31_tired",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "31_tired"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "26": {
+      "id": "28_downhearted_and_blue",
+      "path": [
+        "sf_36",
+        "general_feeling",
+        "28_downhearted_and_blue"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "27": {
+      "id": "4_moderate_activities",
+      "path": [
+        "sf_36",
+        "limitations_to_activities_during_typical_day",
+        "4_moderate_activities"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "28": {
+      "id": "3_vigorous_activities",
+      "path": [
+        "sf_36",
+        "limitations_to_activities_during_typical_day",
+        "3_vigorous_activities"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "29": {
+      "id": "5_lifting_or_carrying_groceries",
+      "path": [
+        "sf_36",
+        "limitations_to_activities_during_typical_day",
+        "5_lifting_or_carrying_groceries"
+      ],
+      "type": "DV_ORDINAL"
+    },
+    "30": {
+      "id": "ecis_procedure_link",
+      "path": [
+        "ecis_procedure_link"
+      ],
+      "type": "DV_TEXT"
+    },
+    "31": {
+      "id": "proms_type",
+      "path": [
+        "proms_type"
+      ],
+      "type": "DV_TEXT"
+    },
+    "32": {
+      "id": "comment",
+      "path": [
+        "procedure",
+        "comment"
+      ],
+      "type": "DV_TEXT"
+    },
+    "33": {
+      "id": "procedure_name",
+      "path": [
+        "procedure",
+        "procedure_name"
+      ],
+      "type": "DV_TEXT"
+    }
+  },
+  "index": {
+    "content[openEHR-EHR-ACTION.procedure.v1]": {
+      "description[at0001]": {
+        "items[at0002]": {
+          "Procedure name": 33
+        },
+        "items[at0005]": {
+          "Comment": 32
+        }
+      }
+    },
+    "content[openEHR-EHR-OBSERVATION.sf36.v0]": {
+      "data[at0001]": {
+        "events[at0002]": {
+          "data[at0003]": {
+            "items[at0008]": {
+              "1. Health in general": 17
+            },
+            "items[at0014]": {
+              "2. Health compared to 1 year ago": 10
+            },
+            "items[at0029]": {
+              "items[at0020]": {
+                "3. Vigorous activities": 28
+              },
+              "items[at0024]": {
+                "4. Moderate activities": 27
+              },
+              "items[at0028]": {
+                "5. Lifting or carrying groceries": 29
+              }
+            },
+            "items[at0061]": {
+              "items[at0065]": {
+                "14. Accomplished less": 15
+              },
+              "items[at0068]": {
+                "15. Limited in kind of work": 14
+              },
+              "items[at0071]": {
+                "16. Difficulty performing work": 16
+              }
+            },
+            "items[at0074]": {
+              "items[at0075]": {
+                "17. Cut down time spent": 8
+              },
+              "items[at0078]": {
+                "18. Accomplished less": 7
+              },
+              "items[at0081]": {
+                "19. Didn't do work as carefully as usual": 9
+              }
+            },
+            "items[at0084]": {
+              "20. Extent of interference with normal social activities": 11
+            },
+            "items[at0090]": {
+              "21. Bodily pain": 13
+            },
+            "items[at0097]": {
+              "22. Pain interfering with normal work": 2
+            },
+            "items[at0104]": {
+              "items[at0105]": {
+                "23. Full of pep": 23
+              },
+              "items[at0112]": {
+                "24. Very nervous": 20
+              },
+              "items[at0119]": {
+                "25. Down in the dumps": 24
+              },
+              "items[at0126]": {
+                "26. Calm and peaceful": 22
+              },
+              "items[at0133]": {
+                "27. A lot of energy": 19
+              },
+              "items[at0140]": {
+                "28. Downhearted and blue": 26
+              },
+              "items[at0147]": {
+                "29. Worn out": 21
+              },
+              "items[at0154]": {
+                "30. Happy": 18
+              },
+              "items[at0161]": {
+                "31. Tired": 25
+              }
+            },
+            "items[at0168]": {
+              "32. Amount of time of interference with social activities": 12
+            },
+            "items[at0174]": {
+              "items[at0175]": {
+                "33. Get sick easier than other people": 4
+              },
+              "items[at0181]": {
+                "34. As healthy as anybody": 6
+              },
+              "items[at0187]": {
+                "35. Expect health to get worse": 3
+              },
+              "items[at0193]": {
+                "36. Health is excellent": 5
+              }
+            }
+          }
+        }
+      }
+    },
+    "content[openEHR-EHR-OBSERVATION.story.v1]": {
+      "data[at0001]": {
+        "events[at0002]": {
+          "data[at0003]": {
+            "items[openEHR-EHR-CLUSTER.pain_vas.v0]": {
+              "items[at0001]": {
+                "Pain scale": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "context": {
+      "other_context[at0001]": {
+        "items[at0002]": {
+          "PROMS type": 31
+        },
+        "items[at0005]": {
+          "ECIS procedure link": 30
+        }
+      }
+    }
+  }
+}

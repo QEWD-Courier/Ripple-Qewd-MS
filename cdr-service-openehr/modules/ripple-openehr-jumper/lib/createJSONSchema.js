@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  1 May 2018
+  8 June 2018
 
 */
 
@@ -89,6 +89,11 @@ module.exports = function(templateName, metadata, filePath) {
               }
             }
           };
+          // remove minLength for value if it's a coded field
+          if (field.codes) {
+            obj[property].properties.value.minLength = 0;  // make optional
+          }
+
           if (field.required) {
             if (!obj[property].required) obj[property].required = [];
             obj[property].required.push('value');
@@ -102,19 +107,33 @@ module.exports = function(templateName, metadata, filePath) {
           }
 
           var type = 'string';
+          /*
           obj[property] = {
             description: field.name,
             type: type,
             minLength: 1
           };
+          */
+
+          obj[property] = {
+            type: 'object',
+            properties: {
+              value: {
+                description: field.name + ' value',
+                type: 'string',
+                minLength: 1
+              }
+            }
+          };
+
           if (field.type === 'DV_DATE_TIME') {
-            obj[property].format = 'date-time';
+            obj[property].properties.value.format = 'date-time';
           }
-          if (field.type === 'DV_QUANTITY') {
-            obj[property].type = 'number';
+          if (field.type === 'DV_QUANTITY' || field.type === 'DV_COUNT') {
+            obj[property].properties.value.type = 'number';
           }
           if (field.type === 'DV_BOOLEAN') {
-            obj[property].type = 'boolean';
+            obj[property].properties.value.type = 'boolean';
           }
         }
       }

@@ -160,7 +160,7 @@
       ],
       "required": false,
       "max": 1,
-      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/is_next_of_kin?"
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/is_next_of_kin"
     },
     {
       "id": "relationship_category",
@@ -180,6 +180,32 @@
       ],
       "required": false,
       "max": 1,
+      "codes": [
+        {
+          "code_string": "at0036",
+          "terminology": "local",
+          "description": "An individual identified by the person as offering care and support, excluding paid carers or carers from voluntary agencies.",
+          "value": "Informal carer"
+        },
+        {
+          "code_string": "at0037",
+          "terminology": "local",
+          "description": "The contact is identified by the subject as being a primary informal source of care and support.",
+          "value": "Main informal carer"
+        },
+        {
+          "code_string": "at0038",
+          "terminology": "local",
+          "description": "A health and social care professional or staff member, including a carer from voluntary sector.",
+          "value": "Formal care worker"
+        },
+        {
+          "code_string": "at0039",
+          "terminology": "local",
+          "description": "The formal carer is the subject's key worker.",
+          "value": "Key formal care worker"
+        }
+      ],
       "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_category"
     },
     {
@@ -200,7 +226,7 @@
       ],
       "required": false,
       "max": 1,
-      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship__role"
+      "flatJSONPath": "relevant_contacts_list/relevant_contacts/relevant_contact:0/relationship_role"
     },
     {
       "id": "subject",

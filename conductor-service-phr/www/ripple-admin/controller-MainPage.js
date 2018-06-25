@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 February 2018
+  21 June 2018
 
 */
 
@@ -33,6 +33,10 @@ function setCookie(value, name) {
   document.cookie = name + "=" + value + '; path=/';
   console.log('cookie set to: ' + name + "=" + value + '; path=/');
 };
+
+function deleteCookie() {
+  document.cookie = 'JSESSIONID=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
+}
 
 module.exports = function (controller, component) {
 
@@ -79,6 +83,7 @@ module.exports = function (controller, component) {
       var status = messageObj.message.mode || 'loggedIn';
 
       controller.token = messageObj.message.token; // update JWT
+      controller.userMode = messageObj.message.mode || 'unknown';
       // create the JSESSIONID cookie to allow correct login of Ripple / LeedsPHR
       setCookie(controller.token);
 
@@ -183,6 +188,12 @@ module.exports = function (controller, component) {
           console.log('*** registerUser err: ' + JSON.stringify(err));
           if (!err.responseJSON || !err.responseJSON.error) {
             controller.emit('error', {message: {error: 'Your request timed out'}});
+          }
+          else if (err.responseJSON.error === 'Invalid JWT: Error: No token supplied') {
+            deleteCookie();
+            setTimeout(function() {
+              location.reload();
+            }, 1000);
           }
           else {
             controller.emit('error', {message: {error: err.responseJSON.error}});

@@ -24,98 +24,54 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 February 2018
+  18 May 2018
 
 */
 
 var request = require('request');
 
-function sendOk(data, callback) {
-
-  var form = data.body.form;
-  var setCookie = data.headers['set-cookie'][0];
-  var cookie = setCookie.split(';')[0];
-  console.log('&& cookie = ' + cookie);
-  //request.cookie(cookie);
-
-  console.log('** form = ' + JSON.stringify(form, null, 2));
-
-  var options = {
-    url: form.action,
-    form: {
-      logout: 'yes'
-    },
-    headers: {
-      Cookie: cookie
-    }
-  };
-
-  options.form[form.input.name] = form.input.value;
-
-  console.log('*** logout form options: ' + JSON.stringify(options, null, 2));
-
-  request.post(options, callback);
-}
-
 module.exports = function(args, finished) {
 
-  finished({
-    redirectURL: 'http://www.mgateway.com:8089/session/end'
+  var id_token = args.session.openid.id_token;
+  var uri = this.userDefined.auth.end_session_endpoint;
+
+  if (!uri) return finished({
+    ok: false
   });
-  return;
+
+  if (this.userDefined.auth.logout_approach === 'client') {
+
+    uri = uri + '?id_token_hint=' + id_token;
+    uri = url + '&post_logout_redirect_uri=' + this.userDefined.auth.post_logout_redirect_uri;
+
+    return finished({
+      //redirectURL: 'http://www.mgateway.com:8089/session/end'
+      redirectURL: uri
+    });
+  }
 
   if (args.session.openid && args.session.openid.id_token) {
-    var id_token = args.session.openid.id_token;
-
-    var uri = this.userDefined.auth.end_session_endpoint;
-
-    if (!uri) return finished({
-      ok: false
-    });
 
     var options = {
       url: this.userDefined.auth.end_session_endpoint,
       method: 'GET',
       qs: {
-        id_token_hint: id_token
+        id_token_hint: id_token,
+        //post_logout_redirect_uri: this.userDefined.auth.post_logout_redirect_uri
       },
       json: true
     };
 
     console.log('**** OpenId end session / logout: options - ' + JSON.stringify(options, null, 2));
 
+    var self = this;
+
     request(options, function(error, response, body) {
       console.log('*** logout - response = ' + JSON.stringify(response));
 
-      /*
-
-      Response will look like this:
-
-      {
-        "form": {
-          "id": "op.logoutForm",
-          "method": "post",
-          "action": "http://192.168.1.120:3002/session/end",
-          "input": {
-            "type": "hidden",
-            "name": "xsrf",
-            "value": "b40e3d9c02b21dc1870e7ef6ffb22464cd0526976bcd8dcc"
-          }
-        }
-      }
-
-      Construct a POST request that will log out the OP
-
-      add another field: logout=yes
-
-      */
-
-      sendOk(response, function(error, response, body) {
-        console.log('*** logout form response = ' + JSON.stringify(response));
-        finished({
-          ok: true,
-          //qewd_redirect: 'http://dev.ripple.foundation:8000',
-        });
+      finished({
+        ok: true,
+        redirectURL: self.userDefined.auth.post_logout_redirect_uri,
       });
     });
   }

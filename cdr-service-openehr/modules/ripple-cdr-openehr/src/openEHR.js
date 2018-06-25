@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  21 June 2018
 
 */
 
@@ -90,7 +90,8 @@ function openEHRRequests(params, userObj) {
         else {
           //remove cached session id and continue to send request to shut it down on OpenEHR system
           console.log('** shutting down session for ' + host);
-          cachedSessions.$(host).delete();
+          //cachedSessions.$(host).delete();
+          cachedSession.delete();
         }
       }
     }
@@ -242,7 +243,8 @@ function openEHRRequest(params, userObj) {
       else {
         //remove cached session id and continue to send request to shut it down on OpenEHR system
         console.log('** shutting down session for ' + host);
-        cachedSessions.$(host).delete();
+        //cachedSessions.$(host).delete();
+        cachedSession.delete();
       }
     }
   }

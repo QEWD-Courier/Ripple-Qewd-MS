@@ -74,6 +74,11 @@
     "destination": "mpi_service"
   },
   {
+    "path": "/api/heading/:heading/fields/summary",
+    "method": "GET",
+    "destination": "cdr_openehr_service"
+  },
+  {
     "path": "/api/patients/:patientId/top3Things",
     "method": "POST",
     "destination": "cdr_openehr_service"
@@ -121,6 +126,11 @@
   {
     "path": "/api/patients/:patientId/:heading/:sourceId",
     "method": "PUT",
+    "destination": "cdr_openehr_service"
+  },
+  {
+    "path": "/api/patients/:patientId/:heading/:sourceId",
+    "method": "DELETE",
     "destination": "cdr_openehr_service"
   },
   {

@@ -11,10 +11,15 @@
           "type": "object",
           "properties": {
             "last_updated": {
-              "description": "Last updated",
-              "type": "string",
-              "minLength": 1,
-              "format": "date-time"
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Last updated value",
+                  "type": "string",
+                  "minLength": 1,
+                  "format": "date-time"
+                }
+              }
             },
             "problem_diagnosis_name": {
               "type": "object",
@@ -40,10 +45,15 @@
               ]
             },
             "date_time_clinically_recognised": {
-              "description": "Date/time clinically recognised",
-              "type": "string",
-              "minLength": 1,
-              "format": "date-time"
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Date/time clinically recognised value",
+                  "type": "string",
+                  "minLength": 1,
+                  "format": "date-time"
+                }
+              }
             },
             "comment": {
               "type": "object",
@@ -86,10 +96,15 @@
               }
             },
             "date_time_of_onset": {
-              "description": "Date/time of onset",
-              "type": "string",
-              "minLength": 1,
-              "format": "date-time"
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Date/time of onset value",
+                  "type": "string",
+                  "minLength": 1,
+                  "format": "date-time"
+                }
+              }
             },
             "body_site": {
               "type": "object",
@@ -132,9 +147,14 @@
               }
             },
             "date_time_of_resolution": {
-              "description": "Date/time of resolution",
-              "type": "string",
-              "minLength": 1
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Date/time of resolution value",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
             },
             "problem_diagnosis_status": {
               "type": "object",
@@ -240,9 +260,14 @@
                   }
                 },
                 "first_occurrence": {
-                  "description": "First occurrence?",
-                  "type": "boolean",
-                  "minLength": 1
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "First occurrence? value",
+                      "type": "boolean",
+                      "minLength": 1
+                    }
+                  }
                 }
               }
             },
@@ -291,9 +316,14 @@
       }
     },
     "territory": {
-      "description": "Territory",
-      "type": "string",
-      "minLength": 1
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Territory value",
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

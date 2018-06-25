@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  30 April 2018
+  8 June 2018
 
 */
 
@@ -84,7 +84,7 @@ function parse(obj, path, info, platform, flatJSONPath) {
 
       if (!tree_structure) {
         currentPath.push(nodeId);
-        newFlatJSONPath = newFlatJSONPath + '/' + node.id;
+        newFlatJSONPath = newFlatJSONPath + '/' + nodeId;
       }
       if (node.children) {
         console.log('\n** nodeId: ' + nodeId + '; parsing children');
@@ -127,6 +127,7 @@ function parse(obj, path, info, platform, flatJSONPath) {
         var max;
         var min;
         var type;
+        var codes;
 
         console.log('parseTemplate: node = ' + JSON.stringify(node, null, 2) + '\n');
 
@@ -149,6 +150,9 @@ function parse(obj, path, info, platform, flatJSONPath) {
                 }
               }
               if (node.constraints[0].type) type = node.constraints[0].type;
+              if (node.constraints[0].constraint.defining_code) {
+                codes = node.constraints[0].constraint.defining_code;
+              }
             }
           }
           if (min > 0) required = true;
@@ -162,6 +166,7 @@ function parse(obj, path, info, platform, flatJSONPath) {
           pathArr: newPath,
           required: required,
           max: max,
+          codes: codes,
           flatJSONPath: newFlatJSONPath
         });
       }

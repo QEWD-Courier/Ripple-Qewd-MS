@@ -3,5 +3,42 @@
     "value": "{{author}}"
   },
   "host": "{{source}}",
-  "patientId": "{{patientId}}"
+  "patientId": "{{patientId}}",
+  "medication_and_medical_devices": {
+    "medication_order": {
+      "order": {
+        "medication_item": {
+          "value": "{{name}}",
+          "code": "{{medicationCode}}",
+          "terminology": "{{medicationTerminology}}"
+        },
+        "dose_amount_description": {
+          "value": "{{doseAmount}}"
+        },
+        "addditional_instruction": {
+          "value": "{{doseDirections}}"
+        },
+        "dose_timing_description": {
+          "value": "{{doseTiming}}"
+        },
+        "route": {
+          "value": "{{route}}"
+        },
+        "order_details": {
+          "order_start_date_time": {
+            "value": "=> rippleDateTime(startDate, false)"
+          },
+          "order_summary": {
+            "course_status": {
+              "code": "at0021"
+            }
+          }
+        },
+        "timing": {
+          "value": "R5/2017-06-26T10:00:00Z/P1M"
+        }
+      },
+      "narrative": "=> getNarrative(name, route, doseAmount, doseTiming)"
+    }
+  }
 }

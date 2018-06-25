@@ -7,7 +7,7 @@
         "terminology": "{{terminology}}"
       },
       "date_time_of_onset": {
-        "value": ""=> rippleDateTime(dateOfOnset,false)","
+        "value": "=> rippleDateTime(dateOfOnset,false)"
       },
       "clinical_description": {
         "value": "{{description}}"

@@ -11,7 +11,7 @@
   "immunisation_summary/immunisation_procedure:0/immunisation_name|value": "=> either(immunisation_procedure.immunisation_name.value, <!delete>)",
   "immunisation_summary/immunisation_procedure:0/immunisation_name|code": "=> either(immunisation_procedure.immunisation_name.code, <!delete>)",
   "immunisation_summary/immunisation_procedure:0/immunisation_name|terminology": "=> either(immunisation_procedure.immunisation_name.terminology, <!delete>)",
-  "immunisation_summary/immunisation_procedure:0/series_number": "=> either(immunisation_procedure.series_number, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/series_number": "=> either(immunisation_procedure.series_number.value, <!delete>)",
   "immunisation_summary/immunisation_procedure:0/comment": "=> dvText(immunisation_procedure.comment)",
   "immunisation_summary/immunisation_procedure:0/comment|value": "=> either(immunisation_procedure.comment.value, <!delete>)",
   "immunisation_summary/immunisation_procedure:0/comment|code": "=> either(immunisation_procedure.comment.code, <!delete>)",
@@ -20,9 +20,9 @@
   "immunisation_summary/immunisation_procedure:0/reason_withheld|value": "=> either(immunisation_procedure.reason_withheld.value, <!delete>)",
   "immunisation_summary/immunisation_procedure:0/reason_withheld|code": "=> either(immunisation_procedure.reason_withheld.code, <!delete>)",
   "immunisation_summary/immunisation_procedure:0/reason_withheld|terminology": "=> either(immunisation_procedure.reason_withheld.terminology, <!delete>)",
-  "immunisation_summary/immunisation_procedure:0/ism_transition": "=> either(immunisation_procedure.ism_transition, <!delete>)",
-  "immunisation_summary/immunisation_procedure:0/subject": "=> either(immunisation_procedure.subject, <!delete>)",
-  "immunisation_summary/immunisation_procedure:0/language": "=> either(immunisation_procedure.language, <!delete>)",
-  "immunisation_summary/immunisation_procedure:0/time": "=> either(immunisation_procedure.time, <!delete>)",
-  "immunisation_summary/immunisation_procedure:0/encoding": "=> either(immunisation_procedure.encoding, <!delete>)"
+  "immunisation_summary/immunisation_procedure:0/ism_transition/current_state|code": "=> either(immunisation_procedure.ism_transition.value, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/subject": "=> either(immunisation_procedure.subject.value, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/language": "=> either(immunisation_procedure.language.value, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/time": "=> either(immunisation_procedure.time.value, <!delete>)",
+  "immunisation_summary/immunisation_procedure:0/encoding": "=> either(immunisation_procedure.encoding.value, <!delete>)"
 }

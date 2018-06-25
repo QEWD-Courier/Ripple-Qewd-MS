@@ -24,12 +24,12 @@
                     "code": {
                       "description": "Medication item code",
                       "type": "string",
-                      "minLength": 1
+                      "minLength": 0
                     },
                     "terminology": {
                       "description": "Medication item terminology",
                       "type": "string",
-                      "minLength": 1
+                      "minLength": 0
                     }
                   },
                   "required": [
@@ -160,16 +160,26 @@
                   "type": "object",
                   "properties": {
                     "order_start_date_time": {
-                      "description": "Order start date/time",
-                      "type": "string",
-                      "minLength": 1,
-                      "format": "date-time"
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "description": "Order start date/time value",
+                          "type": "string",
+                          "minLength": 1,
+                          "format": "date-time"
+                        }
+                      }
                     },
                     "order_stop_date_time": {
-                      "description": "Order stop date/time",
-                      "type": "string",
-                      "minLength": 1,
-                      "format": "date-time"
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "description": "Order stop date/time value",
+                          "type": "string",
+                          "minLength": 1,
+                          "format": "date-time"
+                        }
+                      }
                     },
                     "order_summary": {
                       "type": "object",
@@ -199,19 +209,31 @@
                   }
                 },
                 "action_archetype_id": {
-                  "description": "ActionArchetypeId",
-                  "type": "string",
-                  "minLength": 1
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "ActionArchetypeId value",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
                 },
                 "timing": {
-                  "description": "Timing",
-                  "type": "string",
-                  "minLength": 1
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "description": "Timing value",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
                 }
               }
             },
             "narrative": {
-              "type": "object",
+              "type": "string",
+              "minLength": 1,
+              "description": "Narrative",
               "properties": {
                 "value": {
                   "description": "Narrative value",
@@ -255,9 +277,14 @@
       }
     },
     "territory": {
-      "description": "Territory",
-      "type": "string",
-      "minLength": 1
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Territory value",
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

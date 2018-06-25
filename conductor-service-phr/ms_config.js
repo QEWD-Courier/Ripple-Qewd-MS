@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 March 2018
+  8 June 2018
 
 */
 
@@ -41,7 +41,7 @@ function returnArrayResponse(route, routes, property) {
   property = property || 'results';
 
   routes[index].onResponse = function(args) {
-    if (!args.responseObj.message.error) {
+    if (args && args.responseObj && args.responseObj.message && !args.responseObj.message.error) {
       args.handleResponse({
         message: args.responseObj.message[property]
       });
@@ -110,6 +110,7 @@ module.exports = function(routes, ms_hosts) {
 
   */
 
+
   index = findRoute('/api/patients/:patientId', routes);
 
   routes[index].onResponse = function(args) {
@@ -118,6 +119,11 @@ module.exports = function(routes, ms_hosts) {
       var patientArgs = args.responseObj.message;
       console.log('**** patientArgs: ' + JSON.stringify(patientArgs));
 
+      args.handleResponse({
+        message: patientArgs.demographics
+      });
+
+      /*
       var message = {
         path: '/api/patients/' + patientArgs.demographics.id + '/headings/synopsis',
         method: 'GET',
@@ -151,6 +157,7 @@ module.exports = function(routes, ms_hosts) {
           message: combiResponse
         });
       });
+      */
       return true;
     }
   };

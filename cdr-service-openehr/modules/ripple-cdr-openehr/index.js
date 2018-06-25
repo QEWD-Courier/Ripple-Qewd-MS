@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  9 May 2018
+  13 June 2018
 
 */
 
@@ -40,6 +40,9 @@ var getPatientHeadingSynopsis = require('./handlers/getPatientHeadingSynopsis');
 var postMyHeading = require('./handlers/postMyHeading');
 var postPatientHeading = require('./handlers/postPatientHeading');
 var editPatientHeading = require('./handlers/editPatientHeading');
+var deletePatientHeading = require('./handlers/deletePatientHeading');
+
+var getHeadingSummaryFields = require('./handlers/getSummaryHeadingFields');
 
 var getTop3ThingsSummary = require('./top3Things/getTop3ThingsSummary');
 var getTop3ThingsDetail = require('./top3Things/getTop3ThingsDetail');
@@ -51,6 +54,9 @@ var postFeed = require('./feeds/post');
 var editFeed = require('./feeds/edit');
 
 var routes = {
+  '/api/heading/:heading/fields/summary': {
+    GET: getHeadingSummaryFields
+  },
   '/api/my/heading/:heading': {
     GET: getMyHeadingSummary,
     POST: postMyHeading
@@ -81,7 +87,8 @@ var routes = {
   },
   '/api/patients/:patientId/:heading/:sourceId': {
     GET: getHeadingDetail,
-    PUT: editPatientHeading
+    PUT: editPatientHeading,
+    DELETE: deletePatientHeading
   },
   '/api/feeds': {
     GET: getFeedSummary,

@@ -24,13 +24,111 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  22 February 2018
+  15 June 2018
 
 */
+
+var request = require('request');
+
+function deleteHeadingRecord(patientId, heading, sourceId, jwt, callback) {
+
+  // send REST request to delete this heading record
+
+  var url = 'http://';
+  if (this.userDefined.config.ssl) url = 'https://';
+  url = url + 'localhost';
+  if (this.userDefined.config.port && this.userDefined.config.port !== 80) {
+    url = url + ':' + this.userDefined.config.port;
+  }
+  url = url + '/api/patients/' + patientId + '/' + heading + '/' + sourceId;
+
+  var options = {
+    url: url,
+    method: 'DELETE',
+    json: true,
+    headers: {
+      Authorization: 'Bearer ' + jwt
+    }
+  };
+
+  request(options, function(error, response, body) {
+    console.log('body = ' + JSON.stringify(body));
+    callback(sourceId);
+  });
+
+  /*
+  setTimeout(function() {
+    callback(sourceId);
+  }, 1000);
+  */
+}
+
 
 module.exports = {
 
   handlers: {
+
+    deleteHeading: function(messageObj, session, send, finished) {
+
+      var validJWT = this.jwt.handlers.isJWTValid.call(this, messageObj.params.jwt);
+
+      if (validJWT.ok) {
+
+        var patientId = messageObj.params.patientId;
+        var heading = messageObj.params.heading;
+
+        // send REST request to get summary for this heading
+
+        var url = 'http://';
+        if (this.userDefined.config.ssl) url = 'https://';
+        url = url + 'localhost';
+        if (this.userDefined.config.port && this.userDefined.config.port !== 80) {
+          url = url + ':' + this.userDefined.config.port;
+        }
+        url = url + '/api/patients/' + patientId + '/' + heading;
+
+        var options = {
+          url: url,
+          method: 'GET',
+          json: true,
+          headers: {
+            Authorization: 'Bearer ' + messageObj.params.jwt
+          }
+        };
+        var self = this;
+
+        request(options, function(error, response, body) {
+          console.log('body = ' + JSON.stringify(body));
+
+          var max = body.length;
+
+          function deleteARecord(no) {
+            var sourceId = body[no].sourceId;
+            deleteHeadingRecord.call(self, patientId, heading, sourceId, messageObj.params.jwt, function(sourceId) {
+              console.log('deleted ' + sourceId);
+              send({deleted: sourceId});
+              no++;
+              console.log('no = ' + no + '; max = ' + max);
+              if (no === max) {
+                finished({records: max});
+              }
+              else {
+                deleteARecord(no);
+              }
+            });
+          }
+          
+          deleteARecord(0);
+
+          //finished(body);
+        });
+
+      }
+      else {
+        finished({error: 'Invalid JWT'});
+      }
+
+    },
 
     getHomePageURLs: function(messageObj, session, send, finished) {
       var ripple = '';

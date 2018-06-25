@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 April 2018
+  21 June 2018
 
 */
 
@@ -136,7 +136,8 @@ function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
           host: host,
           patientId: nhsNo,
           date: date,
-          data: result
+          data: result,
+          uid: result.uid
         };
         bySourceIdCache.$(sourceId).setDocument(record);
         byPatientIdCache.$(['byDate', date, sourceId]).value = '';
