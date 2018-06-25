@@ -15,12 +15,12 @@ one or more back-end OpenEHR systems
 
 Start up this container as a foreground process the *rtweed/qewd-server* Docker Container:
 
-       sudo docker run -it --rm -p 8083:8080 -v ~/ripple/cdr-service-openehr:/opt/qewd/mapped -v ~/ripple/yottadb/openehr:/root/.yottadb/r1.20_x86_64/g rtweed/qewd-server
+       sudo docker run -it --rm -p 8083:8080 -v ~/ripple/cdr-service-openehr:/opt/qewd/mapped -v ~/ripple/yottadb/openehr:/root/.yottadb/r1.22_x86_64/g rtweed/qewd-server
 
 
 or, to run it as a daemon process:
 
-       sudo docker run -d --rm -p 8083:8080 -v ~/ripple/cdr-service-openehr:/opt/qewd/mapped -v ~/ripple/yottadb/openehr:/root/.yottadb/r1.20_x86_64/g rtweed/qewd-server
+       sudo docker run -d --rm -p 8083:8080 -v ~/ripple/cdr-service-openehr:/opt/qewd/mapped -v ~/ripple/yottadb/openehr:/root/.yottadb/r1.22_x86_64/g rtweed/qewd-server
 
 
 Note 1: the -p parameter defines the port mapping, using the convention:
