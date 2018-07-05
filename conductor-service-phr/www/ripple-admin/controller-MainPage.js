@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  21 June 2018
+  27 June 2018
 
 */
 
@@ -87,8 +87,18 @@ module.exports = function (controller, component) {
       // create the JSESSIONID cookie to allow correct login of Ripple / LeedsPHR
       setCookie(controller.token);
 
-      component.setState({
-        status: status
+      // Link JWT to QEWD WebSocket app session
+      controller.send({
+        type: 'loggedIn',
+        params: {
+          jwt: controller.token
+        }
+      }, function(responseObj) {
+
+        component.setState({
+          status: status
+        });
+
       });
     }
   });
@@ -189,7 +199,7 @@ module.exports = function (controller, component) {
           if (!err.responseJSON || !err.responseJSON.error) {
             controller.emit('error', {message: {error: 'Your request timed out'}});
           }
-          else if (err.responseJSON.error === 'Invalid JWT: Error: No token supplied') {
+          else if (err.responseJSON.error === 'Invalid JWT: Error: No token supplied' || err.responseJSON.error === 'Invalid JWT: Error: Token expired') {
             deleteCookie();
             setTimeout(function() {
               location.reload();

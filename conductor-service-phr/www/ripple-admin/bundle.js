@@ -67580,7 +67580,7 @@ var AdminPortal = createReactClass({
 
 module.exports = AdminPortal;
 
-},{"./RegisterUser":615,"create-react-class":121,"react":583,"react-bootstrap":531}],600:[function(require,module,exports){
+},{"./RegisterUser":613,"create-react-class":121,"react":583,"react-bootstrap":531}],600:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -67699,7 +67699,7 @@ var Banner = createReactClass({
 
 module.exports = Banner;
 
-},{"./controller-Banner":618,"create-react-class":121,"react":583,"react-bootstrap":531}],601:[function(require,module,exports){
+},{"./controller-Banner":616,"create-react-class":121,"react":583,"react-bootstrap":531}],601:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -67796,7 +67796,7 @@ var Container = createReactClass({
 
 module.exports = Container;
 
-},{"./Panel":614,"./controller-Container":619,"create-react-class":121,"react":583,"react-bootstrap":531}],602:[function(require,module,exports){
+},{"./Panel":612,"./controller-Container":617,"create-react-class":121,"react":583,"react-bootstrap":531}],602:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -67902,242 +67902,7 @@ var Content = createReactClass({
 
 module.exports = Content;
 
-},{"./Container":601,"./controller-Content":620,"create-react-class":121,"react":583}],603:[function(require,module,exports){
-/*
-
- ----------------------------------------------------------------------------
- | ripple-admin: Ripple User Administration MicroService                    |
- |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
- | All rights reserved.                                                     |
- |                                                                          |
- | http://rippleosi.org                                                     |
- | Email: code.custodian@rippleosi.org                                      |
- |                                                                          |
- | Author: Rob Tweed, M/Gateway Developments Ltd                            |
- |                                                                          |
- | Licensed under the Apache License, Version 2.0 (the "License");          |
- | you may not use this file except in compliance with the License.         |
- | You may obtain a copy of the License at                                  |
- |                                                                          |
- |     http://www.apache.org/licenses/LICENSE-2.0                           |
- |                                                                          |
- | Unless required by applicable law or agreed to in writing, software      |
- | distributed under the License is distributed on an "AS IS" BASIS,        |
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
- | See the License for the specific language governing permissions and      |
- |  limitations under the License.                                          |
- ----------------------------------------------------------------------------
-
-  13 June 2018
-
-*/
-
-"use strict";
-
-var React = require('react');
-var createReactClass = require('create-react-class');
-var ReactBootstrap = require('react-bootstrap');
-
-var FormField = require('./FormField');
-
-var Button = ReactBootstrap.Button,
-    Panel = ReactBootstrap.Panel;
-
-
-var DeleteComposition = createReactClass({
-  displayName: 'DeleteComposition',
-
-
-  getInitialState: function getInitialState() {
-    return {
-      status: 'initial'
-    };
-  },
-
-  componentWillMount: function componentWillMount() {
-    this.controller = require('./controller-DeleteComposition')(this.props.controller, this);
-  },
-
-  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    //this.onNewProps(newProps);
-  },
-
-  render: function render() {
-
-    //var componentPath = this.controller.updateComponentPath(this);
-
-    console.log('Rendering DeleteComposition');
-    return React.createElement(
-      Panel,
-      {
-        bsStyle: 'info'
-      },
-      React.createElement(
-        Panel.Heading,
-        null,
-        'Delete a Single Record from a Heading for a Selected Patient'
-      ),
-      React.createElement(
-        Panel.Body,
-        null,
-        React.createElement(FormField, {
-          fieldname: 'patientId',
-          label: 'Patient Id',
-          type: 'text',
-          controller: this.controller,
-          focus: true,
-          value: '',
-          formModule: 'DeleteComposition'
-        }),
-        React.createElement(FormField, {
-          fieldname: 'heading',
-          label: 'Clinical Heading',
-          type: 'text',
-          controller: this.controller,
-          focus: false,
-          value: '',
-          formModule: 'DeleteComposition'
-        }),
-        React.createElement(FormField, {
-          fieldname: 'compositionId',
-          label: 'Composition Id (SourceId)',
-          type: 'text',
-          controller: this.controller,
-          focus: false,
-          value: '',
-          formModule: 'DeleteComposition'
-        }),
-        React.createElement(
-          Button,
-          {
-            bsClass: 'btn btn-success',
-            onClick: this.deleteComposition
-          },
-          'Delete Composition'
-        )
-      )
-    );
-  }
-
-});
-
-module.exports = DeleteComposition;
-
-},{"./FormField":605,"./controller-DeleteComposition":621,"create-react-class":121,"react":583,"react-bootstrap":531}],604:[function(require,module,exports){
-/*
-
- ----------------------------------------------------------------------------
- | ripple-admin: Ripple User Administration MicroService                    |
- |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
- | All rights reserved.                                                     |
- |                                                                          |
- | http://rippleosi.org                                                     |
- | Email: code.custodian@rippleosi.org                                      |
- |                                                                          |
- | Author: Rob Tweed, M/Gateway Developments Ltd                            |
- |                                                                          |
- | Licensed under the Apache License, Version 2.0 (the "License");          |
- | you may not use this file except in compliance with the License.         |
- | You may obtain a copy of the License at                                  |
- |                                                                          |
- |     http://www.apache.org/licenses/LICENSE-2.0                           |
- |                                                                          |
- | Unless required by applicable law or agreed to in writing, software      |
- | distributed under the License is distributed on an "AS IS" BASIS,        |
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
- | See the License for the specific language governing permissions and      |
- |  limitations under the License.                                          |
- ----------------------------------------------------------------------------
-
-  13 June 2018
-
-*/
-
-"use strict";
-
-var React = require('react');
-var createReactClass = require('create-react-class');
-var ReactBootstrap = require('react-bootstrap');
-
-var FormField = require('./FormField');
-
-var Button = ReactBootstrap.Button,
-    Panel = ReactBootstrap.Panel;
-
-
-var DeleteHeading = createReactClass({
-  displayName: 'DeleteHeading',
-
-
-  getInitialState: function getInitialState() {
-    return {
-      status: 'initial'
-    };
-  },
-
-  componentWillMount: function componentWillMount() {
-    this.controller = require('./controller-DeleteHeading')(this.props.controller, this);
-  },
-
-  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    //this.onNewProps(newProps);
-  },
-
-  render: function render() {
-
-    //var componentPath = this.controller.updateComponentPath(this);
-
-    console.log('Rendering DeleteHeading');
-    return React.createElement(
-      Panel,
-      {
-        bsStyle: 'info'
-      },
-      React.createElement(
-        Panel.Heading,
-        null,
-        'Delete All Records within a Heading for a Selected Patient'
-      ),
-      React.createElement(
-        Panel.Body,
-        null,
-        React.createElement(FormField, {
-          fieldname: 'patientId',
-          label: 'Patient Id',
-          type: 'text',
-          controller: this.controller,
-          focus: true,
-          value: '',
-          formModule: 'DeleteHeading'
-        }),
-        React.createElement(FormField, {
-          fieldname: 'heading',
-          label: 'Clinical Heading',
-          type: 'text',
-          controller: this.controller,
-          focus: false,
-          value: '',
-          formModule: 'DeleteHeading'
-        }),
-        React.createElement(
-          Button,
-          {
-            bsClass: 'btn btn-success',
-            onClick: this.deleteHeading
-          },
-          'Clear Down Heading'
-        )
-      )
-    );
-  }
-
-});
-
-module.exports = DeleteHeading;
-
-},{"./FormField":605,"./controller-DeleteHeading":622,"create-react-class":121,"react":583,"react-bootstrap":531}],605:[function(require,module,exports){
+},{"./Container":601,"./controller-Content":618,"create-react-class":121,"react":583}],603:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -68392,7 +68157,7 @@ var FormField = createReactClass({
 
 module.exports = FormField;
 
-},{"./controller-FormField":623,"create-react-class":121,"react":583,"react-bootstrap":531}],606:[function(require,module,exports){
+},{"./controller-FormField":619,"create-react-class":121,"react":583,"react-bootstrap":531}],604:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -68419,7 +68184,7 @@ module.exports = FormField;
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 June 2018
+  27 June 2018
 
 */
 
@@ -68433,6 +68198,7 @@ var FormField = require('./FormField');
 var HeadingTable = require('./HeadingTable');
 
 var Button = ReactBootstrap.Button,
+    ButtonGroup = ReactBootstrap.ButtonGroup,
     Panel = ReactBootstrap.Panel;
 
 
@@ -68467,6 +68233,8 @@ var GetHeadingSummary = createReactClass({
 
     console.log('Rendering GetHeadingSummary');
 
+    console.log('this.populate = ' + JSON.stringify(this.populate, null, 2));
+
     var listing = React.createElement('div', null);
 
     if (this.headingListing.length > 0) {
@@ -68477,6 +68245,8 @@ var GetHeadingSummary = createReactClass({
         heading: this.heading,
         controller: this.controller
       });
+    } else {
+      //this.populate.btnVisibility = 'hidden';
     }
 
     return React.createElement(
@@ -68511,12 +68281,24 @@ var GetHeadingSummary = createReactClass({
           formModule: 'GetHeadingSummary'
         }),
         React.createElement(
-          Button,
-          {
-            bsClass: 'btn btn-success',
-            onClick: this.getHeadingSummary
-          },
-          'Fetch Heading Records'
+          ButtonGroup,
+          null,
+          React.createElement(
+            Button,
+            {
+              bsClass: 'btn btn-success',
+              onClick: this.getHeadingSummary
+            },
+            'Fetch Heading Records'
+          ),
+          React.createElement(
+            Button,
+            {
+              bsClass: this.populate.btnVisibility,
+              onClick: this.populatePatient
+            },
+            'Populate With Sample Data'
+          )
         ),
         listing
       )
@@ -68527,7 +68309,7 @@ var GetHeadingSummary = createReactClass({
 
 module.exports = GetHeadingSummary;
 
-},{"./FormField":605,"./HeadingTable":608,"./controller-GetHeadingSummary":624,"create-react-class":121,"react":583,"react-bootstrap":531}],607:[function(require,module,exports){
+},{"./FormField":603,"./HeadingTable":606,"./controller-GetHeadingSummary":620,"create-react-class":121,"react":583,"react-bootstrap":531}],605:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -68729,7 +68511,7 @@ var HeadingRow = createReactClass({
 
 module.exports = HeadingRow;
 
-},{"./FormField":605,"./controller-HeadingRow":625,"create-react-class":121,"react":583,"react-bootstrap":531}],608:[function(require,module,exports){
+},{"./FormField":603,"./controller-HeadingRow":621,"create-react-class":121,"react":583,"react-bootstrap":531}],606:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69108,7 +68890,7 @@ var HeadingTable = createReactClass({
 
 module.exports = HeadingTable;
 
-},{"./HeadingRow":607,"./controller-HeadingTable":626,"create-react-class":121,"react":583,"react-bootstrap":531}],609:[function(require,module,exports){
+},{"./HeadingRow":605,"./controller-HeadingTable":622,"create-react-class":121,"react":583,"react-bootstrap":531}],607:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69195,7 +68977,7 @@ var LoginField = createReactClass({
 
 module.exports = LoginField;
 
-},{"./controller-LoginField":627,"create-react-class":121,"react":583,"react-bootstrap":531}],610:[function(require,module,exports){
+},{"./controller-LoginField":623,"create-react-class":121,"react":583,"react-bootstrap":531}],608:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69311,7 +69093,7 @@ var LoginModal = createReactClass({
 
 module.exports = LoginModal;
 
-},{"./LoginField":609,"./controller-LoginModal":628,"create-react-class":121,"react":583,"react-bootstrap":531}],611:[function(require,module,exports){
+},{"./LoginField":607,"./controller-LoginModal":624,"create-react-class":121,"react":583,"react-bootstrap":531}],609:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69473,7 +69255,7 @@ var MainPage = createReactClass({
 
 module.exports = MainPage;
 
-},{"./Banner":600,"./Content":602,"./LoginModal":610,"./NotLoggedIn":612,"./Shutdown":616,"./controller-MainPage":629,"create-react-class":121,"jquery":192,"react":583,"react-bootstrap":531,"react-toastr":578}],612:[function(require,module,exports){
+},{"./Banner":600,"./Content":602,"./LoginModal":608,"./NotLoggedIn":610,"./Shutdown":614,"./controller-MainPage":625,"create-react-class":121,"jquery":192,"react":583,"react-bootstrap":531,"react-toastr":578}],610:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69550,7 +69332,7 @@ module.exports = createReactClass({
   }
 });
 
-},{"create-react-class":121,"react":583,"react-bootstrap":531}],613:[function(require,module,exports){
+},{"create-react-class":121,"react":583,"react-bootstrap":531}],611:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69588,8 +69370,7 @@ var createReactClass = require('create-react-class');
 var ReactBootstrap = require('react-bootstrap');
 
 var GetHeadingSummary = require('./GetHeadingSummary');
-var DeleteComposition = require('./DeleteComposition');
-var DeleteHeading = require('./DeleteHeading');
+//var PopulatePatient = require('./PopulatePatient');
 
 var Tabs = ReactBootstrap.Tabs,
     Tab = ReactBootstrap.Tab;
@@ -69633,7 +69414,7 @@ var OpenEHRMaint = createReactClass({
 
 module.exports = OpenEHRMaint;
 
-},{"./DeleteComposition":603,"./DeleteHeading":604,"./GetHeadingSummary":606,"./controller-OpenEHRMaint":630,"create-react-class":121,"react":583,"react-bootstrap":531}],614:[function(require,module,exports){
+},{"./GetHeadingSummary":604,"./controller-OpenEHRMaint":626,"create-react-class":121,"react":583,"react-bootstrap":531}],612:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69765,7 +69546,7 @@ var Pane = createReactClass({
 
 module.exports = Pane;
 
-},{"./controller-Panel":631,"create-react-class":121,"react":583,"react-bootstrap":531}],615:[function(require,module,exports){
+},{"./controller-Panel":627,"create-react-class":121,"react":583,"react-bootstrap":531}],613:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -69989,7 +69770,7 @@ var RegisterUser = createReactClass({
 
 module.exports = RegisterUser;
 
-},{"./FormField":605,"./controller-RegisterUser":632,"create-react-class":121,"react":583,"react-bootstrap":531,"react-select":568}],616:[function(require,module,exports){
+},{"./FormField":603,"./controller-RegisterUser":628,"create-react-class":121,"react":583,"react-bootstrap":531,"react-select":568}],614:[function(require,module,exports){
 /*
 
  ----------------------------------------------------------------------------
@@ -70066,7 +69847,7 @@ module.exports = createReactClass({
   }
 });
 
-},{"./controller-Shutdown":633,"create-react-class":121,"react":583,"react-bootstrap":531}],617:[function(require,module,exports){
+},{"./controller-Shutdown":629,"create-react-class":121,"react":583,"react-bootstrap":531}],615:[function(require,module,exports){
 'use strict';
 
 /*
@@ -70143,7 +69924,7 @@ var params = {
 
 reactLoader(params);
 
-},{"./AdminPortal":599,"./MainPage":611,"./OpenEHRMaint":613,"qewd-react":432}],618:[function(require,module,exports){
+},{"./AdminPortal":599,"./MainPage":609,"./OpenEHRMaint":611,"qewd-react":432}],616:[function(require,module,exports){
 "use strict";
 
 /*
@@ -70188,7 +69969,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],619:[function(require,module,exports){
+},{}],617:[function(require,module,exports){
 'use strict';
 
 /*
@@ -70235,7 +70016,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],620:[function(require,module,exports){
+},{}],618:[function(require,module,exports){
 "use strict";
 
 /*
@@ -70280,190 +70061,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],621:[function(require,module,exports){
-'use strict';
-
-/*
-
- ----------------------------------------------------------------------------
- | ripple-admin: Ripple User Administration MicroService                    |
- |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
- | All rights reserved.                                                     |
- |                                                                          |
- | http://rippleosi.org                                                     |
- | Email: code.custodian@rippleosi.org                                      |
- |                                                                          |
- | Author: Rob Tweed, M/Gateway Developments Ltd                            |
- |                                                                          |
- | Licensed under the Apache License, Version 2.0 (the "License");          |
- | you may not use this file except in compliance with the License.         |
- | You may obtain a copy of the License at                                  |
- |                                                                          |
- |     http://www.apache.org/licenses/LICENSE-2.0                           |
- |                                                                          |
- | Unless required by applicable law or agreed to in writing, software      |
- | distributed under the License is distributed on an "AS IS" BASIS,        |
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
- | See the License for the specific language governing permissions and      |
- |  limitations under the License.                                          |
- ----------------------------------------------------------------------------
-
-  13 June 2018
-
-*/
-
-module.exports = function (controller, component) {
-
-  component.patientId = '';
-  component.heading = '';
-  component.compositionId = '';
-
-  controller.DeleteComposition = {
-    onFieldChange: function onFieldChange(inputObj) {
-      console.log('onFieldChange - ' + inputObj.ref + '; ' + inputObj.value);
-      component[inputObj.ref] = inputObj.value;
-    }
-  };
-
-  component.handleKeyDown = function (e) {
-    // enter key pressed
-    if (e.charCode === 13) {
-      component.deleteComposition();
-    }
-  };
-
-  component.deleteComposition = function () {
-
-    console.log('***** delete composition! ****');
-    console.log('patientId: ' + component.patientId);
-    console.log('heading: ' + component.heading);
-    console.log('sourceId: ' + component.compositionId);
-
-    if (typeof component.patientId !== 'string' || component.patientId === '') {
-      controller.displayError('You must enter a patient Id');
-      return;
-    }
-
-    if (typeof component.heading !== 'string' || component.heading === '') {
-      controller.displayError('You must enter a Heading');
-      return;
-    }
-
-    if (typeof component.compositionId !== 'string' || component.compositionId === '') {
-      controller.displayError('You must enter a Composition Id');
-      return;
-    }
-
-    // send the message to delete the composition
-
-    $.ajax({
-      url: '/api/patients/' + component.patientId + '/' + component.heading + '/' + component.compositionId,
-      method: 'DELETE',
-      contentType: 'application/json',
-      headers: {
-        Authorization: 'Bearer ' + controller.token
-      },
-      dataType: 'json',
-      timeout: 10000
-    }).done(function (data) {
-      console.log('*** received response: ' + JSON.stringify(data));
-      controller.emit('compositionDeleted', { message: data });
-    }).fail(function (err, textStatus, errorThrown) {
-      console.log('*** Delete Composition error: ' + JSON.stringify(err));
-      if (!err.responseJSON || !err.responseJSON.error) {
-        controller.emit('error', { message: { error: 'Your request timed out' } });
-      } else {
-        controller.emit('error', { message: { error: err.responseJSON.error } });
-      }
-    });
-  };
-
-  return controller;
-};
-
-},{}],622:[function(require,module,exports){
-'use strict';
-
-/*
-
- ----------------------------------------------------------------------------
- | ripple-admin: Ripple User Administration MicroService                    |
- |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
- | All rights reserved.                                                     |
- |                                                                          |
- | http://rippleosi.org                                                     |
- | Email: code.custodian@rippleosi.org                                      |
- |                                                                          |
- | Author: Rob Tweed, M/Gateway Developments Ltd                            |
- |                                                                          |
- | Licensed under the Apache License, Version 2.0 (the "License");          |
- | you may not use this file except in compliance with the License.         |
- | You may obtain a copy of the License at                                  |
- |                                                                          |
- |     http://www.apache.org/licenses/LICENSE-2.0                           |
- |                                                                          |
- | Unless required by applicable law or agreed to in writing, software      |
- | distributed under the License is distributed on an "AS IS" BASIS,        |
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
- | See the License for the specific language governing permissions and      |
- |  limitations under the License.                                          |
- ----------------------------------------------------------------------------
-
-  13 June 2018
-
-*/
-
-module.exports = function (controller, component) {
-
-  component.patientId = '';
-  component.heading = '';
-
-  controller.DeleteHeading = {
-    onFieldChange: function onFieldChange(inputObj) {
-      console.log('onFieldChange - ' + inputObj.ref + '; ' + inputObj.value);
-      component[inputObj.ref] = inputObj.value;
-    }
-  };
-
-  component.handleKeyDown = function (e) {
-    // enter key pressed
-    if (e.charCode === 13) {
-      component.deleteComposition();
-    }
-  };
-
-  component.deleteHeading = function () {
-
-    console.log('***** delete heading! ****');
-    console.log('patientId: ' + component.patientId);
-    console.log('heading: ' + component.heading);
-
-    if (typeof component.patientId !== 'string' || component.patientId === '') {
-      controller.displayError('You must enter a patient Id');
-      return;
-    }
-
-    if (typeof component.heading !== 'string' || component.heading === '') {
-      controller.displayError('You must enter a Heading');
-      return;
-    }
-
-    controller.send({
-      type: 'deleteHeading',
-      params: {
-        patientId: component.patientId,
-        heading: component.heading,
-        jwt: controller.token
-      }
-    });
-  };
-
-  return controller;
-};
-
-},{}],623:[function(require,module,exports){
+},{}],619:[function(require,module,exports){
 'use strict';
 
 /*
@@ -70526,7 +70124,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],624:[function(require,module,exports){
+},{}],620:[function(require,module,exports){
 'use strict';
 
 /*
@@ -70555,7 +70153,7 @@ module.exports = function (controller, component) {
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 June 2018
+  27 June 2018
 
 */
 
@@ -70574,6 +70172,10 @@ function getHeadingSummaryFields(heading, controller, callback) {
     }).done(function (data) {
       console.log('*** received response: ' + JSON.stringify(data));
       self.headingSummaryFields[heading] = data.results;
+      if (data.token) {
+        controller.token = data.token; // update the JWT
+        console.log('JWT updated');
+      }
       callback();
     }).fail(function (err, textStatus, errorThrown) {
       console.log('*** GetHeadingSummary error: ' + JSON.stringify(err));
@@ -70598,6 +70200,11 @@ module.exports = function (controller, component) {
   component.headingFields = [];
   component.headingSummaryFields = {};
   component.warningMessage = '';
+  component.populate = {
+    btnVisibility: 'hidden',
+    patientId: '',
+    heading: ''
+  };
 
   controller.GetHeadingSummary = {
     onFieldChange: function onFieldChange(inputObj) {
@@ -70622,6 +70229,7 @@ module.exports = function (controller, component) {
 
   controller.on('headingListReceived', function (messageObj) {
     console.log('** headingListReceived: ' + JSON.stringify(messageObj));
+    component.populate.btnVisibility = 'hidden';
     if (Array.isArray(messageObj.data)) {
       // Listing received
       component.headingFields = component.headingSummaryFields[messageObj.heading];
@@ -70633,6 +70241,7 @@ module.exports = function (controller, component) {
         } else {
           component.warningMessage = 'Unable to find any results for that patient and heading';
         }
+        component.populate.btnVisibility = 'btn btn-primary';
       }
 
       component.setState({
@@ -70641,11 +70250,52 @@ module.exports = function (controller, component) {
     }
   });
 
-  component.getHeadingSummary = function () {
+  component.populatePatient = function () {
+    console.log('*** populatePatient clicked');
+    var populate = component.populate;
 
-    console.log('***** get heading! ****');
-    console.log('patientId: ' + component.patientId);
-    console.log('heading: ' + component.heading);
+    if (populate.btnVisibility === 'hidden' || populate.patientId === '' || populate.heading === '') {
+      controller.displayError('Patient Id and/or heading not specified yet');
+      return;
+    }
+
+    component.patientId = component.populate.patientId;
+    component.heading = component.populate.heading;
+
+    controller.send({
+      type: 'populatePatient',
+      params: {
+        patientId: component.patientId,
+        heading: component.heading,
+        jwt: controller.token
+      }
+    }, function (responseObj) {
+      if (!responseObj.message.error) {
+        console.log('populatePatient response: ' + JSON.stringify(responseObj, null, 2));
+        var data = responseObj.message;
+        if (Array.isArray(data) && data.length > 0) {
+          component.populate = {
+            btnVisibility: 'hidden',
+            patientId: '',
+            heading: ''
+          };
+          var dataObj = {
+            heading: component.heading,
+            data: data
+          };
+          controller.emit('headingListReceived', dataObj);
+        } else {
+          controller.displayError('Invalid response from CDR service');
+        }
+      }
+    });
+
+    //component.setState({
+    //  status: 'populated'
+    //});
+  };
+
+  component.getHeadingSummary = function () {
 
     if (typeof component.patientId !== 'string' || component.patientId === '') {
       controller.displayError('You must enter a patient Id');
@@ -70655,6 +70305,15 @@ module.exports = function (controller, component) {
     if (typeof component.heading !== 'string' || component.heading === '') {
       controller.displayError('You must enter a Heading');
       return;
+    }
+
+    if (component.populate.patientId !== component.patientId) {
+      component.populate.patientId = component.patientId;
+      component.populate.btnVisibility = 'hidden';
+    }
+    if (component.populate.heading !== component.heading) {
+      component.populate.heading = component.heading;
+      component.populate.btnVisibility = 'hidden';
     }
 
     getHeadingSummaryFields.call(component, component.heading, controller, function (error) {
@@ -70690,7 +70349,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],625:[function(require,module,exports){
+},{}],621:[function(require,module,exports){
 'use strict';
 
 /*
@@ -70730,7 +70389,7 @@ function isInt(value) {
 }
 
 function isDate(value) {
-  if (isInt(value) && value.toString().length === 13) return true;
+  if (isInt(value) && value.toString().length > 11) return true;
   return false;
 }
 
@@ -70777,7 +70436,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],626:[function(require,module,exports){
+},{}],622:[function(require,module,exports){
 'use strict';
 
 /*
@@ -70822,6 +70481,10 @@ function deleteHeadingRestRequest(patientId, heading, sourceId, controller, call
     timeout: 20000
   }).done(function (data) {
     console.log('*** received response: ' + JSON.stringify(data));
+    if (data.token) {
+      controller.token = data.token;
+      console.log('JWT updated');
+    }
     callback(data);
   }).fail(function (err, textStatus, errorThrown) {
     console.log('*** Delete Composition error: ' + JSON.stringify(err));
@@ -70883,14 +70546,25 @@ module.exports = function (controller, component) {
       var index = component.headingArrayIndex[component.sourceIdToDelete];
       // remove the record from the Heading Array, and therefore from the table on display
       component.headingArray.splice(index, 1);
-      component.warningMessage = component.sourceIdToDelete + ' deleted from OpenEHR';
-      component.showConfirm = false;
-      component.sourceIdToDelete = false;
-      component.sourceIdToDisplay = false;
-      component.sourceToDisplay = false;
+
+      //component.warningMessage = component.sourceIdToDelete + ' deleted from OpenEHR';
+      //component.showConfirm = false;
+      //component.sourceIdToDelete = false;
+      //component.sourceIdToDisplay = false;
+      //component.sourceToDisplay = false;
+
+      // pass up to getHeadingSummary
+      controller.emit('headingListReceived', {
+        data: component.headingArray,
+        heading: component.props.heading,
+        warning: component.sourceIdToDelete + ' deleted from OpenEHR'
+      });
+
+      /*
       component.setState({
         status: 'completedDelete'
       });
+      */
     });
   };
 
@@ -71033,7 +70707,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],627:[function(require,module,exports){
+},{}],623:[function(require,module,exports){
 'use strict';
 
 /*
@@ -71095,7 +70769,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],628:[function(require,module,exports){
+},{}],624:[function(require,module,exports){
 'use strict';
 
 /*
@@ -71229,7 +70903,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],629:[function(require,module,exports){
+},{}],625:[function(require,module,exports){
 'use strict';
 
 /*
@@ -71258,7 +70932,7 @@ module.exports = function (controller, component) {
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  21 June 2018
+  27 June 2018
 
 */
 
@@ -71321,8 +70995,17 @@ module.exports = function (controller, component) {
       // create the JSESSIONID cookie to allow correct login of Ripple / LeedsPHR
       setCookie(controller.token);
 
-      component.setState({
-        status: status
+      // Link JWT to QEWD WebSocket app session
+      controller.send({
+        type: 'loggedIn',
+        params: {
+          jwt: controller.token
+        }
+      }, function (responseObj) {
+
+        component.setState({
+          status: status
+        });
       });
     }
   });
@@ -71416,7 +71099,7 @@ module.exports = function (controller, component) {
         console.log('*** registerUser err: ' + JSON.stringify(err));
         if (!err.responseJSON || !err.responseJSON.error) {
           controller.emit('error', { message: { error: 'Your request timed out' } });
-        } else if (err.responseJSON.error === 'Invalid JWT: Error: No token supplied') {
+        } else if (err.responseJSON.error === 'Invalid JWT: Error: No token supplied' || err.responseJSON.error === 'Invalid JWT: Error: Token expired') {
           deleteCookie();
           setTimeout(function () {
             location.reload();
@@ -71440,7 +71123,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],630:[function(require,module,exports){
+},{}],626:[function(require,module,exports){
 "use strict";
 
 /*
@@ -71477,7 +71160,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],631:[function(require,module,exports){
+},{}],627:[function(require,module,exports){
 "use strict";
 
 /*
@@ -71524,7 +71207,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],632:[function(require,module,exports){
+},{}],628:[function(require,module,exports){
 'use strict';
 
 /*
@@ -71716,7 +71399,7 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}],633:[function(require,module,exports){
+},{}],629:[function(require,module,exports){
 'use strict';
 
 /*
@@ -71766,4 +71449,4 @@ module.exports = function (controller, component) {
   return controller;
 };
 
-},{}]},{},[617]);
+},{}]},{},[615]);

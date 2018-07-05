@@ -1,0 +1,6 @@
+{
+  "managementPassword": "R!ppl$",
+  "serverName": "Local OpenId-Connect Server",
+  "port": 8080,
+  "poolSize": 2
+}

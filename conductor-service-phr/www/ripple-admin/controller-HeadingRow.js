@@ -35,7 +35,7 @@ function isInt(value) {
 }
 
 function isDate(value) {
-  if (isInt(value) && value.toString().length === 13) return true;
+  if (isInt(value) && value.toString().length > 11) return true;
   return false;
 }
 

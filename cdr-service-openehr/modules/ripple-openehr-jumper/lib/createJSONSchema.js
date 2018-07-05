@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  8 June 2018
+  28 June 2018
 
 */
 
@@ -70,7 +70,12 @@ module.exports = function(templateName, metadata, filePath) {
 
         if (field.type === 'DV_TEXT' || field.type === 'DV_CODED_TEXT') {
           obj[property] = {
-            type: 'object',
+            anyOf: [
+              {type: 'string'},
+              {type: 'object'}
+            ],
+            minLength: 1,
+            description: field.name,
             properties: {
               value: {
                 description: field.name + ' value',

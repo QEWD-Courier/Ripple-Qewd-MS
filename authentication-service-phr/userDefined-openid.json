@@ -1,22 +1,22 @@
 {
   "auth": {
     "type": "OpenID Connect",
-    "client_id": "xxxxxxxxx",
-    "client_secret": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
-    "callback_url": "http://dev.ripple.foundation:8000/api/auth/token",
+    "client_id": "foo",
+    "client_secret": "bar",
+    "callback_url": "http://192.168.1.135:8000/api/auth/token",
     "scope": {
       "login": "openid"
     },
-    "issuer": "https://keycloak.dev1.signin.nhs.uk/cicauth/realms/NHS",
-    "authorization_endpoint": "https://keycloak.dev1.signin.nhs.uk/cicauth/realms/NHS/protocol/openid-connect/auth",
-    "token_endpoint": "https://keycloak.dev1.signin.nhs.uk/cicauth/realms/NHS/protocol/openid-connect/token",
-    "userinfo_endpoint": "https://keycloak.dev1.signin.nhs.uk/cicauth/realms/NHS/protocol/openid-connect/userinfo",
-    "introspection_endpoint": "https://keycloak.dev1.signin.nhs.uk/cicauth/realms/NHS/protocol/openid-connect/token/introspect",
-    "jwks_endpoint": "https://keycloak.dev1.signin.nhs.uk/cicauth/realms/NHS/protocol/openid-connect/certs",
-    "end_session_endpoint": "https://keycloak.dev1.signin.nhs.uk/cicauth/realms/NHS/protocol/openid-connect/logout",
+    "issuer": "http://192.168.1.135:8080/openid",
+    "authorization_endpoint": "http://192.168.1.135:8080/openid/auth",
+    "token_endpoint": "http://192.168.1.135:8080/openid/token",
+    "userinfo_endpoint": "http://192.168.1.135:8080/openid/me",
+    "introspection_endpoint": "http://192.168.1.135:8080/openid/token/introspect",
+    "jwks_endpoint": "http://192.168.1.135:8080/openid/certs",
+    "end_session_endpoint": "http://192.168.1.135:8080/openid/session/end",
     "index_url": "/index.html",
     "cookie_name": "JSESSIONID",
-    "logout_approach": "server",
-    "post_logout_redirect_uri": "http://dev.ripple.foundation:8000"
+    "logout_approach": "client",
+    "post_logout_redirect_uri": "http://192.168.1.135:8000"
   }
 }

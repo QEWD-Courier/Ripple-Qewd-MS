@@ -24,11 +24,12 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  15 June 2018
+  28 June 2018
 
 */
 
 var request = require('request');
+var headingData = {};
 
 function deleteHeadingRecord(patientId, heading, sourceId, jwt, callback) {
 
@@ -63,10 +64,107 @@ function deleteHeadingRecord(patientId, heading, sourceId, jwt, callback) {
   */
 }
 
+function postHeading(patientId, heading, data, jwt, callback) {
+  var url = 'http://';
+  if (this.userDefined.config.ssl) url = 'https://';
+  url = url + 'localhost';
+  if (this.userDefined.config.port && this.userDefined.config.port !== 80) {
+    url = url + ':' + this.userDefined.config.port;
+  }
+  url = url + '/api/patients/' + patientId + '/' + heading;
+
+  var options = {
+    url: url,
+    method: 'POST',
+    json: true,
+    qs: {
+      format: 'openehr-jumper'
+    },
+    body: data,
+    headers: {
+      Authorization: 'Bearer ' + jwt
+    }
+  };
+  request(options, function(error, response, body) {
+    callback(error, response, body);
+  });
+}
+
+function getHeadingSummary(patientId, heading, jwt, callback) {
+  var url = 'http://';
+  if (this.userDefined.config.ssl) url = 'https://';
+  url = url + 'localhost';
+  if (this.userDefined.config.port && this.userDefined.config.port !== 80) {
+    url = url + ':' + this.userDefined.config.port;
+  }
+  url = url + '/api/patients/' + patientId + '/' + heading;
+
+  var options = {
+    url: url,
+    method: 'GET',
+    json: true,
+    headers: {
+      Authorization: 'Bearer ' + jwt
+    }
+  };
+  request(options, function(error, response, body) {
+    callback(error, response, body);
+  });
+}
+
+function populatePatient(patientId, heading, jwt, finished) {
+  if (!headingData[heading]) {
+    headingData[heading] = require('../data/' + heading + '.json');
+  }
+  var self = this;
+  var max = headingData[heading].length;
+  var count = 0;
+  headingData[heading].forEach(function(data) {
+    postHeading.call(self, patientId, heading, data, jwt, function(error, response, body) {
+      count++;
+      if (count === max) {
+        getHeadingSummary.call(self, patientId, heading, jwt, function(error, response, body) {
+          if (error) {
+            return finished(error);
+          }
+          if (!Array.isArray(body)) {
+            return finished({error: 'Invalid response from CDR service'});
+          }
+          finished(body);
+        });
+      }
+    });
+  });
+}
+
 
 module.exports = {
 
+  beforeHandler: function(messageObj, session, send, finished) {
+    if (messageObj.type === 'loggedIn') return;
+    if (!session.authenticated) {
+      finished({error: 'User MUST be authenticated'});
+      return false;
+    }
+  },
+
   handlers: {
+
+    loggedIn: function(messageObj, session, send, finished) {
+      var validJWT = this.jwt.handlers.isJWTValid.call(this, messageObj.params.jwt);
+      if (validJWT.ok) {
+        session.timeout = 20 * 60;
+        session.updateExpiry();
+        session.authenticated = true;
+        finished({ok: true}); 
+      }
+      else {
+        session.timeout = 1;
+        session.updateExpiry();
+        session.authenticated = false;
+        finished({ok: false}); 
+      }
+    },
 
     deleteHeading: function(messageObj, session, send, finished) {
 
@@ -79,27 +177,11 @@ module.exports = {
 
         // send REST request to get summary for this heading
 
-        var url = 'http://';
-        if (this.userDefined.config.ssl) url = 'https://';
-        url = url + 'localhost';
-        if (this.userDefined.config.port && this.userDefined.config.port !== 80) {
-          url = url + ':' + this.userDefined.config.port;
-        }
-        url = url + '/api/patients/' + patientId + '/' + heading;
-
-        var options = {
-          url: url,
-          method: 'GET',
-          json: true,
-          headers: {
-            Authorization: 'Bearer ' + messageObj.params.jwt
-          }
-        };
         var self = this;
+        var jwt = messageObj.params.jwt;
 
-        request(options, function(error, response, body) {
+        getHeadingSummary.call(this, patientId, heading, jwt, function(error, response, body) {
           console.log('body = ' + JSON.stringify(body));
-
           var max = body.length;
 
           function deleteARecord(no) {
@@ -119,8 +201,6 @@ module.exports = {
           }
           
           deleteARecord(0);
-
-          //finished(body);
         });
 
       }
@@ -145,35 +225,33 @@ module.exports = {
         ripple: ripple,
         phr: phr
       });
+    },
+
+    populatePatient: function(messageObj, session, send, finished) {
+      var params = messageObj.params;
+      if (!params.patientId || params.patientId === '') {
+        return finished({error: 'Patient Id not defined or empty string'});
+      }
+      if (!params.heading || params.heading === '') {
+        return finished({error: 'Heading not defined or empty string'});
+      }
+      // first fetch the heading summary for this patient / heading to ensure there's
+      //  no errors and that there's no data
+
+      var self = this;
+      var jwt = messageObj.params.jwt;
+      getHeadingSummary.call(this, params.patientId, params.heading, jwt, function(error, response, body) {
+        if (error) {
+          return finished(error);
+        }
+        if (!Array.isArray(body)) {
+          return finished({error: 'Invalid response from CDR service'});
+        }
+        if (body.length > 0) {
+          return finished({error: 'Patient ' + params.patientId + ' already has ' + params.heading + ' data'});
+        }
+        populatePatient.call(self, params.patientId, params.heading, jwt, finished);
+      });
     }
-
-    /*
-    login: function(messageObj, session, send, finished) {
-       
-      var username = messageObj.params.username;
-      if (!username || username === '') {
-        return finished({error: 'You must enter a username'});
-      }
-
-      var password = messageObj.params.password;
-      if (!password || password === '') {
-        return finished({error: 'You must enter a password'});
-      }
-      var credentialsDoc = this.db.use('RippleAdmin', ['byUsername']);
-
-      var userCredentials = credentialsDoc.$(username);
-      if (!userCredentials.exists) {
-        // username not recognised
-        return finished({error: 'Invalid login attempt'});
-      }
-      if (digest(password) !== userCredentials.$('password').value) {
-        // username ok but wrong password
-        return finished({error: 'Invalid login attempt'});
-      }
-      session.timeout = 20 * 60;
-      session.authenticated = true;
-      finished({ok: true});
-    }
-    */
   }
 };

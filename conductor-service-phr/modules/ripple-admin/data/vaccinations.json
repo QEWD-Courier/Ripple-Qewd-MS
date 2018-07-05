@@ -1,0 +1,41 @@
+[
+  {
+    "immunisation_procedure": {
+      "immunisation_name": {
+        "value": "Tetanus"
+      },
+      "series_number": {
+        "value": 3
+      },
+      "comment": {
+        "value": "Booster needed in 12 months"
+      },
+      "time": {
+        "value": "2017-03-23T07:45:20.622Z"
+      },
+      "ism_transition": {
+        "value": "532"
+      }
+    }
+  },
+  {
+    "immunisation_procedure": {
+      "immunisation_name": {
+        "value": "Japanese encephalitis"
+      },
+      "series_number": {
+        "value": 1235
+      },
+      "comment": {
+        "value": "Injection 1/2"
+      },
+      "time": {
+        "value": "2018-06-02T23:00:00.000Z"
+      },
+      "ism_transition": {
+        "value": "532"
+      }
+
+    }
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "relevant_contacts": {
+      "relevant_contact": {
+        "individual_person": {
+          "contact_details": {
+            "comms_description": {
+              "value": "Mobile: 01920 41312"
+            }
+          },
+          "person_name": {
+            "unstructured_name": {
+              "value": "Adrian Levison"
+            }
+          },
+          "address": {
+            "address_description": {
+              "value": "18 The Ridge, Leeds"
+            }
+          }
+        },
+        "note": {
+          "value": "Lives next door, call anytime."
+        },
+        "is_next_of_kin": {
+          "value": true
+        },
+        "relationship_category": {
+          "value": "Informal carer",
+          "code": "at0036",
+          "terminology": "local"
+        },
+        "relationship_role": {
+          "value": "Brother"
+        }
+      }
+    }
+  },
+  {
+    "relevant_contacts": {
+      "relevant_contact": {
+        "individual_person": {
+          "contact_details": {
+            "comms_description": {
+              "value": "Telephone 020 8641 1234"
+            }
+          },
+          "person_name": {
+            "unstructured_name": {
+              "value": "John Smith"
+            }
+          }
+        },
+        "note": {
+          "value": "Weekends and evenings"
+        },
+        "relationship_category": {
+          "value": "Informal carer",
+          "code": "at0036",
+          "terminology": "local"
+        },
+        "relationship_role": {
+          "value": "Family friend"
+        }
+      }
+    },
+    "composer": {
+      "value": "bob.smith@gmail.com"
+    }
+  },
+  {
+    "relevant_contacts": {
+      "relevant_contact": {
+        "individual_person": {
+          "contact_details": {
+            "comms_description": {
+              "value": "Mobile: 01555 963963"
+            }
+          },
+          "person_name": {
+            "unstructured_name": {
+              "value": "Thomas Hillyer"
+            }
+          },
+          "address": {
+            "address_description": {
+              "value": "45 The Avenue, Leeds"
+            }
+          }
+        },
+        "note": {
+          "value": "do not call between 1200 and 1400."
+        },
+        "is_next_of_kin": {
+          "value": true
+        },
+        "relationship_category": {
+          "value": "Main informal carer",
+          "code": "at0037",
+          "terminology": "local"
+        },
+        "relationship_role": {
+          "value": "Son"
+        }
+      }
+    }
+  },
+  {
+    "relevant_contacts": {
+      "relevant_contact": {
+        "individual_person": {
+          "contact_details": {
+            "comms_description": {
+              "value": "Mobile: 05134 121314"
+            }
+          },
+          "person_name": {
+            "unstructured_name": {
+              "value": "Gillian Green"
+            }
+          },
+          "address": {
+            "address_description": {
+              "value": "The Cottage, Ivy Lane, Leeds"
+            }
+          }
+        },
+        "note": {
+          "value": "Lives in the same house."
+        },
+        "is_next_of_kin": {
+          "value": true
+        },
+        "relationship_category": {
+          "value": "Main informal carer",
+          "code": "at0037",
+          "terminology": "local"
+        },
+        "relationship_role": {
+          "value": "Sister"
+        }
+      }
+    }
+  }
+]

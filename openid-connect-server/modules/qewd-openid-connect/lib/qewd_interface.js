@@ -1,15 +1,15 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-admin: Ripple User Administration MicroService                    |
+ | qewd-openid-connect: QEWD-enabled OpenId Connect Server                  |
  |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
+ | Copyright (c) 2018 M/Gateway Developments Ltd,                           |
+ | Redhill, Surrey UK.                                                      |
  | All rights reserved.                                                     |
  |                                                                          |
- | http://rippleosi.org                                                     |
- | Email: code.custodian@rippleosi.org                                      |
+ | http://www.mgateway.com                                                  |
+ | Email: rtweed@mgateway.com                                               |
  |                                                                          |
- | Author: Rob Tweed, M/Gateway Developments Ltd                            |
  |                                                                          |
  | Licensed under the Apache License, Version 2.0 (the "License");          |
  | you may not use this file except in compliance with the License.         |
@@ -24,56 +24,33 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 June 2018
+  4 July 2018
 
 */
 
-"use strict"
+module.exports = async function() {
 
-var React = require('react');
-var createReactClass = require('create-react-class');
-var ReactBootstrap = require('react-bootstrap');
+  this.openid_server = {};
 
-var GetHeadingSummary = require('./GetHeadingSummary');
-//var PopulatePatient = require('./PopulatePatient');
+  var handleMessagePromise = function(messageObj) {
+    var self = this;
+    return new Promise((resolve) => {
+      self.handleMessage(messageObj, function(responseObj) {
+        resolve(responseObj);
+      });
+    });
+  };
 
-var {
-  Tabs,
-  Tab
-} = ReactBootstrap;
-
-var OpenEHRMaint = createReactClass({
-
-  getInitialState: function() {
-    return {
-      status: 'initial'
-    }
-  },
-
-  componentWillMount: function() {
-    this.controller = require('./controller-OpenEHRMaint')(this.props.controller, this);
-  },
-
-  render: function() {
-    console.log('Rendering openEHRMaint');
-
-    if (this.controller.userMode !== 'admin') {
-      return (
-        <div></div>
-      );
-    }
-
-    return (
-      <Tabs defaultActiveKey={1} id="openEHR-Options">
-        <Tab eventKey={1} title="Maintain Headings">
-          <GetHeadingSummary
-            controller = {this.controller}
-          />
-        </Tab>
-      </Tabs>
-    );
+  async function sendAsync(message) {
+    //message.application = 'openid-server';
+    //message.expressType = message.type;
+    //message.type = 'ewd-qoper8-express';
+    console.log('*** send_promise - sendAsync - this.openid_server = ' + JSON.stringify(this.openid_server, null, 2));
+    if (this.openid_server.token) message.token = this.openid_server.token;
+    var self = this;
+    return await handleMessagePromise.call(self, message);
   }
 
-});
+  this.send_promise = sendAsync.bind(this);
 
-module.exports = OpenEHRMaint;
+};

@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 June 2018
+  27 June 2018
 
 */
 
@@ -39,6 +39,7 @@ var HeadingTable = require('./HeadingTable');
 
 var {
   Button,
+  ButtonGroup,
   Panel
 } = ReactBootstrap;
 
@@ -71,6 +72,8 @@ var GetHeadingSummary = createReactClass({
 
     console.log('Rendering GetHeadingSummary');
 
+    console.log('this.populate = ' + JSON.stringify(this.populate, null, 2));
+
     var listing = (
       <div></div>
     );
@@ -85,6 +88,9 @@ var GetHeadingSummary = createReactClass({
           controller = {this.controller}
         />
       );
+    }
+    else {
+      //this.populate.btnVisibility = 'hidden';
     }
 
     return (
@@ -116,12 +122,21 @@ var GetHeadingSummary = createReactClass({
               formModule = 'GetHeadingSummary'
             />
 
-            <Button 
-              bsClass="btn btn-success"
-              onClick = {this.getHeadingSummary}
-            >
-              Fetch Heading Records
-            </Button>
+            <ButtonGroup>
+              <Button 
+                bsClass="btn btn-success"
+                onClick = {this.getHeadingSummary}
+              >
+                Fetch Heading Records
+              </Button>
+
+              <Button 
+                bsClass={this.populate.btnVisibility}
+                onClick = {this.populatePatient}
+              >
+                Populate With Sample Data
+              </Button>
+            </ButtonGroup>
 
             {listing}
 

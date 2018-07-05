@@ -1,0 +1,146 @@
+[
+  {
+    "problems_and_issues": {
+      "problem_diagnosis": {
+        "problem_diagnosis_name": {
+          "value": "Migraine",
+          "code": "37796009",
+          "terminology": "SNOMED-CT"
+        },
+        "date_time_of_onset": {
+          "value": "2011-06-27T12:30:37.553Z"
+        },
+        "clinical_description": {
+          "value": "Associated with stress and chocolate"
+        }
+      }
+    }
+  },
+  {
+    "problems_and_issues": {
+      "problem_diagnosis": {
+        "problem_diagnosis_name": {
+          "value": "Recurrent urinary tract infection",
+          "code": "197927001",
+          "terminology": "SNOMED-CT"
+        },
+        "date_time_of_onset": {
+          "value": "1999-03-17T12:30:37.000Z"
+        },
+        "clinical_description": {
+          "value": "Pretty stable over time"
+        }
+      }
+    }
+  },
+  {
+    "problems_and_issues": {
+      "problem_diagnosis": {
+        "problem_diagnosis_name": {
+          "value": "Dupuytren's contracture",
+          "code": "274142002",
+          "terminology": "SNOMED-CT"
+        },
+        "date_time_of_onset": {
+          "value": "2015-05-05T12:30:37.553Z"
+        },
+        "body_site": {
+          "value": "Left hand",
+          "code": "85151006",
+          "terminology": "SNOMED-CT"
+        },
+        "clinical_description": {
+          "value": "Becoming quite problematic at work"
+        }
+      }
+    }
+  },
+  {
+    "problems_and_issues": {
+      "problem_diagnosis": {
+        "problem_diagnosis_name": {
+          "value": "myocardial infarction",
+          "code": "22298006",
+          "terminology": "SNOMED-CT"
+        },
+        "comment": {
+          "value": "fully recovered"
+        },
+        "date_time_of_onset": {
+          "value": "2009-05-12T12:30:37.553Z"
+        },
+        "diagnostic_certainty": {
+          "value": "Confirmed",
+          "code": "at0076",
+          "terminology": "local"
+        },
+        "problem_diagnosis_status": {
+          "diagnostic_status": {
+            "value": "Established",
+            "code": "at0018",
+            "terminology": "local"
+          },
+          "active_inactive": {
+            "value": "Inactive",
+            "code": "at0027",
+            "terminology": "local"
+          },
+          "episodicity": {
+            "value": "Ongoing episode",
+            "code": "at0035",
+            "terminology": "local"
+          },
+          "resolution_status": {
+            "value": "Resolving",
+            "code": "at0085",
+            "terminology": "local"
+          }
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr Jennifer Handley"
+    }
+  },
+  {
+    "problems_and_issues": {
+      "problem_diagnosis": {
+        "problem_diagnosis_name": {
+          "value": "Asthma",
+          "code": "12393890",
+          "terminology": "SNOMED-CT"
+        },
+        "date_time_of_onset": {
+          "value": "2018-06-07T00:00:00.000Z"
+        },
+        "clinical_description": {
+          "value": "Occasional shortness of breath and tight chest, in evenings/mornings. Sometimes brought on through exercise when cold"
+        }
+      }
+    }
+  },
+  {
+    "problems_and_issues": {
+      "problem_diagnosis": {
+        "last_updated": {
+          "value": "2017-01-01T00:00:00.000Z"
+        },
+        "problem_diagnosis_name": {
+          "value": "Hypertension",
+          "code": "38341003",
+          "terminology": "SNOMED-CT"
+        },
+        "date_time_of_onset": {
+          "value": "2004-09-17T12:30:37.553Z"
+        },
+        "problem_diagnosis_status": {
+          "active_inactive": {
+            "value": "Active",
+            "code": "at0026",
+            "terminology": "local"
+          }
+        }
+      }
+    }
+  }
+]

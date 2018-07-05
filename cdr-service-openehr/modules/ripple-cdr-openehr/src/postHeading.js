@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  22 Junel 2018
+  27 June 2018
 
 
 */
@@ -93,7 +93,7 @@ function postHeading(patientId, heading, data, qewdSession, callback) {
           ehrId: ehrId,
           host: host,
           openEhrSessionId: openEhrSession.id,
-          data: data,
+          data: data.data,
           headingPostMap: headingMap[heading].post
         };
         postHeadingData.call(self, params, function(responseObj) {

@@ -1,0 +1,128 @@
+[
+  {
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "medication_item": {
+            "value": "Simvastatin",
+            "code": "319997009",
+            "terminology": "SNOMED-CT"
+          },
+          "route": {
+            "value": "oral"
+          },
+          "dose_timing_description": {
+            "value": "20mg"
+          },
+          "additional_instruction": {
+            "value": "Avoid grapefruit"
+          },
+          "order_details": {
+            "order_start_date_time": {
+              "value": "2017-06-13T10:50:42.000Z"
+            },
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          },
+          "timing": {
+            "value": "R5/2017-06-13T10:00:00Z/P1M"
+          }
+        },
+        "narrative": {
+          "value": "Simvastatin - oral - 20mg at night"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr George Shaw"
+    }
+  },
+  {
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "medication_item": {
+            "value": "Budesonide 100micrograms/dose dry powder inhaler",
+            "code": "320565009",
+            "terminology": "SNOMED-CT"
+          },
+          "route": {
+            "value": "inhalation"
+          },
+          "dose_timing_description": {
+            "value": "1 or 2 inhalations"
+          },
+          "additional_instruction": {
+            "value": "Use regularly (Preventer)"
+          },
+          "order_details": {
+            "order_start_date_time": {
+              "value": "2016-02-10T10:50:42.000Z"
+            },
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          },
+          "timing": {
+            "value": "R5/2016-02-09T10:00:00Z/P1M"
+          }
+        },
+        "narrative": {
+          "value": "Budesonide 100micrograms/dose dry powder inhaler"
+        }
+      }
+    }
+  },
+  {
+    "medication_and_medical_devices": {
+      "medication_order": {
+        "order": {
+          "medication_item": {
+            "value": "Diltiazem hydrochloride",
+            "code": "376724001",
+            "terminology": "SNOMED-CT"
+          },
+          "route": {
+            "value": "oral"
+          },
+          "dose_timing_description": {
+            "value": "60mg"
+          },
+          "additional_instruction": {
+            "value": "Swallow whole - do not dissolve in mouth"
+          },
+          "order_details": {
+            "order_start_date_time": {
+              "value": "2016-05-25T10:50:42.000Z"
+            },
+            "order_summary": {
+              "course_status": {
+                "value": "Active",
+                "code": "at0021",
+                "terminology": "local"
+              }
+            }
+          },
+          "timing": {
+            "value": "R5/2017-05-26T10:00:00Z/P1M"
+          }
+        },
+        "narrative": {
+          "value": "Diltiazem hydrochloride - oral - 60mg at night"
+        }
+      }
+    },
+    "composer": {
+      "value": "Dr George Shaw"
+    }
+  }
+]

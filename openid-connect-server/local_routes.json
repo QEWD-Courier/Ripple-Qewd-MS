@@ -1,0 +1,12 @@
+[
+  {
+    "path": "qewd-openid-connect",
+    "module": "/opt/qewd/mapped/modules/qewd-openid-connect/handlers",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  }
+]

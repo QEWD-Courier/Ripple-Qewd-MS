@@ -231,7 +231,10 @@
               }
             },
             "narrative": {
-              "type": "string",
+              "anyOf": [
+                {"type": "string"},
+                {"type": "object"}
+              ],
               "minLength": 1,
               "description": "Narrative",
               "properties": {

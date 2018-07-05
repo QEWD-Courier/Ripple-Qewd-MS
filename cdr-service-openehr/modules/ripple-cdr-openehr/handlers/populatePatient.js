@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-oauth-openid: Ripple MicroServices for OAuth OpenId               |
+ | ripple-cdr-openehr: Ripple MicroServices for OpenEHR                     |
  |                                                                          |
  | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
  | All rights reserved.                                                     |
@@ -24,60 +24,50 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 July 2018
+  27 June 2018
 
 */
 
-var request = require('request');
+var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
+var populatePatient = require('../src/populatePatient');
+var tools = require('../src/tools');
+var getHeadingSummary = require('./getHeadingSummary');
 
 module.exports = function(args, finished) {
 
-  var id_token = args.session.openid.id_token;
-  var uri = this.userDefined.auth.end_session_endpoint;
+  if (args.session.userMode !== 'admin') {
+    return finished({error: 'Invalid request'});
+  }
 
-  if (!uri) return finished({
-    ok: false
+  var patientId = args.patientId;
+  var valid = tools.isPatientIdValid(patientId);
+  if (valid.error) return finished(valid);
+
+  var heading = args.heading;
+  if (heading && (heading === 'feeds' || heading === 'top3Things')) {
+    return finished({error: 'Cannot populate ' + heading + ' records'});
+  }
+
+  if (!tools.isHeadingValid.call(this, heading)) {
+    return finished({error: 'Invalid or missing heading: ' + heading});
+  }
+
+  var session = args.req.qewdSession;
+  var self = this;
+
+  fetchAndCacheHeading.call(this, patientId, heading, session, function(response) {
+    if (!response.ok) {
+      console.log('*** No results could be returned from the OpenEHR servers for heading ' + heading);
+      populatePatient.call(self, patientId, heading, function() {
+        // now fetch the new data and return it
+        getHeadingSummary.call(self, args, finished);
+      });
+    }
+    else {
+      return finished({error: 'heading ' + heading + ' for ' + patientId + ' already has data'});
+    }
   });
 
-  if (this.userDefined.auth.logout_approach === 'client') {
-
-    uri = uri + '?id_token_hint=' + id_token;
-    uri = uri + '&post_logout_redirect_uri=' + this.userDefined.auth.post_logout_redirect_uri;
-
-    return finished({
-      //redirectURL: 'http://www.mgateway.com:8089/session/end'
-      redirectURL: uri
-    });
-  }
-
-  if (args.session.openid && args.session.openid.id_token) {
-
-    var options = {
-      url: this.userDefined.auth.end_session_endpoint,
-      method: 'GET',
-      qs: {
-        id_token_hint: id_token,
-        //post_logout_redirect_uri: this.userDefined.auth.post_logout_redirect_uri
-      },
-      json: true
-    };
-
-    console.log('**** OpenId end session / logout: options - ' + JSON.stringify(options, null, 2));
-
-    var self = this;
-
-    request(options, function(error, response, body) {
-      console.log('*** logout - response = ' + JSON.stringify(response));
-
-      finished({
-        ok: true,
-        redirectURL: self.userDefined.auth.post_logout_redirect_uri,
-      });
-    });
-  }
-  else {
-    finished({
-      ok: false
-    });
-  }
 };
+
+

@@ -42,6 +42,10 @@ function deleteHeadingRestRequest(patientId, heading, sourceId, controller, call
   })
   .done(function(data) {
     console.log('*** received response: ' + JSON.stringify(data));
+    if (data.token) {
+      controller.token = data.token;
+      console.log('JWT updated');
+    }
     callback(data);
   })
   .fail(function(err, textStatus, errorThrown) {
@@ -106,14 +110,25 @@ module.exports = function (controller, component) {
       var index = component.headingArrayIndex[component.sourceIdToDelete];
       // remove the record from the Heading Array, and therefore from the table on display
       component.headingArray.splice(index, 1);
-      component.warningMessage = component.sourceIdToDelete + ' deleted from OpenEHR';
-      component.showConfirm = false;
-      component.sourceIdToDelete = false;
-      component.sourceIdToDisplay = false;
-      component.sourceToDisplay = false;
+      
+      //component.warningMessage = component.sourceIdToDelete + ' deleted from OpenEHR';
+      //component.showConfirm = false;
+      //component.sourceIdToDelete = false;
+      //component.sourceIdToDisplay = false;
+      //component.sourceToDisplay = false;
+
+      // pass up to getHeadingSummary
+      controller.emit('headingListReceived', {
+        data: component.headingArray,
+        heading: component.props.heading,
+        warning: component.sourceIdToDelete + ' deleted from OpenEHR'
+      });
+
+      /*
       component.setState({
         status: 'completedDelete'
       });
+      */
     });
   }
 

@@ -1,15 +1,15 @@
 /*
 
  ----------------------------------------------------------------------------
- | ripple-admin: Ripple User Administration MicroService                    |
+ | qewd-openid-connect: QEWD-enabled OpenId Connect Server                  |
  |                                                                          |
- | Copyright (c) 2018 Ripple Foundation Community Interest Company          |
+ | Copyright (c) 2018 M/Gateway Developments Ltd,                           |
+ | Redhill, Surrey UK.                                                      |
  | All rights reserved.                                                     |
  |                                                                          |
- | http://rippleosi.org                                                     |
- | Email: code.custodian@rippleosi.org                                      |
+ | http://www.mgateway.com                                                  |
+ | Email: rtweed@mgateway.com                                               |
  |                                                                          |
- | Author: Rob Tweed, M/Gateway Developments Ltd                            |
  |                                                                          |
  | Licensed under the Apache License, Version 2.0 (the "License");          |
  | you may not use this file except in compliance with the License.         |
@@ -24,56 +24,35 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 June 2018
+  4 July 2018
 
 */
 
-"use strict"
+var config = require('./startup_config.json');
+var local_routes = require('./local_routes.json');
+var oidc_config = require('./oidc-config.json');
 
-var React = require('react');
-var createReactClass = require('create-react-class');
-var ReactBootstrap = require('react-bootstrap');
+var bodyParser;
+var app;
 
-var GetHeadingSummary = require('./GetHeadingSummary');
-//var PopulatePatient = require('./PopulatePatient');
+config.addMiddleware = function(bp, express) {
+  bodyParser = bp;
+  app = express;
+};
 
-var {
-  Tabs,
-  Tab
-} = ReactBootstrap;
+function onStarted() {
+  var self = this;
+  var deleteDocuments = (config.delete_documents === true);
+  console.log('Wait a couple of seconds for oidc-provider to be available');
+  setTimeout(function() {
+    var oidcServer = require('./modules/qewd-openid-connect');
+    oidcServer.call(self, app, bodyParser, oidc_config);
+  },2000);
+}
 
-var OpenEHRMaint = createReactClass({
+module.exports = {
+  config: config,
+  routes: local_routes,
+  onStarted: onStarted
+};
 
-  getInitialState: function() {
-    return {
-      status: 'initial'
-    }
-  },
-
-  componentWillMount: function() {
-    this.controller = require('./controller-OpenEHRMaint')(this.props.controller, this);
-  },
-
-  render: function() {
-    console.log('Rendering openEHRMaint');
-
-    if (this.controller.userMode !== 'admin') {
-      return (
-        <div></div>
-      );
-    }
-
-    return (
-      <Tabs defaultActiveKey={1} id="openEHR-Options">
-        <Tab eventKey={1} title="Maintain Headings">
-          <GetHeadingSummary
-            controller = {this.controller}
-          />
-        </Tab>
-      </Tabs>
-    );
-  }
-
-});
-
-module.exports = OpenEHRMaint;

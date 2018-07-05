@@ -24,13 +24,27 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 June 2018
+  27 June 2018
 
 */
 
 var tools = require('../src/tools');
 var deleteHeading = require('../src/deleteHeading');
 var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
+
+function deleteFromSession(session, sourceId) {
+  var cachedRecord = session.data.$(['headings', 'bySourceId', sourceId]);
+  var heading = cachedRecord.$('heading').value;
+  var host = cachedRecord.$('host').value;
+  var patientId = cachedRecord.$('patientId').value;
+  var date = cachedRecord.$('date').value;
+
+  session.data.$(['headings', 'byHeading', heading, sourceId]).delete();
+  var byPatientId = session.data.$(['headings', 'byPatientId', patientId, heading]);
+  byPatientId.$(['byDate', date, sourceId]).delete();
+  byPatientId.$(['byHost', host, sourceId]).delete();
+  cachedRecord.delete();
+}
 
 function deletePatientHeading(args, finished) {
 
@@ -78,6 +92,7 @@ function deletePatientHeading(args, finished) {
       }
 
       deleteHeading.call(self, patientId, heading, compositionId, host, session, function(response) {
+        deleteFromSession(session, sourceId);
         finished(response);
       });
     }

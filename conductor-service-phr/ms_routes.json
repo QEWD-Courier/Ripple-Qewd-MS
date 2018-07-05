@@ -154,6 +154,11 @@
     "destination": "cdr_openehr_service"
   },
   {
+    "path": "/api/populate/:patientId/:heading",
+    "method": "GET",
+    "destination": "cdr_openehr_service"
+  },
+  {
     "path": "/api/openehr/jumper/build",
     "method": "GET",
     "destination": "openehr_jumper_service"

@@ -75,6 +75,8 @@ In the file:
 
 #### IDCR Conductor Configuration
 
+Note: The IDCR service is optional.  Ignore this section if you're just interested in the PHR functionality.
+
 In the file:
 
      ~/ripple/conductor-service-idcr/ms-hosts.json
@@ -97,45 +99,20 @@ In the file:
 
   Save your changes (keeping the file-name unchanged).
 
+### 2 The Configuration Parameters for the PHR Authentication Service
 
-### 2. The Configuration Parameters for the PHR Authentication Service
+This repository contains an OpenId Connect Server Container that may be used for testing / evaluation purposes, and which is assumed to be what you will use.
 
+See the instructions in the folders for the *authentication-service-phr* and *openid-connect-server* Containers.
 
-These are defined in the file:
-
-       ~/ripple/authentication-service-phr/userDefined-openid.json
-
-#### Account Details
-
-  You'll need to define correct values for the following two parameters:
-
-
-      "client_id": "xxxxxxxxxx",
-      "client_secret": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
-
-  Contact us for the Gov.UK Verify sandbox credentials
-
-#### Callback URL
-
-
-  You'll need to redefine this line:
-
-      "callback_url": "http://www.mgateway.com:8080/phr/loggedIn.html",
-
-  Change this URL an external-facing, publicly-accessible address for your own PHR Conductor service, eg:
-
-      "callback_url": "http://my.server.com:8080/phr/loggedIn.html",
-
-  Important: the Gov.UK Verify service MUST be able to redirect to your PHR Conductor Micro-Service, so
-  the domain name/port you specify must be publicly-accessible from the Internet.
-
-  Save your changes (keeping the file-name unchanged).
+You'll also find instructions in the *authentication-service-phr* folder on how to switch to production use of NHS Digital's Citizen Id Authentication service.
 
 
 ### 3. The Configuration Parameters for the IDCR Authentication Service
 
+This is optional.  If you're only interested in the PHR functionality, you can skip this section.
 
-This assumes you'll be using an Auth0 account, and the credentials are defined in the file:
+This MicroService assumes you'll be using an Auth0 account, and the credentials are defined in the file:
 
        ~/ripple/authentication-service-idcr/userDefined-auth0.json
 
@@ -175,12 +152,12 @@ This assumes you'll be using an Auth0 account, and the credentials are defined i
 Each MicroService is run as a Docker Container - this container uses the *qewd-server* Docker service which
 includes not only an instance of QEWD, but also an instance of the YottaDB NoSQL database which is mainly
 used for QEWD internal management and user Session management.  However, it is also used as a database for
-the *authentication-service-phr* MicroService.  In order for such data to persist beyond the life-span of the 
-Docker container, the YottaDB database files are mapped to pre-initialised files in the */yottadb* directory.
+the *authentication-service-phr* and *cdr-service-openehr* MicroServices.  In order for such data to persist beyond the life-span of the 
+Docker containers, the YottaDB database files are mapped to pre-initialised files in the */yottadb* directory.
 
 Please don't touch or change the files in this directory and its sub-directories.
 
-Note, when the *authentication-service-phr* MicroService is shut down, the files in this directory
+Note, when the *authentication-service-phr* and/or *cdr-service-openehr* MicroService is shut down, the files in this directory
 can be copied / backed up if required.
 
 
@@ -190,6 +167,7 @@ can be copied / backed up if required.
 */conductor-service-phr* MicroService.  You can start them in any sequence you wish.
 
 - When all the MicroServices are running, start the browser application: see the README file in the */conductor-service-phr* folder.
+
 
 ## The OpenEHR Jumper Functionality
 
