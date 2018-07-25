@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  9 May 2018
+  24 July 2018
 
 */
 
@@ -39,6 +39,14 @@ process.on('unhandledRejection', function(reason, p){
 });
 
 module.exports = function(args, finished) {
+
+  if (args.req.query.error) {
+    var error = args.req.query.error;
+    if (args.req.query.error_description) {
+      error = error + ': ' + args.req.query.error_description;
+    }
+    return finished({error: error});
+  }
 
   errorCallback = finished;
 

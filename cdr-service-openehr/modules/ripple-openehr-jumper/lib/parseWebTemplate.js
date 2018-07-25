@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  8 June 2018
+  17 July 2018
 
 */
 
@@ -78,9 +78,11 @@ function parse(obj, path, info, platform, flatJSONPath) {
     else {
       var nodeId = removePunctuation(node.id);
       var tree_structure = false;
-      if (node.type === 'ITEM_TREE' && (node.id === 'tree' || node.id === 'structure')) tree_structure = true;
+      if (node.type === 'ITEM_TREE' && (node.id === 'tree' || node.id === 'structure' || node.id === 'list')) tree_structure = true;
       if (node.type === 'HISTORY' && node.id === 'event_series') tree_structure = true;
       if (node.type === 'POINT_EVENT') tree_structure = true;
+      if (node.type === 'HISTORY' && node.category === 'DATA_STRUCTURE') tree_structure = true;
+      if (node.type === 'EVENT' && node.category === 'DATA_STRUCTURE') tree_structure = true;
 
       if (!tree_structure) {
         currentPath.push(nodeId);

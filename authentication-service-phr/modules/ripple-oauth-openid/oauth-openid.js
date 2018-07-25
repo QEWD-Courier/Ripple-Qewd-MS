@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  13 March 2018
+  24 July 2018
 
 */
 
@@ -128,6 +128,7 @@ module.exports = {
 
       var client = this.auth.client;
       this.auth.getRedirectURL = function(scope) {
+        scope = scope || config.scope.login;
         return client.authorizationUrl({
           redirect_uri: config.callback_url,
           scope: scope,

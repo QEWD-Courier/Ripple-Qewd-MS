@@ -24,12 +24,11 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 April 2018
+  25 July 2018
 
 */
 
 var fs = require('fs-extra');
-var buildFile = require('./buildFile');
 var buildHeadingFHIRTemplate = require('./buildHeadingFHIRTemplate');
 var buildHeadingRippleTemplate = require('./buildHeadingRippleTemplate');
 var buildJSONFile = require('./buildJsonFile');

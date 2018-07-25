@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  30 April 2018
+  20 July 2018
 
 */
 
@@ -119,6 +119,7 @@ module.exports = function(params) {
   var metadata = params.metadata;
   //var documentName = params.documentName;
   var host = params.host;
+  if (host === 'ethercis') logging.on = true;
   var patientId = params.patientId;
 
   //var templateDoc = this.db.use(documentName, 'templateMap', templateId);
@@ -129,6 +130,8 @@ module.exports = function(params) {
   var results = [];
 
   rawjson.resultSet.forEach(function(result, index) {
+
+    if (index > 0 && host === 'ethercis') logging.on = false;
 
     var data = result.data;
 
@@ -160,11 +163,14 @@ module.exports = function(params) {
     metadata.forEach(function(fieldInfo) {
       var parsedData = output;
       var aqlPath = fieldInfo.aqlPath;
-      if (logging.on) console.log('\n' + aqlPath);
+      if (logging.on) {
+        console.log('\n' + aqlPath);
+        console.log('\n' + JSON.stringify(fieldInfo));
+      }
       var fieldObj = getByAQLPath(data, fieldInfo);
       if (!fieldObj) return;
 
-      //if (logging.on) console.log('** fieldObj = ' + JSON.stringify(fieldObj));
+      if (logging.on) console.log('** fieldObj = ' + JSON.stringify(fieldObj));
 
       var fieldData = {};
 
@@ -178,6 +184,8 @@ module.exports = function(params) {
 
       if (fieldObj.value) fieldData.value = fieldObj.value;
       //if (fieldObj.value && fieldObj.value.value) fieldData.value = fieldObj.value.value;
+
+      console.log('&&& type = ' + fieldInfo.type);
 
       if (fieldInfo.type === 'DV_CODED_TEXT' || fieldInfo.type === 'DV_TEXT') {
         if (fieldObj.value && fieldObj.value.value) fieldData.value = fieldObj.value.value;
@@ -194,6 +202,10 @@ module.exports = function(params) {
         if (fieldObj.code_string) fieldData.value = fieldObj.code_string;
       }
 
+      if (fieldInfo.type === 'CODE_PHRASE') {
+        if (fieldObj.code_string) fieldData.value = fieldObj.code_string;
+      }
+
       if (fieldInfo.type === 'PARTY_PROXY') {
         if (fieldObj.name) fieldData.value = fieldObj.name;
       }
@@ -204,6 +216,20 @@ module.exports = function(params) {
 
       if (fieldInfo.type === 'DV_PARSABLE') {
         if (fieldObj.value && fieldObj.value.value) fieldData.value = fieldObj.value.value;
+      }
+
+      if (fieldInfo.type === 'DV_PROPORTION') {
+        console.log('dv_proportion!');
+        if (fieldObj.numerator && fieldObj.denominator) {
+          console.log('yes!');
+          if (fieldObj.type === 'PERCENT') {
+            fieldData.value = fieldObj.numerator + '%';
+          }
+          else {
+            fieldData.value = fieldObj.numerator + '/' + fieldObj.denominator;
+          }
+          console.log('&&& dv-proportion value: ' + fieldData.value);
+        }
       }
 
       if (fieldInfo.type === 'DV_DATE_TIME') {

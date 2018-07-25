@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  28 June 2018
+  17 July 2018
 
 */
 
@@ -142,6 +142,7 @@ module.exports = {
 
   beforeHandler: function(messageObj, session, send, finished) {
     if (messageObj.type === 'loggedIn') return;
+    if (messageObj.type === 'getHomePageURLs') return;
     if (!session.authenticated) {
       finished({error: 'User MUST be authenticated'});
       return false;

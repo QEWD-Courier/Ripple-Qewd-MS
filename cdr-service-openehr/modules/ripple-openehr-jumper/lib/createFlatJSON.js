@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 June 2018
+  25 July 2018
 
 */
 
@@ -55,6 +55,8 @@ function removePunctuation(string) {
   if (string.indexOf('__') !== -1) string = string.split('__').join('_');
   return string.replace(/[.,\/#!$%\^&\*;:?{}=`~()]/g,"");
 }
+
+/*
 
 function getPaths(obj, path, paths, host) {
 
@@ -156,6 +158,12 @@ function getPaths(obj, path, paths, host) {
           path: currentPath + '/current_state|code'
         });
       }
+      else if (type === 'DV_QUANTITY') {
+        paths.push({
+          id: getSource(currentPath, 'magnitude'),
+          path: currentPath + '|magnitude'
+        });
+      }
       else {
         paths.push({
           id: getSource(currentPath),
@@ -165,6 +173,8 @@ function getPaths(obj, path, paths, host) {
     }
   });
 }
+
+*/
 
 function createFlatJSONTemplate(metaDataArray) {
 
@@ -234,6 +244,12 @@ function createFlatJSONTemplate(metaDataArray) {
     }
     else if (type === 'ISM_TRANSITION') {
       paths[flatJson + '/current_state|code'] = '=> either(' + path + '.value, <!delete>)';
+    }
+    else if (type === 'DV_QUANTITY') {
+      paths[flatJson + '|magnitude'] = '=> either(' + path + '.value, <!delete>)';
+    }
+    else if (type === 'DV_PROPORTION') {
+      paths[flatJson + '|numerator'] = '=> either(' + path + '.value, <!delete>)';
     }
     else {
       //paths[flatJson] = '=> either(' + path + ', <!delete>)';
