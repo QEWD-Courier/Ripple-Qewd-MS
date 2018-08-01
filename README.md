@@ -12,15 +12,10 @@ Author: Rob Tweed, M/Gateway Developments Ltd (@rtweed)
 
 ## Installation
 
-Clone this repo into your host system:
+Clone this repo into your host system, in a conveniently-named directory `ripple`:
 
        cd ~
-       git clone https://github.com/RippleOSI/Ripple-QEWD-Microservices
-
-Rename the directory that is created, to, eg: "ripple":
-
-       mv ~/Ripple-QEWD-Microservices ~/ripple
-
+       git clone https://github.com/RippleOSI/Ripple-QEWD-Microservices ripple
 
 ## Install Docker
 
