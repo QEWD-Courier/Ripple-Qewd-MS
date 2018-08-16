@@ -43,7 +43,7 @@ There are 3 things you'll need to change.
 
 ### 1. The IP addresses of the MicroService machines
 
-These are defined in the *ms-hosts.json* file of the
+These are defined in the *ms_hosts.json* file of the
 two Conductor services.  Here's what to do:
 
 #### PHR Conductor Configuration
@@ -51,7 +51,7 @@ two Conductor services.  Here's what to do:
 In the file:
 
 
-     ~/ripple/conductor-service-phr/ms-hosts.json
+     ~/ripple/conductor-service-phr/ms_hosts.json
 
   You'll find that it contains:
 
@@ -79,7 +79,7 @@ Note: The IDCR service is optional.  Ignore this section if you're just interest
 
 In the file:
 
-     ~/ripple/conductor-service-idcr/ms-hosts.json
+     ~/ripple/conductor-service-idcr/ms_hosts.json
 
   You'll find that it contains:
 
