@@ -24,15 +24,25 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  20 June 2018
+  08 October 2018
 
 */
 
+var transform = require('qewd-transform-json').transform;
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
 var config = require('./startup_config.json');
-config.jwt = require('./jwt_secret.json');
+config.jwt = global_config.jwt;
 var local_routes = require('./local_routes.json');
 var userDefined = require('./userDefined.json');
+var ms_hosts_template = require('./ms_hosts.json');
+var helpers = require('./helpers');
+var ms_config = require('./ms_config');
+var ms_routes = require('./ms_routes.json');
 
+var ms_hosts = transform(ms_hosts_template, global_config, helpers);
+config.u_services = ms_config(ms_routes, ms_hosts);
+
+console.log('microServices config = ' + JSON.stringify(config.u_services, null, 2));
 
 function onStarted() {
   //var jumper = require('./modules/ripple-openehr-jumper');

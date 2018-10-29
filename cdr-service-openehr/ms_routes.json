@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/api/discovery/:patientId/:heading",
+    "method": "GET",
+    "destination": "cdr_discovery_service"
+  },
+  {
+    "path": "/api/discovery/:patientId/:heading/:sourceId",
+    "method": "GET",
+    "destination": "cdr_discovery_service"
+  }
+]

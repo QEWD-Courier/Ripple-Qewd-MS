@@ -34,6 +34,7 @@ var jwt = require('jwt-simple');
 var adminLogin = require('./admin/login');
 var adminRegister = require('./admin/register');
 var adminDocStatus = require('./admin/docStatus');
+var getUserFromJWT = require('./api/getUserFromJWT');
 
 var path_to_auth;
 var auth_module_name;
@@ -100,6 +101,9 @@ module.exports = {
         '/api/auth/admin/docStatus': {
           GET: adminDocStatus
         },
+        '/api/user': {
+          GET: getUserFromJWT
+        },
       };
 
       if (auth_module_name === 'ripple-auth0') {
@@ -145,7 +149,7 @@ module.exports = {
       }
       if (validJWT) {
         if (req.path === '/api/auth/login') {
-          // Valid JWT / QEWD Session, so bypass the login and signal to the browser not to redirect
+          // Valid JWT & QEWD Session, so bypass the login and signal to the browser not to redirect
           finished({
             authenticated: true
           });

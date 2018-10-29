@@ -29,6 +29,12 @@
 */
 
 var remap = require('./remap_routes');
+//var util = require('util');
+
+function sendError(message, res) {
+  res.set('content-length', message.length);
+  res.status(400).send(message);
+}
 
 module.exports = function(routes, config) {
 
@@ -42,12 +48,33 @@ module.exports = function(routes, config) {
       (req, res, next) => {
 
         console.log('Incoming request: ' + req.method + ': ' + req.originalUrl);
+        console.log('Incoming request: req.url = ' + req.url);
         console.log('Incoming request - headers = ' + JSON.stringify(req.headers, null, 2));
+
+
+        //console.log(util.inspect(req));
+
+        // CSRF Protection  (can't be done for OpenId Connect's request)
+       
+        if (req.url.indexOf('/auth/token?code=') === -1) {
+
+          if (!req.headers) {
+            return sendError('Invalid request: headers missing', res);
+          }
+          if (!req.headers['x-requested-with']) {
+            return sendError('Invalid request: x-requested-with header missing', res);
+          }
+          if (req.headers['x-requested-with'] !== 'XMLHttpRequest') {
+            return sendError('Invalid request: x-requested-with header invalid', res);
+          }
+        }
+
+        // end CSRF Protection
 
         // original Ripple sends the QEWD Session token as a cookie header
         // copy this into a Bearer authorization header
 
-        if (!req.headers.authorisation && req.headers.cookie) {
+        if (!req.headers.authorization && req.headers.cookie) {
           if (req.headers.cookie.indexOf('JSESSIONID=') !== -1) {
             var token = req.headers.cookie.split('JSESSIONID=')[1];
             token = token.split(';')[0];

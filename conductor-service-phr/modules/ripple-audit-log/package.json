@@ -1,0 +1,6 @@
+{
+  "name": "ripple-audit-log",
+  "version": "1.0.0",
+  "description": "User activity audit log for Ripple",
+  "main": "index.js"
+}

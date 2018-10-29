@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  22 June 2018
+  16 October 2018
 
 */
 
@@ -70,16 +70,18 @@ module.exports = function(params, callback) {
   var heading = params.heading;
   var data = params.data.data;
   var format = params.data.format;
+  var template;
 
   initialise.call(this);
 
   data.patientId = params.patientId;
   data.source = params.defaultHost;
+  if (params.data.source) data.source = params.data.source;   // specific override - for Discovery mapping
 
   if (!jumperModules[heading]) {
     jumperModules[heading] = {
       path: this.userDefined.paths.jumper_templates + heading
-    }
+    };
   }
   var headingPath = jumperModules[heading].path;
   var openEHRFormatData;
@@ -88,7 +90,7 @@ module.exports = function(params, callback) {
     if (!jumperModules[heading].pulsetile_to_openehr) {
       jumperModules[heading].pulsetile_to_openehr = require(headingPath + '/Pulsetile_to_OpenEHR.json');
     }
-    var template = jumperModules[heading].pulsetile_to_openehr;
+    template = jumperModules[heading].pulsetile_to_openehr;
     openEHRFormatData = transform(template, data, helpers);
   }
   else {
@@ -110,9 +112,8 @@ module.exports = function(params, callback) {
 
   // if any errors, finish
 
-  console.log('\nvalidation results: ' + JSON.stringify(results) + '\n');
-
   if (results.errors && results.errors.length > 0) {
+    console.log('\nvalidation results: ' + JSON.stringify(results) + '\n');
     var errors = '';
     var semicolon = '';
     results.errors.forEach(function(error) {
@@ -120,6 +121,9 @@ module.exports = function(params, callback) {
       semicolon = ';'; 
     });
     return callback({error: errors});
+  }
+  else {
+    console.log('Validation against schema was OK');
   }
 
   if (!jumperModules[heading].flat_json) {

@@ -1,0 +1,14 @@
+select
+  a/uid/value as uid,
+  a/composer/name as author,
+  a/context/start_time/value as date_created,
+  b_a/items[at0001, 'Issue 1']/value/value as Issue_1_Name,
+  b_a/items[at0002, 'Issue 1']/value/value as Issue_1_Detail,
+  b_a/items[at0001, 'Issue 2']/value/value as Issue_2_Name,
+  b_a/items[at0002, 'Issue 2']/value/value as Issue_2_Detail,
+  b_a/items[at0001, 'Issue 3']/value/value as Issue_3_Name,
+  b_a/items[at0002, 'Issue 3']/value/value as Issue_3_Detail
+from EHR e[ehr_id/value='{{ehrId}}']
+contains COMPOSITION a[openEHR-EHR-COMPOSITION.encounter.v1]
+contains CLUSTER b_a[openEHR-EHR-CLUSTER.issue.v0]
+where a/name/value='Top issues'

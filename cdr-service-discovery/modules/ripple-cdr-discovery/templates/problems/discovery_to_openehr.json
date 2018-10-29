@@ -1,0 +1,24 @@
+{
+  "composer": {
+    "value": "{{practitionerName}}"
+  },
+  "host": "Discovery",
+  "uid": "Condition_{{id}}",
+  "patientId": "{{nhsNumber}}",
+  "dateCreated": "{{dateRecorded}}",
+  "problems_and_issues": {
+    "problem_diagnosis": {
+      "problem_diagnosis_name": {
+        "value": "=> useSnomed(code.coding, 'display')",
+        "code": "=> useSnomed(code.coding, 'code')",
+        "terminology": "=> useSnomed(code.coding, 'system')"
+      },
+      "date_time_of_onset": {
+        "value": "=> fhirDateTime(dateRecorded)"
+      },
+      "clinical_description": {
+        "value": "=> either(code.text, 'None recorded')"
+      }
+    }
+  }
+}

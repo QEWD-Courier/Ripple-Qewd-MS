@@ -4,6 +4,7 @@
   },
   "host": "{{source}}",
   "patientId": "{{patientId}}",
+  "date_created": "=> getDateCreated(dateCreated, source)",
   "medication_and_medical_devices": {
     "medication_order": {
       "order": {

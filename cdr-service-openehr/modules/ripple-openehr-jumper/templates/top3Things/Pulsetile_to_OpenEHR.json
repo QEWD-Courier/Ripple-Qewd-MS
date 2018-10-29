@@ -1,0 +1,7 @@
+{
+  "composer": {
+    "value": "{{author}}"
+  },
+  "host": "{{source}}",
+  "patientId": "{{patientId}}"
+}

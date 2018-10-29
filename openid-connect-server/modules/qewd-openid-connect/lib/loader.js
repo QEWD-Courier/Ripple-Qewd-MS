@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 July 2018
+  08 October 2018
 
 */
 
@@ -34,25 +34,32 @@ const adapter = require('./adapter');
 const logoutSource = require('./logoutSource');
 
 var path = require('path');
-var util = require('util');
+//var util = require('util');
 
 module.exports = function(app, bodyParser, params) {
 
+  console.log('OpenId Connect Server Loader starting with params:');
+  console.log(JSON.stringify(params, null, 2));
+
   var qewd_adapter = adapter(this);
   var Account = account(this);
+  var q = this;
 
   const configuration = {
     claims: params.Claims,
     findById: Account.findById,
 
     interactionUrl(ctx) {
-      return `/interaction/${ctx.oidc.uuid}`;
+      //return params.path_prefix + `/interaction/${ctx.oidc.uuid}`;
+      return `/openid/interaction/${ctx.oidc.uuid}`;
     },
 
     logoutSource: logoutSource,
 
     features: {
       devInteractions: false,
+      clientCredentials: true,
+      introspection: true,
       sessionManagement: true
     }
   };
@@ -97,14 +104,28 @@ module.exports = function(app, bodyParser, params) {
 
     const parse = bodyParser.urlencoded({ extended: false });
 
-    app.get('/interaction/logout', async (req, res) => {
+    app.get('/openid/interaction/logout', async (req, res) => {
       //console.log('*** logout redirection page');
       res.render('logout');
     });
 
-    app.get('/interaction/:grant', async (req, res) => {
+    app.get('/openid/interaction/:grant', async (req, res) => {
       oidc.interactionDetails(req).then((details) => {
+        //details.path_prefix = params.path_prefix;
         console.log('see what else is available to you for interaction views', details);
+        
+        if (details.uuid && details.params && details.params.scope) {
+          var scope = details.params.scope;
+          q.handleMessage({
+            type: 'saveGrant',
+            params: {
+              grant: details.uuid,
+              scope: scope
+            },
+            token: q.openid_server.token
+          });
+        }
+        
 
         const view = (() => {
           switch (details.interaction.reason) {
@@ -120,16 +141,17 @@ module.exports = function(app, bodyParser, params) {
       });
     });
 
-    app.post('/interaction/:grant/confirm', parse, (req, res) => {
+    app.post('/openid/interaction/:grant/confirm', parse, (req, res) => {
       oidc.interactionFinished(req, res, {
         consent: {},
       });
     });
 
-    app.post('/interaction/:grant/login', parse, (req, res, next) => {
-      console.log('*** interaction login function');
-      console.log('req = ' + util.inspect(req));
-      Account.authenticate(req.body.email, req.body.password).then((account) => {
+    app.post('/openid/interaction/:grant/login', parse, (req, res, next) => {
+      //console.log('*** interaction login function');
+      //console.log('req = ' + util.inspect(req));
+
+      Account.authenticate(req.body.email, req.body.password, req.params.grant).then((account) => {
         if (account.error) {
           var details = {
             params: {
@@ -141,6 +163,13 @@ module.exports = function(app, bodyParser, params) {
           return;
         }
 
+        var details = {
+          params: {},
+          uuid: req.params.grant
+        }
+        res.render('confirmCode', {details});
+
+        /*
         console.log('** account: ' + JSON.stringify(account));
         oidc.interactionFinished(req, res, {
           login: {
@@ -153,9 +182,122 @@ module.exports = function(app, bodyParser, params) {
             // TODO: remove offline_access from scopes if remember is not checked
           },
         });
+        */
       }).catch(next);
     });
 
+
+    app.post('/openid/interaction/:grant/confirmCode', parse, (req, res, next) => {
+      Account.confirmCode(req.body.confirmCode, req.params.grant).then((results) => {
+        if (results.error) {
+          var details = {
+            params: {
+              error: results.error
+            },
+            uuid: req.params.grant
+          };
+          res.render('confirmCode', {details});
+          return;
+        }
+
+        console.log('** account: ' + JSON.stringify(results.accountId));
+
+        // now we need to force a password change if this is the first login with temporary password
+        // if results.resetPassword is true
+
+        if (results.resetPassword) {
+          var details = {
+            params: {},
+            uuid: req.params.grant
+          }
+          res.render('resetPassword', {details});
+        }
+        else {
+          try {
+            oidc.interactionFinished(req, res, {
+              login: {
+                account: results.accountId,
+                acr: '1',
+                remember: false,
+                ts: Math.floor(Date.now() / 1000),
+              },
+              consent: {
+                // TODO: remove offline_access from scopes if remember is not checked
+              },
+            });
+          }
+          catch(err) {
+            // grant has timed out
+            location.reload();
+          }
+        }
+      }).catch(next);
+    });
+
+    app.post('/openid/interaction/:grant/changePassword', parse, (req, res, next) => {
+      Account.changePassword(req.body.password, req.body.password2, req.params.grant).then((results) => {
+        if (results.error) {
+          var details = {
+            params: {
+              error: results.error
+            },
+            uuid: req.params.grant
+          };
+          if (results.expired) {
+            res.render('login', {details});
+          }
+          else {
+            res.render('resetPassword', {details});
+          }
+          return;
+        }
+
+        // successfully logged in and password updated
+
+        oidc.interactionFinished(req, res, {
+          login: {
+            account: results.accountId,
+            acr: '1',
+            remember: false,
+            ts: Math.floor(Date.now() / 1000),
+          },
+          consent: {
+            // TODO: remove offline_access from scopes if remember is not checked
+          },
+        });
+      }).catch(next);
+    });
+
+    app.get('/openid/interaction/:grant/forgotPassword', parse, (req, res, next) => {
+      var details = {
+        params: {},
+        uuid: req.params.grant
+      };
+      res.render('forgotPassword', {details});
+    });
+
+    app.post('/openid/interaction/:grant/requestNewPassword', parse, (req, res, next) => {
+      Account.requestNewPassword(req.body.email).then((results) => {
+        var details;
+        if (results.error) {
+          details = {
+            params: {
+              error: results.error
+            },
+            uuid: req.params.grant
+          };
+          res.render('forgotPassword', {details});
+          return;
+        }
+        details = {
+          params: {
+            error: 'Use the temporary password that has been emailed to you'
+          },
+          uuid: req.params.grant
+        };
+        res.render('login', {details});
+      }).catch(next);
+    });
 
     app.use('/openid', oidc.callback);
   });

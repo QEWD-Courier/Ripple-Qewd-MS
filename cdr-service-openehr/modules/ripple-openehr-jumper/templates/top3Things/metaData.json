@@ -1,0 +1,326 @@
+{
+  "template_name": "Top issues",
+  "composition_name": "openEHR-EHR-COMPOSITION.encounter.v1",
+  "metadata": [
+    {
+      "id": "issue_3_name",
+      "name": "Issue 3 Name",
+      "path": [
+        "story_history",
+        "issue_3",
+        "issue_3_name"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "events[at0002]",
+        "data[at0003]",
+        "items[openEHR-EHR-CLUSTER.issue.v0]",
+        "items[at0001]"
+      ],
+      "required": true,
+      "max": 1,
+      "flatJSONPath": "top_issues/story_history:0/issue_3/issue_3_name"
+    },
+    {
+      "id": "issue_2_name",
+      "name": "Issue 2 Name",
+      "path": [
+        "story_history",
+        "issue_3",
+        "issue_2",
+        "issue_2_name"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "events[at0002]",
+        "data[at0003]",
+        "items[openEHR-EHR-CLUSTER.issue.v0]",
+        "items[at0001]"
+      ],
+      "required": true,
+      "max": 1,
+      "flatJSONPath": "top_issues/story_history:0/issue_3/issue_2/issue_2_name"
+    },
+    {
+      "id": "issue_1_name",
+      "name": "Issue 1 Name",
+      "path": [
+        "story_history",
+        "issue_3",
+        "issue_2",
+        "issue_1",
+        "issue_1_name"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "events[at0002]",
+        "data[at0003]",
+        "items[openEHR-EHR-CLUSTER.issue.v0]",
+        "items[at0001]"
+      ],
+      "required": true,
+      "max": 1,
+      "flatJSONPath": "top_issues/story_history:0/issue_3/issue_2/issue_1/issue_1_name"
+    },
+    {
+      "id": "issue_1_detail",
+      "name": "Issue 1 Detail",
+      "path": [
+        "story_history",
+        "issue_3",
+        "issue_2",
+        "issue_1",
+        "issue_1_detail"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "events[at0002]",
+        "data[at0003]",
+        "items[openEHR-EHR-CLUSTER.issue.v0]",
+        "items[at0002]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "top_issues/story_history:0/issue_3/issue_2/issue_1/issue_1_detail"
+    },
+    {
+      "id": "issue_2_detail",
+      "name": "Issue 2 Detail",
+      "path": [
+        "story_history",
+        "issue_3",
+        "issue_2",
+        "issue_2_detail"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "events[at0002]",
+        "data[at0003]",
+        "items[openEHR-EHR-CLUSTER.issue.v0]",
+        "items[at0002]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "top_issues/story_history:0/issue_3/issue_2/issue_2_detail"
+    },
+    {
+      "id": "issue_3_detail",
+      "name": "Issue 3 Detail",
+      "path": [
+        "story_history",
+        "issue_3",
+        "issue_3_detail"
+      ],
+      "type": "DV_TEXT",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "events[at0002]",
+        "data[at0003]",
+        "items[openEHR-EHR-CLUSTER.issue.v0]",
+        "items[at0002]"
+      ],
+      "required": false,
+      "max": 1,
+      "flatJSONPath": "top_issues/story_history:0/issue_3/issue_3_detail"
+    },
+    {
+      "id": "time",
+      "name": "Time",
+      "path": [
+        "story_history",
+        "time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/time",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "events[at0002]",
+        "time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/story_history:0/time"
+    },
+    {
+      "id": "origin",
+      "name": "Origin",
+      "path": [
+        "story_history",
+        "origin"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/origin",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "data[at0001]",
+        "origin"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/story_history:0/origin"
+    },
+    {
+      "id": "subject",
+      "name": "Subject",
+      "path": [
+        "story_history",
+        "subject"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/subject",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "subject"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/story_history:0/subject"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "story_history",
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/language",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/story_history:0/language"
+    },
+    {
+      "id": "encoding",
+      "name": "Encoding",
+      "path": [
+        "story_history",
+        "encoding"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/content[openEHR-EHR-OBSERVATION.story.v1]/encoding",
+      "pathArr": [
+        "content[openEHR-EHR-OBSERVATION.story.v1]",
+        "encoding"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/story_history:0/encoding"
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "path": [
+        "composer"
+      ],
+      "type": "PARTY_PROXY",
+      "aqlPath": "/composer",
+      "pathArr": [
+        "composer"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/composer"
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "path": [
+        "language"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/language",
+      "pathArr": [
+        "language"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/language"
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "path": [
+        "category"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/category",
+      "pathArr": [
+        "category"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/category"
+    },
+    {
+      "id": "territory",
+      "name": "Territory",
+      "path": [
+        "territory"
+      ],
+      "type": "CODE_PHRASE",
+      "aqlPath": "/territory",
+      "pathArr": [
+        "territory"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/territory"
+    },
+    {
+      "id": "start_time",
+      "name": "StartTime",
+      "path": [
+        "context",
+        "start_time"
+      ],
+      "type": "DV_DATE_TIME",
+      "aqlPath": "/context/start_time",
+      "pathArr": [
+        "context",
+        "start_time"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/context/start_time"
+    },
+    {
+      "id": "setting",
+      "name": "Setting",
+      "path": [
+        "context",
+        "setting"
+      ],
+      "type": "DV_CODED_TEXT",
+      "aqlPath": "/context/setting",
+      "pathArr": [
+        "context",
+        "setting"
+      ],
+      "required": false,
+      "max": 0,
+      "flatJSONPath": "top_issues/context/setting"
+    }
+  ]
+}

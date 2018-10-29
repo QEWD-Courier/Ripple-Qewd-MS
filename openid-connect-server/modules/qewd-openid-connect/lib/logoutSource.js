@@ -34,22 +34,24 @@ module.exports = async function(ctx, form) {
 
   ctx.body = `
     <!DOCTYPE html>
-    <head>
-      <title>Logout</title>
-    </head>
-    <body>
-      ${form}
-      <script>
-        var form = document.forms[0];
-        var input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'logout';
-        input.value = 'yes';
+    <html>
+       <head>
+        <title>Logout</title>
+      </head>
+      <body>
+        ${form}
+        <script>
+          var form = document.forms[0];
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'logout';
+          input.value = 'yes';
 
-        form.appendChild(input);
+          form.appendChild(input);
 
-        form.submit();
-      </script>
-    </body>
-  </html>`;
+          form.submit();
+        </script>
+      </body>
+    </html>`
+  ;
 };

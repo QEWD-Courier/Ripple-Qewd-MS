@@ -1,0 +1,7 @@
+[
+  {
+    "path": "/api/verify/:token",
+    "method": "GET",
+    "use": "verifyUser"
+  }
+]

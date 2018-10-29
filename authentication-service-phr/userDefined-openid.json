@@ -3,20 +3,20 @@
     "type": "OpenID Connect",
     "client_id": "foo",
     "client_secret": "bar",
-    "callback_url": "http://192.168.1.135:8000/api/auth/token",
+    "callback_url": "=> getUri(phr.microservices.conductor, '/api/auth/token')",
     "scope": {
       "login": "openid"
     },
-    "issuer": "http://192.168.1.135:8080/openid",
-    "authorization_endpoint": "http://192.168.1.135:8080/openid/auth",
-    "token_endpoint": "http://192.168.1.135:8080/openid/token",
-    "userinfo_endpoint": "http://192.168.1.135:8080/openid/me",
-    "introspection_endpoint": "http://192.168.1.135:8080/openid/token/introspect",
-    "jwks_endpoint": "http://192.168.1.135:8080/openid/certs",
-    "end_session_endpoint": "http://192.168.1.135:8080/openid/session/end",
+    "issuer": "=> getUri(phr.microservices.openid_connect, '/openid')",
+    "authorization_endpoint": "=> getUri(phr.microservices.openid_connect, '/openid/auth')",
+    "token_endpoint": "=> getUri(phr.microservices.openid_connect, '/openid/token')",
+    "userinfo_endpoint": "=> getUri(phr.microservices.openid_connect, '/openid/me')",
+    "introspection_endpoint": "=> getUri(phr.microservices.openid_connect, '/openid/token/introspect')",
+    "jwks_endpoint": "=> getUri(phr.microservices.openid_connect, '/openid/certs')",
+    "end_session_endpoint": "=> getUri(phr.microservices.openid_connect, '/openid/session/end')",
     "index_url": "/index.html",
     "cookie_name": "JSESSIONID",
     "logout_approach": "client",
-    "post_logout_redirect_uri": "http://192.168.1.135:8000"
+    "post_logout_redirect_uri": "=> getUri(phr.microservices.conductor)"
   }
 }

@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  21 June 2018
+  17 October 2018
 
 */
 
@@ -287,7 +287,9 @@ function openEHRRequest(params, userObj) {
         console.log(process.pid + ': response from ' + host + ': ' + JSON.stringify(body));
       }
       //if (!body) console.log('***** no body returned from ' + host);
-      //if (body && typeof body === 'string') console.log('body returned from ' + host + ' is a string');
+      if (body && typeof body === 'string') {
+        console.log('body returned from ' + host + ' is a string:\n' + body + '\n');
+      }
       //if (body && typeof body !== 'string' && params.processBody) params.processBody(body, host, userObj);
       if (params.processBody) params.processBody(body, userObj);
     }
@@ -360,18 +362,22 @@ function startSession(host, qewdSession, callback) {
     method: 'POST'
   };
   params.processBody = function(body, session) {
-    if (body && body.sessionId) session.id = body.sessionId;
-    console.log('*** processBody: sessionId = ' + session.id);
+    if (body && body.sessionId) {
+      session.id = body.sessionId;
+      console.log('*** processBody: sessionId = ' + session.id);
 
-    // cache the OpenEHR Session Id
-    if (qewdSession) {
-      qewdSession.data.$(['openEHR', 'sessions', host]).setDocument({
-        creationTime: new Date().getTime(),
-        id: body.sessionId
-      });
-      console.log('** session for ' + host + ': ' + body.sessionId + ' has been cached');
+      // cache the OpenEHR Session Id
+      if (qewdSession) {
+        qewdSession.data.$(['openEHR', 'sessions', host]).setDocument({
+          creationTime: new Date().getTime(),
+          id: body.sessionId
+        });
+        console.log('** session for ' + host + ': ' + body.sessionId + ' has been cached');
+      }
     }
-
+    else {
+      console.log('*** error - startSession response was unexpected. body = ' + JSON.stringify(body));
+    }
   };
   openEHRRequest(params, {});
 }

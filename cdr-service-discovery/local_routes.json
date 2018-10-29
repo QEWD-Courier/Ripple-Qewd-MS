@@ -1,0 +1,12 @@
+[
+  {
+    "path": "ripple-cdr-discovery",
+    "module": "/opt/qewd/mapped/modules/ripple-cdr-discovery",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
+  }
+]

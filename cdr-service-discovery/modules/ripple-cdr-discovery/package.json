@@ -1,0 +1,7 @@
+{
+  "name": "ripple-cdr-discovery",
+  "version": "1.1.0",
+  "dependencies": {
+    "qewd-router": ""
+  }
+}

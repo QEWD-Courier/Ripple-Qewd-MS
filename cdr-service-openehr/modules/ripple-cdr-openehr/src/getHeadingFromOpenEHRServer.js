@@ -103,7 +103,7 @@ function getHeading(nhsNo, heading, host, session, openEHRSession, callback) {
     logResponse: false
   };
 
-  params.queryString = getTransformedAQL.call(this, host, nhsNo, aql[heading]);  
+  params.queryString = getTransformedAQL.call(this, host, nhsNo, aql[heading]);
 
   params.processBody = function(body) {
     console.log(new Date().getTime() + ' response received from ' + host + ': ' + heading);

@@ -1,0 +1,3 @@
+{
+  "cdr_discovery_service": "=> getUri(phr.microservices.discovery)"
+}

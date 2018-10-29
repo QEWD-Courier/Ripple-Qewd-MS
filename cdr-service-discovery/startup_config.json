@@ -1,0 +1,6 @@
+{
+  "managementPassword": "pwd_discovery",
+  "serverName": "Endeavour Discovery MicroService Server",
+  "port": 8080,
+  "poolSize": 3
+}

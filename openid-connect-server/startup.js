@@ -28,17 +28,39 @@
 
 */
 
+var transform = require('qewd-transform-json').transform;
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
+var helpers = require('./helpers');
+
 var config = require('./startup_config.json');
 var local_routes = require('./local_routes.json');
-var oidc_config = require('./oidc-config.json');
+var oidc_config_template = require('./oidc-config.json');
+var oidc_config = transform(oidc_config_template, global_config, helpers);
+console.log('oidc_config = ' + JSON.stringify(oidc_config, null, 2));
 
 var bodyParser;
 var app;
 
-config.addMiddleware = function(bp, express) {
+config.addMiddleware = function(bp, express, q) {
   bodyParser = bp;
   app = express;
 };
+
+local_routes[1].afterRouter = [
+  (req, res, next) => {
+    console.log('** res.locals.message = ' + JSON.stringify(res.locals.message));
+    var messageObj = res.locals.message;
+    res.set('content-type', 'text/html');
+    if (messageObj.error) {
+      var response = '<html><body><h2>Error: ' + messageObj.error + '</h2></body></html>';
+      res.send(response);
+    }
+    else {
+      //var response = '<html><body>' + messageObj.html + '</body></html>';
+      res.send(messageObj.html);
+    }
+  }
+];
 
 function onStarted() {
   var self = this;

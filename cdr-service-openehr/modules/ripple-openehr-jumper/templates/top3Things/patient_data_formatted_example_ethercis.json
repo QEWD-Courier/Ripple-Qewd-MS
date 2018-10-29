@@ -1,0 +1,71 @@
+[
+  {
+    "uid": "b477ac23-7c41-4d23-8f29-c1a5d08d46d4::vm01.ethercis.org::1",
+    "health_care_facility": {
+      "name": "Rippleburgh GP Practice",
+      "id": {
+        "value": "999999-345",
+        "scheme": "2.16.840.1.113883.2.1.4.3",
+        "namespace": "NHS-UK"
+      }
+    },
+    "patientId": 9999999000,
+    "host": "ethercis",
+    "story_history": {
+      "issue_3": {
+        "issue_3_name": {
+          "value": "Anxiety"
+        },
+        "issue_2": {
+          "issue_2_name": {
+            "value": "Anxiety"
+          },
+          "issue_1": {
+            "issue_1_name": {
+              "value": "Anxiety"
+            },
+            "issue_1_detail": {
+              "value": "I get worried all the time"
+            }
+          },
+          "issue_2_detail": {
+            "value": "I get worried all the time"
+          }
+        },
+        "issue_3_detail": {
+          "value": "I get worried all the time"
+        }
+      },
+      "time": {
+        "value": "2018-10-23T09:17:26.000+01:00"
+      },
+      "origin": {
+        "value": "2018-10-23T09:17:26.000+01:00"
+      }
+    },
+    "composer": {
+      "value": "Patient"
+    },
+    "language": {
+      "value": "en"
+    },
+    "category": {
+      "value": "Event",
+      "code": "433",
+      "terminology": "openehr"
+    },
+    "territory": {
+      "value": "GB"
+    },
+    "context": {
+      "start_time": {
+        "value": "2018-10-23T09:17:26+01:00"
+      },
+      "setting": {
+        "value": "other care",
+        "code": "238",
+        "terminology": "openehr"
+      }
+    }
+  }
+]

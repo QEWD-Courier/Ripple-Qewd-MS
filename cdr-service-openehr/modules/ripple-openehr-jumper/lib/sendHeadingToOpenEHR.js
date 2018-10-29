@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 April 2018
+  17 October 2018
 
 
 */
@@ -34,6 +34,13 @@ var openEHR; // = require(openEHRPath + 'openEHR');
 //var mapNHSNoByHost = require(openEHRPath + 'mapNHSNoByHost');
 //var deleteSessionCaches = require(openEHRPath + 'deleteSessionCaches');
 var sendHeadingData = require('./sendHeadingData');
+
+function isEmpty(obj) {
+  for (var property in obj) {
+    return false;
+  }
+  return true;
+}
 
 function sendHeadingToOpenEHR(params, callback) {
 
@@ -76,7 +83,22 @@ function sendHeadingToOpenEHR(params, callback) {
       if (params.method === 'put') args.compositionId = params.compositionId;
       sendHeadingData.call(self, args, function(responseObj) {
         console.log('*** sendHeadingData response: ' + JSON.stringify(responseObj));
-        openEHR.stopSession(host, openEhrSession.id, qewdSession);
+        //openEHR.stopSession(host, openEhrSession.id, qewdSession);
+
+        if (responseObj.data && typeof responseObj.data === 'string' && responseObj.data.indexOf('<html>') !== -1) {
+          // An OpenEHR error has occurred
+          return callback({
+            error: 'OpenEHR Error: ' + responseObj.data
+          });
+        }
+
+        if (isEmpty(responseObj)) {
+          // OpenEHR returned an empty object as a response
+          return callback({
+            error: 'OpenEHR returned an empty response'
+          });
+        }
+
         deleteSessionCaches.call(self, patientId, heading, host);
         if (callback) {
           if (responseObj.data && responseObj.data.compositionUid) {

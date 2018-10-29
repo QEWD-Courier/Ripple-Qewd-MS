@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  16 May 2018
+  26 October 2018
 
 */
 
@@ -50,7 +50,7 @@ module.exports = {
     onResponse: function(responseObj) {
       // repackage response object and return it
 
-      console.log('repackaging response for /api/initialise');
+      console.log('repackaging response for /api/initialise: \n' + JSON.stringify(responseObj, null, 2));
 
       // https://rippleosi.eu.auth0.com/authorize
       //   ?scope=openid profile email
@@ -63,6 +63,14 @@ module.exports = {
       //   &redirect_uri=http://www.mgateway.com:8080/api/auth/token
       //      &auth0Client=eyJuYW1lIjoicWV3ZC1jbGllbnQiLCJ2ZXJzaW9uIjoiMS4yNi4wIn0=
 
+      if (responseObj.status=== 'loading_data') {
+        return {
+          status: responseObj.status,
+          new_patient: responseObj.new_patient
+        };
+      }
+
+      // otherwise, provided authentication was OK, PulseTile is good to go
 
       if (responseObj.authenticated) {
         // map back to what /api/initialised would have sent

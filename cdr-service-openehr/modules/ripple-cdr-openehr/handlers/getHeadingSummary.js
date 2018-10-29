@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 April 2018
+  15 October 2018
 
 */
 
@@ -32,10 +32,14 @@ var fetchAndCacheHeading = require('../src/fetchAndCacheHeading');
 var getHeadingTableFromCache = require('../src/getHeadingTableFromCache');
 var tools = require('../src/tools');
 
-function getHeadingTable(patientId, heading, session, finished) {
+function getHeadingTable(patientId, heading, session, callback) {
   var results = getHeadingTableFromCache.call(this, patientId, heading, session);
-  finished({
+  var fetch_count = session.data.$(['headings', 'byPatientId', patientId, heading, 'fetch_count']).increment();
+  callback({
     responseFrom: 'phr_service',
+    patientId: patientId,
+    heading: heading,
+    fetch_count: fetch_count,
     results: results
   });
 }
@@ -68,7 +72,12 @@ module.exports = function(args, finished) {
     }
     else {
       console.log('heading ' + heading + ' for ' + patientId + ' is cached');
-      getHeadingTable.call(self, patientId, heading, session, finished)
+      getHeadingTable.call(self, patientId, heading, session, function(responseObj) {
+        if (args.req.query && args.req.query.discovery_sync === 'no') {
+          responseObj.discovery_sync = false;
+        }
+        finished(responseObj);
+      });
     }
   });
 

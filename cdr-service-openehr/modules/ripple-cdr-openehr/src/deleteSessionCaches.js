@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  17 January 2018
+  10 October 2018
 
 */
 
@@ -46,5 +46,6 @@ module.exports = function(patientId, heading, host) {
         indexNode.delete();
       });
     }
+    session.data.$(['headings', 'byHeading', heading]).delete();
   });
 };

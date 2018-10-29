@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  27 June 2018
+  17 October 2018
 
 
 */
@@ -38,7 +38,9 @@ var postHeadingByJumper;
 try {
   postHeadingByJumper = require('../../ripple-openehr-jumper/lib/postHeading');
 }
-catch(err) {}
+catch(err) {
+  console.log('*** unable to load postHeading ***');
+}
 
 var headingMap = {};
 var defaultHost;
@@ -67,6 +69,7 @@ function postHeading(patientId, heading, data, qewdSession, callback) {
     return;
   }
 
+  console.log('*** Note: NOT using Jumper for posting this record! ***');
 
   if (!headingMap[heading]) {
     // load on demand

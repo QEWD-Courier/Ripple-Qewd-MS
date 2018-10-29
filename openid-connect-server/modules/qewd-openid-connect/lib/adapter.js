@@ -54,6 +54,17 @@ function initialise_adapter(qoper8) {
       const key = this.key(id);
       const grantId = storage.get(key) && storage.get(key).grantId;
 
+      console.log('** destroy: id = ' + id);
+      console.log('key = ' + key);
+
+      q.handleMessage({
+        type: 'deleteGrant',
+        params: {
+          grant: id
+        },
+        token: q.openid_server.token
+      });
+
       storage.del(key);
 
       if (grantId) {

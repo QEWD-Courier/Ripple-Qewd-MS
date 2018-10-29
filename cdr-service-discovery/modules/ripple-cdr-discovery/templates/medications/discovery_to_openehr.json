@@ -1,0 +1,46 @@
+{
+  "composer": {
+    "value": "{{practitionerName}}"
+  },
+  "host": "Discovery",
+  "uid": "MedicationStatement_{{id}}",
+  "date_created": "=> fhirDateTime(dateAsserted)",
+  "patientId": "{{nhsNumber}}",
+  "medication_and_medical_devices": {
+    "medication_order": {
+      "order": {
+        "medication_item": {
+          "value": "=> useSnomed(medicationCodeableConcept.coding, 'display')",
+          "code": "=> useSnomed(medicationCodeableConcept.coding, 'code')",
+          "terminology": "=> useSnomed(medicationCodeableConcept.coding, 'system')"
+        },
+        "dose_amount_description": {
+          "value": "{{dosage[0].text}}"
+        },
+        "addditional_instruction": {
+          "value": ""
+        },
+        "dose_timing_description": {
+          "value": "Not known"
+        },
+        "route": {
+          "value": "Not known"
+        },
+        "order_details": {
+          "order_start_date_time": {
+            "value": "=> fhirDateTime(dateAsserted)"
+          },
+          "order_summary": {
+            "course_status": {
+              "code": "at0021"
+            }
+          }
+        },
+        "timing": {
+          "value": "R5/2017-06-26T10:00:00Z/P1M"
+        }
+      },
+      "narrative": ""
+    }
+  }
+}

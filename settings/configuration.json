@@ -1,0 +1,48 @@
+{
+  "phr": {
+    "microservices": {
+      "conductor": {
+        "host": "https://178.128.40.14",
+        "port": 443
+      },
+      "authentication": {
+        "host": "http://178.128.40.14",
+        "port": 8001
+      },
+      "openehr": {
+        "host": "http://178.128.40.14",
+        "port": 8003
+      },
+      "discovery": {
+        "host": "http://178.128.40.14",
+        "port": 8004
+      },
+      "openid_connect": {
+        "host": "https://178.128.40.14",
+        "port": 443,
+        "path_prefix": "/oidc"
+      }
+    }
+  },
+  "twilio": {
+    "accountSid": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "authToken": "yyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "telNo": "+447449000000"
+  },
+  "email_server": {
+    "host": "smtp.eu.mailgun.org",
+    "port": 465,
+    "secure": true,
+    "auth": {
+      "user": "postmaster@mail.example.com",
+      "pass": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    }
+  },
+  "user_verify_email": {
+    "from": "\"Helm: Information Only\" <no_reply@example.com>",
+    "subject": "Please verify your email address"
+  },
+  "jwt": {
+    "secret": "bd645d9e-6281-4a96-949a-b249f6ff3d97"
+  }
+}

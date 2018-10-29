@@ -28,6 +28,10 @@
 
 */
 
+var transform = require('qewd-transform-json').transform;
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
+var helpers = require('../../../helpers');
+
 var documentsPath = '/opt/qewd/mapped/documents.json';
 
 var load = require('./loader');
@@ -35,7 +39,9 @@ var qewd_interface = require('./qewd_interface');
 
 var documents;
 try {
-  documents = require(documentsPath);
+  var documents_template = require(documentsPath);
+  documents = transform(documents_template, global_config, helpers);
+  //console.log('documents = ' + JSON.stringify(documents, null, 2));
 }
 catch(err) {};
 

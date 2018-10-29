@@ -1,6 +1,0 @@
-{
-  "managementPassword": "R!ppl$",
-  "serverName": "Auth0 Authentication MicroService Server",
-  "port": 8080,
-  "poolSize": 2
-}

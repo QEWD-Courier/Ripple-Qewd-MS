@@ -1,156 +1,581 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Sign-in</title>
-    <style type="text/css">
-      @import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
 
-      body {
-        font-family: 'Roboto', sans-serif;
-        margin-top: 25px;
-        margin-bottom: 25px;
-      }
+    <link href="data:image/x-icon;base64,    iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGjGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMDYtMTJUMTQ6NTk6NDErMDE6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMTgtMDYtMTJUMTQ6NTk6NDErMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE4LTA2LTEyVDE0OjU5OjQxKzAxOjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZmZjM4NjYyLTMyNzAtNDJiZC04MGVkLTQxZDZhZDNmMWJmOSIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmYwNmIyYzNmLTkzMDctZjI0MS1hZGIzLTY1NTAwZGFkOWE4MiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjM4ZWU0ZjRjLTgwZjUtNDI4OS1iMzRkLTQyMDNmMTZhNmExMiIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzhlZTRmNGMtODBmNS00Mjg5LWIzNGQtNDIwM2YxNmE2YTEyIiBzdEV2dDp3aGVuPSIyMDE4LTA2LTEyVDE0OjU5OjQxKzAxOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NmZmMzg2NjItMzI3MC00MmJkLTgwZWQtNDFkNmFkM2YxYmY5IiBzdEV2dDp3aGVuPSIyMDE4LTA2LTEyVDE0OjU5OjQxKzAxOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+eG1wLmRpZDozRUMwRkVGQTVDRTIxMUU4QUM5MTlDRTZFOEIyQkJEQTwvcmRmOmxpPiA8L3JkZjpCYWc+IDwvcGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhKveukAAA6RSURBVHic7Z1pkFxVGYafnu7Zskw6MRBD7GwQjKSCaFygZHFlE5RV44oiFqK4NKW4UcUPf7hA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" rel="icon" type="image/x-icon" />
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-      .login-card {
-        padding: 40px;
-        padding-top: 0px;
-        padding-bottom: 10px;
-        width: 274px;
-        background-color: #F7F7F7;
-        margin: 0 auto 10px;
-        border-radius: 2px;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-      }
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>myHelm - Login</title>
 
-      .login-card h1 {
-        font-weight: 100;
-        text-align: center;
-        font-size: 2.3em;
-      }
+    <link rel="stylesheet" href="/assets/css/grotesk.css">
+    <link rel="stylesheet" href="/assets/css/remodal.css">
 
-      .login-card [type=submit] {
-        width: 100%;
-        display: block;
-        margin-bottom: 10px;
-        position: relative;
-      }
+    <link rel="stylesheet" href="/assets/css/main.css">
 
-      .login-card input[type=text], input[type=email], input[type=password] {
-        height: 44px;
-        font-size: 16px;
-        width: 100%;
-        margin-bottom: 10px;
-        -webkit-appearance: none;
-        background: #fff;
-        border: 1px solid #d9d9d9;
-        border-top: 1px solid #c0c0c0;
-        padding: 0 8px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-      }
-
-      .login-card input[type=text]:hover, input[type=email]:hover, input[type=password]:hover {
-        border: 1px solid #b9b9b9;
-        border-top: 1px solid #a0a0a0;
-        -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-        -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-        box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-      }
-
-      .login {
-        text-align: center;
-        font-size: 14px;
-        font-family: 'Arial', sans-serif;
-        font-weight: 700;
-        height: 36px;
-        padding: 0 8px;
-      }
-
-      .login-submit {
-        border: 0px;
-        color: #fff;
-        text-shadow: 0 1px rgba(0,0,0,0.1);
-        background-color: #4d90fe;
-      }
-
-      .login-submit:hover {
-        border: 0px;
-        text-shadow: 0 1px rgba(0,0,0,0.3);
-        background-color: #357ae8;
-      }
-
-      .login-card a {
-        text-decoration: none;
-        color: #666;
-        font-weight: 400;
-        text-align: center;
-        display: inline-block;
-        opacity: 0.6;
-        transition: opacity ease 0.5s;
-      }
-
-      .login-card a:hover {
-        opacity: 1;
-      }
-
-      .login-help {
-        width: 100%;
-        text-align: center;
-        font-size: 12px;
-      }
-
-      .login-client-image img {
-        margin-bottom: 20px;
-      }
-
-      .login-card input[type=checkbox] {
-        margin-bottom: 10px;
-      }
-
-      .login-card label {
-        color: #999;
-        font-size: 16px;
-      }
-
-      .grant-debug {
-        font-family: Fixed, monospace;
-        width: 100%;
-        text-align: center;
-        font-size: 12px;
-        color: #999;
-        padding-top: 10px;
-      }
-
-      button {
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </head>
+
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <script>
-      if ('<%= details.params.error %>' !== '') alert('<%= details.params.error %>');
+      //if ('<%= details.params.error %>' !== '') alert('<%= details.params.error %>');
+
+      // reload the page before grant has a chance to expire
+
+      function setTimerCookie() {
+        var expireTime = new Date(Date.now() + 590000);
+        document.cookie = 'timer=live;expires=' + expireTime.toGMTString() + ';path=/';
+      }
+
+      function checkSession() {
+        if (document.cookie.indexOf('timer') === -1) {
+          // grant session has expired so reload home page
+          document.location.href = '/';
+        }
+        else {
+          testSession();
+        }
+      }
+
+      function testSession() {
+        setTimeout(function() {
+          checkSession();
+        },10000);
+      }
+
+      setTimerCookie();
+      testSession();
+
     </script>
 
-    <div class="login-card">
-      <h1>Sign-in</h1>
-      <form autocomplete="off" action="/interaction/<%= details.uuid %>/login" method="post">
-        <input required type="email" name="email" placeholder="Enter an email" <% if (!details.params.login_hint) { %>autofocus="on"<% } else { %> value="<%= details.params.login_hint %>" <% } %>>
-        <input required type="password" name="password" placeholder="and password" <% if (details.params.login_hint) { %>autofocus="on"<% } %>>
+    <div id="root">
 
-        <label><input type="checkbox" name="remember" value="yes" checked="yes">Stay signed in</label>
+      <!--
+      <header>
+        <i class="fa fa-bars menu"></i><img alt="logo" src="/assets/logo-helm.png">
+      </header>
+      -->
 
-        <button type="submit" name="submit" class="login login-submit">Sign-in</button>
-      </form>
-      <div class="login-help">
-        <a href="<%= details.returnTo %>">[ Cancel ]</a>
+      <img src="/assets/strapline.png" alt="Helm - Your Health and care data under control" class="strapline" />
+
+      <div class="LoginRegister">
+
+        <div class="form-box">
+          <div class="titleLogin">
+            Log In<i class="fa fa-angle-down"></i>
+          </div>
+
+          <div class="grant-debug">
+            <%- details.params.error %>
+          </div>
+
+          <form class="forms" autocomplete="off" action="/openid/interaction/<%= details.uuid %>/login" method="post" id="loginForm">
+
+            <label>
+              Email Address
+              <input placeholder="Enter your email address" required type="email" name="email"  autofocus="on" />
+            </label>
+            <label>
+              Password
+              <input placeholder="Password" required type="password" name="password" placeholder="and password" <% if (details.params.login_hint) { %>autofocus="on"<% } %>>
+            </label>
+
+            <div class="btn-box">
+              <a href="/openid/interaction/<%= details.uuid %>/forgotPassword" class="forgotten">[ Forgot my Password ]</a>
+              <button class="succes login" type="button"><i class="fa fa-check"></i>Log In</button>
+            </div>
+          </form>
+
+        </div>
       </div>
-    </div>
-    <div class="login-card">
-      <div class="grant-debug">
-        <%- details.params.error %>
+
+<!--
+      <div class="LoginRegister">
+        <div class="grant-debug">
+          <%- details.params.error %>
+        </div>
       </div>
-    </div>
+-->
+
+      <div class="footer">
+        <p>Copyright 2018 Leeds City Council. All rights reserved</p>
+
+        <div class="footer-img">
+          <img alt="leeds" src="/assets/leeds.png">
+          <img alt="nsh" src="/assets/nhs.png">
+        </div>
+      </div>
+
+
+      <div data-remodal-id="modal" class="modal">
+
+        <div class="modal__header">
+          Terms and Conditions
+          <button data-remodal-action="close" class="remodal-close"></button>
+        </div>
+
+        <div class="modal__content">
+
+          <p class="c3">
+            <span class="c2 c8">
+              Welcome to your Helm account. This is our account service agreement with you.
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <p class="c3">
+            <span class="c8 c2">
+              Leeds City Council (the Council) provides Helm services to help people manage their own health information. Helm enables you, the user, to control who can see the &ldquo;top 3 things to know about me&rdquo; information&nbsp;which you are able to add to your Helm account.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c8 c2">
+              To start using your Helm account, one of our health and care partners (e.g. your GP) will verify your identity. You also need to agree to this Account Service Agreement.
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <p class="c3">
+            <span class="c8 c2">
+              You can stop using the Service at any time.
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <p class="c3">
+            <span class="c8 c2">
+              You must obey the law, choose a secure password, and notify Helm or our partner (GP) of any security problems. You are responsible for information you input into Helm, whether this is &ldquo;top 3 things to know about me&rdquo; information, or information about you which you have copied/downloaded from one of our health and care partners. &nbsp;
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c2">
+              If you find a problem with data from a health and care partner, e.g. your GP, please contact that clinical team. If you find a problem with data you entered into Helm, e.g. your &ldquo;top 3 things to know about me&rdquo;information please contact Helm directly via&nbsp;
+            </span>
+            <span class="c2 c31">
+              <a class="c19" href="mailto:info@myhelm.org">info@myhelm.org</a>
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <p class="c3">
+            <span class="c11">Questions related to data protection and privacy can be addressed to Helm at:</span>
+            <span class="c24">&nbsp;</span>
+          </p>
+          <p class="c3"><span class="c8 c2">info@myhelm.org</span></p>
+          <p class="c3" id="h.30j0zll">
+            <span class="c8 c24 c25">Full Helm Service Agreement&nbsp;</span>
+          </p>
+          <ol class="c7 lst-kix_list_9-0 start" start="1">
+            <li class="c10 c22">
+              <span class="c8 c28">What this account service agreement covers</span>
+            </li>
+          </ol>
+          <p class="c3">
+            <span class="c8 c2">
+              Helm lets you access information about your health problems, diagnosis, vaccinations, medications, and allergies which are held by your care professional.
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <p class="c3"><span class="c8 c14">Our Health and care partners</span></p>
+          <p class="c3"><span class="c8 c2">Our health and care partners are</span></p>
+          <ul class="c7 lst-kix_list_1-0 start">
+            <li class="c3 c9"><span class="c8 c2">Leeds Teaching Hospitals NHS Trust</span></li>
+            <li class="c3 c9"><span class="c8 c2">Leeds NHS Clinical Commissioning Group</span></li>
+            <li class="c3 c9"><span class="c8 c2">Leeds NHS GP Practices</span></li>
+            <li class="c3 c9"><span class="c8 c2">Leeds and York Partnership NHS Foundation Trust</span></li>
+            <li class="c3 c9"><span class="c8 c2">Leeds Community Healthcare NHS Trust</span></li>
+          </ul>
+          <p class="c3 c4 c29"></p>
+          <p class="c3">
+            <span class="c5">
+              As well as viewing your health and care data, information will be automatically securely stored into your Helm account. You can also enter your &ldquo;top 3 things to know about me&rdquo; in your Helm account, and you can decide whether to share that information with our health and care partners. This account service agreement sets the terms and conditions that apply&nbsp;between&nbsp;the user (&ldquo;you&rdquo;) and Leeds City Council &nbsp;(&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) in relation to your use of your Helm account.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              This account service agreement applies to the provision and management of your Helm account, and the Helm software and service including updates that you use while this agreement is in force collectively referred to as &ldquo;Helm services&rdquo;.
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <p class="c3">
+            <span class="c5">
+              Please note that we do not provide warranties for Helm services. This agreement also limits our liability. These terms are in sections 9 and 10 and we ask you to read them carefully.
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <ol class="c7 lst-kix_list_9-0" start="2">
+            <li class="c20">
+              <span class="c1">How you may use the Service
+              </span>
+            </li>
+          </ol>
+          <p class="c3">
+            <span class="c5">
+              You must be at least 16 years of&nbsp;age. You may start using Helm services as soon as you have completed the sign-up and verification process. Support is available via help links. You may cancel Helm services at any time. In your Helm account you are able to securely store information about you as specified in clause 1. You may only send and store content that is legally permissible and appropriate for Helm services.
+            </span>
+          </p>
+          <p class="c3 c4"></p>
+          <p class="c3">
+            <span class="c1">
+              In using the Service, you will:&nbsp;
+            </span></p>
+          <p class="c3 c4"></p>
+          <ul class="c7 lst-kix_list_2-0 start">
+            <li class="c3 c10"><span class="c5">obey the law;&nbsp;</span></li>
+            <li class="c3 c10"><span class="c5">obey any codes of conduct or other notices we provide;&nbsp;</span></li>
+            <li class="c3 c10"><span class="c5">keep your Account password secret; and&nbsp;</span></li>
+            <li class="c3 c10"><span class="c5">promptly notify us if you observe/learn of a security breach related to Helm services.</span></li>
+            <li class="c3 c10"><span class="c5">help Helm maintain a healthy and vibrant environment by reporting any illegal or inappropriate behaviour.</span></li>
+          </ul>
+          <p class="c3 c4 c21"></p>
+          <p class="c3"><span class="c1">3. How you may not use the Service<br /></span></p>
+          <p class="c3"><span class="c11">In using Helm services, you may not:&nbsp;<br /></span></p>
+          <ul class="c7 lst-kix_list_7-0 start">
+            <li class="c3 c10"><span class="c5">use Helm services in a way that harms us or any of our health and care partners, or any other party who the Council contracts with in connection with the provision of Helm services</span></li>
+            <li class="c3 c10"><span class="c5">use any portion of Helm services as a destination linked from any unsolicited bulk messages or unsolicited commercial messages ("spam");&nbsp;</span></li>
+            <li class="c3 c10"><span class="c5">use any automated process or service (such as a BOT, a spider, periodic caching of information stored by Helm, or "meta-searching") to access and/or use Helm services;&nbsp;</span></li>
+            <li class="c3 c10"><span class="c5">use any unauthorised means to modify or reroute, or attempt to modify or reroute, Helm services;&nbsp;</span></li>
+          </ul>
+          <ul class="c7 lst-kix_list_3-0 start">
+            <li class="c3 c10"><span class="c5">damage, disable, overburden, or impair Helm services (or the network(s) supporting or connected to Helm services) or interfere with anyone use and enjoyment of Helm services ; or &nbsp; </span></li>
+            <li class="c3 c10"><span class="c5">re-sell or redistribute Helm services, or any part of Helm services.</span></li>
+            <li class="c3 c10"><span class="c5">Access or attempt to access the Helm account of any other person, or any information about any other person which is held by any of our health and care partners.<br /></span></li>
+          </ul>
+          <p class="c3"><span class="c1">4. Intended use of Service<br /></span></p>
+          <p class="c3">
+            <span class="c13">
+              Helm services are intended for you to conveniently access and manage your personal data relating to your health via your Helm account.&nbsp;&nbsp;The information that you access via your Helm account may not always be accurate or up-to-date. &nbsp;If you believe information to be inaccurate, you should verify its accuracy with your GP practice before you act on the information. GP Practices are responsible for the accuracy of data and information&nbsp;in their records and our health and care partners are responsible for whether and within what timescale they access your &ldquo;top 3 things to know about me&rdquo; information, and for their use of that
+            </span>
+            <span class="c13">information</span><span class="c5">.
+                &nbsp;<br />
+            </span>
+          </p>
+          <p class="c3"><span class="c1">5. You are responsible for your account<br /></span></p>
+          <p class="c3"><span class="c5">Only you may use your Helm account. You are responsible for all activity that takes place with your sign-in credentials.<br /></span></p>
+          <p class="c3"><span class="c1">6. Privacy<br /></span></p>
+          <p class="c3"><span class="c5">We consider your use of Helm services to be private. However, we may access (or permit access to others, where lawful) or disclose information about you, your Helm account and/or the content of your communications, in order to:<br /></span></p>
+          <ol class="c7 lst-kix_list_8-0 start" start="1">
+            <li class="c3 c10"><span class="c5">comply with the law or legal process served on us;</span></li>
+            <li class="c3 c10"><span class="c5">enforce and investigate potential breaches of this agreement, including use of Helm services to participate in, or facilitate, activities that violate the law; or</span></li>
+            <li class="c3 c10">
+              <span class="c5">
+                protect the rights, property, or safety of the Council, its employees, its customers or contractors or the public. By using Helm services you consent to the access and disclosures outlined in this section 6.
+              </span>
+            </li>
+          </ol>
+          <p class="c3">
+            <span class="c5">
+              We may use technology or other means to protect Helm services, protect our partners or
+              contractors or the public, or stop you from breaching this agreement. These means may
+              include, for example, filtering to stop spam or increase security. These means may
+              hinder or break your use of Helm services.<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">To help us to provide and further develop Helm services,
+              we may collect certain information about Helm services performance, the device you are
+              using to access Helm, and your use of Helm services. We may automatically upload this
+              information from the device you are using to access Helm. This data will not personally
+              identify you. You may read about this information collection in more detail in the
+              privacy notice.<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              A health and care partner may access your &ldquo;top 3
+              things to know about me&rdquo; information which you enter and store in your Helm
+              account, in the way set out in Section 15.<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              All the information that you enter and store in your
+              Helm account will be stored in accordance with the Helm retention and destruction
+              policy. Your account and associated data will be considered active until you either
+              request removal from Helm, or your account is dormant for a period of 12 months. If
+              your account is dormant for a period of 12 months a notification will be sent to you
+              via email after which time it will become locked if you don&rsquo;t go back into your
+              Helm account. After this time re-registration will be required.
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              If you have not accessed your Helm account after a
+              period of 3 years, your Helm account and all data in your Helm account will be deleted.
+              During this 3 year period, any stored data in your Helm account will only be accessed
+              for the purposes of checking what information you agreed to share with our health and
+              care partners from time to time. All information gathered for use during the evaluation
+              of Helm will be retained by the Council&rsquo;s Project Evaluation Team for a period of
+              one year after submission of the final evaluation and then confidentially destroyed in
+              accordance with the Council&rsquo;s Retention and Destruction
+              protocol.<br />
+            </span>
+          </p>
+          <p class="c3"><span class="c1">7. Software<br /></span></p>
+          <p class="c3"><span class="c5">You must not copy, disassemble, decompile, or reverse engineer any software, code, script or content included in Helm services.<br /></span></p>
+          <p class="c3"><span class="c1">8. Authentication network<br /></span></p>
+          <p class="c3">
+            <span class="c13">
+              The Council and/or NHS Digital will provide you with
+              authentication credentials to use&nbsp;with&nbsp;Helm services. You are solely
+              responsible for your dealings with the Council / NHS Digital. &nbsp;We may cancel or
+              suspend your access to Helm services for inactivity, which we define as failing to
+              sign&nbsp;in to&nbsp;your Helm account for more than 12 months. &nbsp;When your access
+              is cancelled we will manage any of your data within the system according to the Helm
+              Records Management Policy.
+            </span>
+            <span class="c13"><br /></span>
+          </p>
+          <p class="c3"><span class="c1">9. We make no warranty<br /></span></p>
+          <p class="c3">
+            <span class="c5">
+              There are lots of factors that can affect whether or not
+              Helm services are available, including the availability of your internet connection.
+              &nbsp;The accuracy, quality or timeliness of your information is mainly determined by
+              the accuracy, quality and timeliness of the people who supply or upload the information
+              about you in the records of our health and care partners. The Council cannot,
+              therefore, give a warranty in relation to Helm services or in relation to the
+              information about you which you access, copy or download from our health and care
+              partners&rsquo; records.<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              We provide Helm services "as-is," "with all faults" and
+              "as available". &nbsp;We do not guarantee the availability of Helm services or the
+              accuracy or timeliness of information about you which you access, copy or download from
+              our health and care partners&rsquo; records. You may have consumer rights under UK law
+              that this agreement cannot change. To the fullest extent permitted by UK law, we
+              exclude any implied warranties including those of merchantability, fitness for a
+              particular purpose, standards and non-infringement.&nbsp;<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              Helm services enable you to access, and
+              store&nbsp;records&nbsp;created by our health and care partners and Helm services do
+              not themselves provide medical or any other health or care advice, diagnosis or
+              treatment. Always seek the advice of qualified professionals if you require healthcare
+              advice, diagnosis or treatment. Never disregard professional medical advice or delay in
+              seeking it because of information you access on or through Helm
+              services.<br />
+            </span>
+          </p>
+          <p class="c3"><span class="c1">10. Liability limitation<br /></span></p>
+          <p class="c3">
+            <span class="c5">
+              The person responsible to you if you have a problem with
+              Helm services or your personal information depends on what the problem is. &nbsp;In the
+              first instance, you should approach our relevant health or care partner, who can
+              investigate and either get the problem addressed for you or (if appropriate, where the
+              partner believes the problem is our responsibility) raise the matter with the Council.
+              &nbsp;For problems with service availability&nbsp;you should always check your own
+              internet connection is available first.<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              The following paragraphs set out how far the Council is
+              liable to you in any case where (a) you have a problem with Helm services, (b) it is
+              confirmed as resulting from the Council not meeting obligations that it owes directly
+              to you (such as under data protection law), and (c) as a direct result you suffer loss
+              or damage.<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              You can recover from the Council only direct damages if
+              the Council is liable to you (as described above) and our liability to you cannot
+              lawfully be excluded.<br />
+            </span>
+          </p>
+          <p class="c3">
+            <span class="c5">
+              You cannot recover any other loss, damage or damages,
+              including indirect, consequential, special, indirect, incidental or punitive loss,
+              damage or damages, or lost profits. &nbsp;This means that, in each case, you cannot
+              claim for such loss, damage or damages.
+              &nbsp;
+            </span>
+          </p>
+          <p class="c3"><span class="c11">The above limitations apply in relation to:</span><span class="c5">&nbsp;<br /></span></p>
+          <ul class="c7 lst-kix_list_4-0 start">
+            <li class="c3 c10"><span class="c5">Helm services,</span></li>
+            <li class="c3 c10"><span class="c5">viruses or other third party content that affectsyour access to or use of Helm services &nbsp;or any of your devices or other software or services,</span></li>
+            <li class="c3 c10"><span class="c5">incompatibility between Helm services and other services, software or hardware,</span></li>
+            <li class="c3 c10"><span class="c5">delays or failures you may have in initiating, conducting or completing any transmissions or transactions in connection with Helm services in an accurate or timely manner, and</span></li>
+            <li class="c3 c10"><span class="c5">claims for breach of this agreement, breach of warranty, guarantee or condition, strict liability, negligence, breach of statutory duty or&nbsp;other tort.<br /></span></li>
+          </ul>
+          <p class="c3"><span class="c11">They also apply if:<br /></span></p>
+          <ul class="c7 lst-kix_list_5-0 start">
+            <li class="c3 c10"><span class="c5">this remedy does not fully compensate you for any losses, or fails of its essential purpose; or</span></li>
+            <li class="c3 c10"><span class="c5">the Council knew or should have known about the possibility of the loss, damage or damages.&nbsp;<br /></span></li>
+          </ul>
+          <p class="c3">
+            <span class="c13">
+              The above limitations and exclusions of the
+              Council&rsquo;s liability will apply to the fullest extent permitted by the applicable
+              laws. &nbsp;We limit our liability in this way in view of the fact that Helm services
+              are provided without charge to you.
+            </span>
+            <span class="c11"><br /></span>
+          </p>
+          <p class="c3"><span class="c11">Questions related to data protection and privacy can be addressed to Helm at:</span></p>
+          <p class="c3"><span class="c5">info@myhelm.org</span></p>
+          <p class="c3 c4"></p>
+          <p class="c3"><span class="c1">11. Changes to the Service; If we cancel the Service<br /></span></p>
+          <p class="c3">
+            <span class="c13">
+              We may change Helm services or delete features at any
+              time and for any reason but we will notify you if we do so. We may cancel or suspend
+              your Helm services at any time. Our cancellation or suspension may be without cause
+              and/or without notice. Upon cancellation, your right to use Helm services stops right
+              away.
+            </span>
+            <span class="c5"><br /></span>
+          </p>
+          <p class="c3"><span class="c1">12. How we may change the Service Agreement<br /></span></p>
+          <p class="c3">
+            <span class="c13">
+              We may change this agreement&nbsp;in&nbsp;our
+              discretion by posting new applicable terms and conditions. If you do not agree to the
+              changes then you must stop using Helm services. If you do not stop using Helm services,
+              then your use of Helm services will continue under the changed agreement. The Council
+              will notify users of changes to this agreement, acceptance therein is assumed
+              if&nbsp;refusal&nbsp;is not submitted within 30 days of notification and refusals
+              should be notified to
+            </span>
+            <span class="c6">
+                <a class="c19" href="mailto:info@myhelm.org.uk">info@myhelm.org.uk</a>
+            </span>
+            <span class="c5"><br /></span></p>
+            <p class="c3"><span class="c1">13. Interpreting the Service Agreement<br /></span></p>
+            <p class="c3">
+              <span class="c5">
+                All parts of this agreement apply to the maximum extent
+                permitted by law. A court may hold that we cannot enforce part of this agreement as
+                written. If this happens, then we may exercise our right under condition 12 above and
+                replace that part with terms that most closely match the intent of the part that we
+                cannot enforce. This is the entire agreement between you and us regarding your use of
+                Helm services. It supersedes any prior agreement or statements regarding your use of
+                Helm services. If you have confidentiality obligations related to Helm services, those
+                obligations remain in force (for example, you may have been a beta tester). The
+                headings used in this service agreement do not affect the interpretation of its terms
+                and conditions.<br />
+              </span>
+            </p>
+            <p class="c3"><span class="c1">14. Assignment; No third party beneficiaries<br /></span></p>
+            <p class="c3">
+              <span class="c5">
+                We may transfer or assign this service agreement and/or
+                Helm services, in whole or in part, at any time with or without notice to you. You may
+                not transfer to anyone else, either temporarily or permanently, any rights to use Helm
+                services or any part of them. This service agreement is solely for your and our benefit
+                (and the benefit of any person to whom we transfer or assign the service agreement
+                and/or the Helm services). It is not for the benefit of any other
+                person.<br />
+              </span>
+            </p>
+            <p class="c3"><span class="c1">15. Management of your data<br /></span></p>
+            <p class="c3">
+              <span class="c5">
+                Your &ldquo;top 3 things to know about me&rdquo; data
+                and information which you enter and store in your Helm account is a shared electronic
+                record, which each of our health and care partners can access, provided you have
+                granted permission for this information to be disclosed to our health and care partners
+                and provided such partner is or has provided healthcare services to you. &nbsp;If you
+                require a health and care partner to change how they use your data or information, you
+                must speak to them.
+                &nbsp;
+              </span>
+            </p>
+            <p class="c3">
+              <span class="c5">
+                If you or we, or a health and care partner deletes or
+                amends your data this could result in a data and information loss that is needed to for
+                provide your care and therefore you should seek to make health and care partners aware
+                of any changes in your data or information directly.&nbsp;<br />
+              </span>
+            </p>
+            <p class="c3"><span class="c1">16. Notices we send; Consent regarding electronic information</span></p>
+            <p class="c3">
+              <span class="c5">
+                This service agreement is in electronic form. There may
+                be information regarding Helm services that the law requires us to send you. We may
+                send you this information in electronic form. We may provide required information to
+                you:&nbsp;<br />
+              </span>
+            </p>
+            <ul class="c7 lst-kix_list_6-0 start">
+              <li class="c3 c10"><span class="c5">by e-mail at the e-mail address you specified as part of your sign-up and identity verification for Helm services;&nbsp;</span></li>
+              <li class="c3 c10"><span class="c5">by access to a Helm&nbsp;services web site&nbsp;that will be designated in an e-mail notice sent to you at the time the information is available;&nbsp;or&nbsp;</span></li>
+              <li class="c3 c10"><span class="c5">by&nbsp;access to a Helm&nbsp;services web site&nbsp;that will be generally designated in advance for this purpose.&nbsp;<br /></span></li>
+            </ul>
+            <p class="c3">
+              <span class="c5">
+                Notices provided to you via e-mail will have a grace
+                period of 14 days before being deemed given and received, this period will commence on
+                the transmission date of the e-mail. As long as you can access and use Helm services,
+                you have the necessary software and hardware to receive these notices. If you do not
+                consent to receive any notices electronically, you must stop using Helm
+                services.<br />
+              </span>
+            </p>
+            <p class="c3"><span class="c1">17. Choice of law and location for resolving disputes.</span></p>
+            <p class="c3">
+              <span class="c5">
+                The laws of England govern Helm services, this service
+                agreement and how this service agreement is interpreted and applied, and English law
+                applies to any legal claim or matter arising under or in relation to the Helm services
+                or the service agreement.<br />
+              </span>
+            </p>
+            <p class="c3"><span class="c5">You and we irrevocably consent to the exclusive jurisdiction and venue of the United Kingdom for all disputes arising out of or relating to this service agreement.&nbsp;<br /></span></p>
+            <p class="c3"><span class="c1">19. &nbsp;About Helm<br /></span></p>
+            <p class="c3"><span class="c5">Helm services are provided by Leeds City Council on behalf of our health and care partners. Helm services support the integration of health and social care.</span></p>
+            <p class="c3"><span class="c5">Our health and care partners are:</span></p>
+            <p class="c3 c4"></p>
+            <ul class="c7 lst-kix_list_1-0">
+              <li class="c3 c9"><span class="c5">Leeds Teaching Hospitals NHS Trust</span></li>
+              <li class="c3 c9"><span class="c5">Leeds NHS Clinical Commissioning Group</span></li>
+              <li class="c3 c9"><span class="c5">Leeds GP Practices</span></li>
+              <li class="c3 c9"><span class="c5">Leeds and York Partnership NHS Foundation Trust</span></li>
+              <li class="c3 c9"><span class="c5">Leeds Community Healthcare NHS Trust</span></li>
+              <li class="c3 c9"><span class="c5">NHS England</span></li>
+              <li class="c3 c9"><span class="c5">NHS Digital</span></li>
+              <li class="c3 c9"><span class="c5">other health bodies as may be approved from time to time by the Leeds Information Governance Steering Group.</span></li>
+            </ul>
+
+          </div><!-- ./modal__content -->
+
+          <div class="modal__footer">
+
+            <div class="btn-box">
+              <button class="decline succes" type="button"><i class="fa fa-times"></i>
+                Decline
+              </button>
+              <button class="agree succes" type="button" data-target="#loginForm"><i class="fa fa-check"></i>
+                Agree
+              </button>
+  					</div>
+
+          </div>
+        </div>
+      </div><!-- /.remodal -->
+
+    </div><!-- #root -->
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/remodal.min.js"></script>
+    <script src="/assets/js/js.cookie.js"></script>
+    <script src="/assets/js/main.js"></script>
+
   </body>
 </html>

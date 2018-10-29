@@ -8,5 +8,15 @@
         "statusCode": 404
       }
     }
+  },
+  {
+    "path": "/api",
+    "module": "/opt/qewd/mapped/modules/qewd-openid-connect-rest",
+    "errors": {
+      "notfound": {
+        "text": "Resource Not Recognised",
+        "statusCode": 404
+      }
+    }
   }
 ]

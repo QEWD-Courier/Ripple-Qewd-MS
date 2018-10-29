@@ -4,6 +4,7 @@
   },
   "host": "{{source}}",
   "patientId": "{{patientId}}",
+  "date_created": "=> getDateCreated(dateCreated, source)",
   "uid": "{{sourceId}}",
   "immunisation_procedure": {
     "immunisation_name": {

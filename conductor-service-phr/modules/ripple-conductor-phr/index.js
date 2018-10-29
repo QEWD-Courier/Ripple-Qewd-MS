@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  31 January 2018
+  17 September 2018
 
 */
 
@@ -40,6 +40,24 @@ module.exports = {
   beforeMicroServiceHandler: function(req, finished) {
     console.log('beforeMicroServiceHandler: ' + JSON.stringify(req));
   },
+  beforeHandler: function(req, finished) {
+
+    if (!req.headers) {
+      finished({error: 'Invalid request'});
+      return false;
+    }
+    if (!req.headers['x-requested-with']) {
+      finished({error: 'Invalid request'});
+      return false;
+    }
+    if (req.headers['x-requested-with'] !== 'XMLHttpRequest') {
+      finished({error: 'Invalid request'});
+      return false;
+    }
+
+    //
+  },
+
   /*
   workerResponseHandlers: {
     initialise: function(message) {

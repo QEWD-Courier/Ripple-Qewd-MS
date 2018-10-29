@@ -1,0 +1,846 @@
+{
+  "uid": "6dda811d-3e0d-46e0-8ff6-fd1d30ee3995",
+  "languages": [
+    "en"
+  ],
+  "concept": "IDCR -  Top issues.v0",
+  "tree": {
+    "min": 1,
+    "max": 1,
+    "children": [
+      {
+        "aql_path": "/name",
+        "mandatory_attributes": [
+          {
+            "name": "Value",
+            "attribute": "value",
+            "id": "value",
+            "type": "STRING"
+          }
+        ],
+        "attribute_name": "name",
+        "constraint": {
+          "occurrence": {
+            "min": 1,
+            "max_op": "<=",
+            "min_op": ">=",
+            "max": 1
+          }
+        },
+        "type": "DV_TEXT"
+      },
+      {
+        "min": 0,
+        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]",
+        "max": -1,
+        "children": [
+          {
+            "min": 1,
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data",
+            "max": 1,
+            "children": [
+              {
+                "min": 0,
+                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]",
+                "max": 1,
+                "children": [
+                  {
+                    "min": 1,
+                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data",
+                    "max": 1,
+                    "children": [
+                      {
+                        "min": 0,
+                        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]",
+                        "max": 1,
+                        "children": [
+                          {
+                            "min": 1,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]",
+                            "max": 1,
+                            "name": "Issue 3 Name",
+                            "description": "The issue as presented by the person",
+                            "id": "issue_3_name",
+                            "category": "ELEMENT",
+                            "type": "DV_TEXT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.story.v1],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[openEHR-EHR-CLUSTER.issue.v0],0,/items[at0001],0,/Value}'",
+                            "constraints": [
+                              {
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]/value",
+                                "mandatory_attributes": [
+                                  {
+                                    "name": "Value",
+                                    "attribute": "value",
+                                    "id": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              },
+                              {
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]/name",
+                                "mandatory_attributes": [
+                                  {
+                                    "name": "Value",
+                                    "attribute": "value",
+                                    "id": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "name",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "node_id": "at0001"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]",
+                            "max": 1,
+                            "children": [
+                              {
+                                "min": 1,
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]",
+                                "max": 1,
+                                "name": "Issue 2 Name",
+                                "description": "The issue as presented by the person",
+                                "id": "issue_2_name",
+                                "category": "ELEMENT",
+                                "type": "DV_TEXT",
+                                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.story.v1],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[openEHR-EHR-CLUSTER.issue.v0],0,/items[at0001],0,/Value}'",
+                                "constraints": [
+                                  {
+                                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]/value",
+                                    "mandatory_attributes": [
+                                      {
+                                        "name": "Value",
+                                        "attribute": "value",
+                                        "id": "value",
+                                        "type": "STRING"
+                                      }
+                                    ],
+                                    "attribute_name": "value",
+                                    "constraint": {
+                                      "occurrence": {
+                                        "min": 1,
+                                        "max_op": "<=",
+                                        "min_op": ">=",
+                                        "max": 1
+                                      }
+                                    },
+                                    "type": "DV_TEXT"
+                                  },
+                                  {
+                                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]/name",
+                                    "mandatory_attributes": [
+                                      {
+                                        "name": "Value",
+                                        "attribute": "value",
+                                        "id": "value",
+                                        "type": "STRING"
+                                      }
+                                    ],
+                                    "attribute_name": "name",
+                                    "constraint": {
+                                      "occurrence": {
+                                        "min": 1,
+                                        "max_op": "<=",
+                                        "min_op": ">=",
+                                        "max": 1
+                                      }
+                                    },
+                                    "type": "DV_TEXT"
+                                  }
+                                ],
+                                "node_id": "at0001"
+                              },
+                              {
+                                "min": 0,
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]",
+                                "max": 1,
+                                "children": [
+                                  {
+                                    "min": 1,
+                                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]",
+                                    "max": 1,
+                                    "name": "Issue 1 Name",
+                                    "description": "The issue as presented by the person",
+                                    "id": "issue_1_name",
+                                    "category": "ELEMENT",
+                                    "type": "DV_TEXT",
+                                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.story.v1],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[openEHR-EHR-CLUSTER.issue.v0],0,/items[at0001],0,/Value}'",
+                                    "constraints": [
+                                      {
+                                        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]/value",
+                                        "mandatory_attributes": [
+                                          {
+                                            "name": "Value",
+                                            "attribute": "value",
+                                            "id": "value",
+                                            "type": "STRING"
+                                          }
+                                        ],
+                                        "attribute_name": "value",
+                                        "constraint": {
+                                          "occurrence": {
+                                            "min": 1,
+                                            "max_op": "<=",
+                                            "min_op": ">=",
+                                            "max": 1
+                                          }
+                                        },
+                                        "type": "DV_TEXT"
+                                      },
+                                      {
+                                        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0001]/name",
+                                        "mandatory_attributes": [
+                                          {
+                                            "name": "Value",
+                                            "attribute": "value",
+                                            "id": "value",
+                                            "type": "STRING"
+                                          }
+                                        ],
+                                        "attribute_name": "name",
+                                        "constraint": {
+                                          "occurrence": {
+                                            "min": 1,
+                                            "max_op": "<=",
+                                            "min_op": ">=",
+                                            "max": 1
+                                          }
+                                        },
+                                        "type": "DV_TEXT"
+                                      }
+                                    ],
+                                    "node_id": "at0001"
+                                  },
+                                  {
+                                    "min": 0,
+                                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]",
+                                    "max": 1,
+                                    "name": "Issue 1 Detail",
+                                    "description": "Detailed information about the issue or health problem",
+                                    "id": "issue_1_detail",
+                                    "category": "ELEMENT",
+                                    "type": "DV_TEXT",
+                                    "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.story.v1],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[openEHR-EHR-CLUSTER.issue.v0],0,/items[at0002],0,/Value}'",
+                                    "constraints": [
+                                      {
+                                        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]/value",
+                                        "mandatory_attributes": [
+                                          {
+                                            "name": "Value",
+                                            "attribute": "value",
+                                            "id": "value",
+                                            "type": "STRING"
+                                          }
+                                        ],
+                                        "attribute_name": "value",
+                                        "constraint": {
+                                          "occurrence": {
+                                            "min": 1,
+                                            "max_op": "<=",
+                                            "min_op": ">=",
+                                            "max": 1
+                                          }
+                                        },
+                                        "type": "DV_TEXT"
+                                      },
+                                      {
+                                        "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]/name",
+                                        "mandatory_attributes": [
+                                          {
+                                            "name": "Value",
+                                            "attribute": "value",
+                                            "id": "value",
+                                            "type": "STRING"
+                                          }
+                                        ],
+                                        "attribute_name": "name",
+                                        "constraint": {
+                                          "occurrence": {
+                                            "min": 1,
+                                            "max_op": "<=",
+                                            "min_op": ">=",
+                                            "max": 1
+                                          }
+                                        },
+                                        "type": "DV_TEXT"
+                                      }
+                                    ],
+                                    "node_id": "at0002"
+                                  },
+                                  {
+                                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/name",
+                                    "mandatory_attributes": [
+                                      {
+                                        "name": "Value",
+                                        "attribute": "value",
+                                        "id": "value",
+                                        "type": "STRING"
+                                      }
+                                    ],
+                                    "attribute_name": "name",
+                                    "constraint": {
+                                      "occurrence": {
+                                        "min": 1,
+                                        "max_op": "<=",
+                                        "min_op": ">=",
+                                        "max": 1
+                                      }
+                                    },
+                                    "type": "DV_TEXT"
+                                  }
+                                ],
+                                "name": "Issue 1",
+                                "description": "An issue, symptom, or complaint presented to the health provider seeking explanation, education, understanding, investigation or treatment",
+                                "id": "issue_1",
+                                "type": "CLUSTER",
+                                "category": "DATA_STRUCTURE",
+                                "node_id": "openEHR-EHR-CLUSTER.issue.v0"
+                              },
+                              {
+                                "min": 0,
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]",
+                                "max": 1,
+                                "name": "Issue 2 Detail",
+                                "description": "Detailed information about the issue or health problem",
+                                "id": "issue_2_detail",
+                                "category": "ELEMENT",
+                                "type": "DV_TEXT",
+                                "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.story.v1],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[openEHR-EHR-CLUSTER.issue.v0],0,/items[at0002],0,/Value}'",
+                                "constraints": [
+                                  {
+                                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]/value",
+                                    "mandatory_attributes": [
+                                      {
+                                        "name": "Value",
+                                        "attribute": "value",
+                                        "id": "value",
+                                        "type": "STRING"
+                                      }
+                                    ],
+                                    "attribute_name": "value",
+                                    "constraint": {
+                                      "occurrence": {
+                                        "min": 1,
+                                        "max_op": "<=",
+                                        "min_op": ">=",
+                                        "max": 1
+                                      }
+                                    },
+                                    "type": "DV_TEXT"
+                                  },
+                                  {
+                                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]/name",
+                                    "mandatory_attributes": [
+                                      {
+                                        "name": "Value",
+                                        "attribute": "value",
+                                        "id": "value",
+                                        "type": "STRING"
+                                      }
+                                    ],
+                                    "attribute_name": "name",
+                                    "constraint": {
+                                      "occurrence": {
+                                        "min": 1,
+                                        "max_op": "<=",
+                                        "min_op": ">=",
+                                        "max": 1
+                                      }
+                                    },
+                                    "type": "DV_TEXT"
+                                  }
+                                ],
+                                "node_id": "at0002"
+                              },
+                              {
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/name",
+                                "mandatory_attributes": [
+                                  {
+                                    "name": "Value",
+                                    "attribute": "value",
+                                    "id": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "name",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "name": "Issue 2",
+                            "description": "An issue, symptom, or complaint presented to the health provider seeking explanation, education, understanding, investigation or treatment",
+                            "id": "issue_2",
+                            "type": "CLUSTER",
+                            "category": "DATA_STRUCTURE",
+                            "node_id": "openEHR-EHR-CLUSTER.issue.v0"
+                          },
+                          {
+                            "min": 0,
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]",
+                            "max": 1,
+                            "name": "Issue 3 Detail",
+                            "description": "Detailed information about the issue or health problem",
+                            "id": "issue_3_detail",
+                            "category": "ELEMENT",
+                            "type": "DV_TEXT",
+                            "ethercis_sql": "\"ehr\".\"entry\".\"entry\" #>> '{/content[openEHR-EHR-OBSERVATION.story.v1],0,/data[at0001],/events,/events[at0002],0,/data[at0003],/items[openEHR-EHR-CLUSTER.issue.v0],0,/items[at0002],0,/Value}'",
+                            "constraints": [
+                              {
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]/value",
+                                "mandatory_attributes": [
+                                  {
+                                    "name": "Value",
+                                    "attribute": "value",
+                                    "id": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "value",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              },
+                              {
+                                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/items[at0002]/name",
+                                "mandatory_attributes": [
+                                  {
+                                    "name": "Value",
+                                    "attribute": "value",
+                                    "id": "value",
+                                    "type": "STRING"
+                                  }
+                                ],
+                                "attribute_name": "name",
+                                "constraint": {
+                                  "occurrence": {
+                                    "min": 1,
+                                    "max_op": "<=",
+                                    "min_op": ">=",
+                                    "max": 1
+                                  }
+                                },
+                                "type": "DV_TEXT"
+                              }
+                            ],
+                            "node_id": "at0002"
+                          },
+                          {
+                            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.issue.v0]/name",
+                            "mandatory_attributes": [
+                              {
+                                "name": "Value",
+                                "attribute": "value",
+                                "id": "value",
+                                "type": "STRING"
+                              }
+                            ],
+                            "attribute_name": "name",
+                            "constraint": {
+                              "occurrence": {
+                                "min": 1,
+                                "max_op": "<=",
+                                "min_op": ">=",
+                                "max": 1
+                              }
+                            },
+                            "type": "DV_TEXT"
+                          }
+                        ],
+                        "name": "Issue 3",
+                        "description": "An issue, symptom, or complaint presented to the health provider seeking explanation, education, understanding, investigation or treatment",
+                        "id": "issue_3",
+                        "type": "CLUSTER",
+                        "category": "DATA_STRUCTURE",
+                        "node_id": "openEHR-EHR-CLUSTER.issue.v0"
+                      }
+                    ],
+                    "name": "Tree",
+                    "description": "@ internal @",
+                    "id": "tree",
+                    "type": "ITEM_TREE",
+                    "category": "DATA_STRUCTURE",
+                    "node_id": "at0003"
+                  },
+                  {
+                    "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/events[at0002]/time",
+                    "mandatory_attributes": [
+                      {
+                        "name": "Value",
+                        "attribute": "value",
+                        "id": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "name": "Time",
+                    "attribute": "time",
+                    "id": "time",
+                    "occurrence": {
+                      "min": 1,
+                      "max_op": "<=",
+                      "min_op": ">=",
+                      "max": 1
+                    },
+                    "category": "ATTRIBUTE",
+                    "type": "DV_DATE_TIME"
+                  }
+                ],
+                "name": "Any event",
+                "description": "Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.",
+                "id": "any_event",
+                "type": "POINT_EVENT",
+                "category": "DATA_STRUCTURE",
+                "node_id": "at0002"
+              },
+              {
+                "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/data[at0001]/origin",
+                "mandatory_attributes": [
+                  {
+                    "name": "Value",
+                    "attribute": "value",
+                    "id": "value",
+                    "type": "STRING"
+                  }
+                ],
+                "name": "Origin",
+                "attribute": "origin",
+                "id": "origin",
+                "occurrence": {
+                  "min": 1,
+                  "max_op": "<=",
+                  "min_op": ">=",
+                  "max": 1
+                },
+                "category": "ATTRIBUTE",
+                "type": "DV_DATE_TIME"
+              }
+            ],
+            "name": "Event Series",
+            "description": "@ internal @",
+            "id": "event_series",
+            "type": "HISTORY",
+            "category": "DATA_STRUCTURE",
+            "node_id": "at0001"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/subject",
+            "mandatory_attributes": [
+              {
+                "name": "Namespace",
+                "attribute": "namespace",
+                "id": "namespace",
+                "type": "STRING"
+              },
+              {
+                "name": "Id",
+                "attribute": "id",
+                "id": "id",
+                "type": "OBJECT_ID"
+              },
+              {
+                "name": "Type",
+                "attribute": "type",
+                "id": "type",
+                "type": "STRING"
+              }
+            ],
+            "name": "Subject",
+            "attribute": "subject",
+            "id": "subject",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "PARTY_PROXY"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/language",
+            "mandatory_attributes": [
+              {
+                "name": "CodeString",
+                "attribute": "code_string",
+                "id": "code_string",
+                "type": "STRING"
+              },
+              {
+                "name": "TerminologyId",
+                "attribute": "terminology_id",
+                "id": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Language",
+            "attribute": "language",
+            "id": "language",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "aql_path": "/content[openEHR-EHR-OBSERVATION.story.v1]/encoding",
+            "mandatory_attributes": [
+              {
+                "name": "CodeString",
+                "attribute": "code_string",
+                "id": "code_string",
+                "type": "STRING"
+              },
+              {
+                "name": "TerminologyId",
+                "attribute": "terminology_id",
+                "id": "terminology_id",
+                "type": "TERMINOLOGY_ID"
+              }
+            ],
+            "name": "Encoding",
+            "attribute": "encoding",
+            "id": "encoding",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "CODE_PHRASE"
+          }
+        ],
+        "name": "Story/History",
+        "description": "The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.",
+        "id": "story_history",
+        "type": "OBSERVATION",
+        "category": "DATA_STRUCTURE",
+        "node_id": "openEHR-EHR-OBSERVATION.story.v1"
+      },
+      {
+        "aql_path": "/composer",
+        "mandatory_attributes": [
+          {
+            "name": "Namespace",
+            "attribute": "namespace",
+            "id": "namespace",
+            "type": "STRING"
+          },
+          {
+            "name": "Id",
+            "attribute": "id",
+            "id": "id",
+            "type": "OBJECT_ID"
+          },
+          {
+            "name": "Type",
+            "attribute": "type",
+            "id": "type",
+            "type": "STRING"
+          }
+        ],
+        "name": "Composer",
+        "attribute": "composer",
+        "id": "composer",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "PARTY_PROXY"
+      },
+      {
+        "aql_path": "/language",
+        "mandatory_attributes": [
+          {
+            "name": "CodeString",
+            "attribute": "code_string",
+            "id": "code_string",
+            "type": "STRING"
+          },
+          {
+            "name": "TerminologyId",
+            "attribute": "terminology_id",
+            "id": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Language",
+        "attribute": "language",
+        "id": "language",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "aql_path": "/category",
+        "mandatory_attributes": [
+          {
+            "name": "DefiningCode",
+            "attribute": "defining_code",
+            "id": "defining_code",
+            "type": "CODE_PHRASE"
+          },
+          {
+            "name": "Value",
+            "attribute": "value",
+            "id": "value",
+            "type": "STRING"
+          }
+        ],
+        "name": "Category",
+        "attribute": "category",
+        "id": "category",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "DV_CODED_TEXT"
+      },
+      {
+        "aql_path": "/territory",
+        "mandatory_attributes": [
+          {
+            "name": "CodeString",
+            "attribute": "code_string",
+            "id": "code_string",
+            "type": "STRING"
+          },
+          {
+            "name": "TerminologyId",
+            "attribute": "terminology_id",
+            "id": "terminology_id",
+            "type": "TERMINOLOGY_ID"
+          }
+        ],
+        "name": "Territory",
+        "attribute": "territory",
+        "id": "territory",
+        "occurrence": {
+          "min": 1,
+          "max_op": "<=",
+          "min_op": ">=",
+          "max": 1
+        },
+        "category": "ATTRIBUTE",
+        "type": "CODE_PHRASE"
+      },
+      {
+        "min": 1,
+        "aql_path": "/context",
+        "max": 1,
+        "children": [
+          {
+            "aql_path": "/context/start_time",
+            "mandatory_attributes": [
+              {
+                "name": "Value",
+                "attribute": "value",
+                "id": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "StartTime",
+            "attribute": "start_time",
+            "id": "start_time",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_DATE_TIME"
+          },
+          {
+            "aql_path": "/context/setting",
+            "mandatory_attributes": [
+              {
+                "name": "DefiningCode",
+                "attribute": "defining_code",
+                "id": "defining_code",
+                "type": "CODE_PHRASE"
+              },
+              {
+                "name": "Value",
+                "attribute": "value",
+                "id": "value",
+                "type": "STRING"
+              }
+            ],
+            "name": "Setting",
+            "attribute": "setting",
+            "id": "setting",
+            "occurrence": {
+              "min": 1,
+              "max_op": "<=",
+              "min_op": ">=",
+              "max": 1
+            },
+            "category": "ATTRIBUTE",
+            "type": "DV_CODED_TEXT"
+          }
+        ],
+        "name": "Context",
+        "rm_type": "EVENT_CONTEXT",
+        "attribute": "context",
+        "id": "context",
+        "node_id": ""
+      }
+    ],
+    "name": "Top issues",
+    "description": "Interaction, contact or care event between a subject of care and healthcare provider(s).",
+    "id": "top_issues",
+    "type": "COMPOSITION",
+    "category": "DATA_STRUCTURE",
+    "node_id": "openEHR-EHR-COMPOSITION.encounter.v1"
+  },
+  "template_id": "IDCR - Top issues.v0",
+  "default_language": "en"
+}

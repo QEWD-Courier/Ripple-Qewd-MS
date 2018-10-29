@@ -1,6 +1,7 @@
 {
-  "managementPassword": "R!ppl$",
-  "serverName": "Gov.Verify Authentication MicroService Server",
+  "managementPassword": "pwd_auth",
+  "serverName": "OpenId Connect Authentication MicroService Server",
   "port": 8080,
-  "poolSize": 2
+  "poolSize": 2,
+  "initialSessionTimeout": 600
 }

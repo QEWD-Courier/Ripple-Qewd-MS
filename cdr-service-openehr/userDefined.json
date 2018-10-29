@@ -1,26 +1,19 @@
 {
   "openehr": {
-    "marand": {
-      "url": "https://test.operon.systems",
-      "username": "oprn_hcbox",
-      "password": "XioTAJoO479",
-      "platform": "marand"
-    },
     "ethercis": {
-      "url": "http://178.62.71.220:8080",
+      "url": "http://46.101.81.30:8080",
       "username": "guest",
       "password": "guest",
       "platform": "ethercis"
     }
   },
   "defaultPostHost": "ethercis",
-  "chowner": "rtweed",
+  "chowner": "ripple",
   "synopsis": {
     "headings": [
       "allergies",
       "medications",
       "problems",
-      "contacts",
       "vaccinations",
       "top3Things"
     ],
@@ -39,7 +32,7 @@
         "name": "AllergyIntolerance"
       },
       "synopsisField": "cause",
-      "summaryTableFields": ["cause", "reaction"]
+      "summaryTableFields": ["cause", "reaction", "dateCreated"]
     },
     "contacts": {
       "template": {
@@ -81,6 +74,7 @@
       "summaryTableFields": ["name", "score", "dateCreated"]
     },
     "referrals": true,
+    "top3Things": false,
     "vaccinations": {
       "template": {
         "name": "IDCR - Immunisation summary.v0"

@@ -24,23 +24,59 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  20 June 2018
+  05 October 2018
 
 */
 
+var transform = require('qewd-transform-json').transform;
 var config = require('./startup_config.json');
-var ms_hosts = require('./ms_hosts.json');
+var ms_hosts_template = require('./ms_hosts.json');
 var ms_routes = require('./ms_routes.json');
 var local_routes = require('./local_routes.json');
-config.jwt = require('./jwt_secret.json');
 var ms_config = require('./ms_config');
 var customiseRoutes = require('./customiseRoutes');
+var helpers = require('./helpers');
+
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
+console.log('global_config = ' + JSON.stringify(global_config, null, 2));
+
+var ms_hosts = transform(ms_hosts_template, global_config, helpers);
+console.log('ms_hosts = ' + JSON.stringify(ms_hosts, null, 2));
+
+config.jwt = global_config.jwt;
 
 config.u_services = ms_config(ms_routes, ms_hosts);
 var routes = customiseRoutes(local_routes, config);
 
 config.moduleMap = {
-  'ripple-admin': '/opt/qewd/mapped/modules/ripple-admin'
+  'ripple-admin': '/opt/qewd/mapped/modules/ripple-admin',
+  'ripple-audit-log': '/opt/qewd/mapped/modules/ripple-audit-log',
+  'speedTest': '/opt/qewd/mapped/modules/speedTest'
+};
+
+config.addMiddleware = function(bp, app, _this) {
+  //var util = require('util');
+
+  app.use(function(req, res, next) {
+    // audit log application must be ready for use
+    if (_this.audit_log) {
+
+        //console.log(util.inspect(req));
+
+        var messageObj = {
+          url: req.originalUrl,
+          method: req.method,
+          cookie: req.headers.cookie,
+          ip: req.headers['x-forwarded-for'],
+          user_agent: req.headers['user-agent'],
+          query: req.query,
+          body: req.body
+        };
+        _this.audit_log(messageObj, function(responseObj) {
+        });
+    }
+    next();
+  });
 };
 
 var userDefined = require('./userDefined.json');
@@ -121,6 +157,52 @@ function onStarted() {
   };
   this.microServiceRouter(message, function(response) {
     console.log('** microService response: ' + JSON.stringify(response));
+  });
+
+  // register application to be used for audit logging
+  //  and set up re-usable audit function that includes the token etc
+
+  var _this = this;
+  var messageObj = {
+    type: 'ewd-register',
+    application: 'ripple-audit-log'
+  };
+  this.handleMessage(messageObj, function(responseObj) {
+    var token = responseObj.message.token;
+    var messageObj = {
+      type: 'login',
+      token: token,
+      params: {
+        password: _this.userDefined.config.managementPassword
+      }
+    };
+    _this.handleMessage(messageObj, function(responseObj) {
+      if (responseObj.message.ok) {
+        _this.audit_log = function(requestObj, callback) {
+          var messageObj = {
+            type: 'save_to_audit',
+            token: token,
+            params: requestObj
+          };
+          _this.handleMessage(messageObj, callback);
+        };
+
+        // start keep-alive timed message, to keep token valid for master process lifetime
+
+        _this.keepAliveTimer = setInterval(function() {
+          var messageObj = {
+            type: 'keepAlive',
+            token: token
+          };
+          _this.handleMessage(messageObj, function(responseObj) {});
+        }, 1000000);
+      }
+    });
+  });
+
+  this.on('stop', function() {
+    console.log('Stopping keepAliveTimer');
+    clearInterval(_this.keepAliveTimer);
   });
 
 }

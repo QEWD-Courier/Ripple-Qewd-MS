@@ -6,7 +6,7 @@
   "ctx/id_scheme": "2.16.840.1.113883.2.1.4.3",
   "ctx/language": "en",
   "ctx/territory": "GB",
-  "ctx/time": "=> now()",
+  "ctx/time": "{{date_created}}",
   "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/last_updated": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.last_updated, <!delete>)",
   "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/category|value": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.category.value, <!delete>)",
   "adverse_reaction_list/allergies_and_adverse_reactions/adverse_reaction_risk:0/category|code": "=> either(allergies_and_adverse_reactions.adverse_reaction_risk.category.code, <!delete>)",

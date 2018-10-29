@@ -46,7 +46,7 @@
   {
     "path": "/api/user",
     "method": "GET",
-    "destination": "mpi_service"
+    "destination": "authentication_service"
   },
   {
     "path": "/api/my/demographics",
@@ -56,7 +56,7 @@
   {
     "path": "/api/demographics/:patientId",
     "method": "GET",
-    "destination": "mpi_service"
+    "destination": "cdr_discovery_service"
   },
   {
     "path": "/api/patients",
@@ -74,27 +74,12 @@
     "destination": "mpi_service"
   },
   {
+    "path": "/api/openehr/check",
+    "method": "GET",
+    "destination": "cdr_openehr_service"
+  },
+  {
     "path": "/api/heading/:heading/fields/summary",
-    "method": "GET",
-    "destination": "cdr_openehr_service"
-  },
-  {
-    "path": "/api/patients/:patientId/top3Things",
-    "method": "POST",
-    "destination": "cdr_openehr_service"
-  },
-  {
-    "path": "/api/patients/:patientId/top3Things",
-    "method": "GET",
-    "destination": "cdr_openehr_service"
-  },
-  {
-    "path": "/api/patients/:patientId/top3Things/:sourceId",
-    "method": "PUT",
-    "destination": "cdr_openehr_service"
-  },
-  {
-    "path": "/api/patients/:patientId/top3Things/:sourceId",
     "method": "GET",
     "destination": "cdr_openehr_service"
   },
@@ -186,6 +171,16 @@
   {
     "path": "/api/feeds/:sourceId",
     "method": "PUT",
+    "destination": "cdr_openehr_service"
+  },
+  {
+    "path": "/api/discovery/revert",
+    "method": "DELETE",
+    "destination": "cdr_openehr_service"
+  },
+  {
+    "path": "/api/discovery/revert/:patientId/:heading",
+    "method": "DELETE",
     "destination": "cdr_openehr_service"
   }
 ]

@@ -108,9 +108,13 @@ module.exports = {
       console.log('initialising');
       this.auth = {};
       this.auth.config = this.userDefined.auth;
-      getPublicKey.call(this);
+      //getPublicKey.call(this);
 
       var config = this.auth.config;
+
+      Issuer.defaultHttpOptions = {
+        rejectUnauthorized: false
+      };
 
       this.auth.issuer = new Issuer({
         issuer: config.issuer,
@@ -121,6 +125,7 @@ module.exports = {
         jwks_uri: config.jwks_endpoint,
       });
       var issuer = this.auth.issuer;
+
       this.auth.client = new issuer.Client({
         client_id: config.client_id,
         client_secret: config.client_secret

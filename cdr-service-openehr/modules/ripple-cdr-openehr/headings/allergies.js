@@ -31,7 +31,7 @@
 var heading = {
   name: 'allergies',
   textFieldName: 'cause',
-  headingTableFields: ['cause', 'reaction'],
+  headingTableFields: ['cause', 'reaction', 'dateCreated'],
 
   get: {
 

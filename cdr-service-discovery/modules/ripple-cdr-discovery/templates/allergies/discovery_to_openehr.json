@@ -1,0 +1,23 @@
+{
+  "composer": {
+    "value": "{{practitionerName}}"
+  },
+  "host": "Discovery",
+  "uid": "AllergyIntolerance_{{id}}",
+  "patientId": "{{nhsNumber}}",
+  "date_created": "{{recordedDate}}",
+  "allergies_and_adverse_reactions": {
+    "adverse_reaction_risk": {
+      "causative_agent": {
+        "value": "=> useSnomed(substance.coding, 'display')",
+        "code": "=> useSnomed(substance.coding, 'code')",
+        "terminology": "=> useSnomed(substance.coding, 'system')"
+      },
+      "reaction_details": {
+        "manifestation": {
+          "value": "=> useSnomed(substance.coding, 'display')"
+        }
+      }
+    }
+  }
+}

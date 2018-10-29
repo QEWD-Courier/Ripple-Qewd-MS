@@ -46,11 +46,13 @@ function cacheSummaryHeadings(patientId, session, callback) {
   });
 
   this.userDefined.synopsis.headings.forEach(function(heading) {
+    /*
     if (heading === 'top3Things') {
       count++;
       if (count === noOfHeadingsInSynopsis && callback) callback();
       return;
     }
+    */
     fetchAndCacheHeading.call(self, patientId, heading, session, function(response) {
       count++;
       if (count === noOfHeadingsInSynopsis && callback) callback();
@@ -68,11 +70,13 @@ function getSynopsisFromCache(patientId, noToDisplayInSynopsis, session, callbac
     results[heading] = [];
     var count = 0;
 
+    /*
     if (heading === 'top3Things') {
       var summary = getTop3ThingsSummary.call(self, patientId);
       results[heading].push(summary);
       return;
     }
+    */
 
     var headingByDateCache = patientHeadingCache.$([heading, 'byDate']);
 

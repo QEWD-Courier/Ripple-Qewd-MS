@@ -107,6 +107,7 @@ function getHeadingSummary(patientId, heading, jwt, callback) {
       Authorization: 'Bearer ' + jwt
     }
   };
+
   request(options, function(error, response, body) {
     callback(error, response, body);
   });

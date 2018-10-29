@@ -1,0 +1,272 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "IDCR - Top issues.v0",
+  "description": "Data Entry Schema for OpenEHR Template IDCR - Top issues.v0",
+  "type": "object",
+  "properties": {
+    "story_history": {
+      "type": "object",
+      "properties": {
+        "issue_3": {
+          "type": "object",
+          "properties": {
+            "issue_3_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ],
+              "minLength": 1,
+              "description": "Issue 3 Name",
+              "properties": {
+                "value": {
+                  "description": "Issue 3 Name value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Issue 3 Name code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Issue 3 Name terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "value"
+              ]
+            },
+            "issue_2": {
+              "type": "object",
+              "properties": {
+                "issue_2_name": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ],
+                  "minLength": 1,
+                  "description": "Issue 2 Name",
+                  "properties": {
+                    "value": {
+                      "description": "Issue 2 Name value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Issue 2 Name code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Issue 2 Name terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "value"
+                  ]
+                },
+                "issue_1": {
+                  "type": "object",
+                  "properties": {
+                    "issue_1_name": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "object"
+                        }
+                      ],
+                      "minLength": 1,
+                      "description": "Issue 1 Name",
+                      "properties": {
+                        "value": {
+                          "description": "Issue 1 Name value",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "description": "Issue 1 Name code",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "terminology": {
+                          "description": "Issue 1 Name terminology",
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "value"
+                      ]
+                    },
+                    "issue_1_detail": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "object"
+                        }
+                      ],
+                      "minLength": 1,
+                      "description": "Issue 1 Detail",
+                      "properties": {
+                        "value": {
+                          "description": "Issue 1 Detail value",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "description": "Issue 1 Detail code",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "terminology": {
+                          "description": "Issue 1 Detail terminology",
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "issue_2_detail": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object"
+                    }
+                  ],
+                  "minLength": 1,
+                  "description": "Issue 2 Detail",
+                  "properties": {
+                    "value": {
+                      "description": "Issue 2 Detail value",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "description": "Issue 2 Detail code",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "terminology": {
+                      "description": "Issue 2 Detail terminology",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            },
+            "issue_3_detail": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ],
+              "minLength": 1,
+              "description": "Issue 3 Detail",
+              "properties": {
+                "value": {
+                  "description": "Issue 3 Detail value",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "code": {
+                  "description": "Issue 3 Detail code",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminology": {
+                  "description": "Issue 3 Detail terminology",
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "time": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Time value",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            }
+          }
+        },
+        "origin": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "description": "Origin value",
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "category": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object"
+        }
+      ],
+      "minLength": 1,
+      "description": "Category",
+      "properties": {
+        "value": {
+          "description": "Category value",
+          "type": "string",
+          "minLength": 1
+        },
+        "code": {
+          "description": "Category code",
+          "type": "string",
+          "minLength": 1
+        },
+        "terminology": {
+          "description": "Category terminology",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "territory": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Territory value",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

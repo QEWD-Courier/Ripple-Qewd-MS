@@ -1,6 +1,12 @@
 {
   "issuer": {
-    "host": "http://192.168.1.135",
-    "port": 8080
+    "host": "{{phr.microservices.openid_connect.host}}",
+    "port": "{{phr.microservices.openid_connect.port}}"
+  },
+  "cookies": {
+    "long": {
+      "httpOnly": true,
+      "maxAge": 600000
+    }
   }
 }

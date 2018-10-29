@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  8 June 2018
+  26 October 2018
 
 */
 
@@ -56,7 +56,157 @@ module.exports = function(routes, ms_hosts) {
   returnArrayResponse('/api/feeds/:sourceId', routes, 'feed');
   returnArrayResponse('/api/patients/:patientId/:heading', routes);
   returnArrayResponse('/api/patients/:patientId/:heading/:sourceId', routes);
-  returnArrayResponse('/api/patients/:patientId/top3Things', routes);
+  //returnArrayResponse('/api/patients/:patientId/top3Things', routes);
+
+  var index = findRoute('/api/auth/login', routes);
+
+  routes[index].onResponse = function(args) {
+    console.log('** onResponse handler for /api/auth/login');
+    console.log('** args = ' + JSON.stringify(args, null, 2));
+
+    //  note - the response from this is further modified in remap_routes.js
+    //   see the onResponse handler for /api/initialise
+    
+    var response = args.responseObj.message;
+    if (!response.error) {
+      if (response.authenticated) {
+
+         // user has logged in via OpenId Connect
+
+        var recordStatus;
+        var new_patient;
+        var api_response;
+        var message;
+
+        // we need to check the OpenEHR machine and see if the NHS Number has been created yet
+        //  NHS Number to be checked is in the JWT
+        //  The EtherCIS record will also be populated in the background from Discovery data
+        //   While this is happening responses from /api/initialise will return a status of 'loading_data'
+        //   On completion, this status will change to "ready"
+
+        message = {
+          path: '/api/openehr/check',
+          method: 'GET',
+          headers: {
+            authorization: 'Bearer ' + args.responseObj.message.token
+          }
+        };
+        args.send(message, function(openehrResponse) {
+          console.log('**** response from OpenEHR to /api/openehr/check: \n' + JSON.stringify(openehrResponse, null, 2));
+          if (openehrResponse.message) {
+            if (openehrResponse.message.status) {
+              recordStatus = openehrResponse.message.status;
+              console.log('&&& recordStatus set to ' + recordStatus);
+            }
+            if (typeof openehrResponse.message.new_patient !== 'undefined') {
+              new_patient = openehrResponse.message.new_patient;
+              console.log('&&& new_patient set to ' + new_patient);
+            }
+          }
+          api_response = args.responseObj;
+          if (recordStatus === 'loading_data') {
+            api_response.message.status = recordStatus;
+            api_response.message.new_patient = new_patient;
+          }
+          console.log('*** api_response = ' + JSON.stringify(api_response, null, 2));
+
+          if (recordStatus === 'ready') {
+
+            // pre-fetch the demographics now to avoid later race conditions and speed up UI later
+
+            var message = {
+              path: '/api/demographics/dummy',
+              method: 'GET',
+              headers: {
+                authorization: 'Bearer ' + args.responseObj.message.token
+              }
+            };
+            args.send(message, function(discoveryResponse) {
+              console.log('**** pre-cache response from Discovery for /api/demographics/dummy: \n' + JSON.stringify(discoveryResponse, null, 2));
+              args.handleResponse(api_response);
+            });
+          }
+          else {
+            args.handleResponse(api_response);
+          }
+        });
+        return true;
+      }
+    }
+
+  };
+
+  var index = findRoute('/api/patients/:patientId/:heading', routes);
+
+  routes[index].onResponse = function(args) {
+    //console.log('onResponse handler for /api/patients/:patientId/:heading');
+
+    var respMsg = args.responseObj.message;
+
+    //console.log('response = ' + JSON.stringify(respMsg, null, 2));
+    if (!respMsg.error) {
+
+      //var arr1 = args.responseObj.message.results.cdr_discovery_service.results;
+
+      if (respMsg.refresh) {
+        
+        console.log('!!!!! refresh needed');
+
+        var message = {
+          path: '/api/patients/' + respMsg.patientId + '/' + respMsg.heading,
+          method: 'GET',
+          headers: {
+            authorization: 'Bearer ' + respMsg.token
+          }
+        };
+        args.send(message, function(responseObj) {
+          //console.log('*** refresh response = ' + JSON.stringify(responseObj, null, 2));
+          args.handleResponse(responseObj);
+        });
+        return true;
+      }
+      else {
+        args.handleResponse({
+          message: respMsg.results
+        });
+        return true;
+      }
+    }
+  };
+
+  /*
+
+  var index = findRoute('/api/patients/:patientId/:heading/:sourceId', routes);
+
+  routes[index].onResponse = function(args) {
+    console.log('onResponse handler for /api/patients/:patientId/:heading/:sourceId');
+    console.log('** returned ' + JSON.stringify(args.responseObj, null, 2));
+    if (!args.responseObj.message.error) {
+      var results = {};
+      var discoveryResult = args.responseObj.message.results.cdr_discovery_service;
+      var openehrResult = args.responseObj.message.results.cdr_openehr_service;
+
+      if (discoveryResult.error && openehrResult.results) {
+        results = openehrResult.results;
+      }
+      else if (openehrResult.error && discoveryResult.results) {
+        results = discoveryResult.results;
+      }
+      else if (openehrResult.results && openehrResult.results.length === 0) {
+        if (discoveryResult.results) results = discoveryResult.results;
+      }
+      else if (!discoveryResult.results) {
+        if (openehrResult.results) results = openehrResult.results;
+      }
+      args.handleResponse({
+        message: results
+      });
+      return true;
+    }
+  };
+
+  */
+
 
   /*
 
@@ -114,10 +264,10 @@ module.exports = function(routes, ms_hosts) {
   index = findRoute('/api/patients/:patientId', routes);
 
   routes[index].onResponse = function(args) {
-    console.log('onResponse handler for /api/patients/:patientId');
+    //console.log('onResponse handler for /api/patients/:patientId');
     if (!args.responseObj.message.error) {
       var patientArgs = args.responseObj.message;
-      console.log('**** patientArgs: ' + JSON.stringify(patientArgs));
+      //console.log('**** patientArgs: ' + JSON.stringify(patientArgs));
 
       args.handleResponse({
         message: patientArgs.demographics
@@ -135,7 +285,7 @@ module.exports = function(routes, ms_hosts) {
         }
       };
       args.send(message, function(responseObj) {
-        console.log('response from /api/patients/:patientId/headings/synopsis: ' + JSON.stringify(responseObj));
+        //console.log('response from /api/patients/:patientId/headings/synopsis: ' + JSON.stringify(responseObj));
 
         //add in fields from patient response
 
@@ -180,6 +330,13 @@ module.exports = function(routes, ms_hosts) {
       openehr_jumper_service: {
         host: ms_hosts.cdr_openehr_service,
         application: 'ripple-openehr-jumper'
+      },
+      cdr_discovery_service: {
+        host: ms_hosts.cdr_discovery_service,
+        application: 'ripple-cdr-discovery'
+      },
+      cdr_services: {
+        destinations: ['cdr_openehr_service', 'cdr_discovery_service']
       }
     },
     routes: routes

@@ -1,9 +1,6 @@
 [
-  "request",
   "qewd-template",
-  "qewd-transform-json",
   "moment-timezone",
-  "traverse",
   "jsonschema",
   "valid-url"
 ]

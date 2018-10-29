@@ -1,0 +1,31 @@
+{
+  "composer": {
+    "value": "{{practitionerName}}"
+  },
+  "host": "Discovery",
+  "uid": "Immunization_{{id}}",
+  "patientId": "{{nhsNumber}}",
+  "dateCreated": "=> rippleDateTime(date,false)",
+  "context": {
+    "start_time": {
+      "value": "{{date}}"
+    }
+  },
+  "immunisation_procedure": {
+    "immunisation_name": {
+      "value": "=> useSnomed(vaccineCode.coding, 'display')"
+    },
+    "comment": {
+      "value": "=> getCommentFrom(site, route, explanation, note)"
+    },
+    "series_number": {
+      "value": "1"
+    },
+    "time": {
+      "value": "=> fhirDateTime(date)"
+    },
+    "ism_transition": {
+      "value": "532"
+    }
+  }
+}

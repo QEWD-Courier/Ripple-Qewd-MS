@@ -6,7 +6,7 @@
   "ctx/id_scheme": "2.16.840.1.113883.2.1.4.3",
   "ctx/language": "en",
   "ctx/territory": "GB",
-  "ctx/time": "=> now()",
+  "ctx/time": "{{date_created}}",
   "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/medication_item": "=> dvText(medication_and_medical_devices.medication_order.order.medication_item)",
   "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/medication_item|value": "=> either(medication_and_medical_devices.medication_order.order.medication_item.value, <!delete>)",
   "medication_statement_list/medication_and_medical_devices/medication_order:0/order:0/medication_item|code": "=> either(medication_and_medical_devices.medication_order.order.medication_item.code, <!delete>)",

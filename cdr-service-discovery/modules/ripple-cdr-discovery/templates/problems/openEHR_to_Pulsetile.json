@@ -1,0 +1,14 @@
+{
+  "problem": "{{problems_and_issues.problem_diagnosis.problem_diagnosis_name.value}}",
+  "dateOfOnset": "=> rippleDateTime(problems_and_issues.problem_diagnosis.date_time_of_onset.value, true)",
+  "description": "{{problems_and_issues.problem_diagnosis.clinical_description.value}}",
+  "terminology": "{{problems_and_issues.problem_diagnosis.problem_diagnosis_name.terminology}}",
+  "code": "{{problems_and_issues.problem_diagnosis.problem_diagnosis_name.code}}",
+  "author": "{{composer.value}}",
+  "dateCreated": "{{dateCreated}}",
+  "source": "{{host}}",
+  "sourceId": "=> getUid(uid, host)",
+  "patientId": "{{patientId}}",
+  "originalComposition": "{{originalComposition}}",
+  "originalSource": "{{originalSource}}"
+}

@@ -6,7 +6,7 @@
   "ctx/id_scheme": "2.16.840.1.113883.2.1.4.3",
   "ctx/language": "en",
   "ctx/territory": "GB",
-  "ctx/time": "=> now()",
+  "ctx/time": "{{date_created}}",
   "immunisation_summary/immunisation_procedure:0/immunisation_name": "=> dvText(immunisation_procedure.immunisation_name)",
   "immunisation_summary/immunisation_procedure:0/immunisation_name|value": "=> either(immunisation_procedure.immunisation_name.value, <!delete>)",
   "immunisation_summary/immunisation_procedure:0/immunisation_name|code": "=> either(immunisation_procedure.immunisation_name.code, <!delete>)",

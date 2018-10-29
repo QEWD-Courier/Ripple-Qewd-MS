@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  27 June 2018
+  15 October 2018
 
 */
 
@@ -44,6 +44,18 @@ function deleteFromSession(session, sourceId) {
   byPatientId.$(['byDate', date, sourceId]).delete();
   byPatientId.$(['byHost', host, sourceId]).delete();
   cachedRecord.delete();
+}
+
+function deleteDiscoveryMap(sourceId) {
+  var discovery_map = this.db.use('DiscoveryMap');
+  if (!discovery_map.exists) return;
+
+  var openehr_sourceId_index = discovery_map.$(['by_openehr_sourceId', sourceId]);
+  if (openehr_sourceId_index.exists) {
+    var discovery_sourceId = openehr_sourceId_index.$('discovery').value;
+    discovery_map.$(['by_discovery_sourceId', discovery_sourceId]).delete();
+    openehr_sourceId_index.delete();
+  }
 }
 
 function deletePatientHeading(args, finished) {
@@ -93,6 +105,7 @@ function deletePatientHeading(args, finished) {
 
       deleteHeading.call(self, patientId, heading, compositionId, host, session, function(response) {
         deleteFromSession(session, sourceId);
+        deleteDiscoveryMap.call(self, sourceId);
         finished(response);
       });
     }

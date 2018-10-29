@@ -1,6 +1,5 @@
 [
   "openid-client",
-  "request",
   "bcrypt",
   "email-validator"
 ]

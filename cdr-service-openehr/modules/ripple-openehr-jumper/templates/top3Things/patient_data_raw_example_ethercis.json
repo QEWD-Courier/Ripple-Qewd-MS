@@ -1,0 +1,179 @@
+{
+  "executedAQL": "select a as data from EHR e[ehr_id/value='cd8abecd-9925-4313-86af-93aab4930eae'] contains COMPOSITION a[openEHR-EHR-COMPOSITION.encounter.v1] where a/name/value='Top issues'",
+  "resultSet": [
+    {
+      "data": {
+        "@class": "COMPOSITION",
+        "content": [
+          {
+            "archetype_node_id": "openEHR-EHR-OBSERVATION.story.v1",
+            "@class": "OBSERVATION",
+            "data": {
+              "events": [
+                {
+                  "archetype_node_id": "at0002",
+                  "time": {
+                    "value": "2018-10-23T09:17:26.000+01:00",
+                    "@class": "DV_DATE_TIME"
+                  },
+                  "data": {
+                    "archetype_node_id": "at0003",
+                    "items": [
+                      {
+                        "archetype_node_id": "openEHR-EHR-CLUSTER.issue.v0",
+                        "@class": "CLUSTER",
+                        "items": [
+                          {
+                            "archetype_node_id": "at0001",
+                            "value": {
+                              "value": "Anxiety"
+                            },
+                            "@class": "ELEMENT"
+                          },
+                          {
+                            "archetype_node_id": "at0002",
+                            "value": {
+                              "value": "I get worried all the time"
+                            },
+                            "@class": "ELEMENT"
+                          }
+                        ],
+                        "name": {
+                          "value": "Issue 1"
+                        }
+                      },
+                      {
+                        "archetype_node_id": "openEHR-EHR-CLUSTER.issue.v0",
+                        "@class": "CLUSTER",
+                        "items": [
+                          {
+                            "archetype_node_id": "at0001",
+                            "value": {
+                              "value": "Appetite"
+                            },
+                            "@class": "ELEMENT"
+                          },
+                          {
+                            "archetype_node_id": "at0002",
+                            "value": {
+                              "value": "I seem to have lost my appetite"
+                            },
+                            "@class": "ELEMENT"
+                          }
+                        ],
+                        "name": {
+                          "value": "Issue 2"
+                        }
+                      },
+                      {
+                        "archetype_node_id": "openEHR-EHR-CLUSTER.issue.v0",
+                        "@class": "CLUSTER",
+                        "items": [
+                          {
+                            "archetype_node_id": "at0001",
+                            "value": {
+                              "value": "Stress"
+                            },
+                            "@class": "ELEMENT"
+                          },
+                          {
+                            "archetype_node_id": "at0002",
+                            "value": {
+                              "value": "I am under a lot of stress"
+                            },
+                            "@class": "ELEMENT"
+                          }
+                        ],
+                        "name": {
+                          "value": "Issue 3"
+                        }
+                      }
+                    ]
+                  },
+                  "@class": "POINT_EVENT"
+                }
+              ],
+              "name": {
+                "value": "Event Series"
+              },
+              "origin": {
+                "value": "2018-10-23T09:17:26.000+01:00",
+                "@class": "DV_DATE_TIME"
+              },
+              "archetype_node_id": "at0001"
+            }
+          }
+        ],
+        "context": {
+          "@class": "EVENT_CONTEXT",
+          "setting": {
+            "value": "other care",
+            "@class": "DV_CODED_TEXT",
+            "defining_code": {
+              "@class": "CODE_PHRASE",
+              "code_string": "238",
+              "terminology_id": {
+                "value": "openehr",
+                "@class": "TERMINOLOGY_ID"
+              }
+            }
+          },
+          "start_time": {
+            "value": "2018-10-23T09:17:26+01:00",
+            "@class": "DV_DATE_TIME"
+          },
+          "health_care_facility": {
+            "name": "Rippleburgh GP Practice",
+            "@class": "PARTY_IDENTIFIED",
+            "external_ref": {
+              "id": {
+                "value": "999999-345",
+                "@class": "GENERIC_ID",
+                "scheme": "2.16.840.1.113883.2.1.4.3"
+              },
+              "type": "PARTY",
+              "@class": "PARTY_REF",
+              "namespace": "NHS-UK"
+            }
+          }
+        },
+        "category": {
+          "value": "Event",
+          "@class": "DV_CODED_TEXT",
+          "defining_code": {
+            "@class": "CODE_PHRASE",
+            "code_string": "433",
+            "terminology_id": {
+              "value": "openehr",
+              "@class": "TERMINOLOGY_ID"
+            }
+          }
+        },
+        "composer": {
+          "name": "Patient",
+          "@class": "PARTY_IDENTIFIED"
+        },
+        "language": {
+          "@class": "CODE_PHRASE",
+          "code_string": "en",
+          "terminology_id": {
+            "value": "ISO_639-1",
+            "@class": "TERMINOLOGY_ID"
+          }
+        },
+        "territory": {
+          "@class": "CODE_PHRASE",
+          "code_string": "GB",
+          "terminology_id": {
+            "value": "ISO_3166-1",
+            "@class": "TERMINOLOGY_ID"
+          }
+        },
+        "uid": {
+          "@class": "OBJECT_VERSION_ID",
+          "value": "b477ac23-7c41-4d23-8f29-c1a5d08d46d4::vm01.ethercis.org::1"
+        }
+      }
+    }
+  ]
+}

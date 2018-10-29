@@ -24,23 +24,21 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 July 2018
+  04 October 2018
 
 */
 
-const { createKeyStore } = require('oidc-provider');
-const fs = require('fs');
-
-async function generate_keys() {
-  const keystore = createKeyStore();
-  return await keystore.generate('RSA', 2048, {
-    alg: 'RS256',
-    use: 'sig',
-  }).then(function () {
-    console.log('this is the full private JWKS:\n', keystore.toJSON(true));
-    return keystore.toJSON(true);
-  });
-};
+var login = require('./src/login');
+var getParams = require('./src/getParams');
+var getClient = require('./src/getClient');
+var getUser = require('./src/getUser');
+var validateUser = require('./src/validateUser');
+var confirmCode = require('./src/confirmCode');
+var changePassword = require('./src/changePassword');
+var requestNewPassword = require('./src/requestNewPassword');
+var saveGrant = require('./src/saveGrant');
+var deleteGrant = require('./src/deleteGrant');
+var keepAlive = require('./src/keepAlive');
 
 module.exports = {
 
@@ -53,108 +51,16 @@ module.exports = {
   },
 
   handlers: {
-    login: function(messageObj, session, send, finished) {
-      if (messageObj.params.password === this.userDefined.config.managementPassword) {
-        session.timeout = 20 * 60;
-        session.updateExpiry();
-        session.authenticated = true;
-        finished({
-          ok: true
-        });
-      }
-      else {
-        finished({ok: false});
-      }
-    },
-    getParams: function(messageObj, session, send, finished) {
-
-      var self = this;
-
-      // load up data if it's available
-
-      if (messageObj.params && messageObj.params.documents) {
-        var documents = messageObj.params.documents;
-        if (documents.delete) {
-          documents.delete.forEach(function(docName) {
-            self.db.use(docName).delete();
-          });
-        }
-        if (documents.documents) {
-          var doc;
-          for (var docName in documents.documents) {
-            self.db.use(docName).setDocument(documents.documents[docName]);
-          }
-        }
-        if (documents.removeThisFile) {
-          fs.unlinkSync(messageObj.params.documentsPath);
-        }
-      }
-
-      var openidDoc = this.db.use('OpenId');
-      var params = openidDoc.getDocument(true);
-      if (params.keystore) {
-        finished(params);
-      }
-      else {
-        generate_keys()
-        .then (function(keystore) {
-          openidDoc.$('keystore').setDocument(keystore);
-          params.keystore = keystore;
-          finished(params);
-        });
-      }
-    },
-    getClient: function(messageObj, session, send, finished) {
-      var id;
-      if (messageObj.params) id = messageObj.params.id;
-      if (!id || id === '') {
-        return finished({error: 'Missing or empty id'});
-      }
-      var clientDoc = this.db.use('OpenId', 'Clients', messageObj.params.id);
-      if (clientDoc.exists) {
-        finished(clientDoc.getDocument(true));
-      }
-      else {
-        finished({error: 'No such Client'});
-      }
-    },
-    getUser: function(messageObj, session, send, finished) {
-      var id;
-      if (messageObj.params) id = messageObj.params.id;
-      if (!id || id === '') {
-        return finished({error: 'Missing or empty id'});
-      }
-      var userDoc = this.db.use('OpenId', 'Users', messageObj.params.id);
-      if (userDoc.exists) {
-        finished({
-          email: id,
-          nhsNumber: userDoc.$('nhsNumber').value
-        });
-      }
-      else {
-        finished({error: 'No such User'});
-      }
-    },
-    validateUser: function(messageObj, session, send, finished) {
-      if (!messageObj.params) return finished({error: 'Neither email nor password was sent'});
-      var email = messageObj.params.email;
-      if (!email || email === '') return finished({error: 'Missing or blank email'});
-      var password = messageObj.params.password;
-      if (!password || password === '') return finished({error: 'Missing or blank password'});
-      var userDoc = this.db.use('OpenId', 'Users', email);
-      if (!userDoc.exists) {
-        return finished({error: 'No such user'});
-      }
-      if (userDoc.$('password').value !== password) {
-        return finished({error: 'Invalid login attempt'});
-      }
-      finished({
-        email: email,
-        nhsNumber: userDoc.$('nhsNumber').value
-      });
-    },
-    keepAlive: function(messageObj, session, send, finished) {
-      finished({ok: true});
-    }
+    login: login,
+    getParams: getParams,
+    getClient: getClient,
+    getUser: getUser,
+    validateUser: validateUser,
+    confirmCode: confirmCode,
+    changePassword: changePassword,
+    requestNewPassword: requestNewPassword,
+    saveGrant: saveGrant,
+    deleteGrant: deleteGrant,
+    keepAlive: keepAlive
   }
 };

@@ -19,5 +19,6 @@
   },
   "host": "{{source}}",
   "uid": "{{sourceId}}",
+  "date_created": "=> getDateCreated(dateCreated, source)",
   "patientId": "{{patientId}}"
 }

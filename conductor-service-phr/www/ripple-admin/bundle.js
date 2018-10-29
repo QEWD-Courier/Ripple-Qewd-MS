@@ -65304,7 +65304,7 @@ function Manager (uri, opts) {
   }
   opts = opts || {};
 
-  opts.path = opts.path || '/socket.io';
+  opts.path = opts.path || '/qewd_conductor/socket.io';
   this.nsps = {};
   this.subs = [];
   this.opts = opts;
@@ -70153,7 +70153,7 @@ module.exports = function (controller, component) {
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  27 June 2018
+  15 October 2018
 
 */
 
@@ -70165,7 +70165,7 @@ function getHeadingSummaryFields(heading, controller, callback) {
       method: 'GET',
       contentType: 'application/json',
       headers: {
-        Authorization: 'Bearer ' + this.token
+        Authorization: 'Bearer ' + controller.token
       },
       dataType: 'json',
       timeout: 10000
@@ -70319,7 +70319,7 @@ module.exports = function (controller, component) {
     getHeadingSummaryFields.call(component, component.heading, controller, function (error) {
       if (!error) {
         $.ajax({
-          url: '/api/patients/' + component.patientId + '/' + component.heading,
+          url: '/api/patients/' + component.patientId + '/' + component.heading + '?discovery_sync=no',
           method: 'GET',
           contentType: 'application/json',
           headers: {

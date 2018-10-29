@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  6 April 2018
+  11 October 2018
 
 */
 
@@ -99,12 +99,19 @@ module.exports = function(sourceId, session, format) {
     }
   }
 
+  // check if this is a mapped record from Discovery
+
+  var discovery_map = this.db.use('DiscoveryMap', 'by_openehr_sourceId', sourceId);
+  if (discovery_map.exists) {
+    output.source = 'GP';
+  }
+
   if (format === 'synopsis') {
     // only return the synopsis headings
 
     return {
       sourceId: sourceId,
-      source: host,
+      source: output.source,
       text: output[synopsisField] || ''
     }
   }

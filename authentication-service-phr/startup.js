@@ -28,8 +28,12 @@
 
 */
 
+var transform = require('qewd-transform-json').transform;
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
+var helpers = require('./helpers');
+
 var config = require('./startup_config.json');
-config.jwt = require('./jwt_secret.json');
+config.jwt = global_config.jwt;
 var local_routes = require('./local_routes.json');
 
 // set userDefined to either Auth0 or OpenId Connect version
@@ -88,7 +92,10 @@ function onStarted() {
 
 }
 
-var userDefined = require('./userDefined-openid.json');
+var userDefined_template = require('./userDefined-openid.json');
+var userDefined = transform(userDefined_template, global_config, helpers);
+console.log('userDefined = ' + JSON.stringify(userDefined, null, 2));
+
 
 module.exports = {
   config: config,
