@@ -80,11 +80,13 @@ function post(args, finished) {
 
   var doc = this.db.use('PHRFeeds');
   var feedsByEmailDoc = doc.$(['byEmail', email]);
+  var feedsBySourceId = doc.$('bySourceId');
   var duplicateFound = false;
 
   // check for duplicates already saved against this user (email)
 
   if (feedsByEmailDoc.exists) {
+    console.log('&& feeds exist');
     feedsByEmailDoc.forEachChild(function(sourceId) {
       var data = feedsBySourceId.$(sourceId).getDocument();
       if (data.name === payload.name) {
@@ -106,7 +108,7 @@ function post(args, finished) {
     payload.dateCreated = new Date().getTime();
 
     feedsByEmailDoc.$(newSourceId).value = 'true';
-    doc.$(['bySourceId', newSourceId]).setDocument(payload);
+    feedsBySourceId.$(newSourceId).setDocument(payload);
   }
 
   finished({sourceId: newSourceId});
