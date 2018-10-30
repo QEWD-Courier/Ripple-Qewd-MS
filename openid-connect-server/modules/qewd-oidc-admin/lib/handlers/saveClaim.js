@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  5 September 2018
+  30 October 2018
 
 */
 
@@ -44,7 +44,12 @@ module.exports = function(messageObj, session, send, finished) {
     return finished({error: 'Missing or empty Field List'});
   }
 
-  var fieldArray = fields.split('\n');
+  var fieldArr = fields.split('\n');
+  // remove any blank fields, particularly at the end of the textarea content
+  var fieldArray = [];
+  fieldArr.forEach(function(field) {
+    if (field !== '') fieldArray.push(field);
+  });
 
   var id = messageObj.params.id;
   if (typeof id === 'undefined') {

@@ -32,8 +32,8 @@ module.exports = {
   auth: {
     host:       'https://devauth.endeavourhealth.net',
     path:       '/auth/realms/endeavour/protocol/openid-connect/token',
-    username:   'robtweed',
-    password:   'jfYLgao7S4h0QI0O84TP',
+    username:   'xxxxxxx',
+    password:   'yyyyyyyyyyyyyyy',
     client_id:  'eds-data-checker',
     grant_type: 'password'
   },
