@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  10 May 2018
+  30 October 2018
 
 */
 
@@ -41,14 +41,37 @@ function getSummary(args, finished) {
   var email = args.session.email;
 
   var doc = this.db.use('PHRFeeds');
+  var feedsByEmailDoc = doc.$(['byEmail', email]);
+  var feedsBySourceId = doc.$('bySourceId');
+
+  var names = {};
+  var urls = {};
   var results = [];
-  doc.$(['byEmail', email]).forEachChild(function(sourceId) {
-    var dataDoc = doc.$(['bySourceId', sourceId]);
+
+  feedsByEmailDoc.forEachChild(function(sourceId) {
+    var data = feedsBySourceId.$(sourceId).getDocument();
+    if (names[data.name]) {
+      // duplicate - delete it
+      feedsByEmailDoc.$(sourceId).delete();
+      feedsBySourceId.$(sourceId).delete();
+      return;
+    }
+
+    if (urls[data.landingPageUrl]) {
+      // duplicate found - delete it
+      feedsByEmailDoc.$(sourceId).delete();
+      feedsBySourceId.$(sourceId).delete();
+      return;
+    }
+
+    names[data.name] = true;
+    urls[data.landingPageUrl] = true;
+
     results.push({
-      name: dataDoc.$('name').value,
-      landingPageUrl: dataDoc.$('landingPageUrl').value,
-      rssFeedUrl: dataDoc.$('rssFeedUrl').value,
-      sourceId: dataDoc.$('sourceId').value
+      name: data.name,
+      landingPageUrl: data.landingPageUrl,
+      rssFeedUrl: data.rssFeedUrl,
+      sourceId: sourceId
     });
   });
 

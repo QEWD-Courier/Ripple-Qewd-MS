@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  10 May 2018
+  30 October 2018
 
 */
 
@@ -76,17 +76,40 @@ function post(args, finished) {
   }
 
   // create a sourceId uuid
-  var sourceId = uuid();
-
-  payload.email = email;
-  payload.sourceId = sourceId;
-  payload.dateCreated = new Date().getTime();
+  var newSourceId = uuid();
 
   var doc = this.db.use('PHRFeeds');
-  doc.$(['byEmail', email, sourceId]).value = 'true';
-  doc.$(['bySourceId', sourceId]).setDocument(payload);
+  var feedsByEmailDoc = doc.$(['byEmail', email]);
+  var duplicateFound = false;
 
-  finished({sourceId: sourceId});
+  // check for duplicates already saved against this user (email)
+
+  if (feedsByEmailDoc.exists) {
+    feedsByEmailDoc.forEachChild(function(sourceId) {
+      var data = feedsBySourceId.$(sourceId).getDocument();
+      if (data.name === payload.name) {
+        newSourceId = sourceId;
+        duplicateFound = true;
+        return true; // stop loop
+      }
+      if (data.landingPageUrl === payload.landingPageUrl) {
+        newSourceId = sourceId;
+        duplicateFound = true;
+        return true; // stop loop
+      }
+    });
+  }
+
+  if (!duplicateFound) {
+    payload.email = email;
+    payload.sourceId = newSourceId;
+    payload.dateCreated = new Date().getTime();
+
+    feedsByEmailDoc.$(newSourceId).value = 'true';
+    doc.$(['bySourceId', newSourceId]).setDocument(payload);
+  }
+
+  finished({sourceId: newSourceId});
 }
 
 module.exports = post;
