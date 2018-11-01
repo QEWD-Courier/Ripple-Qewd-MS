@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  26 October 2018
+  1 November 2018
 
 */
 
@@ -56,7 +56,7 @@ module.exports = function(routes, ms_hosts) {
   returnArrayResponse('/api/feeds/:sourceId', routes, 'feed');
   returnArrayResponse('/api/patients/:patientId/:heading', routes);
   returnArrayResponse('/api/patients/:patientId/:heading/:sourceId', routes);
-  //returnArrayResponse('/api/patients/:patientId/top3Things', routes);
+  returnArrayResponse('/api/patients/:patientId/top3Things', routes);
 
   var index = findRoute('/api/auth/login', routes);
 

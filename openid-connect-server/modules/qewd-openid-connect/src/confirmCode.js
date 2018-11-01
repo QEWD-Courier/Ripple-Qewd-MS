@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  03 October 2018
+  23 October 2018
 
 */
 
@@ -52,6 +52,13 @@ module.exports = function(messageObj, session, send, finished) {
 
   if (!twoFaDoc.exists) {
     return finished({error: 'Invalid request'});
+  }
+
+  // how many attempts is this? max 5
+
+  var noOfAttempts = twoFaDoc.$('noOfAttempts').increment();
+  if (noOfAttempts > 5) {
+    return finished({error: 'Maximum Number of Attempts Exceeded'});
   }
 
   var twoFa = twoFaDoc.getDocument();
@@ -85,8 +92,17 @@ module.exports = function(messageObj, session, send, finished) {
   twoFaDoc.delete();
 
   // get rid of any expired 2fa codes while we're here
+  //  as well as the counters for login attempts by remote IP and grant
   
   session.data.$('2fa').forEachChild(function(grant, node) {
+    if (node.$('expiry').value < now) node.delete();
+  });
+
+  session.data.$('grantLock').forEachChild(function(grant, node) {
+    if (node.$('expiry').value < now) node.delete();
+  });
+
+  session.data.$('usernameLock').forEachChild(function(username, node) {
     if (node.$('expiry').value < now) node.delete();
   });
 

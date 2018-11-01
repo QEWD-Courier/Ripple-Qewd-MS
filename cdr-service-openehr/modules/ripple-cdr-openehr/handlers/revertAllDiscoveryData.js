@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  11 October 2018
+  19 October 2018
 
 */
 
@@ -32,40 +32,78 @@ var deletePatientHeading = require('./deletePatientHeading');
 
 module.exports = function(args, finished) {
 
-  console.log('*** Reverting Discovery Data ***');
+  console.log('\n*** Reverting Discovery Data for all patients and headings ***\n');
 
   var discovery_map = this.db.use('DiscoveryMap');
   var discovery_sourceId_index = discovery_map.$('by_discovery_sourceId');
   var openehr_sourceId_index = discovery_map.$('by_openehr_sourceId');
 
   var noOfRecords = 0;
-  openehr_sourceId_index.forEachChild(function(sourceId) {
+  var sourceIdArr = [];
+  openehr_sourceId_index.forEachChild(function(sourceId, node) {
     noOfRecords++;
+    sourceIdArr.push(sourceId);
   });
 
   var count = 0;
   var _this = this;
   var results = [];
   args.session.userMode = 'admin';  // override for now
+  console.log('noOfRecords = ' + noOfRecords);
+  var patientId;
+  var heading;
 
-  openehr_sourceId_index.forEachChild(function(sourceId, node) {
+  function deleteNextSourceId(recNo) {
+    recNo++;
+    if (recNo === noOfRecords) return true;  // finished
+    var sourceId = sourceIdArr[recNo];
+    console.log('sourceId = ' + sourceId);
+    var node = openehr_sourceId_index.$(sourceId);
     var index = node.getDocument();
-    args.patientId = index.patientId;
-    args.heading = index.heading;
     args.sourceId = sourceId;
     console.log('*** deleting ' + sourceId);
 
     discovery_sourceId = index.discovery;
-    node.delete();
-    discovery_sourceId_index.$(discovery_sourceId).delete();
+    args.patientId = index.patientId;
+    args.heading = index.heading;
 
     deletePatientHeading.call(_this, args, function(response) {
+      console.log('** response from EtherCIS = ' + JSON.stringify(response));
+      //if (!response.error) {
+        node.delete();
+        discovery_sourceId_index.$(discovery_sourceId).delete();
+      //}
       results.push(response);
-      count++;
-      if (count === noOfRecords) {
+      var complete = deleteNextSourceId(recNo);
+      if (complete) {
         finished(results);
       }
     });
-  });
+    
+    /*
+
+    // let's just simulate it first
+
+    setTimeout(function() {
+      console.log('Simulated the deletion of ' + sourceId);
+      results.push({sourceId: sourceId});
+      console.log('recNo was ' + recNo + '; now delete the next one');
+      var complete = deleteNextSourceId(recNo);
+      console.log('complete: ' + complete);
+      if (complete) {
+        console.log('*** finished!');
+        finished(results);
+      }
+    }, 100);
+
+    */
+  }
+
+  var complete = deleteNextSourceId(-1);  // kick it off
+  if (complete) {
+    // there were no matching records
+    finished(results);
+  }
+
 };
 

@@ -6,6 +6,6 @@ sudo docker run -d --rm --name auth -p 8001:8080 -v ~/helm/authentication-servic
 
 sudo docker run -d --rm --name openehr -p 8003:8080 -v ~/helm/cdr-service-openehr:/opt/qewd/mapped -v ~/helm/cdr-service-openehr/www:/opt/qewd/www -v ~/helm/yottadb/openehr:/root/.yottadb/r1.22_x86_64/g -v ~/helm/settings:/opt/qewd/mapped/settings rtweed/qewd-server
 
-sudo docker run -d --rm --name discovery -p 8004:8080 -v ~/helm/cdr-service-discovery:/opt/qewd/mapped -v ~/helm/cdr-service-discovery/www:/opt/qewd/www -v ~/helm/settings:/opt/qewd/mapped/settings rtweed/qewd-server
+sudo docker run -d --rm --name discovery -p 8004:8080 -v ~/helm/cdr-service-discovery:/opt/qewd/mapped -v ~/helm/cdr-service-discovery/www:/opt/qewd/www -v ~/helm/yottadb/discovery:/root/.yottadb/r1.22_x86_64/g -v ~/helm/settings:/opt/qewd/mapped/settings rtweed/qewd-server
 
 sudo docker run -d --rm --name oidc -p 8080:8080 -v ~/helm/openid-connect-server:/opt/qewd/mapped -v ~/helm/openid-connect-server/www:/opt/qewd/www -v ~/helm/settings:/opt/qewd/mapped/settings -v ~/helm/yottadb/openid-connect-server:/root/.yottadb/r1.22_x86_64/g rtweed/qewd-server 

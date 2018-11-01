@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  02 October 2018
+  19 October 2018
 
 */
 
@@ -44,8 +44,11 @@ function sendText(message, telNo, callback) {
     from: twilio_params.telNo
   };
   console.log('creating message using ' + JSON.stringify(options, null, 2));
-  client.messages.create(options)
-  .then((message) => callback(message));
+
+  client.messages.create(options, callback);
+
+  //client.messages.create(options)
+  //.then((message) => callback(message));
 }
 
 function sendCode(params, callback) {

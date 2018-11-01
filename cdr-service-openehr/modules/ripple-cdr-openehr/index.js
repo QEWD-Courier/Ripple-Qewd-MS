@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  26 October 2018
+  1 November 2018
 
 */
 
@@ -54,6 +54,7 @@ var postFeed = require('./feeds/post');
 var editFeed = require('./feeds/edit');
 
 var revertDiscoveryData = require('./handlers/revertDiscoveryData');
+var revertAllDiscoveryData = require('./handlers/revertAllDiscoveryData');
 
 var checkNHSNumber = require('./handlers/checkNHSNumber');
 
@@ -85,7 +86,6 @@ var routes = {
   '/api/patients/:patientId/synopsis/:heading': {
     GET: getPatientHeadingSynopsis
   },
-  /*
   '/api/patients/:patientId/top3Things': {
     POST: postTop3Things,
      GET: getTop3ThingsSummary
@@ -94,7 +94,6 @@ var routes = {
     PUT: postTop3Things,
     GET: getTop3ThingsDetail
   },
-  */
   '/api/patients/:patientId/:heading': {
     GET:  getHeadingSummary,
     POST: postPatientHeading
@@ -115,8 +114,11 @@ var routes = {
   '/discovery/merge/:heading': {
     GET: mergeDiscoveryData
   },
-  '/api/discovery/revert': {
-    GET: revertDiscoveryData
+  '/api/discovery/revert/:patientId/:heading': {
+    DELETE: revertDiscoveryData
+  },
+  '/api/discovery/revert/all': {
+    DELETE: revertAllDiscoveryData
   },
 };
 

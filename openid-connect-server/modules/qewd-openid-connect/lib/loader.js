@@ -109,11 +109,9 @@ module.exports = function(app, bodyParser, params) {
       res.render('logout');
     });
 
-    app.get('/openid/interaction/:grant', async (req, res) => {
-      oidc.interactionDetails(req).then((details) => {
-        //details.path_prefix = params.path_prefix;
-        console.log('see what else is available to you for interaction views', details);
-        
+    app.get('/openid/interaction/:grant', async (req, res, next) => {
+      try {
+        const details = await oidc.interactionDetails(req);
         if (details.uuid && details.params && details.params.scope) {
           var scope = details.params.scope;
           q.handleMessage({
@@ -125,33 +123,35 @@ module.exports = function(app, bodyParser, params) {
             token: q.openid_server.token
           });
         }
-        
 
-        const view = (() => {
-          switch (details.interaction.reason) {
-            case 'consent_prompt':
-            case 'client_not_authorized':
-            return 'interaction';
-            default:
-            return 'login';
-          }
-        })();
-
-        res.render(view, { details });
-      });
+        res.render('login', { details });
+      }
+      catch(err) {
+        console.log('**** error: ' + err);
+        return next('Invalid request');
+      }
     });
 
-    app.post('/openid/interaction/:grant/confirm', parse, (req, res) => {
-      oidc.interactionFinished(req, res, {
-        consent: {},
-      });
+    app.post('/openid/interaction/:grant/confirm', parse, (req, res, next) => {
+      try {
+        oidc.interactionFinished(req, res, {
+          consent: {},
+        });
+      } 
+      catch (err) {
+        next(err);
+      }
     });
 
     app.post('/openid/interaction/:grant/login', parse, (req, res, next) => {
-      //console.log('*** interaction login function');
+      console.log('*** interaction login function');
       //console.log('req = ' + util.inspect(req));
+      var ip = '';
+      if (req.headers && req.headers['x-forwarded-for']) {
+        ip = req.headers['x-forwarded-for'];
+      }
 
-      Account.authenticate(req.body.email, req.body.password, req.params.grant).then((account) => {
+      Account.authenticate(req.body.email, req.body.password, req.params.grant, ip).then((account) => {
         if (account.error) {
           var details = {
             params: {
@@ -159,6 +159,12 @@ module.exports = function(app, bodyParser, params) {
             },
             uuid: req.params.grant
           };
+
+          if (account.error === 'Maximum Number of Attempts Exceeded') {
+            res.render('maxAttempts');
+            return;
+          }
+
           res.render('login', {details});
           return;
         }
@@ -168,24 +174,8 @@ module.exports = function(app, bodyParser, params) {
           uuid: req.params.grant
         }
         res.render('confirmCode', {details});
-
-        /*
-        console.log('** account: ' + JSON.stringify(account));
-        oidc.interactionFinished(req, res, {
-          login: {
-            account: account.accountId,
-            acr: '1',
-            remember: !!req.body.remember,
-            ts: Math.floor(Date.now() / 1000),
-          },
-          consent: {
-            // TODO: remove offline_access from scopes if remember is not checked
-          },
-        });
-        */
       }).catch(next);
     });
-
 
     app.post('/openid/interaction/:grant/confirmCode', parse, (req, res, next) => {
       Account.confirmCode(req.body.confirmCode, req.params.grant).then((results) => {
@@ -196,6 +186,12 @@ module.exports = function(app, bodyParser, params) {
             },
             uuid: req.params.grant
           };
+
+          if (results.error === 'Maximum Number of Attempts Exceeded') {
+            res.render('maxAttempts');
+            return;
+          }
+
           res.render('confirmCode', {details});
           return;
         }
@@ -300,6 +296,11 @@ module.exports = function(app, bodyParser, params) {
     });
 
     app.use('/openid', oidc.callback);
+
+    app.use((err, req, res, next) => {
+      console.log('**** Error occurred: ' + err);
+      res.render('error');
+    });
   });
 
   var self = this;

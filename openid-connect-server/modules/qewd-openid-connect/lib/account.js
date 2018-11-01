@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  04 October 2018
+  23 October 2018
 
 */
 
@@ -116,7 +116,7 @@ function initialise_account(qoper8) {
 
     }
 
-    static async authenticate(email, password, grant) {
+    static async authenticate(email, password, grant, ip) {
       if (!email || email === '') return {error: 'Email must be provided'};
       if (!password || password === '') return {error: 'Password must be provided'};
       const lowercased = String(email).toLowerCase();
@@ -126,7 +126,8 @@ function initialise_account(qoper8) {
         params: {
           email: email,
           password: password,
-          grant: grant
+          grant: grant,
+          ip: ip
         }
       })
       .then (function(result) {
