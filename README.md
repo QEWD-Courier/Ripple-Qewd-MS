@@ -390,13 +390,13 @@ Enter the following details:
 - Claim Id / Name:   openid
 - List of Fields:    Enter the following into the textarea field, with each one separated by a line-feed:
 
-      email
-      nhsNumber
-      firstName
-      lastName
-      mobileNumber
-      dob
-      vouchedBy
+    email
+    nhsNumber
+    firstName
+    lastName
+    mobileNumber
+    dob
+    vouchedBy
 
 Click Save
 
