@@ -712,6 +712,112 @@ Note: when you start the first Helm MicroService for the first time, Docker will
 Everything should now be up and running.
 
 
+
+## Configuring the OpenID Connect Server
+
+Before being able to use PulseTile, you need to configure the OpenId Connect server for use with Helm.
+
+First, start up the OIDC Admin application:
+
+      https://192.168.1.100/oidc-admin/index.html
+
+Note: change the IP address / host name to match that of the NGINX web server for your system.
+
+The first time you run this it needs you to create an initial Administrator user.  
+
+Click the *Continue* button to commence this process
+
+Then log in with the QEWD password for the *openid_connect* MicroService - unless you changed it earlier, it will be:
+
+     pwd_oidc
+
+You値l now see a form where you can enter your details as a Administrator.
+
+Note: You **must** provide a working mobile phone number, because this application uses it for Two Factor Authentication.
+
+Once you save the Administrator details you値l be asked to log in again, using the new credentials.
+
+You値l then be prompted to enter the 6 digit code that will have been sent to your mobile phone.
+
+If you enter the correct number, you値l be presented with the main Admin Portal screen.
+
+You now need to create an *OpenId Connect Client* and also create an *OpenId Connect Claim* for use with Helm.  Here痴 how to do each:
+
+### Creating A Client
+
+Click the Green **+** button that you値l see at the far right-hand side of the *Clients* banner
+
+Enter the following details:
+
+- Client Id:                     foo
+- Client secret:                 bar
+- Redirect URI Path:             /api/auth/token
+- Post-Logout Redirect URI Path: **Important**: Delete this so the field is empty
+
+Click Save
+
+
+### Creating A Claim
+
+Click the *Claims* tab and the Green **+** button that you値l see at the far right-hand side of the *Claims* banner
+
+Enter the following details:
+
+- Claim Id / Name:   openid
+- List of Fields:    Enter the following into the textarea field, with each one separated by a line-feed:
+
+      email
+      nhsNumber
+      firstName
+      lastName
+      mobileNumber
+      dob
+      vouchedBy
+
+Click Save
+
+
+## Creating and Maintaining Users
+
+Finally, the last step before being able to use the Helm MicroServices is to create one or more users.  User maintenance takes place on the OpenId Connect service.  Once again you'll use the same *oidc-admin* application as you used above for creating the Client and Claim, ie:
+
+      https://192.168.1.100/oidc-admin/index.html
+
+Click the *Users* tab  and the Green **+** button that you値l see at the far right-hand side of the *Users* banner
+
+Enter your user痴 details.  
+
+**Important**: Ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user痴 account and for Two Factor Authentication respectively.
+
+Note: the Mobile phone number must be entered with the correct country code at the start, eg +44 7771 987654.  Spaces within the number are optional.
+
+After you click the Save button, you値l see the user痴 details in the Users table display.  To the far right of the display, you値l see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.
+
+The new user will receive an email asking them to verify themselves by clicking a link within the email text.  When they do this, they will be directed to the OpenId Connect server which will return them a 6 digit temporary one-time password
+
+The user can use this to log in to the Helm system.
+
+
+## Logging In To Helm
+
+The first time you log in you must use the 6-digit one-time password that you were given when you verified your details (see the previous section above).
+
+To start the Helm PulseTile User Interface, just point your browser at the root path of NGINX on your server, eg:
+
+     https://192.168.1.100
+
+
+You should be re-directed to the OpenId Connect server and you should see the login screen.  Enter your registered email address and password.
+
+Accept the Terms and Conditions
+
+Now enter the 6 digit number that will have been sent to your mobile phone
+
+If this is the first time you logged in, you now have to set your permanent password.  It must be a mixture of upper and lower case characters and one or more numbers.
+
+After a short delay, you値l now see the main Helm screen come up with data for your NHS Number.  That data will have been mapped from test data on the Discovery Data Service.
+
+
 ## The OpenEHR Jumper Functionality
 
 OpenEHR Jumper automates the fetching and updating of OpenEHR data, avoiding the need for hand-crafted
