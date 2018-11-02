@@ -90,31 +90,31 @@ Note 3: On cloud machines, the *authentication*, *openehr* and *discovery* servi
 
 Example on a local VM:
 
-  "phr": {
-    "microservices": {
-      "conductor": {
-        "host": "https://192.168.1.67",
-        "port": 443
-      },
-      "authentication": {
-        "host": "http://192.168.1.67",
-        "port": 8001
-      },
-      "openehr": {
-        "host": "http://192.168.1.67",
-        "port": 8003
-      },
-      "discovery": {
-        "host": "http://192.168.1.67",
-        "port": 8004
-      },
-      "openid_connect": {
-        "host": "https://192.168.1.67",
-        "port": 443,
-        "path_prefix": "/oidc"
+      "phr": {
+        "microservices": {
+          "conductor": {
+            "host": "https://192.168.1.67",
+            "port": 443
+          },
+          "authentication": {
+            "host": "http://192.168.1.67",
+            "port": 8001
+          },
+          "openehr": {
+            "host": "http://192.168.1.67",
+            "port": 8003
+          },
+          "discovery": {
+            "host": "http://192.168.1.67",
+            "port": 8004
+          },
+          "openid_connect": {
+            "host": "https://192.168.1.67",
+            "port": 443,
+            "path_prefix": "/oidc"
+          }
+        }
       }
-    }
-  }
 
 
 ### 2. Configure Twilio
@@ -306,17 +306,6 @@ Copy the PulseTile UI files to the nginx Web Server root directory:
  ~/usr/share/nginx/html
 
 
-## What is the ~/helm/yottadb Folder For?
-
-Each MicroService is run as a Docker Container - this container uses the *qewd-server* Docker service which
-includes not only an instance of QEWD, but also an instance of the [YottaDB](https://yottadb.com/) NoSQL database which is mainly
-used for QEWD internal management and user Session management.  However, it is also used as a database for
-the *authentication* and *openehr* and *openid_connect* MicroServices.  In order for such data to persist beyond the life-span of the 
-Docker containers, the YottaDB database files are mapped to pre-initialised files in the *~/helm/yottadb* directory.
-
-**Please do not** touch or change the files in this directory and its sub-directories.
-
-
 ## Running the Suite of MicroServices
 
 
@@ -453,6 +442,21 @@ If this is the first time you logged in, you now have to set your permanent pass
 After a short delay, you’ll now see the main Helm screen come up with data for your NHS Number.  That data will have been mapped from test data on the Discovery Data Service.
 
 
+
+
+# Other Useful Information about the Helm Middle Tier Architecture
+
+## What is the ~/helm/yottadb Folder For?
+
+Each MicroService is run as a Docker Container - this container uses the *qewd-server* Docker service which
+includes not only an instance of QEWD, but also an instance of the [YottaDB](https://yottadb.com/) NoSQL database which is mainly
+used for QEWD internal management and user Session management.  However, it is also used as a database for
+the *authentication* and *openehr* and *openid_connect* MicroServices.  In order for such data to persist beyond the life-span of the 
+Docker containers, the YottaDB database files are mapped to pre-initialised files in the *~/helm/yottadb* directory.
+
+**Please do not** touch or change the files in this directory and its sub-directories.
+
+
 ## The OpenEHR Jumper Functionality
 
 OpenEHR Jumper automates the fetching and updating of OpenEHR data, avoiding the need for hand-crafted
@@ -515,68 +519,6 @@ Select the Document Store tab/option to view any persistent documents in the QEW
 
 Select the Sessions tab/option to view and optionally shut down any active QEWD user sessions.
 
-
-
-
-OpenEHR Jumper automates the fetching and updating of OpenEHR data, avoiding the need for hand-crafted
-AQL and Flat JSON definitions.  Instead, OpenEHR Jumper just needs to know the name of each
-OpenEHR Template that you're interested in using.
-
-The OpenEHR Jumper configuration is already set up for you in the *openehr* MicroService.
-
-
-## Stopping and Restarting the Helm MicroServices
-
-You can use a variety of mechanisms for stopping the Ripple-QEWD MicroServices, for example:
-
-- if a MicroService is running as a foreground Docker process (using the *-it* parameter), you
-  can simply use *CTRL & C* to stop it
-
-- you can use *sudo docker stop {pid}*.  Use *sudo docker ps* to discover the PIDs for your
-  MicroServices.  Usually you only need to specify the first 3 characters of the PID
-
-- you can use the QEWD Monitor application (see below) for the MicroService you want to shut down.  Click
-  the red X button next to the Master process displayed in the Overview Screen.
-
-Note: In order to minimise any risk of corruption of the YottaDB database, it is recommended that you shut down the MicroServices using the QEWD Monitor option above.  This ensures that
-QEWD Worker process connections to YottaDB are cleanly shut down.
-
-However, each QEWD.js Container ensures that the YottaDB database is correctly run-down when the Container starts, and recovers any data from the YottaDB Journal if any corruption is detected.
-
-To re-start each MicroService, see the section **Running the Suite of MicroServices** above.
-
-
-## The QEWD Monitor Application
-
-Each Ripple-QEWD MicroService runs as a self-contained QEWD instance, and includes its own copy
-of the QEWD Monitor application.
-
-This is a browser-based application that is started using the URL path */{proxy-path}/qewd-monitor/index.html*
-
-where {proxy_path} is an NGINX-interpreted path that routes the request to the appropriate MicroService.  These paths are as follows:
-
-- **conductor**:      */qewd_conductor/*
-- **authentication**: */qewd_auth/*
-- **openid_connect**: */oidc/*
-- **openehr**:        */qewd_openehr/*
-- **discovery**:      */qewd_discovery/*
-
-
-For example, to access the QEWD Monitor application for the *conductor* service, point your browser at:
-
-       http://www.myserver.com/qewd_conductor/qewd-monitor/index.html
-
-If you successfully enter the QEWD Management Password (see earlier for details of how this is defined/configured), you will now be presented with the Overview screen.
-
-From the Overview screen you can:
-
-- examine how QEWD is configured
-- stop the MicroService by stopping the QEWD Master Process
-- stop any or all of the QEWD Worker processes.  QEWD will automatically restart them on demand
-
-Select the Document Store tab/option to view any persistent documents in the QEWD/YottaDB Database
-
-Select the Sessions tab/option to view and optionally shut down any active QEWD user sessions.
 
 
 ## Shell Access to Each MicroService
