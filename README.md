@@ -1,4 +1,4 @@
-# Ripple-QEWD-Microservices
+# QEWD-Courier (was Ripple-QEWD-Microservices)
 
 Email: <code.custodian@ripple.foundation>
 
@@ -64,7 +64,7 @@ To avoid having to use sudo with the docker commands:
         sudo usermod -aG docker ${USER}
         su - ${USER}
 
-You’ll be prompted for your password when invoking the second command above
+Youâ€™ll be prompted for your password when invoking the second command above
 
 
 
@@ -191,7 +191,7 @@ The *openehr* MicroService provides the interface to your OpenEHR server.  The c
 
       ~/helm/cdr-service-openehr/useDefined.json
 
-It’s pre-set to share use of an existing cloud-based test EtherCIS system:
+Itâ€™s pre-set to share use of an existing cloud-based test EtherCIS system:
 
     "openehr": {
       "ethercis": {
@@ -207,7 +207,7 @@ but you can change these settings to use your own OpenEHR server.
 
 ### 7. Configure access to Discovery Data Service
 
-You’ll need to get a trial / demo account with Discovery Data Service.  Enter your username & password into the fields in the Discovery MicroService configuration file:
+Youâ€™ll need to get a trial / demo account with Discovery Data Service.  Enter your username & password into the fields in the Discovery MicroService configuration file:
 
       ~/helm/cdr-service-discovery/modules/ripple-cdr-discovery/src/hosts.js
 
@@ -260,7 +260,7 @@ with the file that you'll find at:
 
       ~/helm/DMZ/etc/nginx/conf.d
 
-There’s just one file in that folder:  *default.conf* 
+Thereâ€™s just one file in that folder:  *default.conf* 
 
 
 ### Set up the Proxy Redirections for your System
@@ -285,7 +285,7 @@ In order to access Helm over SSL (HTTPS), you will need the appropriate certific
 
 However, if you wish, you can make use of the Self-Signed certificates that are included in the repository. If you're happy that these will be satisfactory and adequate for your needs (bearing in mind the lack of inherent security that they will provide), then follow these steps:
 
-If your system doesn’t already have the folder /etc/pki, create it copy in the contents of the folder:
+If your system doesnâ€™t already have the folder /etc/pki, create it copy in the contents of the folder:
 
        ~/helm/DMZ/etc/pki
 
@@ -355,21 +355,21 @@ Then log in with the QEWD password for the *openid_connect* MicroService - unles
 
      pwd_oidc
 
-You’ll now see a form where you can enter your details as a Administrator.
+Youâ€™ll now see a form where you can enter your details as a Administrator.
 
 Note: You **must** provide a working mobile phone number, because this application uses it for Two Factor Authentication.
 
-Once you save the Administrator details you’ll be asked to log in again, using the new credentials.
+Once you save the Administrator details youâ€™ll be asked to log in again, using the new credentials.
 
-You’ll then be prompted to enter the 6 digit code that will have been sent to your mobile phone.
+Youâ€™ll then be prompted to enter the 6 digit code that will have been sent to your mobile phone.
 
-If you enter the correct number, you’ll be presented with the main Admin Portal screen.
+If you enter the correct number, youâ€™ll be presented with the main Admin Portal screen.
 
-You now need to create an *OpenId Connect Client* and also create an *OpenId Connect Claim* for use with Helm.  Here’s how to do each:
+You now need to create an *OpenId Connect Client* and also create an *OpenId Connect Claim* for use with Helm.  Hereâ€™s how to do each:
 
 ### Creating A Client
 
-Click the Green **+** button that you’ll see at the far right-hand side of the *Clients* banner
+Click the Green **+** button that youâ€™ll see at the far right-hand side of the *Clients* banner
 
 Enter the following details:
 
@@ -383,7 +383,7 @@ Click Save
 
 ### Creating A Claim
 
-Click the *Claims* tab and the Green **+** button that you’ll see at the far right-hand side of the *Claims* banner
+Click the *Claims* tab and the Green **+** button that youâ€™ll see at the far right-hand side of the *Claims* banner
 
 Enter the following details:
 
@@ -407,15 +407,15 @@ Finally, the last step before being able to use the Helm MicroServices is to cre
 
       https://192.168.1.100/oidc-admin/index.html
 
-Click the *Users* tab  and the Green **+** button that you’ll see at the far right-hand side of the *Users* banner
+Click the *Users* tab  and the Green **+** button that youâ€™ll see at the far right-hand side of the *Users* banner
 
-Enter your user’s details.  
+Enter your userâ€™s details.  
 
-**Important**: Ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user’s account and for Two Factor Authentication respectively.
+**Important**: Ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the userâ€™s account and for Two Factor Authentication respectively.
 
 Note: the Mobile phone number must be entered with the correct country code at the start, eg +44 7771 987654.  Spaces within the number are optional.
 
-After you click the Save button, you’ll see the user’s details in the Users table display.  To the far right of the display, you’ll see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.
+After you click the Save button, youâ€™ll see the userâ€™s details in the Users table display.  To the far right of the display, youâ€™ll see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.
 
 The new user will receive an email asking them to verify themselves by clicking a link within the email text.  When they do this, they will be directed to the OpenId Connect server which will return them a 6 digit temporary one-time password
 
@@ -439,7 +439,7 @@ Now enter the 6 digit number that will have been sent to your mobile phone
 
 If this is the first time you logged in, you now have to set your permanent password.  It must be a mixture of upper and lower case characters and one or more numbers.
 
-After a short delay, you’ll now see the main Helm screen come up with data for your NHS Number.  That data will have been mapped from test data on the Discovery Data Service.
+After a short delay, youâ€™ll now see the main Helm screen come up with data for your NHS Number.  That data will have been mapped from test data on the Discovery Data Service.
 
 
 
