@@ -207,7 +207,7 @@ The *openehr* MicroService provides the interface to your OpenEHR server.  The c
 
       ~/helm/cdr-service-openehr/useDefined.json
 
-It’s pre-set to share use of an existing cloud-based test EtherCIS system:
+It's pre-set to share use of an existing cloud-based test EtherCIS system:
 
     "openehr": {
       "ethercis": {
@@ -223,7 +223,7 @@ but you can change these settings to use your own OpenEHR server.
 
 ### 7. Configure access to Discovery Data Service
 
-You’ll need to get a trial / demo account with Discovery Data Service.  Enter your username & password into the fields in the Discovery MicroService configuration file:
+You'll need to get a trial / demo account with Discovery Data Service.  Enter your username & password into the fields in the Discovery MicroService configuration file:
 
       ~/helm/cdr-service-discovery/modules/ripple-cdr-discovery/src/hosts.js
 
@@ -276,7 +276,7 @@ with the file that you'll find at:
 
       ~/helm/DMZ/etc/nginx/conf.d
 
-There’s just one file in that folder:  *default.conf* 
+There's just one file in that folder:  *default.conf* 
 
 
 ### Set up the Proxy Redirections for your System
@@ -301,7 +301,7 @@ In order to access Helm over SSL (HTTPS), you will need the appropriate certific
 
 However, if you wish, you can make use of the Self-Signed certificates that are included in the repository. If you're happy that these will be satisfactory and adequate for your needs (bearing in mind the lack of inherent security that they will provide), then follow these steps:
 
-If your system doesn’t already have the folder /etc/pki, create it copy in the contents of the folder:
+If your system doesn't already have the folder /etc/pki, create it copy in the contents of the folder:
 
        ~/helm/DMZ/etc/pki
 
@@ -378,85 +378,30 @@ Then log in with the QEWD password for the *openid_connect* MicroService - unles
 
      pwd_oidc
 
-You’ll now see a form where you can enter your details as a Administrator.
+You'll now see a form where you can enter your details as a Administrator.
 
 Note: You **must** provide a working mobile phone number, because this application uses it for Two Factor Authentication (if enabled).
 
-Once you save the Administrator details you’ll be asked to log in again, using the new credentials.
+Once you save the Administrator details you'll be asked to log in again, using the new credentials.
 
-<<<<<<< HEAD
 If Two Factor Authentication is enabled, you�ll then be prompted to enter the 6 digit code that will have been sent to your mobile phone.  Enter the correct number.
 
 You�ll now be presented with the main Admin Portal screen from which you can create and maintain Helm users.
-=======
-You’ll then be prompted to enter the 6 digit code that will have been sent to your mobile phone.
 
-If you enter the correct number, you’ll be presented with the main Admin Portal screen.
-
-You now need to create an *OpenId Connect Client* and also create an *OpenId Connect Claim* for use with Helm.  Here’s how to do each:
-
-### Creating A Client
-
-Click the Green **+** button that you’ll see at the far right-hand side of the *Clients* banner
-
-Enter the following details:
-
-- Client Id:                     foo
-- Client secret:                 bar
-- Redirect URI Path:             /api/auth/token
-- Post-Logout Redirect URI Path: **Important**: Delete this so the field is empty
-
-Click Save
-
-
-### Creating A Claim
-
-Click the *Claims* tab and the Green **+** button that you’ll see at the far right-hand side of the *Claims* banner
-
-Enter the following details:
-
-- Claim Id / Name:   openid
-- List of Fields:    Enter the following into the textarea field, with each one separated by a line-feed:
-
-      email
-      nhsNumber
-      firstName
-      lastName
-      mobileNumber
-      dob
-      vouchedBy
-
-Click Save
->>>>>>> origin/master
 
 
 ## Creating and Maintaining Users
 
-<<<<<<< HEAD
 From within the main Admin Portal screen, click the *Users* tab  and the Green **+** button that you�ll see at the far right-hand side of the *Users* banner
-=======
-Finally, the last step before being able to use the Helm MicroServices is to create one or more users.  User maintenance takes place on the OpenId Connect service.  Once again you'll use the same *oidc-admin* application as you used above for creating the Client and Claim, ie:
 
-      https://192.168.1.100/oidc-admin/index.html
+Enter your user's details.  
 
-Click the *Users* tab  and the Green **+** button that you’ll see at the far right-hand side of the *Users* banner
->>>>>>> origin/master
-
-Enter your user’s details.  
-
-<<<<<<< HEAD
 **Important**: if you have enabled Two Factor Authentication, ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user�s account and for Two Factor Authentication respectively.
 
 Note: the Mobile phone number must be entered with the correct country code at the start, eg +44 7771 987654.  Spaces within the number are optional.
 
 After you click the Save button, you�ll see the user�s details in the Users table display.  
-=======
-**Important**: Ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user’s account and for Two Factor Authentication respectively.
 
-Note: the Mobile phone number must be entered with the correct country code at the start, eg +44 7771 987654.  Spaces within the number are optional.
-
-After you click the Save button, you’ll see the user’s details in the Users table display.  To the far right of the display, you’ll see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.
->>>>>>> origin/master
 
 if Two Factor Authentication is enabled, then to the far right of the display, you�ll see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.  The new user will receive an email asking them to verify themselves by clicking a link within the email text.  When they do this, they will be directed to the OpenId Connect server which will return them a 6 digit temporary one-time password
 
