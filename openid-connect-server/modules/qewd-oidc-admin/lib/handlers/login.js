@@ -24,10 +24,12 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  02 October 2018
+  14 November 2018
 
 */
 
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
+var use2FA = (global_config.use2FA !== false);
 var bcrypt = require('bcrypt');
 var send2FACode = require('./send2FACode');
 
@@ -85,10 +87,9 @@ module.exports = function(messageObj, session, send, finished) {
     var user = userDoc.getDocument(true);
 
     console.log('&& user: ' + JSON.stringify(user, null, 2));
+    console.log('&&&& use2FA = ' + use2FA);
 
-    //  Temporarily bypassed!
-
-    if (user.verified === false) {
+    if (use2FA && user.verified === false) {
       return finished({error: 'Awaiting verification'});
     }
 
@@ -96,8 +97,23 @@ module.exports = function(messageObj, session, send, finished) {
 
     var match = bcrypt.compareSync(password, hashedPassword);
     if (!match) {
-      return finished({error: 'Invalid login attempt (2)'});
+      return finished({error: 'Invalid login attempt'});
     }
+
+    if (!use2FA) {
+      var mode = user.userType;
+      session.data.$('userType').value = mode;
+      session.data.$('userId').value = id;
+      session.authenticated = true;
+      session.timeout = 1200;
+      return finished({
+        ok: true,
+        mode: mode
+      });
+    }
+
+
+    // 2FA enabled
 
     // credentials seem OK
 
@@ -106,7 +122,10 @@ module.exports = function(messageObj, session, send, finished) {
 
     send2FACode.call(this, id, session, function(response) {
       console.log('Twilio response: ' + JSON.stringify(response, null, 2));
-      finished({ok: true});
+      finished({
+        ok: true,
+        mode: 'confirmMobileCode'
+      });
     });
   }
 };

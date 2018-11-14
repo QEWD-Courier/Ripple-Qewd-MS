@@ -1,7 +1,7 @@
 [
   {
     "path": "ripple-auth",
-    "module": "/opt/qewd/mapped/modules/ripple-auth",
+    "module": "ripple-auth",
     "errors": {
       "notfound": {
         "text": "Resource Not Recognised",

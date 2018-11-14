@@ -1,7 +1,7 @@
 [
   {
     "path": "ripple-cdr-discovery",
-    "module": "/opt/qewd/mapped/modules/ripple-cdr-discovery",
+    "module": "ripple-cdr-discovery",
     "errors": {
       "notfound": {
         "text": "Resource Not Recognised",

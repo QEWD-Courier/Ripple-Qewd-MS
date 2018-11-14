@@ -1,7 +1,7 @@
 [
   {
     "path": "/api",
-    "module": "/opt/qewd/mapped/modules/ripple-conductor-phr",
+    "module": "ripple-conductor-phr",
     "errors": {
       "notfound": {
         "text": "Resource Not Recognised",

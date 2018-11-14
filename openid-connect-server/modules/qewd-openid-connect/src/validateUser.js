@@ -24,10 +24,12 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  23 October 2018
+  14 November 2018
 
 */
 
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
+var use2FA = (global_config.use2FA !== false);
 var bcrypt = require('bcrypt');
 var send2FACode = require('./send2FACode');
 
@@ -109,6 +111,14 @@ module.exports = function(messageObj, session, send, finished) {
 
   sessionUsernameDoc.delete();
   sessionGrantDoc.delete();
+
+  if (!use2FA) {
+    return finished({
+      ok: true,
+      accountId: email,
+      resetPassword: false
+  });
+  }
 
   console.log('sending 2FA code for ' + id);
 

@@ -1,7 +1,7 @@
 [
   {
     "path": "qewd-openid-connect",
-    "module": "/opt/qewd/mapped/modules/qewd-openid-connect/handlers",
+    "module": "qewd-openid-connect/handlers",
     "errors": {
       "notfound": {
         "text": "Resource Not Recognised",
@@ -11,7 +11,7 @@
   },
   {
     "path": "/api",
-    "module": "/opt/qewd/mapped/modules/qewd-openid-connect-rest",
+    "module": "qewd-openid-connect-rest",
     "errors": {
       "notfound": {
         "text": "Resource Not Recognised",

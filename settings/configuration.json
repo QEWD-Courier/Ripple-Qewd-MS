@@ -24,6 +24,7 @@
       }
     }
   },
+  "use2FA": false,
   "twilio": {
     "accountSid": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "authToken": "yyyyyyyyyyyyyyyyyyyyyyyyyy",

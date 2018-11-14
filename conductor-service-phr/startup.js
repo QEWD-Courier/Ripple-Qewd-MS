@@ -49,9 +49,9 @@ config.u_services = ms_config(ms_routes, ms_hosts);
 var routes = customiseRoutes(local_routes, config);
 
 config.moduleMap = {
-  'ripple-admin': '/opt/qewd/mapped/modules/ripple-admin',
-  'ripple-audit-log': '/opt/qewd/mapped/modules/ripple-audit-log',
-  'speedTest': '/opt/qewd/mapped/modules/speedTest'
+  'ripple-admin': 'ripple-admin',
+  'ripple-audit-log': 'ripple-audit-log',
+  'speedTest': 'speedTest'
 };
 
 config.addMiddleware = function(bp, app, _this) {

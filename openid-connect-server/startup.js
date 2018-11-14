@@ -24,10 +24,11 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  4 July 2018
+  14 November 2018
 
 */
 
+var fs = require('fs');
 var transform = require('qewd-transform-json').transform;
 var global_config = require('/opt/qewd/mapped/settings/configuration.json');
 var helpers = require('./helpers');
@@ -63,11 +64,34 @@ local_routes[1].afterRouter = [
 ];
 
 function onStarted() {
+
+  var documents;
+  try {
+    documents = require('./documents.json');
+  }
+  catch(err) {}
+
+  if (documents) {
+    var msg = {
+      type: 'ewd-save-documents',
+      params: {
+        documents: documents,
+        password: this.userDefined.config.managementPassword
+      }
+    };
+    console.log('Initialising Documents from documents.json');
+    this.handleMessage(msg, function(response) {
+      console.log('QEWD Documents created from ' + __dirname + '/documents.json which will now be deleted');
+      fs.unlinkSync(__dirname + '/documents.json');
+    });
+  }
+
+
   var self = this;
   var deleteDocuments = (config.delete_documents === true);
   console.log('Wait a couple of seconds for oidc-provider to be available');
   setTimeout(function() {
-    var oidcServer = require('./modules/qewd-openid-connect');
+    var oidcServer = require('qewd-openid-connect');
     oidcServer.call(self, app, bodyParser, oidc_config);
   },2000);
 }

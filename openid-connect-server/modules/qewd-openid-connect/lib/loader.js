@@ -24,11 +24,11 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  08 October 2018
+  14 November 2018
 
 */
 
-const Provider = require('/opt/qewd/node_modules/oidc-provider');
+const Provider = require('oidc-provider');
 const account = require('./account');
 const adapter = require('./adapter');
 const logoutSource = require('./logoutSource');
@@ -166,6 +166,24 @@ module.exports = function(app, bodyParser, params) {
           }
 
           res.render('login', {details});
+          return;
+        }
+
+        if (account.accountId) {
+
+          // gets here if 2FA not enabled
+
+          oidc.interactionFinished(req, res, {
+            login: {
+              account: account.accountId,
+              acr: '1',
+              remember: false,
+              ts: Math.floor(Date.now() / 1000),
+            },
+            consent: {
+              // TODO: remove offline_access from scopes if remember is not checked
+            },
+          });
           return;
         }
 

@@ -1,1 +1,38 @@
-{}
+{
+  "OpenId": {
+    "Clients": {
+      "by_client_id": {
+        "foo": 1
+      },
+      "by_id": {
+        "1": {
+          "client_id": "foo",
+          "client_secret": "bar",
+          "post_logout_uri_path": "",
+          "redirect_uri_path": "/api/auth/token"
+        }
+      },
+      "next_id": 1
+    },
+    "Claims": {
+      "by_id": {
+        "1": {
+          "fields": [
+            "email",
+            "nhsNumber",
+            "firstName",
+            "lastName",
+            "mobileNumber",
+            "dob",
+            "vouchedBy"
+          ],
+          "name": "openid"
+        }
+      },
+      "by_name": {
+        "openid": 1
+      },
+      "next_id": 1
+    }
+  }
+}

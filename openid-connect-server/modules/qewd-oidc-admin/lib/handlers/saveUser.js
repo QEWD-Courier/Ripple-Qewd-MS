@@ -24,11 +24,14 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  12 October 2018
+  14 November 2018
 
 */
 
+var global_config = require('/opt/qewd/mapped/settings/configuration.json');
+var use2FA = (global_config.use2FA !== false);
 var emailValidator = require('email-validator');
+var bcrypt = require('bcrypt');
 
 function isValidNumber(value) {
   var num = +value;
@@ -159,6 +162,8 @@ module.exports = function(messageObj, session, send, finished) {
 
   var usersDoc = this.db.use('OpenId', 'Users');
   var now = new Date().toISOString();
+  var verified;
+  var password = '';
 
   if (id === '') {
     // saving a new record
@@ -172,11 +177,16 @@ module.exports = function(messageObj, session, send, finished) {
     }
 
     id = usersDoc.$('next_id').increment();
+    verified = !use2FA;
+    if (!use2FA) {
+      var salt = bcrypt.genSaltSync(10);
+      password = bcrypt.hashSync('password', salt);
+    }
 
     usersDoc.$(['by_id', id]).setDocument({
       email: email,
-      password: '',
-      verified: false,
+      password: password,
+      verified: verified,
       firstName: firstName,
       lastName: lastName,
       dob: dob,

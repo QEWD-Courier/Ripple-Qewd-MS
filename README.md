@@ -1,4 +1,4 @@
-# Ripple-QEWD-Microservices
+# QEWD Courier
 
 Email: <code.custodian@ripple.foundation>
 
@@ -116,8 +116,22 @@ Example on a local VM:
         }
       }
 
+### 2. Two Factor Authentication
 
-### 2. Configure Twilio
+By default, the Helm repository has Two Factor Authentication disabled.  To enable it, edit the configuration file:
+
+      ~/helm/settings/configuration.json
+
+and look for this property:
+
+      use2FA: false,
+
+Either remove this line or set its value to *true*, and re-save the configuration file.
+
+
+### 3. Configure Twilio
+
+*If Two Factor Authentication is disabled, you can ignore this section.*
 
 [Twilio](https://www.twilio.com/) is used by the Helm middle-tier for Two-Factor authentication via Mobile Phone text messaging.  It is mainly used in the *openid_connect* MicroService, but any management utilities provided in the other MicroServices also rely on this service to ensure that their use is secure.
 
@@ -136,7 +150,9 @@ ie replace the values in this section:
      }
 
 
-### 3. Configure your Mail Server
+### 4. Configure your Mail Server
+
+*If Two Factor Authentication is disabled, you can ignore this section.*
 
 An email server is required for sending user authorisation/validation emails at user sign-up time
 
@@ -159,7 +175,7 @@ ie replace the values in this section as appropriate:
      }
 
 
-### 4. Change the shared JSON Web Token Secret
+### 5. Change the shared JSON Web Token Secret
 
 It is strongly recommended that you change the shared JSON Web Token (JWT) secret that is used by the Helm MicroServices for authenticating and signing the JWTs that flow between PulseTile and the Helm MicroServices.
 
@@ -176,7 +192,7 @@ ie replace the value of the *secret* property in this section:
 The Secret value can be any string.  Ensure that you use a value that is not too short or easily-guessable.
 
 
-### 5. Change the QEWD.js Management Passwords
+### 6. Change the QEWD.js Management Passwords
 
 Each MicroService folder includes a file named *startup_config.json* that tells the QEWD.js module how to configure itself when it starts up.  Unless you understand what you're doing, it is best to leave most of the settings in this file untouched.  However it is a good idea to change the first property: *managementPassword*
 
@@ -185,7 +201,7 @@ The *managementPassword* is used to access the QEWD-Monitor application for each
 Change this value before you start up the MicroService.  If you want to change it thereafter, you must restart the MicroService for it to take effect.
 
 
-### 6. Configure your OpenEHR Server
+### 7. Configure your OpenEHR Server
 
 The *openehr* MicroService provides the interface to your OpenEHR server.  The configuration for this is specified in the file:
 
@@ -308,6 +324,11 @@ Copy the PulseTile UI files to the nginx Web Server root directory:
 
 ## Running the Suite of MicroServices
 
+*Note:* If you have previously installed and run QEWD Courier and have updated your version from
+the Github repository, make sure you update your copy of the *rtweed/qewd-server* Docker Container.
+You **MUST** be using the latest version!  To update it:
+
+      docker pull rtweed/qewd-server
 
 To start the Helm MicroServices, either run:
 
@@ -341,6 +362,8 @@ Everything should now be up and running.
 
 Before being able to use PulseTile, you need to configure the OpenId Connect server for use with Helm.
 
+When you first start the OpenId Connect Server, the appropriate Client and Claim for use with Helm is set up for you automatically.  All you need to do is create one or more users for your Helm service, as follows:
+
 First, start up the OIDC Admin application:
 
       https://192.168.1.100/oidc-admin/index.html
@@ -357,67 +380,28 @@ Then log in with the QEWD password for the *openid_connect* MicroService - unles
 
 You値l now see a form where you can enter your details as a Administrator.
 
-Note: You **must** provide a working mobile phone number, because this application uses it for Two Factor Authentication.
+Note: You **must** provide a working mobile phone number, because this application uses it for Two Factor Authentication (if enabled).
 
 Once you save the Administrator details you値l be asked to log in again, using the new credentials.
 
-You値l then be prompted to enter the 6 digit code that will have been sent to your mobile phone.
+If Two Factor Authentication is enabled, you値l then be prompted to enter the 6 digit code that will have been sent to your mobile phone.  Enter the correct number.
 
-If you enter the correct number, you値l be presented with the main Admin Portal screen.
-
-You now need to create an *OpenId Connect Client* and also create an *OpenId Connect Claim* for use with Helm.  Here痴 how to do each:
-
-### Creating A Client
-
-Click the Green **+** button that you値l see at the far right-hand side of the *Clients* banner
-
-Enter the following details:
-
-- Client Id:                     foo
-- Client secret:                 bar
-- Redirect URI Path:             /api/auth/token
-- Post-Logout Redirect URI Path: **Important**: Delete this so the field is empty
-
-Click Save
-
-
-### Creating A Claim
-
-Click the *Claims* tab and the Green **+** button that you値l see at the far right-hand side of the *Claims* banner
-
-Enter the following details:
-
-- Claim Id / Name:   openid
-- List of Fields:    Enter the following into the textarea field, with each one separated by a line-feed:
-
-      email
-      nhsNumber
-      firstName
-      lastName
-      mobileNumber
-      dob
-      vouchedBy
-
-Click Save
+You値l now be presented with the main Admin Portal screen from which you can create and maintain Helm users.
 
 
 ## Creating and Maintaining Users
 
-Finally, the last step before being able to use the Helm MicroServices is to create one or more users.  User maintenance takes place on the OpenId Connect service.  Once again you'll use the same *oidc-admin* application as you used above for creating the Client and Claim, ie:
-
-      https://192.168.1.100/oidc-admin/index.html
-
-Click the *Users* tab  and the Green **+** button that you値l see at the far right-hand side of the *Users* banner
+From within the main Admin Portal screen, click the *Users* tab  and the Green **+** button that you値l see at the far right-hand side of the *Users* banner
 
 Enter your user痴 details.  
 
-**Important**: Ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user痴 account and for Two Factor Authentication respectively.
+**Important**: if you have enabled Two Factor Authentication, ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user痴 account and for Two Factor Authentication respectively.
 
 Note: the Mobile phone number must be entered with the correct country code at the start, eg +44 7771 987654.  Spaces within the number are optional.
 
-After you click the Save button, you値l see the user痴 details in the Users table display.  To the far right of the display, you値l see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.
+After you click the Save button, you値l see the user痴 details in the Users table display.  
 
-The new user will receive an email asking them to verify themselves by clicking a link within the email text.  When they do this, they will be directed to the OpenId Connect server which will return them a 6 digit temporary one-time password
+if Two Factor Authentication is enabled, then to the far right of the display, you値l see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.  The new user will receive an email asking them to verify themselves by clicking a link within the email text.  When they do this, they will be directed to the OpenId Connect server which will return them a 6 digit temporary one-time password
 
 The user can use this to log in to the Helm system.
 
@@ -433,11 +417,13 @@ To start the Helm PulseTile User Interface, just point your browser at the root 
 
 You should be re-directed to the OpenId Connect server and you should see the login screen.  Enter your registered email address and password.
 
+Note: if Two Factor Authentication is **DISABLED**, enter the password: **password**
+
 Accept the Terms and Conditions
 
-Now enter the 6 digit number that will have been sent to your mobile phone
+If Two Factor Authentication is enabled, you'll be asked for the 6 digit number that will have been sent to your mobile phone
 
-If this is the first time you logged in, you now have to set your permanent password.  It must be a mixture of upper and lower case characters and one or more numbers.
+if Two Factor Authentication is enabled, and if this is the first time you logged in, you now have to set your permanent password.  It must be a mixture of upper and lower case characters and one or more numbers.
 
 After a short delay, you値l now see the main Helm screen come up with data for your NHS Number.  That data will have been mapped from test data on the Discovery Data Service.
 
