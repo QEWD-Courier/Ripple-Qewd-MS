@@ -322,7 +322,7 @@ Copy the PulseTile UI files to the nginx Web Server root directory:
  ~/usr/share/nginx/html
 
 
-## Running the Suite of MicroServices
+## Running the Suite of QEWD Courier MicroServices
 
 *Note:* If you have previously installed and run QEWD Courier and have updated your version from
 the Github repository, make sure you update your copy of the *rtweed/qewd-server* Docker Container.
@@ -384,26 +384,26 @@ Note: You **must** provide a working mobile phone number, because this applicati
 
 Once you save the Administrator details you'll be asked to log in again, using the new credentials.
 
-If Two Factor Authentication is enabled, you値l then be prompted to enter the 6 digit code that will have been sent to your mobile phone.  Enter the correct number.
+If Two Factor Authentication is enabled, you'll then be prompted to enter the 6 digit code that will have been sent to your mobile phone.  Enter the correct number.
 
-You値l now be presented with the main Admin Portal screen from which you can create and maintain Helm users.
+You'll now be presented with the main Admin Portal screen from which you can create and maintain Helm users.
 
 
 
 ## Creating and Maintaining Users
 
-From within the main Admin Portal screen, click the *Users* tab  and the Green **+** button that you値l see at the far right-hand side of the *Users* banner
+From within the main Admin Portal screen, click the *Users* tab  and the Green **+** button that you'll see at the far right-hand side of the *Users* banner
 
 Enter your user's details.  
 
-**Important**: if you have enabled Two Factor Authentication, ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user痴 account and for Two Factor Authentication respectively.
+**Important**: if you have enabled Two Factor Authentication, ensure that both the email account and mobile phone number are working and correctly-entered.  These will be used for validating the user's account and for Two Factor Authentication respectively.
 
 Note: the Mobile phone number must be entered with the correct country code at the start, eg +44 7771 987654.  Spaces within the number are optional.
 
-After you click the Save button, you値l see the user痴 details in the Users table display.  
+After you click the Save button, you'll see the user's details in the Users table display.  
 
 
-if Two Factor Authentication is enabled, then to the far right of the display, you値l see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.  The new user will receive an email asking them to verify themselves by clicking a link within the email text.  When they do this, they will be directed to the OpenId Connect server which will return them a 6 digit temporary one-time password
+if Two Factor Authentication is enabled, then to the far right of the display, you'll see three buttons, the first of which is an orange button with an Info triangle inside it.  Click this button to send the user an email for them to verify their email address.  The new user will receive an email asking them to verify themselves by clicking a link within the email text.  When they do this, they will be directed to the OpenId Connect server which will return them a 6 digit temporary one-time password
 
 The user can use this to log in to the Helm system.
 
