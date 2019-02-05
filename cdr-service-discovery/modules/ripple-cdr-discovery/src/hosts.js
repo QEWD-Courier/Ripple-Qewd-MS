@@ -33,8 +33,8 @@ module.exports = {
     //host:       'https://devauth.endeavourhealth.net',
     host:       'https://devauth.discoverydataservice.net',
     path:       '/auth/realms/endeavour/protocol/openid-connect/token',
-    username:   'robtweed',
-    password:   'jfYLgao7S4h0QI0O84TP',
+    username:   'xxxxxxxx',
+    password:   'yyyyyyyyyyyyyy',
     client_id:  'eds-data-checker',
     grant_type: 'password'
   },
