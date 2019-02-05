@@ -78,7 +78,7 @@ module.exports = function(app, bodyParser, params) {
 
   if (params.postLogoutRedirectUri) {
 
-    console.log('loading postLogoutRedirectUri: ' + params.postLogoutRedirectUri)
+    console.log('loading postLogoutRedirectUri: ' + params.postLogoutRedirectUri);
 
     async function postLogoutRedirectUri(ctx) {
       console.log('postLogoutRedirectUri function returning ' + params.postLogoutRedirectUri);

@@ -104,6 +104,11 @@
     "destination": "cdr_openehr_service"
   },
   {
+    "path": "/api/hscn/:site/top3Things/:patientId",
+    "method": "GET",
+    "destination": "cdr_openehr_service"
+  },
+  {
     "path": "/api/patients/:patientId/headings/synopsis",
     "method": "GET",
     "destination": "cdr_openehr_service"

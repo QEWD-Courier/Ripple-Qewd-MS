@@ -29,7 +29,6 @@
 */
 
 const Provider = require('oidc-provider');
-//const Provider = require('/opt/qewd/node_modules/oidc-provider');
 const account = require('./account');
 const adapter = require('./adapter');
 const logoutSource = require('./logoutSource');
@@ -296,10 +295,6 @@ module.exports = function(app, bodyParser, params) {
     app.post('/openid/interaction/:grant/requestNewPassword', parse, (req, res, next) => {
       Account.requestNewPassword(req.body.email).then((results) => {
         var details;
-        /*
-
-        Don't give an error - if invalid email address, then user won't get an email
-
         if (results.error) {
           details = {
             params: {
@@ -310,11 +305,9 @@ module.exports = function(app, bodyParser, params) {
           res.render('forgotPassword', {details});
           return;
         }
-        */
         details = {
           params: {
-            //error: 'Use the temporary password that has been emailed to you'
-            error: '<center>If an account exists with this email address<br /> a password reset email will be sent</center>'
+            error: 'Use the temporary password that has been emailed to you'
           },
           uuid: req.params.grant
         };

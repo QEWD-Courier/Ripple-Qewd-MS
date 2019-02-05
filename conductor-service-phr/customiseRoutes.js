@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  19 February 2018
+  16 November 2018
 
 */
 
@@ -81,6 +81,21 @@ module.exports = function(routes, config) {
             req.headers.authorization = 'Bearer ' + token;
             delete req.headers.cookie;
           }
+        }
+
+        if (req.url.startsWith('/hscn/')) {
+          // For Access Token-authenticated messages from HSCN (eg Leeds)
+          // we need to change the Authorization header because QEWD
+          // expects a Bearer token to be a JWT.  We'll change it to 
+          // a custom type of Access to allow the incoming message to
+          // not get rejected by the Conductor, and make it to the
+          // OpenEHR microservice
+
+          if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
+            var token = req.headers.authorization.split('Bearer ')[1];
+            req.headers.authorization = 'AccessToken ' + token;
+          }
+          // for next step see beforeMicroService handler in OpenEHR MicroService index.js
         }
 
         if (remap && remap[req.originalUrl] && remap[req.originalUrl].to && typeof remap[req.originalUrl].to === 'function') {

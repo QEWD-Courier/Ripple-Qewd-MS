@@ -24,11 +24,12 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  04 October 2018
+  18 December 2018
 
 */
 
 var bcrypt = require('bcrypt');
+var zxcvbn = require('zxcvbn'); // Dropbox password strength checker
 
 module.exports = function(messageObj, session, send, finished) {
   if (!messageObj.params) return finished({error: 'No parameters were sent'});
@@ -44,6 +45,22 @@ module.exports = function(messageObj, session, send, finished) {
 
   if (!passwordPattern.test(password)) {
     return finished({error: 'Your password does not meet the necessary requirements'});
+  }
+
+  var errorMessage;
+  var dbResults = zxcvbn(password);
+  if (dbResults.score < 3) {
+    errorMessage = 'That password would be too easy to guess - try again';
+    if (dbResults.feedback && dbResults.feedback.warning !== '') {
+      errorMessage = dbResults.feedback.warning;
+      if (dbResults.feedback.suggestions) {
+        dbResults.feedback.suggestions.forEach(function(suggestion) {
+          errorMessage = errorMessage + '<br />' + suggestion;
+        });
+        errorMessage = '<center>' + errorMessage + '</center>';
+      }
+    }
+    return finished({error: errorMessage});
   }
 
   var grant = messageObj.params.grant;

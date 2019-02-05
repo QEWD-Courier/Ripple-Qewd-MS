@@ -30,15 +30,16 @@
 
 module.exports = {
   auth: {
-    host:       'https://devauth.endeavourhealth.net',
+    //host:       'https://devauth.endeavourhealth.net',
+    host:       'https://devauth.discoverydataservice.net',
     path:       '/auth/realms/endeavour/protocol/openid-connect/token',
-    username:   'xxxxxxx',
-    password:   'yyyyyyyyyyyyyyy',
+    username:   'robtweed',
+    password:   'jfYLgao7S4h0QI0O84TP',
     client_id:  'eds-data-checker',
     grant_type: 'password'
   },
   api: {
-    host: 'https://deveds.endeavourhealth.net/data-assurance',
+    host: 'https://devgateway.discoverydataservice.net/data-assurance',
     paths: {
       getPatientsByNHSNumber: '/api/fhir/patients',
       getPatientResources:    '/api/fhir/resources',

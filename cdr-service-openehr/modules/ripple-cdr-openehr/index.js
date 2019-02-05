@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  1 November 2018
+  16 November 2018
 
 */
 
@@ -47,6 +47,7 @@ var getHeadingSummaryFields = require('./handlers/getSummaryHeadingFields');
 var getTop3ThingsSummary = require('./top3Things/getTop3ThingsSummary');
 var getTop3ThingsDetail = require('./top3Things/getTop3ThingsDetail');
 var postTop3Things = require('./top3Things/postTop3Things');
+var getTop3ThingsHSCN = require('./top3Things/getTop3ThingsHSCN');
 
 var getFeedSummary = require('./feeds/getSummary');
 var getFeedDetail = require('./feeds/getDetail');
@@ -93,6 +94,9 @@ var routes = {
   '/api/patients/:patientId/top3Things/:sourceId': {
     PUT: postTop3Things,
     GET: getTop3ThingsDetail
+  },
+  '/api/hscn/:site/top3Things/:patientId': {
+     GET: getTop3ThingsHSCN
   },
   '/api/patients/:patientId/:heading': {
     GET:  getHeadingSummary,
@@ -157,6 +161,9 @@ module.exports = {
   },
 
   beforeMicroServiceHandler: function(req, finished) {
+
+    if (req.path.startsWith('/api/hscn/')) return true;
+
     var authorised = this.jwt.handlers.validateRestRequest.call(this, req, finished);
     if (authorised) {
       var role = req.session.role;
