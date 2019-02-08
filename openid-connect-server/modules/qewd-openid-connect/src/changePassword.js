@@ -43,8 +43,8 @@ module.exports = function(messageObj, session, send, finished) {
   // at least 7 characters long
   // var passwordPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{7,})");
 
-  // should be 10 digits
-  var passwordPattern = new RegExp(/^\d{10}$/);
+  // should be at least 10 digits
+  var passwordPattern = new RegExp(/^\d{10,}$/);
 
   if (!passwordPattern.test(password)) {
     return finished({error: 'Your password does not meet the necessary requirements'});
