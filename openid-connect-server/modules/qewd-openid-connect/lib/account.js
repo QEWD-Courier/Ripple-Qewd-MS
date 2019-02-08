@@ -110,7 +110,7 @@ function initialise_account(qoper8) {
             nhsNumber: 9999999015
           };
           */
-          
+
         }
       };
 
@@ -191,8 +191,11 @@ function initialise_account(qoper8) {
       // at least 1 lower case
       // at least 1 number
       // at least 7 characters long
-      var passwordPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{7,})");
+      // var passwordPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{7,})");
 
+
+		// should be 10 digits
+	  var passwordPattern = new RegExp(/^\d{10}$/);
       if (!passwordPattern.test(password)) {
         return {error: 'Your password does not meet the necessary requirements'};
       }
