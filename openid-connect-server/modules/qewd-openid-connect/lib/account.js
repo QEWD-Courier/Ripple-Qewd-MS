@@ -195,7 +195,8 @@ function initialise_account(qoper8) {
 
 
 		// should be at least 10 digits
-	  var passwordPattern = new RegExp(/^\d{10,}$/);
+	  // var passwordPattern = new RegExp("[A-Za-z0-9 _.,!\"'/$]*{10,}$/");
+	  var passwordPattern = new RegExp("[A-Za-z0-9.,:!?;()]{10,}$");
       if (!passwordPattern.test(password)) {
         return {error: 'Your password does not meet the necessary requirements'};
       }
