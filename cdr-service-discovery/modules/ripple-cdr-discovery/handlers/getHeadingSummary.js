@@ -3,7 +3,7 @@
  ----------------------------------------------------------------------------
  | ripple-cdr-discovery: Ripple Discovery Interface                         |
  |                                                                          |
- | Copyright (c) 2017-18 Ripple Foundation Community Interest Company       |
+ | Copyright (c) 2017-19 Ripple Foundation Community Interest Company       |
  | All rights reserved.                                                     |
  |                                                                          |
  | http://rippleosi.org                                                     |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  17 October 2018
+  13 February 2019
 
 */
 
@@ -37,10 +37,11 @@ var mapToDiscoveryNHSNo = require('../src/mapToDiscoveryNHSNo');
 var tools = require('../src/tools');
 var headingMap = require('../src/headingMap');
 
+var dds_config = require('/opt/qewd/mapped/settings/configuration.json').DDS;
+
 module.exports = function(args, finished) {
 
   var patientId = args.patientId;
-
 
   // override patientId for PHR Users - only allowed to see their own data
 
@@ -49,9 +50,10 @@ module.exports = function(args, finished) {
   var valid = tools.isPatientIdValid(patientId);
   if (valid.error) return finished(valid);
 
-  patientId = mapToDiscoveryNHSNo.call(this, patientId);
-
-  //patientId = 5558526785;
+  if (!dds_config || dds_config.mode === 'test') {
+    // in test mode, map an OpenEHR/Helm patient Id to a DDS test server one
+    patientId = mapToDiscoveryNHSNo.call(this, patientId);
+  }
 
   var heading = args.heading;
 

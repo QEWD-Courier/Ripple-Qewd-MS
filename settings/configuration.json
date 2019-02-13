@@ -43,6 +43,9 @@
     "from": "\"Helm: Information Only\" <no_reply@example.com>",
     "subject": "Please verify your email address"
   },
+  "DDS": {
+    "mode": "test"
+  },
   "jwt": {
     "secret": "bd645d9e-6281-4a96-949a-b249f6ff3d97"
   }
